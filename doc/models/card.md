@@ -13,7 +13,7 @@
 | `account_name` | `str` | Optional | Account Name |
 | `account_number` | `str` | Optional | Account Number |
 | `account_short_name` | `str` | Optional | Account Short Name |
-| `bundle_id` | `str` | Optional | Bundle Id associated with card in the Gateway.<br /><br>This field will have null value if the card is not associated with any bundle in Gateway or the value of IncludeBundleDetails in request is false. |
+| `bundle_id` | `str` | Optional | Bundle Id associated with card in the Gateway.<br /><br><br>This field will have null value if the card is not associated with any bundle in Gateway or the value of IncludeBundleDetails in request is false. |
 | `card_block_schedules` | [`List[CardBlockSchedule]`](../../doc/models/card-block-schedule.md) | Optional | List of Scheduled Card Blocks details<br /><br>Entity: CardBlockSchedule |
 | `card_group_id` | `int` | Optional | Card group ID |
 | `card_group_name` | `str` | Optional | Card group name |
@@ -37,7 +37,7 @@
 | `is_superseded` | `bool` | Optional | True/False True if a new card is issued with the same PAN, else false. |
 | `is_virtual_card` | `bool` | Optional | True/False True if it is a virtual card, else false |
 | `last_modified_date` | `str` | Optional | Card last modified date and time<br /><br>Format: yyyyMMdd HH:mm:ss<br /><br>Note: Clients to convert this to appropriate DateTime type. |
-| `last_used_date` | `str` | Optional | Card last used date .<br /><br>Note: last used date of a card will be calculated based on billed/unbilled sales items<br>of a given card.The query that extracts the last used dates will be applied on the<br>subset of the cards being returned to the client.Unbilled sales items is checked<br>first and for those not found in the unbilled table, sales items will be checked<br>(only when the last used date is not found in unbilled table for at least a single<br>card from the result). The transactions in last 48 hours are not expected to be<br>Therefore this field gives the correct information up to 48 hours early.<br /><br>Format: yyyyMMdd HH:mm:ss<br /><br>Note: Clients to convert this to appropriate DateTime type |
+| `last_used_date` | `str` | Optional | Card last used date .<br /><br>Note: last used date of a card will be calculated based on billed/unbilled sales items<br><br>      of a given card.The query that extracts the last used dates will be applied on the<br>    <br>      subset of the cards being returned to the client.Unbilled sales items is checked<br>    <br>      first and for those not found in the unbilled table, sales items will be checked<br>    <br>      (only when the last used date is not found in unbilled table for at least a single<br>    <br>      card from the result). The transactions in last 48 hours are not expected to be<br><br>Therefore this field gives the correct information up to 48 hours early.<br /><br>Format: yyyyMMdd HH:mm:ss<br /><br>Note: Clients to convert this to appropriate DateTime type |
 | `local_currency_code` | `str` | Optional | ISO code of the local currency. <br /> |
 | `local_currency_symbol` | `str` | Optional | Local currency symbol. <br /> |
 | `odometer_input` | `bool` | Optional | True/False True if odometer input is enabled on the card, else false |

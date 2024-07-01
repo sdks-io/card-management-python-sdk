@@ -15,15 +15,18 @@ from apimatic_core.response_handler import ResponseHandler
 from apimatic_core.types.parameter import Parameter
 from shellcardmanagementapis.http.http_method_enum import HttpMethodEnum
 from apimatic_core.authentication.multiple.single_auth import Single
+from shellcardmanagementapis.models.search_card_restriction_res import SearchCardRestrictionRes
+from shellcardmanagementapis.models.card_restriction_response import CardRestrictionResponse
 from shellcardmanagementapis.models.create_bundle_response import CreateBundleResponse
 from shellcardmanagementapis.models.update_bundle_response import UpdateBundleResponse
 from shellcardmanagementapis.models.delete_bundle_response import DeleteBundleResponse
-from shellcardmanagementapis.models.summary_of_bundle_response import SummaryOfBundleResponse
-from shellcardmanagementapis.models.restriction_card_response import RestrictionCardResponse
+from shellcardmanagementapis.models.summaryofbundle_response import SummaryofbundleResponse
 from shellcardmanagementapis.models.account_restriction_response import AccountRestrictionResponse
 from shellcardmanagementapis.models.search_account_limit_response import SearchAccountLimitResponse
-from shellcardmanagementapis.models.restriction_search_card_response import RestrictionSearchCardResponse
-from shellcardmanagementapis.exceptions.error_object_exception import ErrorObjectException
+from shellcardmanagementapis.models.bundle_details_response import BundleDetailsResponse
+from shellcardmanagementapis.exceptions.api_exception import APIException
+from shellcardmanagementapis.exceptions.fleetmanagement_v_2_restriction_searchcard_401_error_exception import FleetmanagementV2RestrictionSearchcard401ErrorException
+from shellcardmanagementapis.exceptions.fleetmanagement_v_2_restriction_searchcard_500_error_exception import FleetmanagementV2RestrictionSearchcard500ErrorException
 
 
 class RestrictionController(BaseController):
@@ -32,10 +35,178 @@ class RestrictionController(BaseController):
     def __init__(self, config):
         super(RestrictionController, self).__init__(config)
 
-    def restriction_bundle_create(self,
-                                  request_id,
-                                  body=None):
-        """Does a POST request to /card-restrictions/v1/bundles/create.
+    def search_card_restriction(self,
+                                apikey,
+                                request_id,
+                                body=None):
+        """Does a POST request to /fleetmanagement/v2/restriction/searchcard.
+
+        This API will allows querying card details including the day/time and
+        product restrictions.
+        #### Supported operations
+          * Search by list of cards or bundle
+          * Include card bundle details (optional)
+          
+
+        Args:
+            apikey (str): This is the API key of the specific environment
+                which needs to be passed by the client.
+            request_id (str): Mandatory UUID (according to RFC 4122 standards)
+                for requests and responses. This will be played back in the
+                response from the request.
+            body (SearchCardRestrictionReq, optional): Restriction search card
+                request body
+
+        Returns:
+            SearchCardRestrictionRes: Response from the API. OK
+
+        Raises:
+            APIException: When an error occurs while fetching the data from
+                the remote API. This exception includes the HTTP Response
+                code, an error message, and the HTTP body that was received in
+                the request.
+
+        """
+
+        return super().new_api_call_builder.request(
+            RequestBuilder().server(Server.SHELL)
+            .path('/fleetmanagement/v2/restriction/searchcard')
+            .http_method(HttpMethodEnum.POST)
+            .header_param(Parameter()
+                          .key('apikey')
+                          .value(apikey))
+            .header_param(Parameter()
+                          .key('RequestId')
+                          .value(request_id))
+            .header_param(Parameter()
+                          .key('Content-Type')
+                          .value('application/json'))
+            .body_param(Parameter()
+                        .value(body))
+            .header_param(Parameter()
+                          .key('accept')
+                          .value('application/json'))
+            .body_serializer(APIHelper.json_serialize)
+            .auth(Single('BasicAuth'))
+        ).response(
+            ResponseHandler()
+            .deserializer(APIHelper.json_deserialize)
+            .deserialize_into(SearchCardRestrictionRes.from_dictionary)
+            .local_error('400', 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).', APIException)
+            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.', FleetmanagementV2RestrictionSearchcard401ErrorException)
+            .local_error('403', 'The server understood the request but refuses to authorize it.', APIException)
+            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.', APIException)
+            .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', FleetmanagementV2RestrictionSearchcard500ErrorException)
+        ).execute()
+
+    def apply_restriction(self,
+                          apikey,
+                          request_id,
+                          body=None):
+        """Does a POST request to /fleetmanagement/v2/restriction/card.
+
+        The Card Limit and Restriction API is REST-based and employs Basic and
+        ApiKey authentication. The API endpoints accept JSON-encoded request
+        bodies, return JSON-encoded responses and use standard HTTP response
+        codes. 
+        All resources are located in the Shell Card Platform.  The Shell Card
+        Platform is the overall platform that encompasses all the internal
+        Shell systems used to manage resources. The internal workings of the
+        platform are not important when interacting with the API. However, it
+        is worth noting that the platform uses a microservice architecture to
+        communicate with various backend systems and some API calls are
+        processed asynchronously.
+        All endpoints use the `POST` verb for retrieving, updating, creating
+        and deleting resources in the Shell Card Platform. The endpoints that
+        retrieve resources from the Shell Card Platform allow flexible search
+        parameters in the API request body.
+        **Important Note** - This operation allows setting or updating the
+        restrictions on existing cards. (For up to 3 cards in a single call).
+        All restrictions of the cards are submitted and executed after
+        successful below condition.
+        •	The card exists.
+        •	Day time restriction cannot be set to restrict the use of a card on
+        all days of the week i.e., the values for all the days in the
+        restriction cannot be set to false.
+        •	Either of the usage, daytime, location or product restriction
+        ‘Reset’ is set to ‘True’ or applied on the card.
+        •	All the limits in the usage restriction profile for a card is not
+        set to ‘0’/null.
+        •	If IsVelocityCeiling is ‘true’, API will validate below condition:
+        Usage restrictions for a card are lower than Customer Card Type level
+        limits, if there are no customer level overrides available then lower
+        than OU card type limits.
+        •	In usage restrictions, the limits per transaction should be less
+        than or equal to Daily, Daily should be less than or equal to Weekly,
+        Weekly should be less than or equal to Monthly, Monthly should be less
+        than or equal to Yearly (Annually). Exception being null/blank will be
+        skipped. i.e., Daily value should be less than equal to Monthly value
+        if Weekly value is null/blank. Lifetime limit is not considered for
+        usage restrictions limits validation.
+        •	Apply the card type limit to Gateway when a value is NULL in the
+        input. However, if the card type limit is NULL for the same field,
+        then no limit will be applied in Gateway.
+        •	If ‘SetDefaultOnVelocityUpdate’ is ‘true’ then the operation will
+        apply customer cardtype or OU level velocity limits on existing cards
+        when restrictions are modified without providing custom values for all
+        fields.
+
+        Args:
+            apikey (str): This is the API key of the specific environment
+                which needs to be passed by the client.
+            request_id (str): Mandatory UUID (according to RFC 4122 standards)
+                for requests and responses. This will be played back in the
+                response from the request.
+            body (CardRestrictionReq, optional): Card Restriction request
+                body
+
+        Returns:
+            CardRestrictionResponse: Response from the API. OK
+
+        Raises:
+            APIException: When an error occurs while fetching the data from
+                the remote API. This exception includes the HTTP Response
+                code, an error message, and the HTTP body that was received in
+                the request.
+
+        """
+
+        return super().new_api_call_builder.request(
+            RequestBuilder().server(Server.SHELL)
+            .path('/fleetmanagement/v2/restriction/card')
+            .http_method(HttpMethodEnum.POST)
+            .header_param(Parameter()
+                          .key('apikey')
+                          .value(apikey))
+            .header_param(Parameter()
+                          .key('RequestId')
+                          .value(request_id))
+            .header_param(Parameter()
+                          .key('Content-Type')
+                          .value('application/json'))
+            .body_param(Parameter()
+                        .value(body))
+            .header_param(Parameter()
+                          .key('accept')
+                          .value('application/json'))
+            .body_serializer(APIHelper.json_serialize)
+            .auth(Single('BasicAuth'))
+        ).response(
+            ResponseHandler()
+            .deserializer(APIHelper.json_deserialize)
+            .deserialize_into(CardRestrictionResponse.from_dictionary)
+            .local_error('400', 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).', APIException)
+            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.', APIException)
+            .local_error('403', 'The server understood the request but refuses to authorize it.', APIException)
+            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.', APIException)
+            .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
+        ).execute()
+
+    def create_bundle(self,
+                      apikey,
+                      request_id,
+                      body=None):
+        """Does a POST request to /fleetmanagement/v1/restriction/createbundle.
 
         This API enables clients to create a new card bundle and apply
         restrictions.
@@ -69,10 +240,12 @@ class RestrictionController(BaseController):
           e.g. mandatory check.
 
         Args:
+            apikey (str): This is the API key of the specific environment
+                which needs to be passed by the client.
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
                 for requests and responses. This will be played back in the
                 response from the request.
-            body (CreateBundleRequest, optional): Create Bundle Request body
+            body (CreateBundleRequest, optional): CreateBundle request body
 
         Returns:
             CreateBundleResponse: Response from the API. OK
@@ -86,9 +259,12 @@ class RestrictionController(BaseController):
         """
 
         return super().new_api_call_builder.request(
-            RequestBuilder().server(Server.DEFAULT)
-            .path('/card-restrictions/v1/bundles/create')
+            RequestBuilder().server(Server.SHELL)
+            .path('/fleetmanagement/v1/restriction/createbundle')
             .http_method(HttpMethodEnum.POST)
+            .header_param(Parameter()
+                          .key('apikey')
+                          .value(apikey))
             .header_param(Parameter()
                           .key('RequestId')
                           .value(request_id))
@@ -101,22 +277,23 @@ class RestrictionController(BaseController):
                           .key('accept')
                           .value('application/json'))
             .body_serializer(APIHelper.json_serialize)
-            .auth(Single('BearerToken'))
+            .auth(Single('BasicAuth'))
         ).response(
             ResponseHandler()
             .deserializer(APIHelper.json_deserialize)
             .deserialize_into(CreateBundleResponse.from_dictionary)
-            .local_error('400', 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n', ErrorObjectException)
-            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n', ErrorObjectException)
-            .local_error('403', 'Forbidden', ErrorObjectException)
-            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n', ErrorObjectException)
-            .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n', ErrorObjectException)
+            .local_error('400', 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).', APIException)
+            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.', APIException)
+            .local_error('403', 'The server understood the request but refuses to authorize it.', APIException)
+            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.', APIException)
+            .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def restriction_bundle_update(self,
-                                  request_id,
-                                  body=None):
-        """Does a POST request to /card-restrictions/v1/bundles/update.
+    def update_bundle(self,
+                      apikey,
+                      request_id,
+                      body=None):
+        """Does a POST request to /fleetmanagement/v1/restriction/updatebundle.
 
         This API enables clients to update an existing card bundle and its
         associated restrictions.
@@ -157,10 +334,12 @@ class RestrictionController(BaseController):
           e.g. at least one card must be provided in the input.
 
         Args:
+            apikey (str): This is the API key of the specific environment
+                which needs to be passed by the client.
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
                 for requests and responses. This will be played back in the
                 response from the request.
-            body (UpdateBundleRequest, optional): Update Bundle Request body
+            body (UpdateBundleRequest, optional): Update Bundle request body
 
         Returns:
             UpdateBundleResponse: Response from the API. OK
@@ -174,9 +353,12 @@ class RestrictionController(BaseController):
         """
 
         return super().new_api_call_builder.request(
-            RequestBuilder().server(Server.DEFAULT)
-            .path('/card-restrictions/v1/bundles/update')
+            RequestBuilder().server(Server.SHELL)
+            .path('/fleetmanagement/v1/restriction/updatebundle')
             .http_method(HttpMethodEnum.POST)
+            .header_param(Parameter()
+                          .key('apikey')
+                          .value(apikey))
             .header_param(Parameter()
                           .key('RequestId')
                           .value(request_id))
@@ -189,22 +371,23 @@ class RestrictionController(BaseController):
                           .key('accept')
                           .value('application/json'))
             .body_serializer(APIHelper.json_serialize)
-            .auth(Single('BearerToken'))
+            .auth(Single('BasicAuth'))
         ).response(
             ResponseHandler()
             .deserializer(APIHelper.json_deserialize)
             .deserialize_into(UpdateBundleResponse.from_dictionary)
-            .local_error('400', 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n', ErrorObjectException)
-            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n', ErrorObjectException)
-            .local_error('403', 'Forbidden', ErrorObjectException)
-            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n', ErrorObjectException)
-            .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n', ErrorObjectException)
+            .local_error('400', 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).', APIException)
+            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.', APIException)
+            .local_error('403', 'The server understood the request but refuses to authorize it.', APIException)
+            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.', APIException)
+            .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def restriction_bundle_delete(self,
-                                  request_id,
-                                  body=None):
-        """Does a POST request to /card-restrictions/v1/bundles/delete.
+    def delete_bundle(self,
+                      apikey,
+                      request_id,
+                      body=None):
+        """Does a POST request to /fleetmanagement/v1/restriction/deletebundle.
 
         This API enables clients to delete an existing card bundle in the
         Shell Card Platform. Once the card bundle is deleted the usage and
@@ -221,10 +404,12 @@ class RestrictionController(BaseController):
           e.g. mandatory check.
 
         Args:
+            apikey (str): This is the API key of the specific environment
+                which needs to be passed by the client.
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
                 for requests and responses. This will be played back in the
                 response from the request.
-            body (DeleteBundleRequest, optional): Delete Bundle Request body
+            body (DeleteBundleRequest, optional): Update Bundle request body
 
         Returns:
             DeleteBundleResponse: Response from the API. OK
@@ -238,9 +423,12 @@ class RestrictionController(BaseController):
         """
 
         return super().new_api_call_builder.request(
-            RequestBuilder().server(Server.DEFAULT)
-            .path('/card-restrictions/v1/bundles/delete')
+            RequestBuilder().server(Server.SHELL)
+            .path('/fleetmanagement/v1/restriction/deletebundle')
             .http_method(HttpMethodEnum.POST)
+            .header_param(Parameter()
+                          .key('apikey')
+                          .value(apikey))
             .header_param(Parameter()
                           .key('RequestId')
                           .value(request_id))
@@ -253,22 +441,23 @@ class RestrictionController(BaseController):
                           .key('accept')
                           .value('application/json'))
             .body_serializer(APIHelper.json_serialize)
-            .auth(Single('BearerToken'))
+            .auth(Single('BasicAuth'))
         ).response(
             ResponseHandler()
             .deserializer(APIHelper.json_deserialize)
             .deserialize_into(DeleteBundleResponse.from_dictionary)
-            .local_error('400', 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n', ErrorObjectException)
-            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n', ErrorObjectException)
-            .local_error('403', 'Forbidden', ErrorObjectException)
-            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n', ErrorObjectException)
-            .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n', ErrorObjectException)
+            .local_error('400', 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).', APIException)
+            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.', APIException)
+            .local_error('403', 'The server understood the request but refuses to authorize it.', APIException)
+            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.', APIException)
+            .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def restriction_bundle_summary(self,
-                                   request_id,
-                                   body=None):
-        """Does a POST request to /card-restrictions/v1/bundles/Summary.
+    def summaryofbundles(self,
+                         apikey,
+                         request_id,
+                         body=None):
+        """Does a POST request to /fleetmanagement/v1/restriction/summaryofbundles.
 
         This API allows clients to get a summary of card bundles associated
         with Payer/Account. This API will return the basic bundle details
@@ -283,14 +472,16 @@ class RestrictionController(BaseController):
           * Get summary of bundles by list of bundle Ids
 
         Args:
+            apikey (str): This is the API key of the specific environment
+                which needs to be passed by the client.
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
                 for requests and responses. This will be played back in the
                 response from the request.
-            body (SummaryOfBundleRequest, optional): Summary Bundle Request
-                body
+            body (SummaryofbundlerRequest, optional): Summary of Bundle
+                request body
 
         Returns:
-            SummaryOfBundleResponse: Response from the API. OK
+            SummaryofbundleResponse: Response from the API. OK
 
         Raises:
             APIException: When an error occurs while fetching the data from
@@ -301,9 +492,12 @@ class RestrictionController(BaseController):
         """
 
         return super().new_api_call_builder.request(
-            RequestBuilder().server(Server.DEFAULT)
-            .path('/card-restrictions/v1/bundles/Summary')
+            RequestBuilder().server(Server.SHELL)
+            .path('/fleetmanagement/v1/restriction/summaryofbundles')
             .http_method(HttpMethodEnum.POST)
+            .header_param(Parameter()
+                          .key('apikey')
+                          .value(apikey))
             .header_param(Parameter()
                           .key('RequestId')
                           .value(request_id))
@@ -316,102 +510,46 @@ class RestrictionController(BaseController):
                           .key('accept')
                           .value('application/json'))
             .body_serializer(APIHelper.json_serialize)
-            .auth(Single('BearerToken'))
+            .auth(Single('BasicAuth'))
         ).response(
             ResponseHandler()
             .deserializer(APIHelper.json_deserialize)
-            .deserialize_into(SummaryOfBundleResponse.from_dictionary)
-            .local_error('400', 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n', ErrorObjectException)
-            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n', ErrorObjectException)
-            .local_error('403', 'Forbidden', ErrorObjectException)
-            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n', ErrorObjectException)
-            .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n', ErrorObjectException)
+            .deserialize_into(SummaryofbundleResponse.from_dictionary)
+            .local_error('400', 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).', APIException)
+            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.', APIException)
+            .local_error('403', 'The server understood the request but refuses to authorize it.', APIException)
+            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.', APIException)
+            .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def card_restriction(self,
-                         request_id,
-                         body=None):
-        """Does a POST request to /card-restrictions/v2/card.
-
-        This API allows to set or update the restrictions for existing cards
-        or newly ordered cards under the same payer.
-          #### Supported operations
-          * Set or reset usage restrictions for cards
-          * Set or reset day/time restrictions for cards
-          * Set or reset product restrictions for cards
-          * Set or reset location restrictions for cards
-
-        Args:
-            request_id (str): Mandatory UUID (according to RFC 4122 standards)
-                for requests and responses. This will be played back in the
-                response from the request.
-            body (RestrictionCardRequest, optional): Summary Bundle Request
-                body
-
-        Returns:
-            RestrictionCardResponse: Response from the API. OK
-
-        Raises:
-            APIException: When an error occurs while fetching the data from
-                the remote API. This exception includes the HTTP Response
-                code, an error message, and the HTTP body that was received in
-                the request.
-
-        """
-
-        return super().new_api_call_builder.request(
-            RequestBuilder().server(Server.DEFAULT)
-            .path('/card-restrictions/v2/card')
-            .http_method(HttpMethodEnum.POST)
-            .header_param(Parameter()
-                          .key('RequestId')
-                          .value(request_id))
-            .header_param(Parameter()
-                          .key('Content-Type')
-                          .value('application/json'))
-            .body_param(Parameter()
-                        .value(body))
-            .header_param(Parameter()
-                          .key('accept')
-                          .value('application/json'))
-            .body_serializer(APIHelper.json_serialize)
-            .auth(Single('BearerToken'))
-        ).response(
-            ResponseHandler()
-            .deserializer(APIHelper.json_deserialize)
-            .deserialize_into(RestrictionCardResponse.from_dictionary)
-            .local_error('400', 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n', ErrorObjectException)
-            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n', ErrorObjectException)
-            .local_error('403', 'Forbidden', ErrorObjectException)
-            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n', ErrorObjectException)
-            .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n', ErrorObjectException)
-        ).execute()
-
-    def account_restriction(self,
+    def restriction_account(self,
+                            apikey,
                             request_id,
                             body=None):
-        """Does a POST request to /card-restrictions/v1/Account.
+        """Does a POST request to /fleetmanagement/v1/restriction/account.
 
-        This operation allows setting or updating the usage restrictions of an
+        This API allows setting or updating the usage restrictions of an
         existing account. 
-        #### Validation rules
-        *	The account exists.
-        *	Day time restriction cannot be set to restrict the use of a card,
+        Then validation rules applied for this API.
+        •	The account exists.
+        •	Day time restriction cannot be set to restrict the use of a card,
         under the account, on all days of the week.
-        *	Either of the usage, daytime or location is either marked for reset
+        •	Either of the usage, daytime or location is either marked for reset
         or new restriction values provided for the account.
-        *	In usage restrictions, the limits per transaction should be less
+        •	In usage restrictions, the limits per transaction should be less
         than or equal to Daily, Daily should be less than or equal to Weekly,
         Weekly should be less than or equal to Monthly. Exception being
         0/blank will be skipped, i.e., Daily value should be less than equal
         to Monthly value if Weekly value is 0/blank.
 
         Args:
+            apikey (str): This is the API key of the specific environment
+                which needs to be passed by the client.
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
                 for requests and responses. This will be played back in the
                 response from the request.
-            body (AccountRestrictionRequest, optional): Summary Bundle Request
-                body
+            body (AccountRestrictionRequest, optional): Account Restriction
+                request body
 
         Returns:
             AccountRestrictionResponse: Response from the API. OK
@@ -425,9 +563,12 @@ class RestrictionController(BaseController):
         """
 
         return super().new_api_call_builder.request(
-            RequestBuilder().server(Server.DEFAULT)
-            .path('/card-restrictions/v1/Account')
+            RequestBuilder().server(Server.SHELL)
+            .path('/fleetmanagement/v1/restriction/account')
             .http_method(HttpMethodEnum.POST)
+            .header_param(Parameter()
+                          .key('apikey')
+                          .value(apikey))
             .header_param(Parameter()
                           .key('RequestId')
                           .value(request_id))
@@ -445,29 +586,31 @@ class RestrictionController(BaseController):
             ResponseHandler()
             .deserializer(APIHelper.json_deserialize)
             .deserialize_into(AccountRestrictionResponse.from_dictionary)
-            .local_error('400', 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n', ErrorObjectException)
-            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n', ErrorObjectException)
-            .local_error('403', 'Forbidden', ErrorObjectException)
-            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n', ErrorObjectException)
-            .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n', ErrorObjectException)
+            .local_error('400', 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).', APIException)
+            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.', APIException)
+            .local_error('403', 'The server understood the request but refuses to authorize it.', APIException)
+            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.', APIException)
+            .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
     def search_account_limit(self,
+                             apikey,
                              request_id,
                              body=None):
-        """Does a POST request to /card-restrictions/v1/searchaccountlimit.
+        """Does a POST request to /fleetmanagement/v1/restriction/searchaccountlimit.
 
-        This operation will allow user to get account level limits for the
-        given account. 
-        It returns the velocity limits if its overridden at the account else
-        the values will be null/empty.
+        This API will allow user to get account level limits for the given
+        account. It returns the velocity limits if its overridden at the
+        account else the values will be null/empty.
 
         Args:
+            apikey (str): This is the API key of the specific environment
+                which needs to be passed by the client.
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
                 for requests and responses. This will be played back in the
                 response from the request.
-            body (SearchAccountLimitRequest, optional): Summary Bundle Request
-                body
+            body (SearchAccountLimitRequest, optional): Search Account Limit
+                RequestBody
 
         Returns:
             SearchAccountLimitResponse: Response from the API. OK
@@ -481,9 +624,12 @@ class RestrictionController(BaseController):
         """
 
         return super().new_api_call_builder.request(
-            RequestBuilder().server(Server.DEFAULT)
-            .path('/card-restrictions/v1/searchaccountlimit')
+            RequestBuilder().server(Server.SHELL)
+            .path('/fleetmanagement/v1/restriction/searchaccountlimit')
             .http_method(HttpMethodEnum.POST)
+            .header_param(Parameter()
+                          .key('apikey')
+                          .value(apikey))
             .header_param(Parameter()
                           .key('RequestId')
                           .value(request_id))
@@ -496,38 +642,38 @@ class RestrictionController(BaseController):
                           .key('accept')
                           .value('application/json'))
             .body_serializer(APIHelper.json_serialize)
-            .auth(Single('BearerToken'))
+            .auth(Single('BasicAuth'))
         ).response(
             ResponseHandler()
             .deserializer(APIHelper.json_deserialize)
             .deserialize_into(SearchAccountLimitResponse.from_dictionary)
-            .local_error('400', 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n', ErrorObjectException)
-            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n', ErrorObjectException)
-            .local_error('403', 'Forbidden', ErrorObjectException)
-            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n', ErrorObjectException)
-            .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n', ErrorObjectException)
+            .local_error('400', 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).', APIException)
+            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.', APIException)
+            .local_error('403', 'The server understood the request but refuses to authorize it.', APIException)
+            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.', APIException)
+            .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def search_card_restriction(self,
-                                request_id,
-                                body=None):
-        """Does a POST request to /card-restrictions/v2/search.
+    def bundledetails(self,
+                      apikey,
+                      request_id,
+                      body=None):
+        """Does a POST request to /fleetmanagement/v1/restriction/bundledetails.
 
-        This API will allows querying card details including the day/time and
-        product restrictions.
-        #### Supported operations
-          * Search by list of cards or bundle
-          * Include card bundle details (optional)
+        This API allows to get the details of a specific card bundle. It
+        returns the bundle basic details along with the cards in the bundle
+        and restrictions applied on them.
 
         Args:
+            apikey (str): This is the API key of the specific environment
+                which needs to be passed by the client.
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
                 for requests and responses. This will be played back in the
                 response from the request.
-            body (RestrictionSearchCardRequest, optional): Summary Bundle
-                Request body
+            body (BudleDetailsRequest, optional): Bundle Details Request body
 
         Returns:
-            RestrictionSearchCardResponse: Response from the API. OK
+            BundleDetailsResponse: Response from the API. OK
 
         Raises:
             APIException: When an error occurs while fetching the data from
@@ -538,9 +684,12 @@ class RestrictionController(BaseController):
         """
 
         return super().new_api_call_builder.request(
-            RequestBuilder().server(Server.DEFAULT)
-            .path('/card-restrictions/v2/search')
+            RequestBuilder().server(Server.SHELL)
+            .path('/fleetmanagement/v1/restriction/bundledetails')
             .http_method(HttpMethodEnum.POST)
+            .header_param(Parameter()
+                          .key('apikey')
+                          .value(apikey))
             .header_param(Parameter()
                           .key('RequestId')
                           .value(request_id))
@@ -553,14 +702,14 @@ class RestrictionController(BaseController):
                           .key('accept')
                           .value('application/json'))
             .body_serializer(APIHelper.json_serialize)
-            .auth(Single('BearerToken'))
+            .auth(Single('BasicAuth'))
         ).response(
             ResponseHandler()
             .deserializer(APIHelper.json_deserialize)
-            .deserialize_into(RestrictionSearchCardResponse.from_dictionary)
-            .local_error('400', 'The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).\n', ErrorObjectException)
-            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.\n', ErrorObjectException)
-            .local_error('403', 'Forbidden', ErrorObjectException)
-            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.\n', ErrorObjectException)
-            .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.\n', ErrorObjectException)
+            .deserialize_into(BundleDetailsResponse.from_dictionary)
+            .local_error('400', 'The server cannot or will not process the request  due to something that is perceived to be a client\r\n error (e.g., malformed request syntax, invalid \r\n request message framing, or deceptive request routing).', APIException)
+            .local_error('401', 'The request has not been applied because it lacks valid  authentication credentials for the target resource.', APIException)
+            .local_error('403', 'The server understood the request but refuses to authorize it.', APIException)
+            .local_error('404', 'The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists.', APIException)
+            .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()

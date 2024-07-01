@@ -18,11 +18,11 @@ class InvoiceDistributionMethod(object):
     Attributes:
         is_primary (bool): If True then this distribution method is the
             default distribution method.
-        frequency_type (str): Frequency type unit Id & description  E.g.:  1-
-            Daily  2-Weekly  3-Monthly  4-Invoicing  6-Calendar quarter
+        frequency_type (str): Frequency type unit Id & description E.g.: 1-
+            Daily 2-Weekly 3-Monthly 4-Invoicing 6-Calendar quarter
         distribution_method (str): Invoice Distribution Method
-            (Id-Description)  E.g.:  1-e-mail  2-Fax  3-Courier to Customer 
-            4-Courier to Client  5-Print  6-FTP  7-SMS
+            (Id-Description) E.g.: 1-e-mail 2-Fax 3-Courier to Customer
+            4-Courier to Client 5-Print 6-FTP 7-SMS
         output_type (str): Invoice output type (Id - Description)
 
     """

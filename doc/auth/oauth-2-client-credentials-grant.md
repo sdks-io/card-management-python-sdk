@@ -12,6 +12,9 @@ Documentation for accessing and setting credentials for BearerToken.
 | OAuthClientId | `str` | OAuth 2 Client ID | `o_auth_client_id` |
 | OAuthClientSecret | `str` | OAuth 2 Client Secret | `o_auth_client_secret` |
 | OAuthToken | `OAuthToken` | Object for storing information about the OAuth token | `o_auth_token` |
+| OAuthTokenProvider | `Callable[[OAuthToken, OAuth2], OAuthToken]` | Registers a callback for oAuth Token Provider used for automatic token fetching/refreshing. | `o_auth_token_provider` |
+| OAuthOnTokenUpdate | `Callable[[OAuthToken], None]` | Registers a callback for token update event. | `o_auth_on_token_update` |
+| OAuthClockSkew | `int` | Clock skew time in seconds applied while checking the OAuth Token expiry. | `o_auth_clock_skew` |
 
 
 
@@ -21,7 +24,7 @@ Documentation for accessing and setting credentials for BearerToken.
 
 ### Client Initialization
 
-You must initialize the client with *OAuth 2.0 Client Credentials Grant* credentials as shown in the following code snippet.
+You must initialize the client with *OAuth 2.0 Client Credentials Grant* credentials as shown in the following code snippet. This will fetch the OAuth token automatically when any of the endpoints, requiring *OAuth 2.0 Client Credentials Grant* autentication, are called.
 
 ```python
 client = ShellcardmanagementapisClient(
@@ -34,96 +37,46 @@ client = ShellcardmanagementapisClient(
 
 
 
-Your application must obtain user authorization before it can execute an endpoint call in case this SDK chooses to use *OAuth 2.0 Client Credentials Grant*. This authorization includes the following steps.
+Your application can also manually provide an OAuthToken using the setter `o_auth_token` in `BearerTokenCredentials` object. This function takes in an instance of OAuthToken containing information for authorizing client requests and refreshing the token itself.
 
-The `fetch_token()` method will exchange the OAuth client credentials for an *access token*. The access token is an object containing information for authorizing client requests and refreshing the token itself.
+### Adding OAuth Token Update Callback
 
-```python
-try:
-    token = client.bearer_token.fetch_token()
-    bearer_token_credentials = client.config.bearer_token_credentials.clone_with(o_auth_token=token)
-    config = client.config.clone_with(bearer_token_credentials=bearer_token_credentials)
-    client = ShellcardmanagementapisClient(config)
-except OAuthProviderException as ex:
-    # handle exception
-    pass
-except APIException as ex:
-    # handle exception
-    pass
-```
-
-The client can now make authorized endpoint calls.
-
-### Storing an access token for reuse
-
-It is recommended that you store the access token for reuse.
-
-```python
-# store token
-save_token_to_database(client.config.bearer_token_credentials.o_auth_token)
-```
-
-### Creating a client from a stored token
-
-To authorize a client from a stored access token, just set the access token in Configuration along with the other configuration parameters before creating the client:
+Whenever the OAuth Token gets updated, the provided callback implementation will be executed. For instance, you may use it to store your access token whenever it gets updated.
 
 ```python
 client = ShellcardmanagementapisClient(
     bearer_token_credentials=BearerTokenCredentials(
-        o_auth_token=load_token_from_database()
+        o_auth_client_id='OAuthClientId',
+        o_auth_client_secret='OAuthClientSecret',
+        o_auth_on_token_update=(lambda o_auth_token:
+                                # Add the callback handler to perform operations like save to DB or file etc.
+                                # It will be triggered whenever the token gets updated
+                                save_token_to_database(o_auth_token))
     )
 )
 ```
 
-### Complete example
+### Adding Custom OAuth Token Provider
 
-
+To authorize a client using a stored access token, set up the `o_auth_token_provider` in `BearerTokenCredentials` along with the other auth parameters before creating the client:
 
 ```python
-from shellcardmanagementapis.shellcardmanagementapis_client import ShellcardmanagementapisClient
-from shellcardmanagementapis.exceptions.o_auth_provider_exception import OAuthProviderException
+def _o_auth_token_provider(last_oauth_token, auth_manager):
+    # Add the callback handler to provide a new OAuth token
+    # It will be triggered whenever the last provided o_auth_token is null or expired
+    o_auth_token = load_token_from_database()
+    if o_auth_token is None:
+        o_auth_token = auth_manager.fetch_token()
+    return o_auth_token
 
-from shellcardmanagementapis.exceptions.api_exception import APIException
 
 client = ShellcardmanagementapisClient(
     bearer_token_credentials=BearerTokenCredentials(
         o_auth_client_id='OAuthClientId',
-        o_auth_client_secret='OAuthClientSecret'
+        o_auth_client_secret='OAuthClientSecret',
+        o_auth_token_provider=_o_auth_token_provider
     )
 )
-# function for storing token to database
-def save_token_to_database(o_auth_token):
-    # code to save the token to database
-    pass
-
-# function for loading token from database
-def load_token_from_database():
-    # load token from database and return it (return None if no token exists)
-    pass
-
-# obtain access token, needed for client to be authorized
-previous_token = load_token_from_database()
-if previous_token:
-    # restore previous access token
-    bearer_token_credentials = client.config.bearer_token_credentials.clone_with(o_auth_token=previous_token)
-    config = client.config.clone_with(bearer_token_credentials=bearer_token_credentials)
-    client = ShellcardmanagementapisClient(config)
-else:
-    # obtain new access token
-    try:
-        token = client.bearer_token.fetch_token()
-        save_token_to_database(token)
-        bearer_token_credentials = client.config.bearer_token_credentials.clone_with(o_auth_token=token)
-        config = client.config.clone_with(bearer_token_credentials=bearer_token_credentials)
-        client = ShellcardmanagementapisClient(config)
-    except OAuthProviderException as ex:
-        # handle exception
-        pass
-    except APIException as ex:
-        # handle exception
-        pass
-
-# the client is now authorized and you can use controllers to make endpoint calls
 ```
 
 

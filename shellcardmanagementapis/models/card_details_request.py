@@ -24,27 +24,27 @@ class CardDetailsRequest(object):
             Lithuania, Estonia, Ukraine etc. It is optional for other
             countries if ColCoID is provided.  Example:  86-Philippines  5-UK
         col_co_country_code (str): ISO Country code of collecting company
-        client_reference_id (str): Customer reference number of the card. 
+        client_reference_id (str): Customer reference number of the card.
             Optional
         payer_number (str): Payer Number of the selected payer.
         payer_id (int): Payer Id (i.e. Customer Id of the Payment of the
             selected payer.
-        account_number (str): Account Number of the customer.  Optional if
+        account_number (str): Account Number of the customer. Optional if
             AccountId is passed, else mandatory.
-        account_id (int): Account ID of the customer.  Optional if
+        account_id (int): Account ID of the customer. Optional if
             AccountNumber is passed, else mandatory.
-        pan (str): PAN of the card.  Optional if CardId is passed, else
+        pan (str): PAN of the card. Optional if CardId is passed, else
             Mandatory.
-        card_id (int): Card Id of the card.  Optional if PAN is passed, else
+        card_id (int): Card Id of the card. Optional if PAN is passed, else
             Mandatory.
-        token_type_id (int): Token Type ID for the Card  Optional
-        token_type_name (str): Token Type name for the Card  Optional
-        creation_date (str): Card Creation Date time  Optional  Format:
+        token_type_id (int): Token Type ID for the Card Optional
+        token_type_name (str): Token Type name for the Card Optional
+        creation_date (str): Card Creation Date time Optional Format:
             yyyyMMdd
-        effective_date (str): Effective date for the Card  Optional  Format:
+        effective_date (str): Effective date for the Card Optional Format:
             yyyyMMdd
         include_bundle_details (bool): When the value is True, API will return
-            bundle Id associated with card in the response, if available. 
+            bundle Id associated with card in the response, if available.
             Note: Use ‘Null’ or ‘False’ for optimum performance. A delay in
             response is expected when set to ‘True’.
         include_intermediate_status (bool): A flag which indicates if the

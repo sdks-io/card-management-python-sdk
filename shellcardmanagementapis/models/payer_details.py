@@ -10,7 +10,7 @@ from shellcardmanagementapis.api_helper import APIHelper
 from shellcardmanagementapis.models.address import Address
 from shellcardmanagementapis.models.bank_account import BankAccount
 from shellcardmanagementapis.models.customer_contract import CustomerContract
-from shellcardmanagementapis.models.finance_currency import FinanceCurrency
+from shellcardmanagementapis.models.finance_currency_2 import FinanceCurrency2
 from shellcardmanagementapis.models.invoice_distribution_method import InvoiceDistributionMethod
 
 
@@ -38,7 +38,7 @@ class PayerDetails(object):
             payment from the last SOA.
         outstanding_balance (float): Current outstanding balance amount from
             the last SOA.
-        unallocated_payment (float): Unallocated payment.  When negative,
+        unallocated_payment (float): Unallocated payment. When negative,
             indicates overdue amount from the last SOA.
         soa_currency_code (str): Currency ISO code
         soa_currency_symbol (str): Currency symbol
@@ -65,13 +65,13 @@ class PayerDetails(object):
             credit limit currency to local currency
         billing_frequency_type_id (int): Billing/Invoice frequency Identifier.
             Indicates the frequency in which the transactions will be
-            considered for invoicing in a bulling run  E.g.: 1, 2, 3, etc.
+            considered for invoicing in a bulling run E.g.: 1, 2, 3, etc.
         billing_frequency_type (str): Billing/Invoice frequency. The frequency
             in which the transactions will be considered for invoicing in a
             bulling run  E.g.:   1 Daily (all days)  2 Daily (only working
             days)  3 Weekly - Monday  4 Weekly – Tuesday  Etc.
         billing_run_frequency_type_id (int): Frequency at which the billing
-            process is triggered.  E.g.: 1, 2, 3, etc.
+            process is triggered. E.g.: 1, 2, 3, etc.
         billing_run_frequnecy (str): Frequency at which the billing process is
             triggered.E.g.:   1 Daily (all days)  2 Daily (only working days) 
             3 Weekly - Monday  4 Weekly – Tuesday  Etc.
@@ -89,7 +89,7 @@ class PayerDetails(object):
             month.
         invoice_distribution_methods (List[InvoiceDistributionMethod]): TODO:
             type description here.
-        output_type (str): Invoice output type (Id-Description)  E.g.:  1-PDF 
+        output_type (str): Invoice output type (Id-Description) E.g.: 1-PDF
             6-Print
         invoice_account_id (int): The Account ID of the account on which the
             invoice is generated.
@@ -141,10 +141,10 @@ class PayerDetails(object):
         line_of_business (str): Payer/Company Line of Business Id and
             Description
         print_credit_limit (bool): Is Credit Limit printed on the statement of
-            account: True/False  If True Credit Limit is printed on
+            account: True/False If True Credit Limit is printed on
             invoice/SOA
-        card_group_type (str): Card Group Type configured for Payer  e.g. (Id
-            – Description):  1-Horizontal only  2-Vertical only  3-Both
+        card_group_type (str): Card Group Type configured for Payer e.g. (Id –
+            Description): 1-Horizontal only 2-Vertical only 3-Both
         renew_cards (bool): If set to True cards will be automatically renewed
             on expiry
         allow_select_pin (bool): If set to True then Self Select PIN is
@@ -159,15 +159,15 @@ class PayerDetails(object):
         exposure (float): Exposure after guarantee
         outstanding_debt (float): Total outstanding debt (including billed and
             unbilled sales and fee items)
-        available_credit (float): The available credit for the payer.  This is
+        available_credit (float): The available credit for the payer. This is
             the credit limit minus the outstanding debt.
-        band (str): Band Id and Description of the Payer in Card Platform. 
-            e.g. (Id – Description):  1-Platinum  2-Gold  3-Silver  4-Bronze
+        band (str): Band Id and Description of the Payer in Card Platform.
+            e.g. (Id – Description): 1-Platinum 2-Gold 3-Silver 4-Bronze
         global_customer_reference_id (str): Global Customer reference id
             configured in card platform for Payer (Same as Payer Group)
         credit_limit (float): Payment Credit limit of Payer.
         credit_limit_in_customer_currency (float): Credit limit in Customer
-            currency.  Note: For currency details refer the parameters
+            currency. Note: For currency details refer the parameters
             CurrencyCode & CurrencySymbol in the PayerDetail response.
         billing_currency_code (str): Customer Billing currency ISO code.
         billing_currency_symbol (str): Customer Billing currency Symbol.
@@ -187,25 +187,23 @@ class PayerDetails(object):
         billing_address (Address): TODO: type description here.
         has_active_vol_based_pricing (bool): True, if the payer is setup for
             volume-based pricing and is active on the current date, else
-            false.    This field is returned only when IncludeBonusParameters
+            false.   This field is returned only when IncludeBonusParameters
             is set to True in the request. Else set to null.
         has_active_vol_based_bonus (bool): True, if the payer is setup for
-            volume-based bonus and is active on the current date, else false. 
+            volume-based bonus and is active on the current date, else false.
             This field is returned only when IncludeBonusParameters is set to
             True in the request. Else set to null.
         has_active_vol_based_association_bonus (bool): True, if the payer is
             setup for volume-based association bonus and is active on the
-            current date, else false.  This field is returned only when
+            current date, else false. This field is returned only when
             IncludeBonusParameters is set to True in the request. Else set to
             null.
-        finance_currency (FinanceCurrency): This entity will not be present in
-            the response if the ‘IncludeFinanceCurrency’ flag in the request
-            is ‘false’
-        tolls_customer_id (str): Customer id in e-TM system  This field will
+        finance_currency (FinanceCurrency2): TODO: type description here.
+        tolls_customer_id (str): Customer id in e-TM system This field will
             have value only when ReturnTollsCustomerId is set to true in the
             request else set to null or empty.
         tolls_colco_country_type_id (str): String Colco country type id in
-            e-TM system  This field will have value only when
+            e-TM system This field will have value only when
             ReturnTollsCustomerId is set to true in the request else set to
             null or empty.
         contracts (List[CustomerContract]): TODO: type description here.
@@ -962,7 +960,7 @@ class PayerDetails(object):
         has_active_vol_based_pricing = dictionary.get("HasActiveVolBasedPricing") if "HasActiveVolBasedPricing" in dictionary.keys() else APIHelper.SKIP
         has_active_vol_based_bonus = dictionary.get("HasActiveVolBasedBonus") if "HasActiveVolBasedBonus" in dictionary.keys() else APIHelper.SKIP
         has_active_vol_based_association_bonus = dictionary.get("HasActiveVolBasedAssociationBonus") if "HasActiveVolBasedAssociationBonus" in dictionary.keys() else APIHelper.SKIP
-        finance_currency = FinanceCurrency.from_dictionary(dictionary.get('FinanceCurrency')) if 'FinanceCurrency' in dictionary.keys() else APIHelper.SKIP
+        finance_currency = FinanceCurrency2.from_dictionary(dictionary.get('FinanceCurrency')) if 'FinanceCurrency' in dictionary.keys() else APIHelper.SKIP
         tolls_customer_id = dictionary.get("TollsCustomerId") if "TollsCustomerId" in dictionary.keys() else APIHelper.SKIP
         tolls_colco_country_type_id = dictionary.get("TollsColcoCountryTypeId") if "TollsColcoCountryTypeId" in dictionary.keys() else APIHelper.SKIP
         contracts = None

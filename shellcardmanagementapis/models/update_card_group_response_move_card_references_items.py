@@ -16,8 +16,8 @@ class UpdateCardGroupResponseMoveCardReferencesItems(object):
     TODO: type model description here.
 
     Attributes:
-        card_id (int): Card Id of the card.  Example: 123
-        pan (str): PAN of the card.  Example: 7002051123456789145
+        card_id (int): Card Id of the card. Example: 123
+        pan (str): PAN of the card. Example: 7002051123456789145
         reference (int): Reference number for tracking of update status
             request of the specific card.
 

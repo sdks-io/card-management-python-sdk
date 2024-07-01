@@ -22,20 +22,20 @@ class AccountVelocityLimit(object):
             Values: DAILY, WEEKLY, MONTHLY, ANNUAL, LIFETIME, PERTRX
         limit (float): The limit associated with this velocity with the
             correct number of digits after the decimal point according to the
-            minor denomination of the currency of the card issuer (except for
-            COUNT type velocity).
+            minor denomination of the currency of the card issuer.  Example:
+            1500.55
         accumulation (float): The transaction accumulation during the current
             period with the correct number of digits after the decimal point
             according to the minor denomination of the currency of the card
             issuer (except for COUNT type velocity). Not present for PERTRX
-            period.
+            period.  Example: 1100.55
         balance (float): The remaining/available balance at this point in time
             with the correct number of digits after the decimal point
             according to the minor denomination of the currency of the card
             issuer (except for COUNT type velocity). Not present for PERTRX
-            period.
+            period.  Example: 400.55
         override (bool): Indicate if the limit is overridden or default.
-            (false for default).
+            (false for default).  Example: false
         product_group (str): The reference group name for product
             differentiated velocities. This field cannot be used with Volume
             type velocity.  Example: RoadSvc  This is an optional output
@@ -43,7 +43,8 @@ class AccountVelocityLimit(object):
         threshold (float): The limit to trigger an alert if the balance after
             a transaction reaches it or below. 0 indicates no alerts will be
             sent. Not present if not set (issuer value threshold limit applies
-            if available). Not present for COUNT type velocity.
+            if available). Not present for COUNT type velocity.  Example:
+            50.55  This is an optional output field.
 
     """
 
@@ -60,17 +61,6 @@ class AccountVelocityLimit(object):
     }
 
     _optionals = [
-        'mtype',
-        'period',
-        'limit',
-        'accumulation',
-        'balance',
-        'override',
-        'product_group',
-        'threshold',
-    ]
-
-    _nullables = [
         'mtype',
         'period',
         'limit',
@@ -129,14 +119,14 @@ class AccountVelocityLimit(object):
             return None
 
         # Extract variables from the dictionary
-        mtype = dictionary.get("Type") if "Type" in dictionary.keys() else APIHelper.SKIP
-        period = dictionary.get("Period") if "Period" in dictionary.keys() else APIHelper.SKIP
-        limit = dictionary.get("Limit") if "Limit" in dictionary.keys() else APIHelper.SKIP
-        accumulation = dictionary.get("Accumulation") if "Accumulation" in dictionary.keys() else APIHelper.SKIP
-        balance = dictionary.get("Balance") if "Balance" in dictionary.keys() else APIHelper.SKIP
+        mtype = dictionary.get("Type") if dictionary.get("Type") else APIHelper.SKIP
+        period = dictionary.get("Period") if dictionary.get("Period") else APIHelper.SKIP
+        limit = dictionary.get("Limit") if dictionary.get("Limit") else APIHelper.SKIP
+        accumulation = dictionary.get("Accumulation") if dictionary.get("Accumulation") else APIHelper.SKIP
+        balance = dictionary.get("Balance") if dictionary.get("Balance") else APIHelper.SKIP
         override = dictionary.get("Override") if "Override" in dictionary.keys() else APIHelper.SKIP
-        product_group = dictionary.get("ProductGroup") if "ProductGroup" in dictionary.keys() else APIHelper.SKIP
-        threshold = dictionary.get("Threshold") if "Threshold" in dictionary.keys() else APIHelper.SKIP
+        product_group = dictionary.get("ProductGroup") if dictionary.get("ProductGroup") else APIHelper.SKIP
+        threshold = dictionary.get("Threshold") if dictionary.get("Threshold") else APIHelper.SKIP
         # Return an object of this model
         return cls(mtype,
                    period,

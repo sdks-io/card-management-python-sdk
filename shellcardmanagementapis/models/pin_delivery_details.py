@@ -17,21 +17,21 @@ class PINDeliveryDetails(object):
     This is mandatory if PINContactType is 4 else optional and ignored.
 
     Attributes:
-        contact_name (str): Contact Name  Max Length: 50
-        contact_title (str): Contact Title  Max Length: 50
-        company_name (str): Company Name for PIN delivery.  Max Length: 50
-        address_line (str): Address Lines  Max Length: 1024
-        zip_code (str): Zip Code  Max Length: 10
-        city (str): City  Max Length: 40
+        contact_name (str): Contact Name Max Length: 50
+        contact_title (str): Contact Title Max Length: 50
+        company_name (str): Company Name for PIN delivery. Max Length: 50
+        address_line (str): Address Lines Max Length: 1024
+        zip_code (str): Zip Code Max Length: 10
+        city (str): City Max Length: 40
         region_id (int): Region
         country_id (int): Country
         phone_number (str): Cardholder phone number for PIN delivery.
-        email_address (str): Cardholder email address for PIN delivery  Max
-            Length : 90  Example: xxxxxx@example.com <br/>Note:Based on the
+        email_address (str): Cardholder email address for PIN delivery Max
+            Length : 90 Example: xxxxxx@example.com <br/>Note:Based on the
             international standard that there can be Max Length 64 before the
             @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the
             domain) = 88 (Minimum of 2)
-        save_pin_reminder (bool): Save PIN Reminder  If SavePINReminder is
+        save_pin_reminder (bool): Save PIN Reminder If SavePINReminder is
             true, the contact address will be saved database for PIN reminder.
             <br/>Only allowed for PIN Advice paper delivery.
 

@@ -17,15 +17,15 @@ class UpdateMPayRegStatusRequestMPayRequestsItems(object):
 
     Attributes:
         global_request_id (str): List of MPay Request to be updated for Fleet
-            Manager approval status.  Mandatory  Maximum number of requests
-            that can be submitted are 50
-        status (str): Status of mobile payment registration request 
-            Mandatory.  Allowed values –  • Approved  •   Rejected
-        approver_user_id (str): Approver’s User ID  ApproverUserID is
-            mandatory when Status is Approved else optional
-        approver_user_display_name (str): Approver’s display name  Mandatory
+            Manager approval status. Mandatory Maximum number of requests that
+            can be submitted are 50
+        status (str): Status of mobile payment registration request Mandatory.
+            Allowed values – • Approved •   Rejected
+        approver_user_id (str): Approver’s User ID ApproverUserID is mandatory
+            when Status is Approved else optional
+        approver_user_display_name (str): Approver’s display name Mandatory
             when Status is Approved else optional.
-        reason (str): Reason for Fleet Manager approval/rejection.  Optional
+        reason (str): Reason for Fleet Manager approval/rejection. Optional
 
     """
 

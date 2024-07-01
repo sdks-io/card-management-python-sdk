@@ -16,9 +16,9 @@ class SearchCard(object):
     SearchCard
 
     Attributes:
-        card_id (int): Unique Card Id  Optional if PAN is given, else
+        card_id (int): Unique Card Id Optional if PAN is given, else
             mandatory.
-        pan (str): Card PAN.  Optional if CardId is given, else mandatory. 
+        pan (str): Card PAN. Optional if CardId is given, else mandatory.
             Note: PAN is ignored if CardId is given.
 
     """

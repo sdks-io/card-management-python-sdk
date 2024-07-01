@@ -18,84 +18,84 @@ class OrderCardEnquiry(object):
     Attributes:
         account_id (int): Account ID on the card request
         account_number (str): AccountNumber
-        bco_reference (int): Bulk card order request refrence numer.<br /> 
+        bco_reference (int): Bulk card order request refrence numer.<br />
             This field will be null if the order is not through BCO.
         bco_row_number (int): Row number of the request in the BCO file.<br />
             This field will be null if the order is not through BCO.
         card_group_id (int): Card group ID
         card_group_name (str): Card group name
-        card_id (int): Unique Card Id.<br />  The field will be null if the
+        card_id (int): Unique Card Id.<br /> The field will be null if the
             card order request is not successly processed.
-        card_pan (str): Card PAN.<br />  Mask PAN (Mask all digits except the
-            Last 6 digits of the PAN).<br />  The field will be null if the
+        card_pan (str): Card PAN.<br /> Mask PAN (Mask all digits except the
+            Last 6 digits of the PAN).<br /> The field will be null if the
             card order request is not successly processed.
-        card_type_code (str): CardTypeCode<br />  ISO code of the card i.e.
+        card_type_code (str): CardTypeCode<br /> ISO code of the card i.e.
             first 7 digits of the PAN
         card_type_id (int): CardTypeId
         card_type_name (str): CardTypeName
         driver_name (str): Driver name
-        error_code (str): Error code for the order card request.<br />  The
+        error_code (str): Error code for the order card request.<br /> The
             value will be 0000 if it is processed without errors.
         error_description (str): Error description for the order card
-            request.<br />  The value will be empty string if it is processed
+            request.<br /> The value will be empty string if it is processed
             without errors.
         gateway_sync_error_code (str): Error code for the Gateway sync
-            error.<br />  The value will be 0000 if it is processed without
+            error.<br /> The value will be 0000 if it is processed without
             errors.
         gateway_sync_error_description (str): Error description for the
-            Gateway sync error.<br />  The value will be empty string if it is
+            Gateway sync error.<br /> The value will be empty string if it is
             processed without errors.
-        gateway_sync_status (str): GatewaySyncStatus<br />  Status of the card
-            sync with CFGW.<br />  Possible values:<br />  -Success<br /> 
-            -Failed<br />  -In Progress<br />  -Not Submitted
+        gateway_sync_status (str): GatewaySyncStatus<br /> Status of the card
+            sync with CFGW.<br /> Possible values:<br /> -Success<br />
+            -Failed<br /> -In Progress<br /> -Not Submitted
         main_reference (int): Main reference number for the order card
-            request.<br />  This field will be null if the order is through
+            request.<br /> This field will be null if the order is through
             BCO.
         order_card_reference (int): Indivitual card reference number for the
-            order card request.<br />  This field will be null if the order is
+            order card request.<br /> This field will be null if the order is
             through BCO.
-        order_status (str): Order status.<br />  Possible values:<br />  P  
-            Pending<br />  I   Picked up for processing<br />  PX Failed at
-            Queue but retry attempts pending<br />  X Failed  at Queue<br /> 
-            R Card is processed, awaiting for PAN update.<br />  S
-            Processed<br />  F Failed
+        order_status (str): Order status.<br /> Possible values:<br /> P  
+            Pending<br /> I   Picked up for processing<br /> PX Failed at
+            Queue but retry attempts pending<br /> X Failed  at Queue<br /> R
+            Card is processed, awaiting for PAN update.<br /> S Processed<br
+            /> F Failed
         payer_id (int): Payer ID on the card request.
         payer_number (str): Payer Number on the card request
         processed_date (str): Date and time (in cutomers local time) when the
-            card order request is processed<br />  Format: yyyyMMdd
-            HH:mm:ss<br />  Note: The client application to convert the string
-            to appropriate date/time type.
+            card order request is processed<br /> Format: yyyyMMdd HH:mm:ss<br
+            /> Note: The client application to convert the string to
+            appropriate date/time type.
         purchase_category_code (str): PurchaseCategoryCode
-        purchase_category_id (int): PurchaseCategoryId <br />  Note: Not
+        purchase_category_id (int): PurchaseCategoryId <br /> Note: Not
             Purchase code. This is a unique purchase category id assigned
         purchase_category_name (str): PurchaseCategoryName
         submitted_date (str): Date and time (in cutomers local time) when the
-            card order request is submitted.<br />  Format: yyyyMMdd
-            HH:mm:ss<br />  Note: The client application to convert the string
+            card order request is submitted.<br /> Format: yyyyMMdd
+            HH:mm:ss<br /> Note: The client application to convert the string
             to appropriate date/time type.
-        sync_processed_date (str): SyncProcessedDate<br />  Date and time (in
+        sync_processed_date (str): SyncProcessedDate<br /> Date and time (in
             cutomers local time) when the sync card request is processed.<br
-            />  Format: yyyyMMdd HH:mm:ss<br />  Note: The client application
-            to convert the string to appropriate date/time type.
-        sync_requested_date (str): SyncRequestedDate<br />  Date and time (in
+            /> Format: yyyyMMdd HH:mm:ss<br /> Note: The client application to
+            convert the string to appropriate date/time type.
+        sync_requested_date (str): SyncRequestedDate<br /> Date and time (in
             cutomers local time) when the sync card request is submitted.<br
-            />  Format: yyyyMMdd HH:mm:ss <br />  Note: The client application
+            /> Format: yyyyMMdd HH:mm:ss <br /> Note: The client application
             to convert the string to appropriate date/time type.
         vrn (str): Vehicle registration number
         order_request_id (str): Unique Id of the Original Order card request,
-            the status of which is enquired by this API. <br />  This is
+            the status of which is enquired by this API. <br /> This is
             returned for end to end traceability of a request based on the
             original Order Card request.
-        expiry_date (str): Expiry date of the card.<br />  Format: MMyy<br /> 
-            (Clients to convert this to appropriate DateTime type.)<br /> 
-            Note: This is the Expiry Date saved.<br />  If the Order Card
-            request is still not processed, i.e.PAN is not yet issued, this
-            field will be null or empty. <br />  For a Card Order with a
-            custom Expiry Date passed in the request, this value will be
-            returned after it is updated successfully.
+        expiry_date (str): Expiry date of the card. Format: yyyymmdd hh:mm:ss 
+            (Clients to convert this to appropriate DateTime type.) Note: This
+            is the Expiry Date saved DB. If the Order Card request is still
+            not processed, i.e. PAN is not yet issued, this field will be null
+            or empty.  For a Card Order with a custom Expiry Date passed in
+            the request, this value will be returned after it is updated
+            successfully in GFN by the background process.
         client_reference_id (str): This is the Client Reference Id of card in
             the order which needs to be passed by the client.
-        status_description (str): Order status.<br />  Possible values<br />  
+        status_description (str): Order status.<br /> Possible values<br />  
             Success<br />   Failed<br />   InProgress<br />
         col_co_id (int): Colcoid
 

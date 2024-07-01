@@ -18,7 +18,7 @@ class ScheduleCardBlockResponse(object):
 
     Attributes:
         main_reference (int): Reference number for tracking the execution of
-            the request.  Note: Reference will be empty for status 9006 and
+            the request. Note: Reference will be empty for status 9006 and
             9012 i.e., request for all the cards failed.
         request_id (str): API Request ID
         status (str): Overall Status of the API call

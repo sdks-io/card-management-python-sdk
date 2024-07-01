@@ -17,33 +17,32 @@ class AccountRequest(object):
     TODO: type model description here.
 
     Attributes:
-        status (str): Account Status.  Optional if StatusList is passed, else
-            mandatory.  Ignored if StatusList is passed.  Allowed values:  •
-            ALL  • ACTIVE  • BLOCKED  • CANCELLED  • CREDITLOCK  •
-            DELINQUENCYLOCK
+        status (str): Account Status. Optional if StatusList is passed, else
+            mandatory. Ignored if StatusList is passed. Allowed values: • ALL
+            • ACTIVE • BLOCKED • CANCELLED • CREDITLOCK • DELINQUENCYLOCK
         include_card_summary (bool): Include card summary details in the
-            response.    When passed as false, the card summary related
-            parameters on response will be set to null.    Optional – default
+            response.   When passed as false, the card summary related
+            parameters on response will be set to null.   Optional – default
             value: true.
-        payer_id (int): Payer id of the customer.  Optional if PayerNumber is
+        payer_id (int): Payer id of the customer. Optional if PayerNumber is
             passed, else Mandatory.
-        payer_number (str): PayerNumber of the customer.  Optional if PayerId
+        payer_number (str): PayerNumber of the customer. Optional if PayerId
             is passed, else Mandatory.
-        page_size (int): Page Size – Number of records to show on a page. 
-            Optional  Default value 50
+        page_size (int): Page Size – Number of records to show on a page.
+            Optional Default value 50
         request_id (str): API Request Id
         col_co_code (int): Collecting Company Code (Shell Code) of the
             selected payer.   ColCoCode or ColCoCountryCode  is Mandatory for
             serviced OUs such as Romania, Latvia, Lithuania, Estonia, Ukraine
             etc. It is optional for other countries if ColCoID is provided.
         col_co_country_code (str): The 2-character ISO Code for the customer
-            and card owning country.  ColCoCode or ColCoCountryCode  is
+            and card owning country. ColCoCode or ColCoCountryCode  is
             Mandatory for serviced OUs such as Romania, Latvia, Lithuania,
             Estonia, Ukraine etc. It is optional for other countries if
             ColCoID is provided.
-        current_page (int): Page Number (as shown to the users)  Optional 
+        current_page (int): Page Number (as shown to the users) Optional
             Default value 1
-        invoice_points_only (bool): Optional – default value: false.  When
+        invoice_points_only (bool): Optional – default value: false. When
             passed as true, the API will return accounts that are configured
             as Invoice Point only.
         col_co_id (int): Collecting Company Id (in GFN) of the selected payer.

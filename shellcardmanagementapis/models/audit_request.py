@@ -17,14 +17,14 @@ class AuditRequest(object):
     TODO: type model description here.
 
     Attributes:
-        status (str): Status of requests to be fetched.  • Success  • Failed 
-            • InProgress  • Submitted  • Rejected  • PendingApproval  • All  •
-            MailedToCSC  Optional  If not passed “All” will be considered as
-            the default value.
-        payer_number (str): Payer Number of the selected payer.  Optional if
+        status (str): Status of requests to be fetched. • Success • Failed •
+            InProgress • Submitted • Rejected • PendingApproval • All •
+            MailedToCSC Optional If not passed “All” will be considered as the
+            default value.
+        payer_number (str): Payer Number of the selected payer. Optional if
             PayerId is passed else Mandatory
-        payer_id (int): Payer Id  of the selected payer.  Optional if
-            PayerNumber is passed else Mandatory  Example: 123456
+        payer_id (int): Payer Id  of the selected payer. Optional if
+            PayerNumber is passed else Mandatory Example: 123456
         account_number (str): TODO: type description here.
         col_co_code (int): Collecting Company Code (Shell Code) of the
             selected payer.   Mandatory for serviced OUs such as Romania,
@@ -35,32 +35,33 @@ class AuditRequest(object):
             Optional if ColCoCode is passed else Mandatory.  Example:  1 for
             Philippines  5 for UK
         accounts (Accounts): TODO: type description here.
-        page_size (int): Page Size – Number of records to show on a page 
-            Optional  Default value 50
-        requested_operation (List[str]): To search for requests submitted
-            until this date.  Optional   Format: yyyyMMdd   Example: 20200130 
-            If ToDate is not provided and FromDate is provided, then ToDate
-            will be considered as current date or 30 days from FromDate,
-            whichever is earlier. However, when both FromDate and ToDate is
-            not provided then last 30 days will be considered for filtering.
+        page_size (int): Page Size – Number of records to show on a page
+            Optional Default value 50
+        requested_operation (List[str]): Type of requests to be fetched. 
+            Optional  Allowed values:  • OrderCard  • CreateCardGroup  •
+            PINReminder  • MoveCard  • UpdateCardStatus  • UpdateCardGroup  •
+            AutoRenew  • BulkCardOrder  • BulkCardBlock  •
+            BulkCardOrderMultiAccount  • MobilePaymentRegistration  •
+            UpdateCompanyInfo  • BCOSummary  • BCOMultiAccountSummary  •
+            BCBSummary  • FundTransfer  • DeliveryAddressUpdate
         sort_order (str): Allowed Sorting Options:  1. SubmittedDateDescending
             2. SubmittedDateAscending   3. AccountNumberAscending  4.
             AccountNumberDescending  Optional: Default value is 1  Example
             value to be passed: 1,3
         search_text (str): Search text used as criteria to filter the
-            requests.  Optional  Minimum length is 4 characters
-            (configurable). Else, an error (0007) will be returned. When valid
-            text is provided, MS will return all the records that contains the
-            Search Text within any of the look up fields
-        current_page (int): Page Number (as shown to the users)  Optional 
+            requests. Optional Minimum length is 4 characters (configurable).
+            Else, an error (0007) will be returned. When valid text is
+            provided, MS will return all the records that contains the Search
+            Text within any of the look up fields
+        current_page (int): Page Number (as shown to the users) Optional
             Default value 1
-        from_date (str): To search for requests submitted from this date. 
-            Optional  Maximum of X days duration allowed per search. The X
-            value is configurable and initially set to 180 days.  Format:
-            yyyyMMdd  Example: 20200101  If FromDate is not provided and
-            ToDate is provided, then FromDate will be considered as 30 days
-            less than ToDate. However, when both FromDate and ToDate is not
-            provided then last 30 days will be considered for filtering.
+        from_date (str): To search for requests submitted from this date.
+            Optional Maximum of X days duration allowed per search. The X
+            value is configurable and initially set to 180 days. Format:
+            yyyyMMdd Example: 20200101 If FromDate is not provided and ToDate
+            is provided, then FromDate will be considered as 30 days less than
+            ToDate. However, when both FromDate and ToDate is not provided
+            then last 30 days will be considered for filtering.
         to_date (str): To search for requests submitted until this date. 
             Optional   Format: yyyyMMdd   Example: 20200130  If ToDate is not
             provided and FromDate is provided, then ToDate will be considered

@@ -17,12 +17,11 @@ class ProductGroup(object):
     TODO: type model description here.
 
     Attributes:
-        reference_id (int): Referenced Purchase Category Id  Example: 123,
-            124
+        reference_id (int): Referenced Purchase Category Id Example: 123, 124
         product_group_id (str): Product group ID
         name (str): Product group name
         is_default (bool): Indicates whether this is a default Product Group
-            at ColCo level or not.  Note: The Customer level default settings
+            at ColCo level or not. Note: The Customer level default settings
             are not considered here.
         is_fuel_type (bool): Identifies the type of Product group.  true - if
             it is a Fuel type Product group   false - if it is Non-Fuel type

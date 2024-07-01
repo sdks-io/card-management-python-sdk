@@ -19,8 +19,8 @@ class PINReminderReference(object):
         card_id (int): Card Id
         panid (int): PAN ID
         pan (int): PAN
-        card_expiry_date (str): Expiry date of the card.  Mandatory if Either
-            PAN or PANID is passed, else optional.  Format: yyyyMMdd
+        card_expiry_date (str): Expiry date of the card. Mandatory if Either
+            PAN or PANID is passed, else optional. Format: yyyyMMdd
         reference_id (int): Individual card pin reminder reference number for
             the Pin Reminder request.
 

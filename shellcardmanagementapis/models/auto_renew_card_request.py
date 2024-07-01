@@ -25,8 +25,8 @@ class AutoRenewCardRequest(object):
             Latvia, Lithuania, Estonia, Ukraine etc. It is optional for other
             countries if ColCoID is provided.  Example:  86-Philippines  5-UK
         payer_number (str): Payer Number (Ex: GB000000123) of the selected
-            payer.  Optional if PayerId is passed else Mandatory
-        payer_id (int): Payer Id  of the selected payer.  Optional if
+            payer. Optional if PayerId is passed else Mandatory
+        payer_id (int): Payer Id  of the selected payer. Optional if
             PayerNumber is passed else Mandatory
         auto_renew_cards (List[AutoRenewCardRequestAutoRenewCardsItems]):
             TODO: type description here.

@@ -37,24 +37,24 @@ class LoggedInUserResponse(object):
             configuration for the logged in User.
         csv_separator (str): Preferred CSV Separator for the logged in user.
         decimal_separator (str): Preferred Decimal separator configured for
-            the logged in user  Note: - Colco default value (configured at
+            the logged in user Note: - Colco default value (configured at
             Microservices) is returned when the user is not provided or does
             not exist.
         report_format (str): Preferred report format configured for the logged
             in user
-        has_api_access (bool): True/False  True, if user has access to the
+        has_api_access (bool): True/False True, if user has access to the
             requested API. This is validated based on the role Vs API access
             matrix and client Vs API access matrix.
         roles (List[Role]): List of roles the user have access to
         payers (List[PayerAccess]): List of payers which the user has access
-            to.  • It will return 250 payers only and it is configurable. If
-            the user has more than that, the remaining will be ignored.  • The
+            to. • It will return 250 payers only and it is configurable. If
+            the user has more than that, the remaining will be ignored. • The
             payer which is marked as default will be the first item in the
-            output.    Note: This list will be empty for users mapped with
+            output.   Note: This list will be empty for users mapped with
             roles which has either IsShellAdmin or IsServiceAccount set to
             true as their access level is controlled at ColCo level only.
         accounts (List[AccountAccess]): List of accounts which the user has
-            access to.  Note: This list will be empty for users mapped with
+            access to. Note: This list will be empty for users mapped with
             roles which has either IsCustomerAdmin, IsShellAdmin or
             IsServiceAccount set to true as their access level is controller
             at either ColCo or payer level only.
@@ -64,7 +64,7 @@ class LoggedInUserResponse(object):
             IsCustomerUser set to true as their access level is controller at
             Payer or Account level.
         eid_access_details (List[EIDAccess]): List of Electronic Invoice Data
-            configured for the user.  Note: This list will be empty if the
+            configured for the user. Note: This list will be empty if the
             value of EIDDetails is set to false or empty in the request.
         user_classification_by_system (str): User classification by system.
         user_classification_by_shell (str): User classification by Shell.

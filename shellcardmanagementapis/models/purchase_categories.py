@@ -17,18 +17,18 @@ class PurchaseCategories(object):
 
     Attributes:
         id (int): Purchase category Id
-        code (str): Purchase category code  Example: 0,1, 2 etc.  Full list
-            below:  0 - All Fuels (without VP) and Lubricants  1 - Fuel Save
-            only  2 - Fuel Save and Lubricants  3 - No Restrictions  4 - VP
-            and Fuel Save  5 - Diesel ONLY  6 - Diesel and Lubricants  7 - VP
-            and Lubricants  8 - VP and Fuel Save and Lubricants
+        code (str): Purchase category code Example: 0,1, 2 etc. Full list
+            below: 0 - All Fuels (without VP) and Lubricants 1 - Fuel Save
+            only 2 - Fuel Save and Lubricants 3 - No Restrictions 4 - VP and
+            Fuel Save 5 - Diesel ONLY 6 - Diesel and Lubricants 7 - VP and
+            Lubricants 8 - VP and Fuel Save and Lubricants
         name (str): Purchase category name   Example: Fuel Save Only  Full
             list below:  0 - All Fuels (without VP) and Lubricants  1 - Fuel
             Save only  2 - Fuel Save and Lubricants  3 - No Restrictions  4 -
             VP and Fuel Save  5 - Diesel ONLY  6 - Diesel and Lubricants  7 -
             VP and Lubricants  8 - VP and Fuel Save and Lubricants
         is_visible (bool): If True then PurchaseCategory can be used while
-            submitting new order cards requests.  If false this
+            submitting new order cards requests. If false this
             PurchaseCategory will not be used for Ordering Cards.
         product_groups (str): List of Default product groups
 

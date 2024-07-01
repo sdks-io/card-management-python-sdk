@@ -22,7 +22,7 @@ class PurchaseCategoryRequest(object):
         col_co_code (int): Collecting Company Code (Shell Code).
         col_co_id (int): Collecting Company Id (in Shell Cards Platform).
         card_type_id (int): Card type Id
-        purchase_category_id (int): Purchase category Id  Optional.  Example:
+        purchase_category_id (int): Purchase category Id Optional. Example:
             123, 124, etc.,
         language_code (str): Language code for the Title and Description. 
             Language codes should be same as SFH supported language  

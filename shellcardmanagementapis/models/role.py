@@ -20,9 +20,9 @@ class Role(object):
         is_customer_admin (bool): Whether the role is an administrator.
         is_customer_user (bool): Whether the role is a customer user.
         is_shell_admin (bool): True if the role is Shell user, else false.
-        is_service_account (bool): True/False.  True if the role is Service
+        is_service_account (bool): True/False. True if the role is Service
             accounts, else false.
-        is_user_admin (bool): True/False.  True, if the role allows user
+        is_user_admin (bool): True/False. True, if the role allows user
             administration, else false.
 
     """

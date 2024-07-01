@@ -16,13 +16,13 @@ class CreateCardGroupRequestCardsItems(object):
     TODO: type model description here.
 
     Attributes:
-        account_id (int): Account Id of the account of the card.  Optional if
+        account_id (int): Account Id of the account of the card. Optional if
             AccountNumber is passed, else Mandatory.
-        account_number (str): Account Number of the account of the card. 
+        account_number (str): Account Number of the account of the card.
             Optional if AccountId is passed, else Mandatory.
-        card_id (int): Card Id of the card.  Optional if PAN is passed, else
+        card_id (int): Card Id of the card. Optional if PAN is passed, else
             Mandatory.
-        pan (str): PAN of the card.  Optional if CardId is passed, else
+        pan (str): PAN of the card. Optional if CardId is passed, else
             Mandatory.
 
     """

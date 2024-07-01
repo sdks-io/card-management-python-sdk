@@ -48,8 +48,7 @@ class ShellcardmanagementapisClient(object):
                  override_http_client_configuration=False, http_call_back=None,
                  timeout=60, max_retries=0, backoff_factor=2,
                  retry_statuses=None, retry_methods=None,
-                 environment=Environment.PRODUCTION,
-                 url='api-test.shell.com/test', basic_auth_credentials=None,
+                 environment=Environment.SIT, basic_auth_credentials=None,
                  bearer_token_credentials=None, config=None):
         self.config = config or Configuration(
             http_client_instance=http_client_instance,
@@ -57,7 +56,7 @@ class ShellcardmanagementapisClient(object):
             http_call_back=http_call_back, timeout=timeout,
             max_retries=max_retries, backoff_factor=backoff_factor,
             retry_statuses=retry_statuses, retry_methods=retry_methods,
-            environment=environment, url=url,
+            environment=environment,
             basic_auth_credentials=basic_auth_credentials,
             bearer_token_credentials=bearer_token_credentials)
 

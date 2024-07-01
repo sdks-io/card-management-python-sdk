@@ -16,9 +16,9 @@ class CardBlockSchedule(object):
     Response entity object for CardBlockSchedule  list
 
     Attributes:
-        from_date (str): Effective start date of Block / Unblock<br /> 
-            Format: yyyyMMdd
-        to_date (str): Effective end date of Block / Unblock<br />  Format:
+        from_date (str): Effective start date of Block / Unblock<br /> Format:
+            yyyyMMdd
+        to_date (str): Effective end date of Block / Unblock<br /> Format:
             yyyyMMdd
 
     """

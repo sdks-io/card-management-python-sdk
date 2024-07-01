@@ -23,11 +23,11 @@ class UpdateCardGroupRequest(object):
         col_co_id (int): Collecting Company Id  of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example: 
             1-Philippines  5-UK
-        payer_number (str): Payer Number of the selected payer.  Optional if
+        payer_number (str): Payer Number of the selected payer. Optional if
             PayerId is passed else Mandatory
         payer_id (int): Payer Id (i.e., Customer Id of the Payment Customer)
-            of the selected payer.  Optional if PayerNumber is passed else
-            Mandatory  Example: 123456
+            of the selected payer. Optional if PayerNumber is passed else
+            Mandatory Example: 123456
         account_id (int): Account ID of the card-group to be
             updated/terminated.
         account_number (str): Account Number of the card-group to be
@@ -36,9 +36,9 @@ class UpdateCardGroupRequest(object):
             updated or terminated.
         card_group_name (str): New name for the card group if it needs to be
             updated. Set this field to ‘null’ if no change required to the
-            current card group name.    Optional    Minimum length: 1
-            (Configurable)  Maximum length: 40 (Configurable)  Allowed
-            characters (Configurable) are: - A-Z 0-9, / ‘. & Ä Ö Ü Å Æ É Ø 
+            current card group name.   Optional   Minimum length: 1
+            (Configurable) Maximum length: 40 (Configurable) Allowed
+            characters (Configurable) are: - A-Z 0-9, / ‘. & Ä Ö Ü Å Æ É Ø
             Note: The card group name has to be unique for customer. Else an
             error with error code 9015 is returned.
         print_on_card (bool): Whether to emboss the card group name on the
@@ -49,29 +49,28 @@ class UpdateCardGroupRequest(object):
             Optional  Note:   1) If a card type is passed, the cardgorup will
             allow cards with same card type to be moved in to the card group. 
             2) Pass ‘-1’ to remove the card type from the card group.
-        terminate_card_group (bool): Whether to terminate the card group. 
-            When set to true, the card group will be terminated by setting
-            current date as it’s termination date.  Optional, False by default
-            .
+        terminate_card_group (bool): Whether to terminate the card group. When
+            set to true, the card group will be terminated by setting current
+            date as it’s termination date. Optional, False by default .
         move_cards (bool): Whether to move the cards from this CardGroup in to
-            a different or a new CardGroup.  Optional  When the value is set
-            to ‘False’ or ‘null’, the cards that are currently in the
-            card-group will remain under the same card-group.
-        target_account_id (int): Account ID of the new/target card-group. 
+            a different or a new CardGroup. Optional When the value is set to
+            ‘False’ or ‘null’, the cards that are currently in the card-group
+            will remain under the same card-group.
+        target_account_id (int): Account ID of the new/target card-group.
             Either TargetAccountId or TargetAccountNumber is mandatory when
             MoveCards is set to True.
         target_account_number (str): Account Number of the new/target
-            card-group.  Either TargetAccountId or TargetAccountNumber is
+            card-group. Either TargetAccountId or TargetAccountNumber is
             mandatory when MoveCards is set to True.
         target_new_card_group_name (str): Name of the new card group if the
             cards in the existing card-group have to be moved to a new
-            card-group.    Mandatory when MoveCards parameter is True and
-            TargetCardGroupId is null.    Minimum length: 1 (Configurable) 
+            card-group.   Mandatory when MoveCards parameter is True and
+            TargetCardGroupId is null.   Minimum length: 1 (Configurable)
             Maximum length: 30 (Configurable)
         target_card_group_id (int): ID of the card group if the cards in the
             existing card-group have to be moved to another existing
-            card-group.  Mandatory when MoveCards parameter is True and
-            TargetNewCardGroupName is null.  If the value is “-1” then the
+            card-group. Mandatory when MoveCards parameter is True and
+            TargetNewCardGroupName is null. If the value is “-1” then the
             cards will be moved out of the current CardGroup.
 
     """

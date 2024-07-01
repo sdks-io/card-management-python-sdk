@@ -16,9 +16,9 @@ class AuditResponseAuditsItems(object):
     TODO: type model description here.
 
     Attributes:
-        account_id (int): Account id of the customer.  It will be the source
+        account_id (int): Account id of the customer. It will be the source
             account id in case of “Fund Transfer
-        account_number (str): Account number of the customer.  It will be the
+        account_number (str): Account number of the customer. It will be the
             source account number in case of “Fund Transfer”
         additional_information_1 (str): Additional information in the
             request.
@@ -47,14 +47,14 @@ class AuditResponseAuditsItems(object):
         error_string (str): Error description of the request
         global_request_id (str): Global unique request reference provided by
             client application.
-        pan (str): PAN in the request.  If Mask PAN is enabled at
-            Microservices configuration then all digits of the PAN, except the
-            last 6 digits, will be masked.
+        pan (str): PAN in the request. If Mask PAN is enabled at Microservices
+            configuration then all digits of the PAN, except the last 6
+            digits, will be masked.
         payer_id (int): Payer id of the customer.
         payer_number (str): Payer number of the customer.
         processed_on (str): Request processed date.   Format: yyyyMMdd HH:mm:
             ss
-        requested_by (str): vUUID of the user who submitted this request.  It
+        requested_by (str): vUUID of the user who submitted this request. It
             will be the UUID of the Driver in the case of
             “MobilePaymentRegistration”
         requested_operation (str): User requested operation.   Possible
@@ -73,15 +73,15 @@ class AuditResponseAuditsItems(object):
             BulkCardOrderMultiAccount  • MobilePaymentRegistration  •
             UpdateCompanyInfo  • BCOSummary  • BCOMultiAccountSummary  •
             BCBSummary  • FundTransfer  • DeliveryAddressUpdate
-        status (str): Status of the request.  Possible values:  • Success  •
-            Failed  • InProgress  • Submitted  • Rejected  • PendingApproval 
-            • MailedToCSC
+        status (str): Status of the request. Possible values: • Success •
+            Failed • InProgress • Submitted • Rejected • PendingApproval •
+            MailedToCSC
         submitted_on (str): Request submitted date.   Format: yyyyMMdd HH:mm:
             ss
         sub_request_reference (int): Reference number for the individual
             request type.
         user_display_name (str): Display name of the user who submitted this
-            request.  It will be the Display Name of the Driver in the case of
+            request. It will be the Display Name of the Driver in the case of
             “MobilePaymentRegistration” in the below format:
 
     """

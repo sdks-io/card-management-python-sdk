@@ -19,9 +19,9 @@ class UpdateCardGroupResponse(object):
 
     Attributes:
         main_reference (int): Reference number for tracking the overall
-            request.  The value will be null when the validation fails.
+            request. The value will be null when the validation fails.
         update_card_group_reference (int): Reference number for tracking the
-            execution of terminate card-group request.  Reference number will
+            execution of terminate card-group request. Reference number will
             be null when the validations fail or TerminateCardGroup in the
             request object is false.
         new_card_group_reference (int): Reference number for tracking the
@@ -32,7 +32,7 @@ class UpdateCardGroupResponse(object):
         move_card_references
             (List[UpdateCardGroupResponseMoveCardReferencesItems]): List of
             cards submitted successfully for processing the move to the target
-            card-group or to change card-group to null.  This list will be
+            card-group or to change card-group to null. This list will be
             empty when the validations fail or there are no cards in the
             card-group that is getting terminated or MoveCards in the request
             object is false

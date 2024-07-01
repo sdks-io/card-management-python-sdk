@@ -19,7 +19,7 @@ class PayerAccess(object):
         is_default (bool): Whether this payer is the default payer of the
             user.
         colco_id (int): Collecting company id.
-        colco_code (int): Collecting company code.  Example:  86-Philippines 
+        colco_code (int): Collecting company code. Example: 86-Philippines
             5-UK
         col_co_country_code (str): The 2-character ISO Code for the customer
             and card owning country
@@ -27,10 +27,9 @@ class PayerAccess(object):
         payer_group (str): Payer group of the payer.   The value of this
             parameter will always be null when the input parameter
             “IncludePayerGroup” is false.
-        payer_id (int): Payer Id to which the user has access  Example:
-            123456
-        payer_number (str): Payer Number to which the user has access 
-            Example: GB000000123
+        payer_id (int): Payer Id to which the user has access Example: 123456
+        payer_number (str): Payer Number to which the user has access Example:
+            GB000000123
         payer_name (str): Name of the Payer to which the user has access
 
     """

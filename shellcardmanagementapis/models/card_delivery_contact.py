@@ -17,36 +17,36 @@ class CardDeliveryContact(object):
     Mandatory when CardDeliveryType is 2 else ignored.
 
     Attributes:
-        delivery_contact_title (str): Title of the contact person <br /> 
-            Optional  Max field length: 10
-        delivery_contact_name (str): Name of the contact person <br /> 
-            Mandatory  <br />  Max field length: 50
-        delivery_company_name (str): Company name <br />  Mandatory  <br /> 
-            Max field length: 50
-        delivery_address_line_1 (str): Address line 1 <br />  Mandatory<br /> 
+        delivery_contact_title (str): Title of the contact person <br />
+            Optional Max field length: 10
+        delivery_contact_name (str): Name of the contact person <br />
+            Mandatory  <br /> Max field length: 50
+        delivery_company_name (str): Company name <br /> Mandatory  <br /> Max
+            field length: 50
+        delivery_address_line_1 (str): Address line 1 <br /> Mandatory<br />
             Max field length: 40
-        delivery_address_line_2 (str): Address line 2 <br />  Optional <br /> 
-            Max field length: 40  <br />  Optional
-        delivery_address_line_3 (str): Address line 3 <br />  Optional <br /> 
-            Max field length: 40  <br />  Optional
-        delivery_zip_code (str): ZIP code <br />  Mandatory  <br />  Max field
-            length: 10  <br />  Optional
-        delivery_city (str): City  <br />  Mandatory  <br />  Max field
-            length: 40
-        delivery_region_id (int): Region Id  <br />  Optional
-        delivery_region (str): Region  <br />  Optional<br />  When region is
+        delivery_address_line_2 (str): Address line 2 <br /> Optional <br />
+            Max field length: 40  <br /> Optional
+        delivery_address_line_3 (str): Address line 3 <br /> Optional <br />
+            Max field length: 40  <br /> Optional
+        delivery_zip_code (str): ZIP code <br /> Mandatory  <br /> Max field
+            length: 10  <br /> Optional
+        delivery_city (str): City  <br /> Mandatory  <br /> Max field length:
+            40
+        delivery_region_id (int): Region Id  <br /> Optional
+        delivery_region (str): Region  <br /> Optional<br /> When region is
             passed
         delivery_country (str): The ISO code of the country.<br />
-        phone_number (str): Phone number for courier delivery.<br /> 
-            Optional.<br />  Max field length: 20
-        email_address (str): Email address for courier delivery.<br /> 
-            Optional.<br />  Max field length: 90 <br/>Note:Based on the
+        phone_number (str): Phone number for courier delivery.<br />
+            Optional.<br /> Max field length: 20
+        email_address (str): Email address for courier delivery.<br />
+            Optional.<br /> Max field length: 90 <br/>Note:Based on the
             international standard that there can be Max Length 64 before the
             @ (the 'Local part’) =64(minimum of 1) Max Lenth after the (the
             domain) = 88 (Minimum of 2)
         save_for_card_reissue (bool): If this is specified, the contact
             address will be saved in cards platform for card reissue
-            processing.<br />  Optional
+            processing.<br /> Optional
 
     """
 

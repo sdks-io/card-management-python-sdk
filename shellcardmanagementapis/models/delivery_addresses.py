@@ -35,8 +35,8 @@ class DeliveryAddresses(object):
         region_id (int): Region Id of the address.
         telephone (str): Telephone number of the address contact
         zip_code (str): Delivery Zip code
-        address_type (int): Delivery address type.  Possible Values:  1 – Card
-            and PIN delivery address  2 – Card delivery address  3 – PIN
+        address_type (int): Delivery address type. Possible Values: 1 – Card
+            and PIN delivery address 2 – Card delivery address 3 – PIN
             delivery address
 
     """

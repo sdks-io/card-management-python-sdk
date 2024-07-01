@@ -17,8 +17,8 @@ class ScheduleCardBlockRequest(object):
     TODO: type model description here.
 
     Attributes:
-        is_time_supported (bool): Default: False  True – It supports both date
-            & time.  False – It supports only date. Time will be ignored if it
+        is_time_supported (bool): Default: False True – It supports both date
+            & time. False – It supports only date. Time will be ignored if it
             is provided in the request.
         schedule_card_block_cards (List[ScheduleCardBlockCardsItems]): List of
             ScheduleCardBlockCard entity. Each card in the list will be

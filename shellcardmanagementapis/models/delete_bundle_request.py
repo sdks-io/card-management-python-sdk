@@ -16,12 +16,14 @@ class DeleteBundleRequest(object):
     TODO: type model description here.
 
     Attributes:
-        col_co_id (int): Collecting Company Id of the selected payer.  
-            Optional if ColCoCode is passed else Mandatory.  Example:  1 for
-            Philippines
         col_co_code (int): Collecting Company Code (Shell Code) of the
             selected payer.   Mandatory for serviced OUs such as Romania,
             Latvia, Lithuania, Estonia, Ukraine etc. It is optional for other
+            countries if ColCoID is provided.  Example:  86 for Philippines  5
+            for UK
+        col_co_id (int): Collecting Company Code (Shell Code) of the selected
+            payer.   Mandatory for serviced OUs such as Romania, Latvia,
+            Lithuania, Estonia, Ukraine etc. It is optional for other
             countries if ColCoID is provided.  Example:  86 for Philippines  5
             for UK
         payer_number (str): Payer Number of the selected payer.  Either
@@ -41,8 +43,8 @@ class DeleteBundleRequest(object):
     # Create a mapping from Model property names to API property names
     _names = {
         "bundle_id": 'BundleId',
-        "col_co_id": 'ColCoId',
         "col_co_code": 'ColCoCode',
+        "col_co_id": 'ColCoId',
         "payer_number": 'PayerNumber',
         "payer_id": 'PayerId',
         "account_id": 'AccountId',
@@ -50,8 +52,8 @@ class DeleteBundleRequest(object):
     }
 
     _optionals = [
-        'col_co_id',
         'col_co_code',
+        'col_co_id',
         'payer_number',
         'payer_id',
         'account_id',
@@ -60,8 +62,8 @@ class DeleteBundleRequest(object):
 
     def __init__(self,
                  bundle_id=None,
-                 col_co_id=APIHelper.SKIP,
                  col_co_code=APIHelper.SKIP,
+                 col_co_id=APIHelper.SKIP,
                  payer_number=APIHelper.SKIP,
                  payer_id=APIHelper.SKIP,
                  account_id=APIHelper.SKIP,
@@ -69,10 +71,10 @@ class DeleteBundleRequest(object):
         """Constructor for the DeleteBundleRequest class"""
 
         # Initialize members of the class
-        if col_co_id is not APIHelper.SKIP:
-            self.col_co_id = col_co_id 
         if col_co_code is not APIHelper.SKIP:
             self.col_co_code = col_co_code 
+        if col_co_id is not APIHelper.SKIP:
+            self.col_co_id = col_co_id 
         if payer_number is not APIHelper.SKIP:
             self.payer_number = payer_number 
         if payer_id is not APIHelper.SKIP:
@@ -103,16 +105,16 @@ class DeleteBundleRequest(object):
 
         # Extract variables from the dictionary
         bundle_id = dictionary.get("BundleId") if dictionary.get("BundleId") else None
-        col_co_id = dictionary.get("ColCoId") if dictionary.get("ColCoId") else APIHelper.SKIP
         col_co_code = dictionary.get("ColCoCode") if dictionary.get("ColCoCode") else APIHelper.SKIP
+        col_co_id = dictionary.get("ColCoId") if dictionary.get("ColCoId") else APIHelper.SKIP
         payer_number = dictionary.get("PayerNumber") if dictionary.get("PayerNumber") else APIHelper.SKIP
         payer_id = dictionary.get("PayerId") if dictionary.get("PayerId") else APIHelper.SKIP
         account_id = dictionary.get("AccountId") if dictionary.get("AccountId") else APIHelper.SKIP
         account_number = dictionary.get("AccountNumber") if dictionary.get("AccountNumber") else APIHelper.SKIP
         # Return an object of this model
         return cls(bundle_id,
-                   col_co_id,
                    col_co_code,
+                   col_co_id,
                    payer_number,
                    payer_id,
                    account_id,

@@ -70,10 +70,10 @@ class CardTypeResponseCustomerCardTypesItems(object):
             accessing application API key exists in the
             “ApplicationsToShowNPIITokens” card type configuration else
             “False”.
-        medium_type_id (int): Id of the medium type identifier.  Example:
-            1,2,4    Full list below:  1 - Fuel Card  2 - Fuel Card with EV  3
-            - EV only  4 - Fuel Card and Key Fob  5 - Key Fob  6 - Virtual
-            Card  7 - NPII Token  8 – Smartpay Token
+        medium_type_id (int): Id of the medium type identifier. Example: 1,2,4
+            Full list below: 1 - Fuel Card 2 - Fuel Card with EV 3 - EV only 4
+            - Fuel Card and Key Fob 5 - Key Fob 6 - Virtual Card 7 - NPII
+            Token 8 – Smartpay Token
         medium_type (str): Name of the medium type identifier.  Example: Fuel
             Card, Fuel Card with EV, Key Fob      Full list below:  1 - Fuel
             Card  2 - Fuel Card with EV  3 - EV only  4 - Fuel Card and Key

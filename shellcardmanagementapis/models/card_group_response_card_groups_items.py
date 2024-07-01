@@ -36,7 +36,7 @@ class CardGroupResponseCardGroupsItems(object):
         card_type_name (str): Card Type Name
         expired_cards (int): Total number of expired cards for the given
             search criteria
-        expiry_date (str): Expiry date of the card.  Format: yyyyMMdd  Note:
+        expiry_date (str): Expiry date of the card. Format: yyyyMMdd Note:
             Clients to convert this to appropriate DateTime type.
         print_on_card (bool): PrintOnCard true/false
         renewal_pending_cards (int): Total number of Renewal Pending Cards for

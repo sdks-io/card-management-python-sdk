@@ -16,9 +16,9 @@ class Accounts(object):
     TODO: type model description here.
 
     Attributes:
-        account_id (int): Account Id of the customer.  Optional, if
+        account_id (int): Account Id of the customer. Optional, if
             AccountNumber is passed, else mandatory.
-        account_number (str): Account Number of the customer.  Optional, if
+        account_number (str): Account Number of the customer. Optional, if
             AccountId is passed, else mandatory.
 
     """

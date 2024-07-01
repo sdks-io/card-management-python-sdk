@@ -12,28 +12,28 @@ customer_controller = client.customer
 
 ## Methods
 
-* [Loggedin User](../../doc/controllers/customer.md#loggedin-user)
+* [Loggedinuser](../../doc/controllers/customer.md#loggedinuser)
 * [Payers](../../doc/controllers/customer.md#payers)
 * [Customer](../../doc/controllers/customer.md#customer)
 * [Accounts](../../doc/controllers/customer.md#accounts)
 * [Card Type](../../doc/controllers/customer.md#card-type)
-* [Card Groups](../../doc/controllers/customer.md#card-groups)
-* [Audit Report](../../doc/controllers/customer.md#audit-report)
-* [Create Card Group](../../doc/controllers/customer.md#create-card-group)
-* [Update Card Group](../../doc/controllers/customer.md#update-card-group)
+* [Cardgroups](../../doc/controllers/customer.md#cardgroups)
+* [Auditreport](../../doc/controllers/customer.md#auditreport)
+* [Createcardgroup](../../doc/controllers/customer.md#createcardgroup)
+* [Updatecardgroup](../../doc/controllers/customer.md#updatecardgroup)
 
 
-# Loggedin User
+# Loggedinuser
 
 This API allows querying the user data of the logged in user.</br>
 This API will return the user access details such as payers and/or accounts. </br>
 This API will also validate that logged in user has access to the requested API, on failure it will return HasAPIAccess flag as false in response.</br>
 
 ```python
-def loggedin_user(self,
-                 apikey,
-                 request_id,
-                 body=None)
+def loggedinuser(self,
+                apikey,
+                request_id,
+                body=None)
 ```
 
 ## Parameters
@@ -42,7 +42,7 @@ def loggedin_user(self,
 |  --- | --- | --- | --- |
 | `apikey` | `str` | Header, Required | This is the API key of the specific environment which needs to be passed by the client. |
 | `request_id` | `str` | Header, Required | Mandatory UUID (according to RFC 4122 standards) for requests and responses. This will be played back in the response from the request. |
-| `body` | [`LoggedInUserRequest`](../../doc/models/logged-in-user-request.md) | Body, Optional | Logged in user request body |
+| `body` | [`FleetmanagementV1UserLoggedinuserRequest`](../../doc/models/fleetmanagement-v1-user-loggedinuser-request.md) | Body, Optional | Logged in user request body |
 
 ## Response Type
 
@@ -55,7 +55,7 @@ apikey = 'apikey6'
 
 request_id = 'RequestId8'
 
-body = LoggedInUserRequest(
+body = FleetmanagementV1UserLoggedinuserRequest(
     include_payer_group=False,
     include_eid_details=False,
     requested_api_name='Name of the API',
@@ -63,7 +63,7 @@ body = LoggedInUserRequest(
     payer_number='GB00123456'
 )
 
-result = customer_controller.loggedin_user(
+result = customer_controller.loggedinuser(
     apikey,
     request_id,
     body=body
@@ -155,11 +155,11 @@ print(result)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1UserLoggedinuser400ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`FleetmanagementV1UserLoggedinuser401ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-401-error-exception.md) |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1UserLoggedinuser403ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1UserLoggedinuser404ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`FleetmanagementV1UserLoggedinuser500ErrorException`](../../doc/models/fleetmanagement-v1-user-loggedinuser-500-error-exception.md) |
 
 
 # Payers
@@ -428,11 +428,11 @@ print(result)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`FleetmanagementV1CustomerPayers400ErrorException`](../../doc/models/fleetmanagement-v1-customer-payers-400-error-exception.md) |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `APIException` |
+| 403 | The server understood the request but refuses to authorize it. | `APIException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`FleetmanagementV1CustomerPayers404ErrorException`](../../doc/models/fleetmanagement-v1-customer-payers-404-error-exception.md) |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `APIException` |
 
 
 # Customer
@@ -580,11 +580,11 @@ print(result)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `APIException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `APIException` |
+| 403 | The server understood the request but refuses to authorize it. | [`FleetmanagementV1CustomerCustomer403ErrorException`](../../doc/models/fleetmanagement-v1-customer-customer-403-error-exception.md) |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `APIException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `APIException` |
 
 
 # Accounts
@@ -740,11 +740,11 @@ print(result)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `APIException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `APIException` |
+| 403 | The server understood the request but refuses to authorize it. | `APIException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `APIException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `APIException` |
 
 
 # Card Type
@@ -890,14 +890,14 @@ print(result)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `APIException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `APIException` |
+| 403 | The server understood the request but refuses to authorize it. | `APIException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `APIException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `APIException` |
 
 
-# Card Groups
+# Cardgroups
 
 This operation allows querying the card group details . It provides flexible search criteria and supports paging.\
 
@@ -908,10 +908,10 @@ When the card group type is configured as ‘Horizontal’ in cards platform, th
 Accounts with cancelled status will not be considered for cardgroups search for the configured (E.g., SFH) set of client apps.
 
 ```python
-def card_groups(self,
-               apikey,
-               request_id,
-               body=None)
+def cardgroups(self,
+              apikey,
+              request_id,
+              body=None)
 ```
 
 ## Parameters
@@ -950,7 +950,7 @@ body = CardGroupRequest(
     page_size=1
 )
 
-result = customer_controller.card_groups(
+result = customer_controller.cardgroups(
     apikey,
     request_id,
     body=body
@@ -1003,14 +1003,14 @@ print(result)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `APIException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `APIException` |
+| 403 | The server understood the request but refuses to authorize it. | `APIException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `APIException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `APIException` |
 
 
-# Audit Report
+# Auditreport
 
 This operation allows users to fetch audit data of account or card operations performed by users of a given customer
 The audit data includes details of below API operations
@@ -1028,16 +1028,15 @@ The audit data includes details of below API operations
 * BCOSummary
 * BCOMultiAccountSummary
 * BCBSummary
-* Mobile Payment
-* Registration
+* Mobile Payment Registration
 * Fund Transfer (Scheduled & Realtime)
 * Delivery Address Update.
 
 ```python
-def audit_report(self,
-                apikey,
-                request_id,
-                body=None)
+def auditreport(self,
+               apikey,
+               request_id,
+               body=None)
 ```
 
 ## Parameters
@@ -1081,7 +1080,7 @@ body = AuditRequest(
     to_date='20240202'
 )
 
-result = customer_controller.audit_report(
+result = customer_controller.auditreport(
     apikey,
     request_id,
     body=body
@@ -1143,14 +1142,14 @@ print(result)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `APIException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `APIException` |
+| 403 | The server understood the request but refuses to authorize it. | `APIException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `APIException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `APIException` |
 
 
-# Create Card Group
+# Createcardgroup
 
 This API allows creating a new Card Group in the Shell Cards Platform. It will
 also allow moving of cards (up to 500 cards) into the newly created
@@ -1166,10 +1165,10 @@ card-group.
   successfully
 
 ```python
-def create_card_group(self,
-                     apikey,
-                     request_id,
-                     body=None)
+def createcardgroup(self,
+                   apikey,
+                   request_id,
+                   body=None)
 ```
 
 ## Parameters
@@ -1210,7 +1209,7 @@ body = CreateCardGroupRequest(
     ]
 )
 
-result = customer_controller.create_card_group(
+result = customer_controller.createcardgroup(
     apikey,
     request_id,
     body=body
@@ -1250,14 +1249,14 @@ print(result)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `APIException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `APIException` |
+| 403 | The server understood the request but refuses to authorize it. | `APIException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `APIException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `APIException` |
 
 
-# Update Card Group
+# Updatecardgroup
 
 This API allows updating or removing a Card Group in the Shell Cards Platform.
 
@@ -1267,10 +1266,10 @@ The request for updating or removing of the card group, creationg of a new card 
 validations.
 
 ```python
-def update_card_group(self,
-                     apikey,
-                     request_id,
-                     body=None)
+def updatecardgroup(self,
+                   apikey,
+                   request_id,
+                   body=None)
 ```
 
 ## Parameters
@@ -1311,7 +1310,7 @@ body = UpdateCardGroupRequest(
     target_card_group_id=3456
 )
 
-result = customer_controller.update_card_group(
+result = customer_controller.updatecardgroup(
     apikey,
     request_id,
     body=body
@@ -1323,21 +1322,27 @@ print(result)
 
 ```json
 {
-  "MainReference": 0,
-  "UpdateCardGroupReference": 0,
-  "NewCardGroupReference": 0,
+  "MainReference": 56789,
+  "UpdateCardGroupReference": 89,
+  "NewCardGroupReference": 78,
   "MoveCardReferences": [
     {
-      "CardId": 0,
-      "PAN": "string",
-      "Reference": 0
+      "CardId": 125,
+      "PAN": "7002861007636000020",
+      "Reference": 58764
     }
   ],
   "Error": {
-    "Code": "0000",
-    "Description": "Success"
+    "Description": "Success",
+    "Code": "0000"
   },
-  "RequestId": "string"
+  "Warnings": [
+    {
+      "Type": "System Outage",
+      "Message": "System is down for upgradation."
+    }
+  ],
+  "RequestId": "ed557f02-c7d7-4c01-b3e5-11bf3239c8ed"
 }
 ```
 
@@ -1345,9 +1350,9 @@ print(result)
 
 | HTTP Status Code | Error Description | Exception Class |
 |  --- | --- | --- |
-| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 403 | The server understood the request but refuses to authorize it. | [`ErrorUserAccessError1Exception`](../../doc/models/error-user-access-error-1-exception.md) |
-| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
-| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | [`DefaultErrorException`](../../doc/models/default-error-exception.md) |
+| 400 | The server cannot or will not process the request  due to something that is perceived to be a client<br>error (e.g., malformed request syntax, invalid<br>request message framing, or deceptive request routing). | `APIException` |
+| 401 | The request has not been applied because it lacks valid  authentication credentials for the target resource. | `APIException` |
+| 403 | The server understood the request but refuses to authorize it. | `APIException` |
+| 404 | The origin server did not find a current representation  for the target resource or is not willing to disclose  that one exists. | `APIException` |
+| 500 | The server encountered an unexpected condition the prevented it from fulfilling the request. | `APIException` |
 

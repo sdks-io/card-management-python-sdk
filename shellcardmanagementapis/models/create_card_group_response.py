@@ -21,7 +21,7 @@ class CreateCardGroupResponse(object):
     Attributes:
         main_reference (int): Reference number for tracking the execution of
             the requests – new Card Group creation and to move the cards to
-            the new card group.  Reference number will be null when the
+            the new card group. Reference number will be null when the
             validations of new card group parameters fail.
         new_card_group_reference (int): Reference number for tracking the
             execution of card group creation.   Reference number will be null
@@ -30,8 +30,8 @@ class CreateCardGroupResponse(object):
             (List[CreateCardGroupResponseSuccessfulRequestsItems]): List of
             cards validated and submitted successfully for processing.
         error_cards (List[CreateCardGroupResponseErrorCardsItems]): List of
-            cards that failed validation and not submitted for processing. 
-            Entity: FailedCardReference  This list will be empty when the
+            cards that failed validation and not submitted for processing.
+            Entity: FailedCardReference This list will be empty when the
             validations of new card group parameters fail.
         error (ErrorStatus): TODO: type description here.
         request_id (str): API Request Id

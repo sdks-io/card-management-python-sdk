@@ -5,8 +5,7 @@ The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| `url` | `UrlEnum` | This variable specifies the type of environment. Environments:<br><br>* `api.shell.com` - Production<br>* `api-test.shell.com` - SIT<br>*Default*: `'api-test.shell.com/test'` |
-| `environment` | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
+| `environment` | `Environment` | The API environment. <br> **Default: `Environment.SIT`** |
 | `http_client_instance` | `HttpClient` | The Http Client passed from the sdk user for making requests |
 | `override_http_client_configuration` | `bool` | The value which determines to override properties of the passed Http Client from the sdk user |
 | `http_call_back` | `HttpCallBack` | The callback value that is invoked before and after an HTTP call is made to an endpoint |

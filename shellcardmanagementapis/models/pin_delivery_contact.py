@@ -18,43 +18,42 @@ class PINDeliveryContact(object):
     ignored.
 
     Attributes:
-        delivery_contact_title (str): Title of the contact person <br /> 
+        delivery_contact_title (str): Title of the contact person <br />
             Optional
-        delivery_contact_name (str): Name of the contact person <br /> 
-            Mandatory - If PINAdviceType is paper else optional. <br />  Max
-            field length: 50  <br />  Optional
-        delivery_company_name (str): Company name <br />  Mandatory - If
-            PINAdviceType is paper else optional. <br />  Max field length: 50
-            <br />  Optional
-        delivery_address_line_1 (str): Address line 1 <br />  Mandatory - if
-            PINAdviceType is paper else optional.<br />  Max field length: 40 
-            <br />  Optional
-        delivery_address_line_2 (str): Address line 2 <br />  Optional <br /> 
-            Max field length: 40  <br />  Optional
-        delivery_address_line_3 (str): Address line 3 <br />  Optional <br /> 
-            Max field length: 40  <br />  Optional
-        delivery_zip_code (str): ZIP code <br />  Mandatory - if PINAdviceType
-            is paper else optional. <br />  Max field length: 10  <br /> 
+        delivery_contact_name (str): Name of the contact person <br />
+            Mandatory - If PINAdviceType is paper else optional. <br /> Max
+            field length: 50  <br /> Optional
+        delivery_company_name (str): Company name <br /> Mandatory - If
+            PINAdviceType is paper else optional. <br /> Max field length: 50 
+            <br /> Optional
+        delivery_address_line_1 (str): Address line 1 <br /> Mandatory - if
+            PINAdviceType is paper else optional.<br /> Max field length: 40 
+            <br /> Optional
+        delivery_address_line_2 (str): Address line 2 <br /> Optional <br />
+            Max field length: 40  <br /> Optional
+        delivery_address_line_3 (str): Address line 3 <br /> Optional <br />
+            Max field length: 40  <br /> Optional
+        delivery_zip_code (str): ZIP code <br /> Mandatory - if PINAdviceType
+            is paper else optional. <br /> Max field length: 10  <br />
             Optional
-        delivery_city (str): City  <br />  Mandatory - If PINAdviceType is
-            paper else optional. <br />  Max field length: 40  <br /> 
-            Optional
-        delivery_region_id (int): Region Id  <br />  Optional
-        delivery_region (str): Region  <br />  Optional<br />
-        delivery_country (str): The ISO code of the country.<br />  Mandatory
+        delivery_city (str): City  <br /> Mandatory - If PINAdviceType is
+            paper else optional. <br /> Max field length: 40  <br /> Optional
+        delivery_region_id (int): Region Id  <br /> Optional
+        delivery_region (str): Region  <br /> Optional<br />
+        delivery_country (str): The ISO code of the country.<br /> Mandatory
             if PINAdviceType is paper else optional.
         phone_number (str): Phone number for to send SMS of the PIN in case
-            PINAdviceType is SMS.<br />  Mandatory if PINAdviceType is SMS
-            else optional.<br />  Max field length: 20
+            PINAdviceType is SMS.<br /> Mandatory if PINAdviceType is SMS else
+            optional.<br /> Max field length: 20
         email_address (str): Email address for to send email of the PIN in
-            case PINAdviceType is Email.<br />  Mandatory if PINAdviceType is
-            email else optional.<br />  Max field length: 90. <br/>Note:Based
+            case PINAdviceType is Email.<br /> Mandatory if PINAdviceType is
+            email else optional.<br /> Max field length: 90. <br/>Note:Based
             on the international standard that there can be Max Length 64
             before the @ (the 'Local part’) =64(minimum of 1) Max Lenth after
             the (the domain) = 88 (Minimum of 2)
         save_for_pin_reminder (bool): The given address will be used for
-            sending PIN reminders in future when requested.<br />  Only
-            allowed for paper delivery<br />  Optional
+            sending PIN reminders in future when requested.<br /> Only allowed
+            for paper delivery<br /> Optional
 
     """
 

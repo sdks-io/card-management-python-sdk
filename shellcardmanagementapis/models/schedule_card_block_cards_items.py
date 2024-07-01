@@ -23,28 +23,28 @@ class ScheduleCardBlockCardsItems(object):
         col_co_id (int): Collecting Company Id of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example: 
             1-Philippines  5-UK
-        account_id (int): Account Id of the customer.  Optional if
+        account_id (int): Account Id of the customer. Optional if
             AccountNumber is passed, else Mandatory.
-        account_number (str): Account Number of the customer.  Optional if
+        account_number (str): Account Number of the customer. Optional if
             AccountId is passed, else Mandatory.
         payer_id (int): Payer id of the customer.  Optional if PayerNumber is
             passed, else Mandatory.   Example: 123456
-        payer_number (str): PayerNumber of the customer.  Optional if PayerId
+        payer_number (str): PayerNumber of the customer. Optional if PayerId
             is passed, else Mandatory.
-        card_id (int): Unique Id of the card.  Optional if PAN is passed, else
+        card_id (int): Unique Id of the card. Optional if PAN is passed, else
             Mandatory.
-        pan (str): PAN of the card.  Optional if CardId is passed, else
+        pan (str): PAN of the card. Optional if CardId is passed, else
             Mandatory.
-        card_expiry_date (str): Expiry date of the card.  Optional if CardId
-            is passed, else Mandatory.  Format: yyyyMMdd  Example: 20170930
-        action (str): Action  Mandatory  Possible values are:  • AddOrUpdate –
+        card_expiry_date (str): Expiry date of the card. Optional if CardId is
+            passed, else Mandatory. Format: yyyyMMdd Example: 20170930
+        action (str): Action Mandatory Possible values are: • AddOrUpdate –
             adds a new request or updates any existing requests, with
-            overlapping dates, for the card  • AddAndOverwriteAll - all the
+            overlapping dates, for the card • AddAndOverwriteAll - all the
             existing requests of the given card will be removed and a new
-            request with the specified FromDate and ToDate will be added.  •
+            request with the specified FromDate and ToDate will be added. •
             Delete – deletes any existing request with the same start date and
-            end date for the card  • DeleteAll – deletes all saved future
-            dated requests (all block and unblock requests) of the card.
+            end date for the card • DeleteAll – deletes all saved future dated
+            requests (all block and unblock requests) of the card.
         from_date (str): Effective start date of Block / Unblock  Allowed
             Formats: –  • yyyyMMdd  • yyyyMMdd HH:mm  Eg: 20230512 14:30,
             20230512  Optional  Default value:   •  If the card status is
@@ -55,23 +55,22 @@ class ScheduleCardBlockCardsItems(object):
             the Card Status is “Temporary Block (Customer)” and FromDate is
             provided – The fromdate & time is considered as starting period of
             unblock request.
-        to_date (str): Effective end date of Block / Unblock  Allowed Formats:
-            –  • yyyyMMdd  • yyyyMMdd HH:mm  Eg: 20230512 14:30, 20230512 
-            Optional – When the Card status is Active else mandatory.  When
-            not provided, the card will remain blocked until manually
-            unblocked.  Note:  • Time is considered only when the
-            “IsTimeSupported” flag is set as true, else it will be considered
-            as only date.  • Date & Time passed in the request will be
-            considered in UTC time-zone.  • If the card is currently in
-            ‘Temporary Block (Customer)’ status, then this date is treated as
-            the unblock date and is mandatory.  • If the Card Status is
-            “Temporary Block (Customer)” and FromDate & ToDate is provided -
-            The request will be considered as a scheduled specific period
-            unblock request.
+        to_date (str): Effective end date of Block / Unblock Allowed Formats:
+            – • yyyyMMdd • yyyyMMdd HH:mm Eg: 20230512 14:30, 20230512
+            Optional – When the Card status is Active else mandatory. When not
+            provided, the card will remain blocked until manually unblocked.
+            Note: • Time is considered only when the “IsTimeSupported” flag is
+            set as true, else it will be considered as only date. • Date &
+            Time passed in the request will be considered in UTC time-zone. •
+            If the card is currently in ‘Temporary Block (Customer)’ status,
+            then this date is treated as the unblock date and is mandatory. •
+            If the Card Status is “Temporary Block (Customer)” and FromDate &
+            ToDate is provided - The request will be considered as a scheduled
+            specific period unblock request.
         caller (str): The caller to be notified with the status of the
             scheduled card block / unblock request.  Mandatory, if
             NotifyCaller is true.   Maximum field length: 20
-        notify_caller (bool): True/False.  Optional.  Default: False  If true,
+        notify_caller (bool): True/False. Optional. Default: False If true,
             the caller would be notified back with the status as success or
             failure after the scheduled card block / unblock request is
             processed.

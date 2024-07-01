@@ -16,13 +16,13 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
     TODO: type model description here.
 
     Attributes:
-        account_number (str): Account Number of the customer.  Optional if
+        account_number (str): Account Number of the customer. Optional if
             AccountId is passed, else Mandatory.
-        account_id (int): Account Id of the customer.  Optional if
+        account_id (int): Account Id of the customer. Optional if
             AccountNumber is passed, else Mandatory.
-        pan (str): PAN of the card.  Optional if CardId is passed, else
+        pan (str): PAN of the card. Optional if CardId is passed, else
             Mandatory.
-        card_id (int): Card Id of the card.  Optional if PAN is passed, else
+        card_id (int): Card Id of the card. Optional if PAN is passed, else
             Mandatory.
         reissue_setting (bool): Reissue setting of the card.   Values:  True –
             Card will be Reissued when nearing its expiry date  False – Card

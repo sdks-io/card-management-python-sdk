@@ -17,111 +17,110 @@ class ReplaceCardSettings(object):
 
     Attributes:
         self_selected_encrypted_pin (str): The encrypted value of
-            self-selected PIN.<br />  Optional – When not provided, the PIN
+            self-selected PIN.<br /> Optional – When not provided, the PIN
             will be auto generated(if the card token type supports PIN) and
-            delivered based on the given PIN delivery option.<br />  Max
+            delivered based on the given PIN delivery option.<br /> Max
             Length: 256
         self_selected_pin_key_id (str): KeyId of the PIN encrypted value.<br
-            />  Mandatory, if opted for self-selected PIN else optional.<br />
+            /> Mandatory, if opted for self-selected PIN else optional.<br />
             Max Length: 30
         self_selected_pin_session_key (str): Encoded message of the TCS form
-            which is used for encrypting the PIN of this card.<br />  The
+            which is used for encrypting the PIN of this card.<br /> The
             encode message forms are provided to clients by another API
-            (“TCS”).<br />  Instructions to encrypt the PIN is covered in the
-            related API specifications document.<br />  Mandatory –If opted
-            for self-selected PIN else optional.  Max Length: 1024
-        validate_fleet_id (bool): True/False.<br />  Optional <br />  Default:
-            False<br />  For cards ordered with Validate Fleet Id parameter
-            set to true, CFGW will be notified to enable this validation for
-            the card.<br />  Note: When “FleetIdInputRequired” is not set on
-            the card, validate fleet id will be considered false regardless of
-            the value passed on this parameter.
+            (“TCS”).<br /> Instructions to encrypt the PIN is covered in the
+            related API specifications document.<br /> Mandatory –If opted for
+            self-selected PIN else optional. Max Length: 1024
+        validate_fleet_id (bool): True/False.<br /> Optional <br /> Default:
+            False<br /> For cards ordered with Validate Fleet Id parameter set
+            to true, CFGW will be notified to enable this validation for the
+            card.<br /> Note: When “FleetIdInputRequired” is not set on the
+            card, validate fleet id will be considered false regardless of the
+            value passed on this parameter.
         card_group_id (int): Existing Card Group ID, under which the
-            replacement card is to be created.<br />  Pass “-1” if the
-            replacement card should not be assigned to any card group.<br /> 
-            Optional <br />  If not provided, the replacement card will be
+            replacement card is to be created.<br /> Pass “-1” if the
+            replacement card should not be assigned to any card group.<br />
+            Optional <br /> If not provided, the replacement card will be
             created under the same card group as the current card.
-        card_delivery_type (int): Card delivery type.<br />  Mandatory <br /> 
-            Allowed Value: <br />  1. Customer Address(Default) <br />  2. New
-            Delivery Address <br />  3. Old Card Address
-        delivery_contact_title (str): Title of the contact person. <br /> 
-            Optional<br />  Max field length: 10
-        delivery_contact_name (str): Name of the contact person <br /> 
+        card_delivery_type (int): Card delivery type.<br /> Mandatory <br />
+            Allowed Value: <br /> 1. Customer Address(Default) <br /> 2. New
+            Delivery Address <br /> 3. Old Card Address
+        delivery_contact_title (str): Title of the contact person. <br />
+            Optional<br /> Max field length: 10
+        delivery_contact_name (str): Name of the contact person <br />
             Mandatory - If CardDeliveryType  is 2 and OrderCardReplacement is
-            passed as true.<br />  Max field length: 50
-        delivery_company_name (str): Company name <br />  Mandatory - If
+            passed as true.<br /> Max field length: 50
+        delivery_company_name (str): Company name <br /> Mandatory - If
             CardDeliveryType  is 2 and OrderCardReplacement is passed as true.
             Max field length: 50
-        delivery_address_line_1 (str): Address line 1 <br />  Mandatory - If
+        delivery_address_line_1 (str): Address line 1 <br /> Mandatory - If
             CardDeliveryType  is 2 and OrderCardReplacement is passed as
-            true.<br />  Max field length: 40
-        delivery_address_line_2 (str): Address line 2 <br />  Optional <br /> 
+            true.<br /> Max field length: 40
+        delivery_address_line_2 (str): Address line 2 <br /> Optional <br />
             Max field length: 40
-        delivery_address_line_3 (str): Address line 3 <br />  Optional<br /> 
+        delivery_address_line_3 (str): Address line 3 <br /> Optional<br />
             Max field length: 40
-        delivery_zip_code (str): ZIP code <br />  Mandatory - If
+        delivery_zip_code (str): ZIP code <br /> Mandatory - If
             CardDeliveryType  is 2 and OrderCardReplacement is passed as
-            true.<br />  Max field length: 10
-        delivery_city (str): City  <br />  Mandatory - If CardDeliveryType  is
-            2 and OrderCardReplacement is passed as true.<br />  Max field
+            true.<br /> Max field length: 10
+        delivery_city (str): City  <br /> Mandatory - If CardDeliveryType  is
+            2 and OrderCardReplacement is passed as true.<br /> Max field
             length: 40
-        delivery_region_id (int): Region Id  <br />  Optional
-        delivery_region (str): Region  <br />  Optional<br />  When region is
+        delivery_region_id (int): Region Id  <br /> Optional
+        delivery_region (str): Region  <br /> Optional<br /> When region is
             passed
-        delivery_country (str): The ISO code of the country.<br />  Mandatory
-            - If CardDeliveryType  is 2 and OrderCardReplacement is passed as
+        delivery_country (str): The ISO code of the country.<br /> Mandatory -
+            If CardDeliveryType  is 2 and OrderCardReplacement is passed as
             true
         delivery_country_id (int): The countryId of gicen country.<br />
-        phone_number (str): Phone number for to send SMS. <br />  Optional<br
-            />  Max field length: 20
-        email_address (str): Email address for to send email.<br />  Mandatory
-            if PINAdviceType is email else optional.<br />  Max field length:
+        phone_number (str): Phone number for to send SMS. <br /> Optional<br
+            /> Max field length: 20
+        email_address (str): Email address for to send email.<br /> Mandatory
+            if PINAdviceType is email else optional.<br /> Max field length:
             90
         pin_delivery_address_type (int): PIN delivery address type
-            selection.<br />  Optional<br />  Allowed Values:<br />  1.
-            Customer Address(Default)<br />  2. Card Address<br />  3. New
-            Delivery Address
-        pin_advice_type (int): PIN delivery method.<br />  Mandatory when
-            OrderReplacement Is true.<br />  Allowed Values:<br />  1.
-            Paper<br />  2. Email<br />  3. SMS<br />  4. None
-        pin_delivery_contact_title (str): Title of the contact person.<br /> 
-            Optional <br />  Max field length: 10
-        pin_delivery_contact_name (str): Name of the contact person.<br /> 
-            Mandatory - If PINAdviceType is paper else optional.<br />  Max
+            selection.<br /> Optional<br /> Allowed Values:<br /> 1. Customer
+            Address(Default)<br /> 2. Card Address<br /> 3. New Delivery
+            Address
+        pin_advice_type (int): PIN delivery method.<br /> Mandatory when
+            OrderReplacement Is true.<br /> Allowed Values:<br /> 1. Paper<br
+            /> 2. Email<br /> 3. SMS<br /> 4. None
+        pin_delivery_contact_title (str): Title of the contact person.<br />
+            Optional <br /> Max field length: 10
+        pin_delivery_contact_name (str): Name of the contact person.<br />
+            Mandatory - If PINAdviceType is paper else optional.<br /> Max
             field length: 50
-        pin_delivery_company_name (str): Company name.<br />  Mandatory - If
-            PINAdviceType is paper else optional.<br />  Max field length: 50
-        pin_delivery_address_line_1 (str): Address line 1.<br />  Mandatory -
-            If PINAdviceType is paper else optional.<br />  Max field length:
+        pin_delivery_company_name (str): Company name.<br /> Mandatory - If
+            PINAdviceType is paper else optional.<br /> Max field length: 50
+        pin_delivery_address_line_1 (str): Address line 1.<br /> Mandatory -
+            If PINAdviceType is paper else optional.<br /> Max field length:
             40
-        pin_delivery_address_line_2 (str): Address line 2.<br />  Optional <br
-            />  Max field length: 40
-        pin_delivery_address_line_3 (str): Address line 3.<br />  Optional <br
-            />  Max field length: 40
-        pin_delivery_zip_code (str): ZIP code.<br />  Mandatory - if
-            PINAdviceType is paper else optional. <br />  Max field length:
-            10
-        pin_delivery_city (str): City.<br />  Mandatory - If PINAdviceType is
-            paper else optional. <br />  Max field length: 40
-        pin_delivery_region_id (int): Region Id.<br />  Optional
-        pin_delivery_region (str): Region.<br />  When region is passed
-        pin_delivery_country (str): The ISO code of the country.<br /> 
-            Mappings for ISO code <br />  Mandatory if PINAdviceType is paper
+        pin_delivery_address_line_2 (str): Address line 2.<br /> Optional <br
+            /> Max field length: 40
+        pin_delivery_address_line_3 (str): Address line 3.<br /> Optional <br
+            /> Max field length: 40
+        pin_delivery_zip_code (str): ZIP code.<br /> Mandatory - if
+            PINAdviceType is paper else optional. <br /> Max field length: 10
+        pin_delivery_city (str): City.<br /> Mandatory - If PINAdviceType is
+            paper else optional. <br /> Max field length: 40
+        pin_delivery_region_id (int): Region Id.<br /> Optional
+        pin_delivery_region (str): Region.<br /> When region is passed
+        pin_delivery_country (str): The ISO code of the country.<br />
+            Mappings for ISO code <br /> Mandatory if PINAdviceType is paper
             else optional.
-        pin_delivery_country_id (int): The countryId of the country.<br /> 
-            Mappings for ISO code<br />  This is not an input parameter.
+        pin_delivery_country_id (int): The countryId of the country.<br />
+            Mappings for ISO code<br /> This is not an input parameter.
         pin_phone_number (str): Phone number for to send SMS of the PIN in
-            case PINAdviceType is SMS.<br />  Mandatory if PINAdviceType is
-            SMS else optional.<br />  Max field length: 20
+            case PINAdviceType is SMS.<br /> Mandatory if PINAdviceType is SMS
+            else optional.<br /> Max field length: 20
         pin_email_address (str): Email address for to send email of the PIN in
-            case PINAdviceType is Email.<br />  Mandatory if PINAdviceType is
-            email else optional.<br />  Max field length: 90
+            case PINAdviceType is Email.<br /> Mandatory if PINAdviceType is
+            email else optional.<br /> Max field length: 90
         save_for_pin_reminder (bool): The given address will be used for
             sending PIN reminders in future when requested.<br />  PIN Advice
             type should be Paper   Optional
         save_for_card_reissue (bool): If this is specified, the contact
             address will be saved in cards platform for card reissue
-            processing.<br />  Optional
+            processing.<br /> Optional
         expiry_date (str): Expiry Date for newly created card to be update in
             cards plot form.<br />  Optional <br />  Format: MMyy <br /> 
             Eg:1221 <br />  If not apply the default Expiry Date.<br /> 

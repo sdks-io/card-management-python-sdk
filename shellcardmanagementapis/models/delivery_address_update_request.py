@@ -24,14 +24,14 @@ class DeliveryAddressUpdateRequest(object):
             Latvia, Lithuania, Estonia, Ukraine etc. It is optional for other
             countries if ColCoID is provided.
         payer_id (int): Payer Id (i.e. Customer Id of the Payment Customer) of
-            the selected payer.  Optional if PayerNumber is passed else
+            the selected payer. Optional if PayerNumber is passed else
             Mandatory
         payer_number (str): Payer Number (Ex: GB000000123) of the selected
-            payer.  Optional if PayerId is passed else Mandatory
-        account_id (int): Account ID of the customer.  Optional if
+            payer. Optional if PayerId is passed else Mandatory
+        account_id (int): Account ID of the customer. Optional if
             AccountNumber is passed, else mandatory.
-        account_number (str): Account Number of the customer.  Optional if
-            AccountId is passed, else mandatory.  This input is a search
+        account_number (str): Account Number of the customer. Optional if
+            AccountId is passed, else mandatory. This input is a search
             criterion, if given.
         delivery_address_updates (List[DeliveryAddressUpdate]): TODO: type
             description here.

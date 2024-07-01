@@ -24,16 +24,16 @@ class CardTypeRequest(object):
             countries if ColCoID is provided.
         payer_id (int): Payer Id of the selected payer.
         payer_number (str): Payer Number of the selected payer.
-        account_id (int): Account Id of the customer.  Optional if
+        account_id (int): Account Id of the customer. Optional if
             AccountNumber is passed else Mandatory.
-        account_number (str): Account Number of the customer.  Optional if
-            AccountId is passed else Mandatory  Example: GB000000124
+        account_number (str): Account Number of the customer. Optional if
+            AccountId is passed else Mandatory Example: GB000000124
         include_usage_restrictions (bool): Include usage restrictions in the
-            response.  Optional field– default value is False.  Possible
-            values: True/False
+            response. Optional field– default value is False. Possible values:
+            True/False
         include_purchase_categories (bool): Include purchase categories in the
-            response.  Optional field– default value is False.  Possible
-            values: True/False
+            response. Optional field– default value is False. Possible values:
+            True/False
 
     """
 

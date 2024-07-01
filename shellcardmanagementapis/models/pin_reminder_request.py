@@ -18,23 +18,23 @@ class PINReminderRequest(object):
     the PINReminder operation.
 
     Attributes:
-        account_id (int): Account Id of the customer.<br />  Optional if
-            AccountNumber is passed, else Mandatory.<br />  This input is a
+        account_id (int): Account Id of the customer.<br /> Optional if
+            AccountNumber is passed, else Mandatory.<br /> This input is a
             search criterion, if given.
-        account_number (str): Account Number of the customer.<br />  Optional
-            if AccountId is passed, else Mandatory.<br />  This input is a
+        account_number (str): Account Number of the customer.<br /> Optional
+            if AccountId is passed, else Mandatory.<br /> This input is a
             search criterion, if given.
         col_co_code (int): Collecting Company Code (Shell Code) of the
-            selected payer. <br />  Mandatory for serviced OUs such as
-            Romania, Latvia, Lithuania, Estonia, Ukraine etc. <br />  It is
-            optional for other countries if ColCoID is provided.
-        col_co_id (int): Collecting Company Id of the selected payer<br /> 
+            selected payer. <br /> Mandatory for serviced OUs such as Romania,
+            Latvia, Lithuania, Estonia, Ukraine etc. <br /> It is optional for
+            other countries if ColCoID is provided.
+        col_co_id (int): Collecting Company Id of the selected payer<br />
             Optional if ColCoCode is passed else Mandatory.
         payer_id (int): Payer Id (i.e. Customer Id of the Payment Customer of
-            the selected payer.<br />  Optional if PayerNumber is passed else
+            the selected payer.<br /> Optional if PayerNumber is passed else
             Mandatory
         payer_number (str): Payer Number (Ex: GB000000123) of the selected
-            payer.<br />  Optional if PayerId is passed else Mandatory
+            payer.<br /> Optional if PayerId is passed else Mandatory
         pin_reminder_card_details (List[PINReminderCardDetails]): List of
             PINReminderCardDetails entity. The fields of this entity are
             described below.

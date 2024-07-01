@@ -24,14 +24,14 @@ class UpdateMPayRegStatusRequest(object):
             selected payer.   Mandatory for serviced OUs such as Romania,
             Latvia, Lithuania, Estonia, Ukraine etc. It is optional for other
             countries if ColCoID is provided.  Example:  86-Philippines  5-UK
-        payer_id (int): Payer Id  of the selected payer.  Optional if
+        payer_id (int): Payer Id  of the selected payer. Optional if
             PayerNumber is passed else Mandatory
         payer_number (str): Payer Number (Ex: GB000000123) of the selected
-            payer.  Optional if PayerId is passed else Mandatory
+            payer. Optional if PayerId is passed else Mandatory
         m_pay_requests (List[UpdateMPayRegStatusRequestMPayRequestsItems]):
             List of MPay Request to be updated for Fleet Manager approval
-            status.  Mandatory  Maximum number of requests that can be
-            submitted are 50
+            status. Mandatory Maximum number of requests that can be submitted
+            are 50
 
     """
 

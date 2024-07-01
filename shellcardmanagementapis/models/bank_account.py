@@ -25,8 +25,8 @@ class BankAccount(object):
         currency_code (str): Bank Account currency ISO code.
         currency_symbol (str): Bank Account currency Symbol.
         country_iso_code (str): Bank Account Country ISO Code
-        country (str): Bank Account Country Name  1-Austria  2-Belgium 
-            3-Bulgaria  4-Croatia  5-Czech Republic
+        country (str): Bank Account Country Name 1-Austria 2-Belgium
+            3-Bulgaria 4-Croatia 5-Czech Republic
         sort_code (str): Payer bank Sort Code
         swift_code (str): Payer Bank Swift Code
         bank_type (str): Bank Type Id and Description

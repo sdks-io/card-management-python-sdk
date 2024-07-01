@@ -17,22 +17,21 @@ The package is compatible with Python versions `3 >=3.7, <= 3.11`.
 Install the package from PyPi using the following pip command:
 
 ```python
-pip install card-management-sdk==1.0.0
+pip install card-management-sdk==1.1.0
 ```
 
 You can also view the package at:
-https://pypi.python.org/pypi/card-management-sdk/1.0.0
+https://pypi.python.org/pypi/card-management-sdk/1.1.0
 
 ## Initialize the API Client
 
-**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/client.md)
+**_Note:_** Documentation for the client can be found [here.](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/client.md)
 
 The following parameters are configurable for the API Client:
 
 | Parameter | Type | Description |
 |  --- | --- | --- |
-| `url` | `UrlEnum` | This variable specifies the type of environment. Environments:<br><br>* `api.shell.com` - Production<br>* `api-test.shell.com` - SIT<br>*Default*: `'api-test.shell.com/test'` |
-| `environment` | `Environment` | The API environment. <br> **Default: `Environment.PRODUCTION`** |
+| `environment` | `Environment` | The API environment. <br> **Default: `Environment.SIT`** |
 | `http_client_instance` | `HttpClient` | The Http Client passed from the sdk user for making requests |
 | `override_http_client_configuration` | `bool` | The value which determines to override properties of the passed Http Client from the sdk user |
 | `http_call_back` | `HttpCallBack` | The callback value that is invoked before and after an HTTP call is made to an endpoint |
@@ -41,8 +40,8 @@ The following parameters are configurable for the API Client:
 | `backoff_factor` | `float` | A backoff factor to apply between attempts after the second try. <br> **Default: 2** |
 | `retry_statuses` | `Array of int` | The http statuses on which retry is to be done. <br> **Default: [408, 413, 429, 500, 502, 503, 504, 521, 522, 524]** |
 | `retry_methods` | `Array of string` | The http methods on which retry is to be done. <br> **Default: ['GET', 'PUT']** |
-| `basic_auth_credentials` | [`BasicAuthCredentials`](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/basic-authentication.md) | The credential object for Basic Authentication |
-| `bearer_token_credentials` | [`BearerTokenCredentials`](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/oauth-2-client-credentials-grant.md) | The credential object for OAuth 2 Client Credentials Grant |
+| `basic_auth_credentials` | [`BasicAuthCredentials`](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/$a/https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/basic-authentication.md) | The credential object for Basic Authentication |
+| `bearer_token_credentials` | [`BearerTokenCredentials`](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/$a/https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/oauth-2-client-credentials-grant.md) | The credential object for OAuth 2 Client Credentials Grant |
 
 The API client can be initialized as follows:
 
@@ -59,23 +58,34 @@ client = ShellcardmanagementapisClient(
 )
 ```
 
+## Environments
+
+The SDK can be configured to use a different environment for making API calls. Available environments are:
+
+### Fields
+
+| Name | Description |
+|  --- | --- |
+| SIT | **Default** |
+| Production | - |
+
 ## Authorization
 
 This API uses the following authentication schemes.
 
-* [`BasicAuth (Basic Authentication)`](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/basic-authentication.md)
-* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/$a/https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/oauth-2-client-credentials-grant.md)
+* [`BasicAuth (Basic Authentication)`](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/$a/https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/basic-authentication.md)
+* [`BearerToken (OAuth 2 Client Credentials Grant)`](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/$a/https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/oauth-2-client-credentials-grant.md)
 
 ## List of APIs
 
-* [O Auth Authorization](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/controllers/o-auth-authorization.md)
-* [Customer](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/controllers/customer.md)
-* [Restriction](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/controllers/restriction.md)
-* [Card](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/controllers/card.md)
+* [O Auth Authorization](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/controllers/o-auth-authorization.md)
+* [Customer](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/controllers/customer.md)
+* [Restriction](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/controllers/restriction.md)
+* [Card](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/controllers/card.md)
 
 ## Classes Documentation
 
-* [Utility Classes](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/utility-classes.md)
-* [HttpResponse](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/http-response.md)
-* [HttpRequest](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.0.0/doc/http-request.md)
+* [Utility Classes](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/utility-classes.md)
+* [HttpResponse](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/http-response.md)
+* [HttpRequest](https://www.github.com/sdks-io/card-management-python-sdk/tree/1.1.0/doc/http-request.md)
 

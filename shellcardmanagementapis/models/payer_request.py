@@ -17,9 +17,9 @@ class PayerRequest(object):
     TODO: type model description here.
 
     Attributes:
-        payers (List[Payers]): List of Payer entity.  Optional.  Note:  • Max
+        payers (List[Payers]): List of Payer entity. Optional. Note: • Max
             number of payers allowed in the input is 10, if it exceeds in the
-            input it will throw an error.  • This value is configurable.
+            input it will throw an error. • This value is configurable.
             Initial configuration will be 1000 and will change to 10 once SFH
             changes are integrated.
         return_basic_details_only (bool): Returns only the high-level basic

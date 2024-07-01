@@ -25,14 +25,14 @@ class CustomerDetailResponse(object):
         account_number (str): Account Number of the selected account.
         account_short_name (str): Short name of the customer.
         account_trading_name (str): Trading name of the customer
-        allow_fleet_id_input (bool): True/False.  When false, users should not
+        allow_fleet_id_input (bool): True/False. When false, users should not
             be allowed to enable Fleet Id prompt option while ordering cards
             under this account.
-        band (str): Band Id and Description of the Payer in Card Platform 
-            e.g. (Id – Description):  1-Platinum  2-Gold  3-Silver  4-Bronze
+        band (str): Band Id and Description of the Payer in Card Platform e.g.
+            (Id – Description): 1-Platinum 2-Gold 3-Silver 4-Bronze
         billing_address (Address): TODO: type description here.
-        card_group_position (str): Card group position at –  • Payer – Payer
-            level  • Account – Account level
+        card_group_position (str): Card group position at – • Payer – Payer
+            level • Account – Account level
         correspondence_address (Address): TODO: type description here.
         delivery_addresses (List[DeliveryAddresses]): TODO: type description
             here.
@@ -45,8 +45,8 @@ class CustomerDetailResponse(object):
             the account
         is_invoice_point (bool): Whether the account is an invoice point.
         marketing_segmentation (str): Marketing Segmentation id and
-            description  e.g. (Id – Description):  1-National CRT 
-            2-International CRT & IKAs  3-Small Customers 
+            description e.g. (Id – Description): 1-National CRT
+            2-International CRT & IKAs 3-Small Customers
             4-National/International Fleet/IKA
         vat_number (str): VAT Registration Number of Customer
         payer_id (int): Payer Id of the selected account.
@@ -58,7 +58,7 @@ class CustomerDetailResponse(object):
             Description):  1-Active  2-Requested from UTA   3-Awaiting
             embossing   4-Manufactured  5-Awaiting despatch
         default_pin_advice_type (int): Default PIN AdviceType of the customer.
-            Possible Values:  1. Paper  2. Email  3. SMS  4. None
+            Possible Values: 1. Paper 2. Email 3. SMS 4. None
         pin_advice_types (List[PINAdviceTypes]): TODO: type description here.
         error (ErrorStatus): TODO: type description here.
         request_id (str): API Request id

@@ -19,31 +19,31 @@ class UpdateCardRenewalAddress(object):
     field is ignored otherwise.
 
     Attributes:
-        contact_name (str): Contact name  Note: Mandatory when
+        contact_name (str): Contact name Note: Mandatory when
             ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is
-            ignored otherwise.    Max Length: 50
-        contact_title (str): Title  Max Length: 50
-        company_name (str): Company name.  Note: Mandatory when
+            ignored otherwise.   Max Length: 50
+        contact_title (str): Title Max Length: 50
+        company_name (str): Company name. Note: Mandatory when
             ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is
-            ignored otherwise.  Max Length: 50
-        address_line (str): Address line 1,2 and 3  Note: Mandatory when
+            ignored otherwise. Max Length: 50
+        address_line (str): Address line 1,2 and 3 Note: Mandatory when
             ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is
-            ignored otherwise.  Max Length: 128  Note: -Each address line
-            should be separated by “\r\n”.
-        zip_code (str): ZipCode  Note: Mandatory when
+            ignored otherwise. Max Length: 128 Note: -Each address line should
+            be separated by “\r\n”.
+        zip_code (str): ZipCode Note: Mandatory when
             ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is
-            ignored otherwise.  Max Length: 10
-        city (str): City  Note: Mandatory when ‘UseCustomerDefaultAddress’ is
-            set to ‘false’. The field is ignored otherwise.  Max Length: 40
+            ignored otherwise. Max Length: 10
+        city (str): City Note: Mandatory when ‘UseCustomerDefaultAddress’ is
+            set to ‘false’. The field is ignored otherwise. Max Length: 40
         region_id (int): Region id of card.
-        country_id (int): Country ID  Note: Mandatory when
+        country_id (int): Country ID Note: Mandatory when
             ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is
             ignored otherwise.
         email_address (str): Email Address    Max Length: 90  Note: -  Based
             on the international standard that there can be   • Max Length 64
             before the @ (the 'Local part’) =64(minimum of 1)  • Max Lenth
             after the (the domain) = 88 (Minimum of 2)
-        phone_number (str): Phone number  Optional  Max Length: 16
+        phone_number (str): Phone number Optional Max Length: 16
 
     """
 

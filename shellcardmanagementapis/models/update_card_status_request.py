@@ -20,19 +20,18 @@ class UpdateCardStatusRequest(object):
         cards (List[UpdateCard]): List of UpdateCardRequest entity. Each card
             in the list will be updated to the given target status. The
             details of the entity are given below.
-        reason_id (int): Reason id for updating the card status.<br /> 
-            Optional<br />  Either Reason ID or Text is madatory when
-            TargetStatus is ‘Block’ or ‘Damaged’. Else ignored.<br /> 
-            Possible values:<br />  -Lost <br />  -Stolen <br />  -Card no
-            longer required<br />  When passed, the reason Id will be
-            validated with the allowed reason ids configured for the card type
-            of the card.<br />  . If the given reason Id is not allowed for
-            certain card types, then the request will be rejected as invalid
-            ResonId.
-        reason_text (str): Reason text for updating the card status.<br /> 
+        reason_id (int): Reason id for updating the card status.<br />
+            Optional<br /> Either Reason ID or Text is madatory when
+            TargetStatus is ‘Block’ or ‘Damaged’. Else ignored.<br /> Possible
+            values:<br /> -Lost <br /> -Stolen <br /> -Card no longer
+            required<br /> When passed, the reason Id will be validated with
+            the allowed reason ids configured for the card type of the
+            card.<br /> . If the given reason Id is not allowed for certain
+            card types, then the request will be rejected as invalid ResonId.
+        reason_text (str): Reason text for updating the card status.<br />
             Optional Either Reason ID or Text is madatory when TargetStatus is
-            ‘Block’ or ‘Damaged’. Else ignored.<br />  Possible values:<br /> 
-            -Lost <br />  -Stolen <br />  -Card no longer required <br />  
+            ‘Block’ or ‘Damaged’. Else ignored.<br /> Possible values:<br />
+            -Lost <br /> -Stolen <br /> -Card no longer required <br />  
             Optional – However, either Reason ID or Text is madatory when
             TargetStatus is ‘Block’ or ‘Damaged’.<br />   When Reason Text is
             passed and the Target Status is either Block or Damaged, the text
@@ -42,8 +41,8 @@ class UpdateCardStatusRequest(object):
             Customer blocked’ will be used as the reason for ‘Temporary
             Block’.
         target_status (str): The list of cards passed in Cards parameter will
-            be updated to this status.<br />  Mandatory<br />  Allowed
-            values:<br />  -TemporaryBlock<br />  -Unblock<br />  -Block<br />
+            be updated to this status.<br /> Mandatory<br /> Allowed
+            values:<br /> -TemporaryBlock<br /> -Unblock<br /> -Block<br />
             -Damaged<br />
 
     """

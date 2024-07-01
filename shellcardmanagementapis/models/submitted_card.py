@@ -18,28 +18,28 @@ class SubmittedCard(object):
 
     Attributes:
         replacement_card_reference (int): Reference number for tracking of
-            replacement card order request of the specific card,<br />  This
-            is applicable for requests with target status as Block and
+            replacement card order request of the specific card,<br /> This is
+            applicable for requests with target status as Block and
             OrderReplacement passed as True.
         update_card_reference (int): Reference number for tracking of update
             status request of the specific card,
-        account_id (int): Account Id of the customer.<br />  Optional if
+        account_id (int): Account Id of the customer.<br /> Optional if
             AccountNumber is passed, else Mandatory.
-        account_number (str): Account Number of the customer.<br />  Optional
+        account_number (str): Account Number of the customer.<br /> Optional
             if AccountId is passed, else Mandatory.
-        card_expiry_date (str): Expiry date of the card.<br />  Mandatory if
-            PAN is passed, else optional.<br />  Format: yyyyMMdd
-        card_id (int): Card Id of the card.<br />  Optional if PAN is passed,
+        card_expiry_date (str): Expiry date of the card.<br /> Mandatory if
+            PAN is passed, else optional.<br /> Format: yyyyMMdd
+        card_id (int): Card Id of the card.<br /> Optional if PAN is passed,
             else Mandatory.
-        col_co_code (int): Collecting company code of the customer. <br /> 
+        col_co_code (int): Collecting company code of the customer. <br />
             Optional if ColCoId is passed, else Mandatory.<br />
-        col_co_id (int): Collecting company id of the customer. <br /> 
+        col_co_id (int): Collecting company id of the customer. <br />
             Optional if ColCoCode is passed, else Mandatory.<br />
-        pan (str): PAN of the card.<br />  Optional if CardId is passed, else
+        pan (str): PAN of the card.<br /> Optional if CardId is passed, else
             Mandatory.<br />
-        payer_id (int): Payer id of the customer.<br />  Optional if
+        payer_id (int): Payer id of the customer.<br /> Optional if
             PayerNumber is passed, else Mandatory.
-        payer_number (str): PayerNumber of the customer.<br />  Optional if
+        payer_number (str): PayerNumber of the customer.<br /> Optional if
             PayerId is passed, else Mandatory.
 
     """

@@ -25,9 +25,9 @@ class CardGroupRequest(object):
             Latvia, Lithuania, Estonia, Ukraine etc. It is optional for other
             countries if ColCoID is provided.  Example:  86 for Philippines  5
             for UK
-        payer_id (int): Payer id of the customer.  Optional if PayerNumber is
-            passed, else Mandatory.  This input is a search criterion. 
-            Example: 123456
+        payer_id (int): Payer id of the customer. Optional if PayerNumber is
+            passed, else Mandatory. This input is a search criterion. Example:
+            123456
         payer_number (str): PayerNumber of the customer.  Optional if PayerId
             is passed, else Mandatory.   This input is a search criterion. 
             Example: GB00123456
@@ -35,12 +35,12 @@ class CardGroupRequest(object):
         card_group_name (str): Card Group Name   Optional.   Minimum of 2
             characters should be provided else not considered.  CardGroups
             those have the entered value at any part
-        status (str): Card Group Status  Mandatory  Allowed values:  • ALL  •
-            TERMINATED  • ACTIVE
-        current_page (int): Page Number (as shown to the users)  Optional 
+        status (str): Card Group Status Mandatory Allowed values: • ALL •
+            TERMINATED • ACTIVE
+        current_page (int): Page Number (as shown to the users) Optional
             Default value 1
-        page_size (int): Page Size – Number of records to show on a page. 
-            Optional  Default value 50.  Return all rows if -1 is supplied as
+        page_size (int): Page Size – Number of records to show on a page.
+            Optional Default value 50. Return all rows if -1 is supplied as
             page size.
 
     """

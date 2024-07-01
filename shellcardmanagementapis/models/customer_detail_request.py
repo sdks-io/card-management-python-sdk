@@ -24,13 +24,13 @@ class CustomerDetailRequest(object):
             Latvia, Lithuania, Estonia, Ukraine etc. It is optional for other
             countries if ColCoID is provided.  Example:  86-Philippines  5-UK
         payer_id (int): Payer Id (i.e., Customer Id of the Payment Customer in
-            H3 Cards Platform) of the selected payer.  Optional if PayerNumber
-            is passed else Mandatory  Example: 123456
-        payer_number (str): Payer Number of the selected payer.  Optional if
-            PayerId is passed else Mandatory  Example: GB000000123
-        account_id (int): Account ID of the customer.  Optional if
+            H3 Cards Platform) of the selected payer. Optional if PayerNumber
+            is passed else Mandatory Example: 123456
+        payer_number (str): Payer Number of the selected payer. Optional if
+            PayerId is passed else Mandatory Example: GB000000123
+        account_id (int): Account ID of the customer. Optional if
             AccountNumber is passed else Mandatory.
-        account_number (str): Account Number of the customer.  Optional if
+        account_number (str): Account Number of the customer. Optional if
             AccountId is passed else Mandatory.
 
     """

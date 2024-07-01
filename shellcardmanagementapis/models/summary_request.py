@@ -24,133 +24,132 @@ class SummaryRequest(object):
         account_number (str): Account Number of the customer.<br/>
             Optional.<br/> This input is a search criterion, if given.
         col_co_code (int): Collecting Company Code (Shell Code) of the
-            selected payer. <br />  Optional If ColCo Id or ColCoCountryCode
-            is passed else Mandatory.<br />
+            selected payer. <br /> Optional If ColCo Id or ColCoCountryCode is
+            passed else Mandatory.<br />
         col_co_country_code (str): The 2 character ISO Code for the customer
-            and card owning country.<br />  Optional If ColCoId or ColCoCode
-            is passed else Mandatory.<br />
+            and card owning country.<br /> Optional If ColCoId or ColCoCode is
+            passed else Mandatory.<br />
         col_co_id (int): Collecting Company Id (in ) of the selected payer.<br
-            />  Optional If ColCo Codeor ColCoCountryCode is passed else
+            /> Optional If ColCo Codeor ColCoCountryCode is passed else
             Mandatory <br />
         payer_id (int): Payer Id (i.e. Customer Id of the Payment Customer )
-            of the selected payer.<br />  Optional if PayerNumber is passed
+            of the selected payer.<br /> Optional if PayerNumber is passed
             else Mandatory
-        payer_number (str): Payer Number of the selected payer.<br /> 
-            Optional if PayerId is passed else Mandatory
-        card_group_id (int): Card group id.<br />  Optional. <br />  This
-            input is a search criterion, if given.<br />  When -1 is passed,
-            those cards that does not belong to any card group will be
-            returned.
-        card_group_name (str): Card group name.<br />  Optional.<br />  This
-            input is a search criterion, if given.<br />  If CardGroupId is
+        payer_number (str): Payer Number of the selected payer.<br /> Optional
+            if PayerId is passed else Mandatory
+        card_group_id (int): Card group id.<br /> Optional. <br /> This input
+            is a search criterion, if given.<br /> When -1 is passed, those
+            cards that does not belong to any card group will be returned.
+        card_group_name (str): Card group name.<br /> Optional.<br /> This
+            input is a search criterion, if given.<br /> If CardGroupId is
             provided then this search criterion will be ignored, else, those
             cards that have the card group name completely matching with the
             entered value will be returned
-        card_status (List[str]): Status of the card.<br />  Mandatory.<br /> 
+        card_status (List[str]): Status of the card.<br /> Mandatory.<br />
             Multiple statuses are allowed to be included in the search
-            criteria.<br />  CardStatus filter accepts either of the two
-            values for each status as described below. However, the output
-            field “StatusDescription” is aligned with second value highlighted
-            in italics.<br />  Below are the possible allowed statuses: <br />
-            • ACTIVE or Active – Cards at status Active (The result will
-            include all the cards having the following intermediate statuses
-            as defined s, if the IncludeIntermediateStatus flag is true:
-            Active (Block in progress), Active (Cancel in progress), Active
-            (Marked as damaged)), New (Cancel in progress).<br />  • ON_ORDER
-            or New – Cards at status New <br />  • EXPIRED or Expired – Cards
-            at status Expired<br />  • BLOCKED or Blocked Card – Cards at
-            status Block (The result will include all cards having the
-            following intermediate status as defined, if the
-            IncludeIntermediateStatus flag is true: Blocked card (Unblock in
-            progress))<br />  • TEMP_BLOCKED_CUSTOMER or Temporary
-            Block(Customer) – Cards at status Temporary Blocked By Customer<br
-            />  • TEMP_BLOCKED_SHELL or Temporary Block (Shell) – Cards at
-            Status Temporary Blocked by Shell<br />  • CANCELLED or Cancelled
-            – Cards at status Cancelled<br />  • PENDING_RENEWAL or Pending
-            Renewal - Cards that are in renewal process<br />  • REPLACED or
-            Replaced – Cards at Status Replaced<br />  • FRAUD or Fraud –
-            Cards at Status FRAUD<br />  • ALL
+            criteria.<br /> CardStatus filter accepts either of the two values
+            for each status as described below. However, the output field
+            “StatusDescription” is aligned with second value highlighted in
+            italics.<br /> Below are the possible allowed statuses: <br /> •
+            ACTIVE or Active – Cards at status Active (The result will include
+            all the cards having the following intermediate statuses as
+            defined s, if the IncludeIntermediateStatus flag is true: Active
+            (Block in progress), Active (Cancel in progress), Active (Marked
+            as damaged)), New (Cancel in progress).<br /> • ON_ORDER or New –
+            Cards at status New <br /> • EXPIRED or Expired – Cards at status
+            Expired<br /> • BLOCKED or Blocked Card – Cards at status Block
+            (The result will include all cards having the following
+            intermediate status as defined, if the IncludeIntermediateStatus
+            flag is true: Blocked card (Unblock in progress))<br /> •
+            TEMP_BLOCKED_CUSTOMER or Temporary Block(Customer) – Cards at
+            status Temporary Blocked By Customer<br /> • TEMP_BLOCKED_SHELL or
+            Temporary Block (Shell) – Cards at Status Temporary Blocked by
+            Shell<br /> • CANCELLED or Cancelled – Cards at status
+            Cancelled<br /> • PENDING_RENEWAL or Pending Renewal - Cards that
+            are in renewal process<br /> • REPLACED or Replaced – Cards at
+            Status Replaced<br /> • FRAUD or Fraud – Cards at Status FRAUD<br
+            /> • ALL
         expiring_in_days (int): Cards active and expiring in given number of
-            days.<br />  Optional<br />  Note: When a value is passed in this
+            days.<br /> Optional<br /> Note: When a value is passed in this
             parameter, only active cards will be considered while searching.
         issued_after (str): If provided, only list cards issued after the
-            given date<br />  Optional<br />  Format: yyyyMMdd<br />  Note:
+            given date<br /> Optional<br /> Format: yyyyMMdd<br /> Note:
             Clients to convert this to appropriate DateTime type.
-        pan_ends_with (str): Last digits of the PAN number<br />  Minimum 4
+        pan_ends_with (str): Last digits of the PAN number<br /> Minimum 4
             last digits of the card should be sent for this field to be
-            considered as part of the search criteria.<br />  Optional<br /> 
+            considered as part of the search criteria.<br /> Optional<br />
             Max Length: 50
-        driver_name (List[str]): Driver Name embossed on the card<br /> 
-            Optional<br />  Up to 10 driver names could be passed in the
-            parameter.<br />  Minimum of 4 characters should be provided for
-            each driver name else not considered.<br />  Those cards will be
+        driver_name (List[str]): Driver Name embossed on the card<br />
+            Optional<br /> Up to 10 driver names could be passed in the
+            parameter.<br /> Minimum of 4 characters should be provided for
+            each driver name else not considered.<br /> Those cards will be
             returned when part of the driver name matches with any of the
-            string passed in the list.<br />  Max Length for each Driver name:
+            string passed in the list.<br /> Max Length for each Driver name:
             50
         vehicle_registration_number (List[str]): Vehicle Registration embossed
-            on the card<br />  Optional<br />  Up to 10 vehicle registration
-            numbers could be passed in the parameter.<br />  Minimum of 4
+            on the card<br /> Optional<br /> Up to 10 vehicle registration
+            numbers could be passed in the parameter.<br /> Minimum of 4
             characters should be provided for each VRN else not considered<br
-            />  Those cards will be returned when part of the VRN matches with
-            any of the string passed in the list.<br />  Max Length for each
+            /> Those cards will be returned when part of the VRN matches with
+            any of the string passed in the list.<br /> Max Length for each
             VRN: 50
         include_cards (List[SearchCard]): List of SearchCard entity i.e., Card
-            Id or PAN, which needs to be included in the response.<br /> 
+            Id or PAN, which needs to be included in the response.<br />
             Details of the SerachCard entity are given below.
         exclude_cards (List[SearchCard]): List of SearchCard entity i.e., Card
-            Id or PAN, which needs to be excluded in the response. <br /> 
+            Id or PAN, which needs to be excluded in the response. <br />
             Details of the SerachCard entity are given below.
         exclude_bundle_id (str): Bundle Id for the Card, which needs to be
-            excluded in the response.<br />  Optional
-        card_segment (str): Market segment to which card belongs to.<br /> 
-            Optional.<br />  Allowed values<br />  • CRT<br />  • Fleet
+            excluded in the response.<br /> Optional
+        card_segment (str): Market segment to which card belongs to.<br />
+            Optional.<br /> Allowed values<br /> • CRT<br /> • Fleet
         purchase_category_code (str): Purchase category code of the card.<br
-            />  Optional.
+            /> Optional.
         card_type_code (str): ISO code of the card i.e. first 7 digits of the
-            PAN<br />  Optional.
-        exclude_pending_renewal_cards (bool): Default value is True.<br /> 
+            PAN<br /> Optional.
+        exclude_pending_renewal_cards (bool): Default value is True.<br />
             When true, the API will not return cards that are at Pending
             Renewal Status in Cards Platform
-        exclude_cancelled_cards (bool): Default value is True.<br />  When
+        exclude_cancelled_cards (bool): Default value is True.<br /> When
             true, the API will not return cards that are at Cancelled Status
             in Cards Platform
-        exclude_replaced_cards (bool): Default value is False.<br />  When
+        exclude_replaced_cards (bool): Default value is False.<br /> When
             true, the API will not return cards that are at Replaced Status in
             Cards Platform
-        exclude_fraud_cards (bool): Default value is False.<br />  When true,
+        exclude_fraud_cards (bool): Default value is False.<br /> When true,
             the API will not return cards that are at Fraud Status in Cards
             Platform
-        exclude_card_group_id (int): Optional<br />  When passed, the API will
+        exclude_card_group_id (int): Optional<br /> When passed, the API will
             not return cards that are currently in the Card Group specified
-        exclude_card_group_name (str): Optional<br />  When passed, the API
+        exclude_card_group_name (str): Optional<br /> When passed, the API
             will not return cards that are currently in the Card Group
             specified
-        creation_date (str): Card Creation Date<br />  Optional<br />  Format:
+        creation_date (str): Card Creation Date<br /> Optional<br /> Format:
             yyyyMMdd
-        effective_date (str): Effective date for the Card<br />  Optional<br
-            />  Format: yyyyMMdd
-        network (str): Cards allowed to be used in site.<br />  Optional.<br
-            />  Allowed values<br />  • ShellSitesOnly<br />  •
+        effective_date (str): Effective date for the Card<br /> Optional<br />
+            Format: yyyyMMdd
+        network (str): Cards allowed to be used in site.<br /> Optional.<br />
+            Allowed values<br /> • ShellSitesOnly<br /> •
             PartnersSitesIncluded<br />
         coverage (str): Cards allowed to used nationally/internationally.<br
-            />  Optional.<br />  Allowed values<br />   -National<br />  
+            /> Optional.<br /> Allowed values<br />   -National<br />  
             -International
-        expiry_month (str): Month in which the card is expiring.<br /> 
-            Optional.<br />  Format: MMYYYY
-        exclude_old_cards (bool): Default Value: False<br />  When this field
+        expiry_month (str): Month in which the card is expiring.<br />
+            Optional.<br /> Format: MMYYYY
+        exclude_old_cards (bool): Default Value: False<br /> When this field
             is set to True, cards with below status 2 years (configurable) ago
             and earlier are excluded from the result<br />   -Blocked Card<br
             />   -Expired<br />   -Cancelled<br />   -Suspended<br />  
             -Blocked<br />   -Expired and Cancelled<br />   -Replaced<br />  
             -Replaced By<br />   -Closed<br />   -Fraud<br />
-        reissue_setting (str): Default Value: All<br />  Optional<br />  This
+        reissue_setting (str): Default Value: All<br /> Optional<br /> This
             option is used to filter the list of cards with
-            ‘ReissueSetting’.<br />  If ‘True’, the API will return cards with
-            ReIssueSetting value is true.<br />  If ‘False’, the API will
-            return cards with ReIsssueSetting value is false.<br />  If ‘ALL’,
+            ‘ReissueSetting’.<br /> If ‘True’, the API will return cards with
+            ReIssueSetting value is true.<br /> If ‘False’, the API will
+            return cards with ReIsssueSetting value is false.<br /> If ‘ALL’,
             API will return cards with ReIssueSetting value True &amp; False
-            both.<br />  Allowed Values:<br />  1. All<br />  2. True<br /> 
-            3. False
+            both.<br /> Allowed Values:<br /> 1. All<br /> 2. True<br /> 3.
+            False
         request_id (str): TODO: type description here.
 
     """

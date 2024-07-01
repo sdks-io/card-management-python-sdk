@@ -18,13 +18,13 @@ class ScheduleCardBlockResponseDataItems(object):
     Attributes:
         card_id (int): Unique Id of the card.
         from_date (str): Effective start date & time of Block / Unblock as
-            updated in the intermediate queue table.    Format: yyyyMMdd HH:mm
+            updated in the intermediate queue table.   Format: yyyyMMdd HH:mm
             Eg: 20230512 12:30
         to_date (str): Effective end date & time of Block / Unblock as updated
-            in the intermediate queue table.    Format: yyyyMMdd HH:mm  Eg:
+            in the intermediate queue table.   Format: yyyyMMdd HH:mm Eg:
             20230512 14:30
         reference_id (int): Effective end date & time of Block / Unblock as
-            updated in the intermediate queue table.    Format: yyyyMMdd HH:mm
+            updated in the intermediate queue table.   Format: yyyyMMdd HH:mm
             Eg: 20230512 14:30
 
     """
