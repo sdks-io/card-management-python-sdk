@@ -20,10 +20,10 @@ class SearchAccountLimitResponse(object):
     Attributes:
         request_id (str): Request Id of the API call
         account_id (int): Account ID of the customer.
-        account_number (str): Account Number  Example: GB99215176
+        account_number (str): Account Number Example: GB99215176
         reference_product (str): 3 digit Shell global fuel product code, if
-            already set up.  Example: 021
-        restriction_condition (str): The restriction condition code.  Example:
+            already set up. Example: 021
+        restriction_condition (str): The restriction condition code. Example:
             DECLINE_ALERT
         velocity_limits (List[AccountVelocityLimit]): TODO: type description
             here.

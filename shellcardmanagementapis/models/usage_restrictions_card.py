@@ -16,10 +16,10 @@ class UsageRestrictionsCard(object):
     TODO: type model description here.
 
     Attributes:
-        daily_spend (float): Maximum spend value (amount) allowed per day. 
-            Optional  It allows null in the input field. If Values is passed
-            as null, apply the card type limit. However, if the card type
-            limit is NULL for the same field then No limit will be applied in
+        daily_spend (float): Maximum spend value (amount) allowed per day.
+            Optional It allows null in the input field. If Values is passed as
+            null, apply the card type limit. However, if the card type limit
+            is NULL for the same field then No limit will be applied in
             Gateway.
         weekly_spend (float): Maximum spend value (amount) allowed per week.  
             Optional

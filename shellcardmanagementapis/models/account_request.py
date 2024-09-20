@@ -18,8 +18,9 @@ class AccountRequest(object):
 
     Attributes:
         status (str): Account Status. Optional if StatusList is passed, else
-            mandatory. Ignored if StatusList is passed. Allowed values: • ALL
-            • ACTIVE • BLOCKED • CANCELLED • CREDITLOCK • DELINQUENCYLOCK
+            mandatory. Ignored if StatusList is passed. Allowed values: •   
+            ALL •    ACTIVE •    BLOCKED •    CANCELLED •    CREDITLOCK •   
+            DELINQUENCYLOCK
         include_card_summary (bool): Include card summary details in the
             response.   When passed as false, the card summary related
             parameters on response will be set to null.   Optional – default
@@ -57,8 +58,8 @@ class AccountRequest(object):
             returned.
         status_list (List[str]): Account Statuses.  Optional   Multiple
             statuses are allowed to be included in the search criteria. 
-            Allowed values:  • ACTIVE  • BLOCKED  • CANCELLED  • CREDITLOCK  •
-            DELINQUENCYLOCK
+            Allowed values:  •    ACTIVE  •    BLOCKED  •    CANCELLED  •   
+            CREDITLOCK  •    DELINQUENCYLOCK
 
     """
 

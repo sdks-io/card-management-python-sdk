@@ -58,24 +58,25 @@ class AuditResponseAuditsItems(object):
             will be the UUID of the Driver in the case of
             “MobilePaymentRegistration”
         requested_operation (str): User requested operation.   Possible
-            values:  • OrderCard  • CreateCardGroup  • PINReminder  • MoveCard
-            • UpdateCardStatus  • UpdateCardGroup  • AutoRenew  •
-            BulkCardOrder  • BulkCardBlock  • BulkCardOrderMultiAccount  •
-            MobilePaymentRegistration  • UpdateCompanyInfo  • BCOSummary  •
-            BCOMultiAccountSummary  • BCBSummary  • FundTransfer  •
-            DeliveryAddressUpdate
+            values:  •    OrderCard  •    CreateCardGroup  •    PINReminder  •
+            MoveCard  •    UpdateCardStatus  •    UpdateCardGroup  •   
+            AutoRenew  •    BulkCardOrder  •    BulkCardBlock  •   
+            BulkCardOrderMultiAccount  •    MobilePaymentRegistration  •   
+            UpdateCompanyInfo  •    BCOSummary  •    BCOMultiAccountSummary  •
+            BCBSummary  •    FundTransfer  •    DeliveryAddressUpdate
         request_reference (int): Reference number for the requested
             operation.
         request_type (str): Request type initiated under the requested
-            operation.   Possible values:  • OrderCard  • CreateCardGroup  •
-            PINReminder  • MoveCard  • UpdateCardStatus  • UpdateCardGroup  •
-            AutoRenew  • BulkCardOrder  • BulkCardBlock  •
-            BulkCardOrderMultiAccount  • MobilePaymentRegistration  •
-            UpdateCompanyInfo  • BCOSummary  • BCOMultiAccountSummary  •
-            BCBSummary  • FundTransfer  • DeliveryAddressUpdate
-        status (str): Status of the request. Possible values: • Success •
-            Failed • InProgress • Submitted • Rejected • PendingApproval •
-            MailedToCSC
+            operation.   Possible values:  •    OrderCard  •   
+            CreateCardGroup  •    PINReminder  •    MoveCard  •   
+            UpdateCardStatus  •    UpdateCardGroup  •    AutoRenew  •   
+            BulkCardOrder  •    BulkCardBlock  •    BulkCardOrderMultiAccount 
+            •    MobilePaymentRegistration  •    UpdateCompanyInfo  •   
+            BCOSummary  •    BCOMultiAccountSummary  •    BCBSummary  •   
+            FundTransfer  •    DeliveryAddressUpdate
+        status (str): Status of the request. Possible values: •    Success •  
+            Failed •    InProgress •    Submitted •    Rejected •   
+            PendingApproval •    MailedToCSC
         submitted_on (str): Request submitted date.   Format: yyyyMMdd HH:mm:
             ss
         sub_request_reference (int): Reference number for the individual

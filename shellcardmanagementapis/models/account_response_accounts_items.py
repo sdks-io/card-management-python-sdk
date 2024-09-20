@@ -26,14 +26,14 @@ class AccountResponseAccountsItems(object):
             customer/account configured.
         billing_frequency_type (str): Billing/Invoice frequency. The frequency
             in which the transactions will be considered for invoicing in a
-            bulling run  E.g.:   1 Daily (all days)  2 Daily (only working
-            days)  3 Weekly - Monday  4 Weekly – Tuesday  Etc.
+            bulling run  E.g.:   1    Daily (all days)  2    Daily (only
+            working days)  3    Weekly - Monday  4    Weekly – Tuesday  Etc.
         billing_frequency_type_id (int): Billing/Invoice frequency Identifier.
             Indicates the frequency in which the transactions will be
             considered for invoicing in a bulling run
         billing_run_frequency (str): Frequency at which the billing process is
-            triggered. E.g.:   1 Daily (all days)  2 Daily (only working days)
-            3 Weekly - Monday  4 Weekly – Tuesday  Etc.
+            triggered. E.g.:   1    Daily (all days)  2    Daily (only working
+            days)  3    Weekly - Monday  4    Weekly – Tuesday  Etc.
         billing_run_frequency_type_id (int): Frequency at which the billing
             process is triggered. E.g.: 1, 2, 3, etc.
         col_co_country_code (str): The 2-character ISO Code for the customer

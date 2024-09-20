@@ -41,9 +41,9 @@
 | `local_currency_exchange_rate` | `float` | Optional | Exchange rate from OU base currency to local currency. |
 | `local_currency_exchange_rate_so_a` | `float` | Optional | Exchange rate from SoA credit limit currency to local currency |
 | `billing_frequency_type_id` | `int` | Optional | Billing/Invoice frequency Identifier. Indicates the frequency in which the transactions will be considered for invoicing in a bulling run<br>E.g.: 1, 2, 3, etc. |
-| `billing_frequency_type` | `str` | Optional | Billing/Invoice frequency. The frequency in which the transactions will be considered for invoicing in a bulling run<br>E.g.:<br>1	Daily (all days)<br>2	Daily (only working days)<br>3	Weekly - Monday<br>4	Weekly – Tuesday<br>Etc. |
+| `billing_frequency_type` | `str` | Optional | Billing/Invoice frequency. The frequency in which the transactions will be considered for invoicing in a bulling run<br>E.g.:<br>1    Daily (all days)<br>2    Daily (only working days)<br>3    Weekly - Monday<br>4    Weekly – Tuesday<br>Etc. |
 | `billing_run_frequency_type_id` | `int` | Optional | Frequency at which the billing process is triggered.<br>E.g.: 1, 2, 3, etc. |
-| `billing_run_frequnecy` | `str` | Optional | Frequency at which the billing process is triggered.E.g.:<br>1	Daily (all days)<br>2	Daily (only working days)<br>3	Weekly - Monday<br>4	Weekly – Tuesday<br>Etc. |
+| `billing_run_frequnecy` | `str` | Optional | Frequency at which the billing process is triggered.E.g.:<br>1    Daily (all days)<br>2    Daily (only working days)<br>3    Weekly - Monday<br>4    Weekly – Tuesday<br>Etc. |
 | `day_1_run` | `int` | Optional | The first day in a month when the billing should run in case of multiple billing runs configured with in a single month. |
 | `day_2_run` | `int` | Optional | The second day in a month when the billing should run in case of multiple billing runs configured with in a single month. |
 | `day_3_run` | `int` | Optional | The third day in a month when the billing should run in case of multiple billing runs configured with in a single month. |
@@ -112,7 +112,7 @@
 | `has_active_vol_based_association_bonus` | `bool` | Optional | True, if the payer is setup for volume-based association bonus and is active on the current date, else false.<br>This field is returned only when IncludeBonusParameters is set to True in the request. Else set to null. |
 | `finance_currency` | [`FinanceCurrency2`](../../doc/models/finance-currency-2.md) | Optional | - |
 | `tolls_customer_id` | `str` | Optional | Customer id in e-TM system<br>This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty. |
-| `tolls_colco_country_type_id` | `str` | Optional | String	Colco country type id in e-TM system<br>This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty. |
+| `tolls_colco_country_type_id` | `str` | Optional | String    Colco country type id in e-TM system<br>This field will have value only when ReturnTollsCustomerId is set to true in the request else set to null or empty. |
 | `contracts` | [`List[CustomerContract]`](../../doc/models/customer-contract.md) | Optional | - |
 
 ## Example (as JSON)

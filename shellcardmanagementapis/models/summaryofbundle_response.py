@@ -19,11 +19,11 @@ class SummaryofbundleResponse(object):
 
     Attributes:
         request_id (str): Request Id of the API call
-        payer_id (int): Payer Id of the bundles and cards.  Example: 123456
-        payer_number (str): Payer Number of the bundles and cards.  Example:
+        payer_id (int): Payer Id of the bundles and cards. Example: 123456
+        payer_number (str): Payer Number of the bundles and cards. Example:
             GB000000123
         account_id (int): TODO: type description here.
-        account_number (str): Account Number of the bundle.  Example:
+        account_number (str): Account Number of the bundle. Example:
             GB000000123
         count_of_cards_not_in_bundle (int): Count of cards that are not part
             of the bundle in a given account.

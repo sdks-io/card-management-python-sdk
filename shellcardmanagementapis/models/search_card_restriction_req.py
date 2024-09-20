@@ -27,23 +27,23 @@ class SearchCardRestrictionReq(object):
             countries if ColCoID is provided.  Example:  86 for Philippines  5
             for UK
         payer_id (int): Payer Id (i.e. Customer Id of the Payment Customer) of
-            the selected payer.  Optional if PayerNumber is passed else
-            Mandatory  Example: 123456
-        payer_number (str): Payer Number of the selected payer.  Optional if
-            PayerId is passed else Mandatory  Example: GB000000123
+            the selected payer. Optional if PayerNumber is passed else
+            Mandatory Example: 123456
+        payer_number (str): Payer Number of the selected payer. Optional if
+            PayerId is passed else Mandatory Example: GB000000123
         accounts (Accounts): TODO: type description here.
-        bundle_id (str): Identifier of the Card bundle  Optional if cards list
-            is given, else mandatory.  This input is a search criterion, if
+        bundle_id (str): Identifier of the Card bundle Optional if cards list
+            is given, else mandatory. This input is a search criterion, if
             given.
         cards (SearchCardRestriction): TODO: type description here.
-        include_location_restrictions (bool): True/False  Whether to include
-            location restriction of the cards in the response.  Optional 
+        include_location_restrictions (bool): True/False Whether to include
+            location restriction of the cards in the response. Optional
             Default ‘false’
         include_bundle_details (bool): Default value is False,  When the value
             is True, API will return bundle Id associated with cards in the
             response, if available.   Note: Use ‘Null’ or ‘False’ for optimum
             performance. A delay in response is expected when set to ‘True’.
-        include_inherited_limits (bool): Default value is True,  When True:
+        include_inherited_limits (bool): Default value is True, When True:
             service will return the inherited values for the usage limits
             (from card-program or account as available) when it is not
             overridden on the card.

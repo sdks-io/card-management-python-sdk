@@ -17,20 +17,20 @@ class PartnerSiteRestriction(object):
 
     Attributes:
         network_code (str): Gateway network codes, typically 7 or 10 digits,
-            where sites and site groups belong to.  Example: 0002003250
+            where sites and site groups belong to. Example: 0002003250
         sites (List[str]): A list of Site IDs in this network which needs to
-            be either restricted or allowed.  For example, 97123, 97155  A
-            list of values must be passed for either Sites or SiteGroups or
-            both.  Max 10 sites are allowed for the Partner site Restriction.
+            be either restricted or allowed. For example, 97123, 97155 A list
+            of values must be passed for either Sites or SiteGroups or both.
+            Max 10 sites are allowed for the Partner site Restriction.
         site_groups (List[str]): A list of site group ids in this network
-            which needs to be either restricted or allowed.  For example,
-            83649200  A list of values must be passed for either Sites or
-            SiteGroups or both.  Max 10 sites groups are allowed for the
+            which needs to be either restricted or allowed. For example,
+            83649200 A list of values must be passed for either Sites or
+            SiteGroups or both. Max 10 sites groups are allowed for the
             Partner site Restriction.
         exclusive (bool): Flag indicates whether the profile is inclusive or
-            exclusive.  Mandatory  Example: False - (inclusive), i.e. the
+            exclusive. Mandatory Example: False - (inclusive), i.e. the
             “Sites” & “SiteGroups” properties lists the sites & site groups
-            where the transaction will be allowed.  True - (exclusive), i.e.
+            where the transaction will be allowed. True - (exclusive), i.e.
             the “Sites” & “SiteGroups” properties lists the sites and site
             groups where the transactions will be declined.
 

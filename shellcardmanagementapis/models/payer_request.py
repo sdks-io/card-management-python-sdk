@@ -17,9 +17,9 @@ class PayerRequest(object):
     TODO: type model description here.
 
     Attributes:
-        payers (List[Payers]): List of Payer entity. Optional. Note: • Max
+        payers (List[Payers]): List of Payer entity. Optional. Note: •    Max
             number of payers allowed in the input is 10, if it exceeds in the
-            input it will throw an error. • This value is configurable.
+            input it will throw an error. •    This value is configurable.
             Initial configuration will be 1000 and will change to 10 once SFH
             changes are integrated.
         return_basic_details_only (bool): Returns only the high-level basic
@@ -33,9 +33,9 @@ class PayerRequest(object):
         current_page (int): Page Number
         page_size (int): Page Size – Number of records to show on a page   
             Default value 50  Return 250 rows only in the response if -1 is
-            supplied as page size.    Note:   • Max page size is 250, if the
-            user provided value is more than 250 then it will throw error.  •
-            This value is configurable.
+            supplied as page size.    Note:   •    Max page size is 250, if
+            the user provided value is more than 250 then it will throw error.
+            •    This value is configurable.
 
     """
 

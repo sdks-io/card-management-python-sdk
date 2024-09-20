@@ -17,10 +17,10 @@ class UsageRestriction(object):
     restrictions applied on the card.
 
     Attributes:
-        level (str): Usage limit is applied on the card from this level. 
-            Valid values –  • Inherited  • Card  When Card level usage
+        level (str): Usage limit is applied on the card from this level. Valid
+            values – •    Inherited •    Card When Card level usage
             restrictions are not present, the API will return the inherited
-            restrictions.  Note: -This field is deprecated. Instead, use
+            restrictions. Note: -This field is deprecated. Instead, use
             ‘Override’.
         daily_spend (float): Maximum spend value (amount) allowed per day.  
             Card limit ‘0’ represents the value is inherited and inherited
@@ -36,7 +36,7 @@ class UsageRestriction(object):
             balance after a transaction reaches it or below. 0 indicates no
             alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55
+            velocity. Example: 50.55
         weekly_spend (float): Maximum spend value (amount) allowed per week.  
             Card limit ‘0’ represents the value is inherited and inherited
             limit could be calculated by adding accumulated and balance. 
@@ -51,7 +51,7 @@ class UsageRestriction(object):
             balance after a transaction reaches it or below. 0 indicates no
             alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         monthly_spend (float): Maximum spend value (amount) allowed per month.
             Card limit ‘0’ represents the value is inherited and inherited
             limit could be calculated by adding accumulated and balance. 
@@ -83,7 +83,7 @@ class UsageRestriction(object):
             balance after a transaction reaches it or below. 0 indicates no
             alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         life_time_spend (float): Maximum spend value (amount) allowed in
             card’s life time.   Card limit ‘0’ represents the value is
             inherited and inherited limit could be calculated by adding
@@ -99,7 +99,7 @@ class UsageRestriction(object):
             the balance after a transaction reaches it or below. 0 indicates
             no alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         daily_volume (float): Maximum volume (quantity) allowed per day.  
             Card limit ‘0’ represents the value is inherited and inherited
             limit could be calculated by adding accumulated and balance. 
@@ -114,7 +114,7 @@ class UsageRestriction(object):
             balance after a transaction reaches it or below. 0 indicates no
             alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         weekly_volume (float): Maximum volume (quantity) allowed per week.  
             Card limit ‘0’ represents the value is inherited and inherited
             limit could be calculated by adding accumulated and balance. 
@@ -129,7 +129,7 @@ class UsageRestriction(object):
             balance after a transaction reaches it or below. 0 indicates no
             alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         monthly_volume (float): Maximum volume (quantity) allowed per month.  
             Card limit ‘0’ represents the value is inherited and inherited
             limit could be calculated by adding accumulated and balance. 
@@ -144,7 +144,7 @@ class UsageRestriction(object):
             balance after a transaction reaches it or below. 0 indicates no
             alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         per_transaction_volume (float): Maximum volume (quantity) allowed per
             transaction.   Card limit ‘0’ represents the value is inherited
             and inherited limit could be calculated by adding accumulated and
@@ -165,7 +165,7 @@ class UsageRestriction(object):
             balance after a transaction reaches it or below. 0 indicates no
             alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         life_time_volume (float): Maximum volume (quantity) allowed in the
             card’s life time.   Card limit ‘0’ represents the value is
             inherited and inherited limit could be calculated by adding
@@ -181,7 +181,7 @@ class UsageRestriction(object):
             the balance after a transaction reaches it or below. 0 indicates
             no alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         daily_transaction_count (float): Maximum number of transactions
             allowed per day.   Card limit ‘0’ represents the value is
             inherited and inherited limit could be calculated by adding
@@ -197,7 +197,7 @@ class UsageRestriction(object):
             the balance after a transaction reaches it or below. 0 indicates
             no alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         weekly_transaction_count (float): Maximum number of transactions
             allowed per week.   Card limit ‘0’ represents the value is
             inherited and inherited limit could be calculated by adding
@@ -213,7 +213,7 @@ class UsageRestriction(object):
             the balance after a transaction reaches it or below. 0 indicates
             no alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         monthly_transaction_count (float): Maximum number of transactions
             allowed per month.   Card limit ‘0’ represents the value is
             inherited and inherited limit could be calculated by adding
@@ -229,7 +229,7 @@ class UsageRestriction(object):
             if the balance after a transaction reaches it or below. 0
             indicates no alerts will be sent. Not present if not set (issuer
             value threshold limit applies if available). Not present for COUNT
-            type velocity.  Example: 50.55  This is an optional output field.
+            type velocity. Example: 50.55 This is an optional output field.
         annual_transaction_count (float): Maximum number of transactions
             allowed per annum.   Card limit ‘0’ represents the value is
             inherited and inherited limit could be calculated by adding
@@ -244,7 +244,7 @@ class UsageRestriction(object):
             the balance after a transaction reaches it or below. 0 indicates
             no alerts will be sent. Not present if not set (issuer value
             threshold limit applies if available). Not present for COUNT type
-            velocity.  Example: 50.55  This is an optional output field.
+            velocity. Example: 50.55 This is an optional output field.
         life_time_transaction_count (float): Maximum number of transactions
             allowed in the card’s life time.   Card limit ‘0’ represents the
             value is inherited and inherited limit could be calculated by
@@ -260,7 +260,7 @@ class UsageRestriction(object):
             if the balance after a transaction reaches it or below. 0
             indicates no alerts will be sent. Not present if not set (issuer
             value threshold limit applies if available). Not present for COUNT
-            type velocity.  Example: 50.55  This is an optional output field.
+            type velocity. Example: 50.55 This is an optional output field.
 
     """
 

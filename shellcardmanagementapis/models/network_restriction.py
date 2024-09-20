@@ -17,13 +17,13 @@ class NetworkRestriction(object):
 
     Attributes:
         country (str): ISO 3166-1 Numeric-3 code of the country where the
-            network restriction is applied.  Example: 826 for United Kingdom.
+            network restriction is applied. Example: 826 for United Kingdom.
         networks (List[str]): A list of Gateway network codes, typically 7 or
-            10 digits.  Example: 0002003250
+            10 digits. Example: 0002003250
         exclusive (bool): Flag indicates whether the profile is inclusive or
-            exclusive.  Example: False - (inclusive), i.e. the “Networks”
+            exclusive. Example: False - (inclusive), i.e. the “Networks”
             property lists the networks in which the transaction will be
-            allowed.  True - (exclusive), i.e. the “Networks” property lists
+            allowed. True - (exclusive), i.e. the “Networks” property lists
             the networks in which the transactions will be declined.
 
     """

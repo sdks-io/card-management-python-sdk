@@ -35,38 +35,40 @@ class ScheduleCardBlockCardsItems(object):
             Mandatory.
         pan (str): PAN of the card. Optional if CardId is passed, else
             Mandatory.
+        panid (str): Card PAN ID.  Optional if CardId is given, else
+            mandatory.  Note: PANID is ignored if CardId is given.
         card_expiry_date (str): Expiry date of the card. Optional if CardId is
             passed, else Mandatory. Format: yyyyMMdd Example: 20170930
-        action (str): Action Mandatory Possible values are: • AddOrUpdate –
+        action (str): Action Mandatory Possible values are: •    AddOrUpdate –
             adds a new request or updates any existing requests, with
-            overlapping dates, for the card • AddAndOverwriteAll - all the
+            overlapping dates, for the card •    AddAndOverwriteAll - all the
             existing requests of the given card will be removed and a new
-            request with the specified FromDate and ToDate will be added. •
+            request with the specified FromDate and ToDate will be added. •   
             Delete – deletes any existing request with the same start date and
-            end date for the card • DeleteAll – deletes all saved future dated
-            requests (all block and unblock requests) of the card.
+            end date for the card •    DeleteAll – deletes all saved future
+            dated requests (all block and unblock requests) of the card.
         from_date (str): Effective start date of Block / Unblock  Allowed
-            Formats: –  • yyyyMMdd  • yyyyMMdd HH:mm  Eg: 20230512 14:30,
-            20230512  Optional  Default value:   •  If the card status is
-            “Active” then Current date & Time  • If the card status is
-            “TemporaryBlock (Customer)” then null.  Note:  • Time is
-            considered only when “IsTimeSupported” is true else it will be
-            treated as a date.  • Time will be passed in UTC time-zone.  • If
-            the Card Status is “Temporary Block (Customer)” and FromDate is
+            Formats: –  •    yyyyMMdd  •    yyyyMMdd HH:mm  Eg: 20230512
+            14:30, 20230512  Optional  Default value:   •     If the card
+            status is “Active” then Current date & Time  •    If the card
+            status is “TemporaryBlock (Customer)” then null.  Note:  •    Time
+            is considered only when “IsTimeSupported” is true else it will be
+            treated as a date.  •    Time will be passed in UTC time-zone.  • 
+            If the Card Status is “Temporary Block (Customer)” and FromDate is
             provided – The fromdate & time is considered as starting period of
             unblock request.
         to_date (str): Effective end date of Block / Unblock Allowed Formats:
-            – • yyyyMMdd • yyyyMMdd HH:mm Eg: 20230512 14:30, 20230512
+            – •    yyyyMMdd •    yyyyMMdd HH:mm Eg: 20230512 14:30, 20230512
             Optional – When the Card status is Active else mandatory. When not
             provided, the card will remain blocked until manually unblocked.
-            Note: • Time is considered only when the “IsTimeSupported” flag is
-            set as true, else it will be considered as only date. • Date &
-            Time passed in the request will be considered in UTC time-zone. •
-            If the card is currently in ‘Temporary Block (Customer)’ status,
-            then this date is treated as the unblock date and is mandatory. •
-            If the Card Status is “Temporary Block (Customer)” and FromDate &
-            ToDate is provided - The request will be considered as a scheduled
-            specific period unblock request.
+            Note: •    Time is considered only when the “IsTimeSupported” flag
+            is set as true, else it will be considered as only date. •    Date
+            & Time passed in the request will be considered in UTC time-zone.
+            •    If the card is currently in ‘Temporary Block (Customer)’
+            status, then this date is treated as the unblock date and is
+            mandatory. •    If the Card Status is “Temporary Block (Customer)”
+            and FromDate & ToDate is provided - The request will be considered
+            as a scheduled specific period unblock request.
         caller (str): The caller to be notified with the status of the
             scheduled card block / unblock request.  Mandatory, if
             NotifyCaller is true.   Maximum field length: 20
@@ -88,6 +90,7 @@ class ScheduleCardBlockCardsItems(object):
         "payer_number": 'PayerNumber',
         "card_id": 'CardId',
         "pan": 'PAN',
+        "panid": 'PANID',
         "card_expiry_date": 'CardExpiryDate',
         "from_date": 'FromDate',
         "to_date": 'ToDate',
@@ -104,6 +107,7 @@ class ScheduleCardBlockCardsItems(object):
         'payer_number',
         'card_id',
         'pan',
+        'panid',
         'card_expiry_date',
         'from_date',
         'to_date',
@@ -125,6 +129,7 @@ class ScheduleCardBlockCardsItems(object):
                  payer_number=APIHelper.SKIP,
                  card_id=APIHelper.SKIP,
                  pan=APIHelper.SKIP,
+                 panid=APIHelper.SKIP,
                  card_expiry_date=APIHelper.SKIP,
                  from_date=APIHelper.SKIP,
                  to_date=APIHelper.SKIP,
@@ -149,6 +154,8 @@ class ScheduleCardBlockCardsItems(object):
             self.card_id = card_id 
         if pan is not APIHelper.SKIP:
             self.pan = pan 
+        if panid is not APIHelper.SKIP:
+            self.panid = panid 
         if card_expiry_date is not APIHelper.SKIP:
             self.card_expiry_date = card_expiry_date 
         self.action = action 
@@ -189,6 +196,7 @@ class ScheduleCardBlockCardsItems(object):
         payer_number = dictionary.get("PayerNumber") if dictionary.get("PayerNumber") else APIHelper.SKIP
         card_id = dictionary.get("CardId") if dictionary.get("CardId") else APIHelper.SKIP
         pan = dictionary.get("PAN") if dictionary.get("PAN") else APIHelper.SKIP
+        panid = dictionary.get("PANID") if dictionary.get("PANID") else APIHelper.SKIP
         card_expiry_date = dictionary.get("CardExpiryDate") if dictionary.get("CardExpiryDate") else APIHelper.SKIP
         from_date = dictionary.get("FromDate") if dictionary.get("FromDate") else APIHelper.SKIP
         to_date = dictionary.get("ToDate") if dictionary.get("ToDate") else APIHelper.SKIP
@@ -204,6 +212,7 @@ class ScheduleCardBlockCardsItems(object):
                    payer_number,
                    card_id,
                    pan,
+                   panid,
                    card_expiry_date,
                    from_date,
                    to_date,

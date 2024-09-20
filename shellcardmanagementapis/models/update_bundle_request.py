@@ -24,30 +24,28 @@ class UpdateBundleRequest(object):
             Mandatory for serviced OUs such as Romania, Latvia, Lithuania,
             Estonia, Ukraine etc. It is optional for other countries if
             ColCoID is provided.  Example:  86 for Philippines  5 for UK
-        payer_id (str): Payer Id of the selected payer.  Either PayerId or
-            PayerNumber or both must be passed.  Example: 123456
-        payer_number (str): Payer Number of the selected payer.  Either
-            PayerId or PayerNumber or both must be passed.  Example:
-            GB000000123
-        account_id (int): Account ID of the customer.  Either AccountId or
-            AccountNumber or both must be passed.  Example: 123456
+        payer_id (str): Payer Id of the selected payer. Either PayerId or
+            PayerNumber or both must be passed. Example: 123456
+        payer_number (str): Payer Number of the selected payer. Either PayerId
+            or PayerNumber or both must be passed. Example: GB000000123
+        account_id (int): Account ID of the customer. Either AccountId or
+            AccountNumber or both must be passed. Example: 123456
         account_number (str): Account Number of the customer.   Either
             AccountId or AccountNumber or both must be passed.  Example:
             GB000000123
-        bundle_id (str): Identifier of the bundle in Gateway.  Mandatory
+        bundle_id (str): Identifier of the bundle in Gateway. Mandatory
         request_action (str): The value indicates the action to be performed
-            with the request.  Mandatory  Allowed values:  • Add  • Update  •
+            with the request. Mandatory Allowed values: •    Add •    Update •
             Remove
-        cards (List[str]): List of Card PANs to be added in the bundle. 
+        cards (List[str]): List of Card PANs to be added in the bundle.
             Mandatory for Add / Remove request action. Ignored for Update
-            action.  Example: 7002051006629890645  When PAN matches with
+            action. Example: 7002051006629890645 When PAN matches with
             multiple cards, the restriction will be applied on the latest
             issued card.
         usage_restriction_action (str): The value indicates what actions to be
             performed with respect to usage restrictions on the list of cards
-            being added or removed.  Mandatory for Add / Remove request
-            action. Ignored for Update action.  Allowed values:  • Update  •
-            None
+            being added or removed. Mandatory for Add / Remove request action.
+            Ignored for Update action. Allowed values: •    Update •    None
         restrictions (BundleRestrictionUpdate): TODO: type description here.
 
     """

@@ -9,8 +9,8 @@
 
 | Name | Type | Tags | Description |
 |  --- | --- | --- | --- |
-| `usage_restrictions` | [`UsageRestriction`](../../doc/models/usage-restriction.md) | Optional | Details of the usage restrictions such as day/week/month value and volume restrictions applied on the card. |
-| `day_time_restrictions` | [`DayTimeRestriction`](../../doc/models/day-time-restriction.md) | Optional | Details of the day/time restrictions such as weekdays and time range in which transactions should be allowed on the card. |
+| `usage_restrictions` | `object` | Optional | - |
+| `day_time_restrictions` | [`DayTimeRestrictions`](../../doc/models/day-time-restrictions.md) | Optional | - |
 | `product_restrictions` | [`BundledDetailsProductList`](../../doc/models/bundled-details-product-list.md) | Optional | - |
 | `location_restrictions` | [`LocationRestriction`](../../doc/models/location-restriction.md) | Optional | - |
 
@@ -19,11 +19,8 @@
 ```json
 {
   "UsageRestrictions": {
-    "Level": "Level0",
-    "DailySpend": 7.72,
-    "DailySpendAccumulated": 127.2,
-    "DailySpendBalance": 5.36,
-    "DailySpendOverride": false
+    "key1": "val1",
+    "key2": "val2"
   },
   "DayTimeRestrictions": {
     "Monday": false,

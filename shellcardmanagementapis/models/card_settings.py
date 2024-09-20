@@ -42,8 +42,8 @@ class CardSettings(object):
             Optional <br /> If not provided, the replacement card will be
             created under the same card group as the current card.
         card_delivery_type (int): Card delivery type.<br /> Mandatory <br />
-            Allowed Value: <br /> 1. Customer Address(Default) <br /> 2. New
-            Delivery Address <br /> 3. Old Card Address
+            Allowed Value: <br /> 1.    Customer Address(Default) <br /> 2.   
+            New Delivery Address <br /> 3.    Old Card Address
         delivery_contact_title (str): Title of the contact person. <br />
             Optional<br /> Max field length: 10
         delivery_contact_name (str): Name of the contact person <br />
@@ -78,12 +78,12 @@ class CardSettings(object):
             if PINAdviceType is email else optional.<br /> Max field length:
             90
         pin_delivery_address_type (int): PIN delivery address type
-            selection.<br /> Optional<br /> Allowed Values:<br /> 1. Customer
-            Address(Default)<br /> 2. Card Address<br /> 3. New Delivery
-            Address
+            selection.<br /> Optional<br /> Allowed Values:<br /> 1.   
+            Customer Address(Default)<br /> 2.    Card Address<br /> 3.    New
+            Delivery Address
         pin_advice_type (int): PIN delivery method.<br /> Mandatory when
-            OrderReplacement Is true.<br /> Allowed Values:<br /> 1. Paper<br
-            /> 2. Email<br /> 3. SMS<br /> 4. None
+            OrderReplacement Is true.<br /> Allowed Values:<br /> 1.   
+            Paper<br /> 2.    Email<br /> 3.    SMS<br /> 4.    None
         pin_delivery_contact_title (str): Title of the contact person.<br />
             Optional <br /> Max field length: 10
         pin_delivery_contact_name (str): Name of the contact person.<br />

@@ -12,7 +12,7 @@ from shellcardmanagementapis.models.pin_reminder_card_details import PINReminder
 
 class CardManagementV1PinreminderRequest(object):
 
-    """Implementation of the 'Card Management V1 Pinreminder Request' model.
+    """Implementation of the 'CardManagementV1PinreminderRequest' model.
 
     TODO: type model description here.
 

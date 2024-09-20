@@ -90,8 +90,10 @@ class Card(object):
         local_currency_symbol (str): Local currency symbol. <br />
         odometer_input (bool): True/False True if odometer input is enabled on
             the card, else false
-        pan (str): Card PAN Mask PAN (Mask all digits except the Last 6 digits
-            of the PAN)
+        pan (str): Card PAN
+        masked_pan (str): Card PAN Mask PAN (Mask all digits except the Last 6
+            digits of the PAN)
+        panid (float): Card PAN ID.
         purchase_category_code (str): Purchase category code
         purchase_category_id (int): Purchase category Id <br /> Note: Not
             Purchase code.
@@ -184,6 +186,8 @@ class Card(object):
         "local_currency_symbol": 'LocalCurrencySymbol',
         "odometer_input": 'OdometerInput',
         "pan": 'PAN',
+        "masked_pan": 'MaskedPAN',
+        "panid": 'PANID',
         "purchase_category_code": 'PurchaseCategoryCode',
         "purchase_category_id": 'PurchaseCategoryId',
         "purchase_category_name": 'PurchaseCategoryName',
@@ -238,6 +242,8 @@ class Card(object):
         'local_currency_symbol',
         'odometer_input',
         'pan',
+        'masked_pan',
+        'panid',
         'purchase_category_code',
         'purchase_category_id',
         'purchase_category_name',
@@ -331,6 +337,8 @@ class Card(object):
                  local_currency_symbol=APIHelper.SKIP,
                  odometer_input=APIHelper.SKIP,
                  pan=APIHelper.SKIP,
+                 masked_pan=APIHelper.SKIP,
+                 panid=APIHelper.SKIP,
                  purchase_category_code=APIHelper.SKIP,
                  purchase_category_id=APIHelper.SKIP,
                  purchase_category_name=APIHelper.SKIP,
@@ -418,6 +426,10 @@ class Card(object):
             self.odometer_input = odometer_input 
         if pan is not APIHelper.SKIP:
             self.pan = pan 
+        if masked_pan is not APIHelper.SKIP:
+            self.masked_pan = masked_pan 
+        if panid is not APIHelper.SKIP:
+            self.panid = panid 
         if purchase_category_code is not APIHelper.SKIP:
             self.purchase_category_code = purchase_category_code 
         if purchase_category_id is not APIHelper.SKIP:
@@ -511,6 +523,8 @@ class Card(object):
         local_currency_symbol = dictionary.get("LocalCurrencySymbol") if "LocalCurrencySymbol" in dictionary.keys() else APIHelper.SKIP
         odometer_input = dictionary.get("OdometerInput") if "OdometerInput" in dictionary.keys() else APIHelper.SKIP
         pan = dictionary.get("PAN") if "PAN" in dictionary.keys() else APIHelper.SKIP
+        masked_pan = dictionary.get("MaskedPAN") if dictionary.get("MaskedPAN") else APIHelper.SKIP
+        panid = dictionary.get("PANID") if dictionary.get("PANID") else APIHelper.SKIP
         purchase_category_code = dictionary.get("PurchaseCategoryCode") if "PurchaseCategoryCode" in dictionary.keys() else APIHelper.SKIP
         purchase_category_id = dictionary.get("PurchaseCategoryId") if "PurchaseCategoryId" in dictionary.keys() else APIHelper.SKIP
         purchase_category_name = dictionary.get("PurchaseCategoryName") if "PurchaseCategoryName" in dictionary.keys() else APIHelper.SKIP
@@ -563,6 +577,8 @@ class Card(object):
                    local_currency_symbol,
                    odometer_input,
                    pan,
+                   masked_pan,
+                   panid,
                    purchase_category_code,
                    purchase_category_id,
                    purchase_category_name,

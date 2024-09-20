@@ -68,13 +68,13 @@ class PayerDetails(object):
             considered for invoicing in a bulling run E.g.: 1, 2, 3, etc.
         billing_frequency_type (str): Billing/Invoice frequency. The frequency
             in which the transactions will be considered for invoicing in a
-            bulling run  E.g.:   1 Daily (all days)  2 Daily (only working
-            days)  3 Weekly - Monday  4 Weekly – Tuesday  Etc.
+            bulling run  E.g.:   1    Daily (all days)  2    Daily (only
+            working days)  3    Weekly - Monday  4    Weekly – Tuesday  Etc.
         billing_run_frequency_type_id (int): Frequency at which the billing
             process is triggered. E.g.: 1, 2, 3, etc.
         billing_run_frequnecy (str): Frequency at which the billing process is
-            triggered.E.g.:   1 Daily (all days)  2 Daily (only working days) 
-            3 Weekly - Monday  4 Weekly – Tuesday  Etc.
+            triggered.E.g.:   1    Daily (all days)  2    Daily (only working
+            days)  3    Weekly - Monday  4    Weekly – Tuesday  Etc.
         day_1_run (int): The first day in a month when the billing should run
             in case of multiple billing runs configured with in a single
             month.
@@ -202,7 +202,7 @@ class PayerDetails(object):
         tolls_customer_id (str): Customer id in e-TM system This field will
             have value only when ReturnTollsCustomerId is set to true in the
             request else set to null or empty.
-        tolls_colco_country_type_id (str): String Colco country type id in
+        tolls_colco_country_type_id (str): String    Colco country type id in
             e-TM system This field will have value only when
             ReturnTollsCustomerId is set to true in the request else set to
             null or empty.

@@ -11,7 +11,7 @@ from shellcardmanagementapis.api_helper import APIHelper
 
 class FleetmanagementV1UserLoggedinuserRequest(object):
 
-    """Implementation of the 'Fleetmanagement V1 User Loggedinuser Request' model.
+    """Implementation of the 'FleetmanagementV1UserLoggedinuserRequest' model.
 
     TODO: type model description here.
 

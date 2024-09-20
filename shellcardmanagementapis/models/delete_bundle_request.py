@@ -26,17 +26,16 @@ class DeleteBundleRequest(object):
             Lithuania, Estonia, Ukraine etc. It is optional for other
             countries if ColCoID is provided.  Example:  86 for Philippines  5
             for UK
-        payer_number (str): Payer Number of the selected payer.  Either
-            PayerId or PayerNumber or both must be passed.  Example:
-            GB000000123
-        payer_id (int): Payer Id of the selected payer.  Either PayerId or
-            PayerNumber or both must be passed.  Example: 123456
-        account_id (int): Account ID of the customer.  Either AccountId or
-            AccountNumber or both must be passed.  Example: 123456
+        payer_number (str): Payer Number of the selected payer. Either PayerId
+            or PayerNumber or both must be passed. Example: GB000000123
+        payer_id (int): Payer Id of the selected payer. Either PayerId or
+            PayerNumber or both must be passed. Example: 123456
+        account_id (int): Account ID of the customer. Either AccountId or
+            AccountNumber or both must be passed. Example: 123456
         account_number (str): Account Number of the customer.   Either
             AccountId or AccountNumber or both must be passed.  Example:
             GB000000123
-        bundle_id (str): Identifier of the card bundle in Gateway.  Mandatory
+        bundle_id (str): Identifier of the card bundle in Gateway. Mandatory
 
     """
 

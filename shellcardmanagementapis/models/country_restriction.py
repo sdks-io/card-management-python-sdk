@@ -16,12 +16,12 @@ class CountryRestriction(object):
     TODO: type model description here.
 
     Attributes:
-        countries (List[str]): A list of ISO 3166-1 Numeric-3 country codes. 
+        countries (List[str]): A list of ISO 3166-1 Numeric-3 country codes.
             Example: 826 for United Kingdom.
         exclusive (bool): Flag indicates whether the profile is inclusive or
-            exclusive.  Example: False - (inclusive), i.e. the “Countries”
+            exclusive. Example: False - (inclusive), i.e. the “Countries”
             property lists the countries where the transactions will be
-            allowed.  True - (exclusive), i.e. the “Countries” property lists
+            allowed. True - (exclusive), i.e. the “Countries” property lists
             the countries where the transactions will be declined.
 
     """

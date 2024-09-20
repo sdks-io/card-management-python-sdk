@@ -1071,9 +1071,9 @@ class CardController(BaseController):
         This operation allows  update the approval status of Mobile Payment
         Registration requests requiring for Fleet Manager approval.
         If the approval status is:
-        *	“Approved” then the request status will be changed to Pending for
+        *    “Approved” then the request status will be changed to Pending for
         processing. 
-        *	“Rejected” then status will be updated to “CI” (Failed) with
+        *    “Rejected” then status will be updated to “CI” (Failed) with
         appropriate error message. 
 
         Args:

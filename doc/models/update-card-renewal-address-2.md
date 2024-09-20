@@ -17,7 +17,7 @@
 | `city` | `str` | Optional | City<br>Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise.<br>Max Length: 40 |
 | `region_id` | `int` | Optional | Region id of card. |
 | `country_id` | `int` | Required | Country ID<br>Note: Mandatory when ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is ignored otherwise. |
-| `email_address` | `str` | Optional | Email Address<br><br>Max Length: 90<br>Note: -<br>Based on the international standard that there can be<br>•	Max Length 64 before the @ (the 'Local part’) =64(minimum of 1)<br>•	Max Lenth after the (the domain) = 88 (Minimum of 2) |
+| `email_address` | `str` | Optional | Email Address<br><br>Max Length: 90<br>Note: -<br>Based on the international standard that there can be<br>•    Max Length 64 before the @ (the 'Local part’) =64(minimum of 1)<br>•    Max Lenth after the (the domain) = 88 (Minimum of 2) |
 | `phone_number` | `str` | Optional | Phone number<br>Optional<br>Max Length: 16 |
 
 ## Example (as JSON)

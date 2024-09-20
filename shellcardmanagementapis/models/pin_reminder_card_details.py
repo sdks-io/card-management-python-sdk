@@ -31,13 +31,13 @@ class PINReminderCardDetails(object):
         card_expiry_date (str): Expiry date of the card. Mandatory if Either
             PAN or PANID is passed, else optional. Format: yyyyMMdd
         pin_advice_type (int): PIN delivery method. Mandatory Allowed Values: 
-            1. Paper     2. Email     3. SMS
+            1.    Paper     2.    Email     3.    SMS
         pin_contact_type (int): PIN Contact Type. Mandatory Allowed Values: 1.
             Use PIN Delivery contact details stored previously for this card
-            2. Use Card Delivery contact details stored previously for this
-            card 3. Use default PIN Delivery contact details stored for this
-            customer 4. Use new specific contact for PIN Reminder only   Note:
-            - PINContactType “3” is only allowed for Paper delivery
+            2.    Use Card Delivery contact details stored previously for this
+            card 3.    Use default PIN Delivery contact details stored for
+            this customer 4.    Use new specific contact for PIN Reminder only
+            Note: - PINContactType “3” is only allowed for Paper delivery
         pin_deliver_to (PINDeliverTo): TODO: type description here.
 
     """

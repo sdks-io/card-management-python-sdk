@@ -17,10 +17,10 @@ class AuditRequest(object):
     TODO: type model description here.
 
     Attributes:
-        status (str): Status of requests to be fetched. • Success • Failed •
-            InProgress • Submitted • Rejected • PendingApproval • All •
-            MailedToCSC Optional If not passed “All” will be considered as the
-            default value.
+        status (str): Status of requests to be fetched. •    Success •   
+            Failed •    InProgress •    Submitted •    Rejected •   
+            PendingApproval •    All •    MailedToCSC Optional If not passed
+            “All” will be considered as the default value.
         payer_number (str): Payer Number of the selected payer. Optional if
             PayerId is passed else Mandatory
         payer_id (int): Payer Id  of the selected payer. Optional if
@@ -37,17 +37,18 @@ class AuditRequest(object):
         accounts (Accounts): TODO: type description here.
         page_size (int): Page Size – Number of records to show on a page
             Optional Default value 50
-        requested_operation (List[str]): Type of requests to be fetched. 
-            Optional  Allowed values:  • OrderCard  • CreateCardGroup  •
-            PINReminder  • MoveCard  • UpdateCardStatus  • UpdateCardGroup  •
-            AutoRenew  • BulkCardOrder  • BulkCardBlock  •
-            BulkCardOrderMultiAccount  • MobilePaymentRegistration  •
-            UpdateCompanyInfo  • BCOSummary  • BCOMultiAccountSummary  •
-            BCBSummary  • FundTransfer  • DeliveryAddressUpdate
-        sort_order (str): Allowed Sorting Options:  1. SubmittedDateDescending
-            2. SubmittedDateAscending   3. AccountNumberAscending  4.
-            AccountNumberDescending  Optional: Default value is 1  Example
-            value to be passed: 1,3
+        requested_operation (List[str]): Type of requests to be fetched.
+            Optional Allowed values: •    OrderCard •    CreateCardGroup •   
+            PINReminder •    MoveCard •    UpdateCardStatus •   
+            UpdateCardGroup •    AutoRenew •    BulkCardOrder •   
+            BulkCardBlock •    BulkCardOrderMultiAccount •   
+            MobilePaymentRegistration •    UpdateCompanyInfo •    BCOSummary •
+            BCOMultiAccountSummary •    BCBSummary •    FundTransfer •   
+            DeliveryAddressUpdate
+        sort_order (str): Allowed Sorting Options:  1.   
+            SubmittedDateDescending  2.    SubmittedDateAscending   3.   
+            AccountNumberAscending  4.    AccountNumberDescending  Optional:
+            Default value is 1  Example value to be passed: 1,3
         search_text (str): Search text used as criteria to filter the
             requests. Optional Minimum length is 4 characters (configurable).
             Else, an error (0007) will be returned. When valid text is

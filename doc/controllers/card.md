@@ -121,7 +121,8 @@ body = SearchCardRequest(
         exclude_cards=[
             SearchCard(
                 card_id=466907,
-                pan='7077327290224795811'
+                pan='7077327290224795811',
+                panid=17350065
             )
         ],
         exclude_fraud_cards=False,
@@ -131,7 +132,8 @@ body = SearchCardRequest(
         include_cards=[
             SearchCard(
                 card_id=466906,
-                pan='7077327290224795801'
+                pan='7077327290224795801',
+                panid=17350065
             )
         ],
         include_intermediate_status=False,
@@ -162,7 +164,6 @@ result = card_controller.searchcard(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -212,6 +213,8 @@ print(result)
       "LocalCurrencySymbol": "Kč",
       "OdometerInput": true,
       "PAN": "7077327290223410782",
+      "MaskedPAN": "7077327******410782",
+      "PANID": 17350064,
       "PurchaseCategoryCode": "3",
       "PurchaseCategoryId": 103,
       "PurchaseCategoryName": "3 - No Restriction",
@@ -352,7 +355,6 @@ result = card_controller.cardsummary(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -535,7 +537,6 @@ result = card_controller.cardordercard(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -626,7 +627,6 @@ result = card_controller.cardordercardenquiry(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -645,6 +645,8 @@ print(result)
       "CardGroupName": "null",
       "CardId": 41008,
       "CardPAN": "7077187910757000712",
+      "MaskedPAN": "707718******000712",
+      "PANID": 17285721,
       "CardTypeCode": "7077187",
       "CardTypeId": 704,
       "CardTypeName": "NL CRT Nat. Shell + partnernetwerk",
@@ -809,7 +811,6 @@ result = card_controller.cardcancel(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -973,6 +974,7 @@ body = CardManagementV1UpdatestatusRequest(
             col_co_code=32,
             col_co_id=32,
             pan='7077327290223410816',
+            panid=17350064,
             payer_id=1223,
             payer_number='CZ00000928'
         )
@@ -986,7 +988,6 @@ result = card_controller.cardupdatestatus(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1008,6 +1009,8 @@ print(result)
       "ColCoCode": 32,
       "ColCoId": 32,
       "PAN": "7077327290223421201",
+      "PANID": 17352931,
+      "MaskedPAN": "7077327******421201",
       "PayerId": 1227,
       "PayerNumber": "CZ00000927"
     }
@@ -1071,7 +1074,6 @@ result = card_controller.purchase_category(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1189,7 +1191,6 @@ result = card_controller.carddetails(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1412,7 +1413,6 @@ result = card_controller.card_move(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1538,7 +1538,6 @@ result = card_controller.cardpinreminder(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1639,6 +1638,7 @@ body = ScheduleCardBlockRequest(
             payer_number='CZ00000928',
             card_id=234,
             pan='7077327290223418348',
+            panid='130128',
             card_expiry_date='20240731',
             from_date='20230701 14:30',
             to_date='20230731 16:30',
@@ -1652,7 +1652,6 @@ result = card_controller.schedule_card_block(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1739,6 +1738,7 @@ body = AutoRenewCardRequest(
             account_number='CZ00000929',
             account_id=1229,
             pan='7077327290223440243',
+            panid=17240826,
             card_id=446472
         )
     ]
@@ -1748,7 +1748,6 @@ result = card_controller.autorenew(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1761,7 +1760,8 @@ print(result)
   "Data": [
     {
       "AutoRenewReferenceId": 226,
-      "CardIdAndPAN": "446472;7077327290223440243"
+      "CardIdAndPAN": "446472;7077327290223440243",
+      "PANID": 17240826
     }
   ]
 }
@@ -1828,7 +1828,6 @@ result = card_controller.updatemobilepaymentregistrationstatus(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1878,7 +1877,6 @@ def getkey(self,
 request_id = 'RequestId8'
 
 result = card_controller.getkey(request_id)
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1964,7 +1962,6 @@ result = card_controller.deliveryaddressupdate(
     apikey,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*

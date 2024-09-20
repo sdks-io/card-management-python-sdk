@@ -16,9 +16,9 @@ class ProductRestrictionCard(object):
     TODO: type model description here.
 
     Attributes:
-        products (List[str]): An array of 3-digit global product codes. 
-            Optional.  Example: [ "033", "021", "023”]
-        product_groups (List[str]): An array of product group IDs.  Optional. 
+        products (List[str]): An array of 3-digit global product codes.
+            Optional. Example: [ "033", "021", "023”]
+        product_groups (List[str]): An array of product group IDs. Optional.
             Example: [ "670246404", "40557126" ]
 
     """

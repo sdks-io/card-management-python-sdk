@@ -16,7 +16,7 @@
 | `account_id` | `int` | Optional | Account ID of the customer on which the restrictions will be applied.<br>Optional if AccountNumber is passed, else Mandatory.<br>Example: 123456 |
 | `account_number` | `str` | Optional | Account Number of the customer on which the restrictions will be applied.<br>Optional if AccountId is passed, else Mandatory.<br>Example: GB000000123 |
 | `reset_usage_restrictions` | `bool` | Optional | True/False.<br>If true, the usage restrictions applied on the account will be removed.<br>Optional<br>Default: False |
-| `usage_restrictions` | [`UsageRestrictionsCard`](../../doc/models/usage-restrictions-card.md) | Optional | - |
+| `usage_restrictions` | `object` | Optional | - |
 
 ## Example (as JSON)
 

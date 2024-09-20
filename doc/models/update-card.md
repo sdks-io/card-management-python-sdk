@@ -27,6 +27,7 @@ Request entity object for UpdateCardRequest  list
 | `col_co_code` | `int` | Optional | Collecting company code of the customer. <br /><br>Optional if ColCoId is passed, else Mandatory.<br /> |
 | `col_co_id` | `int` | Optional | Collecting company id of the customer. <br /><br>Optional if ColCoCode is passed, else Mandatory.<br /> |
 | `pan` | `str` | Optional | PAN of the card.<br /><br>Optional if CardId is passed, else Mandatory.<br /> |
+| `panid` | `float` | Optional | PANID of the card |
 | `payer_id` | `int` | Optional | Payer id of the customer.<br /><br>Optional if PayerNumber is passed, else Mandatory. |
 | `payer_number` | `str` | Optional | PayerNumber of the customer.<br /><br>Optional if PayerId is passed, else Mandatory. |
 

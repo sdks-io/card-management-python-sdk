@@ -17,8 +17,8 @@ class RestrictionProduct(object):
 
     Attributes:
         global_product_code (str): The productCode returned by the Gateway
-            API.  Example: 021
-        description (str): The description returned by the Gateway API. 
+            API. Example: 021
+        description (str): The description returned by the Gateway API.
             Example: High Performance Diesel
 
     """

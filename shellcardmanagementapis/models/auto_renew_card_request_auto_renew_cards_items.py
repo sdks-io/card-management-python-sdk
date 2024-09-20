@@ -22,6 +22,8 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
             AccountNumber is passed, else Mandatory.
         pan (str): PAN of the card. Optional if CardId is passed, else
             Mandatory.
+        panid (float): Card PAN ID.  Optional if CardId is given, else
+            mandatory.  Note: PANID is ignored if CardId is given.
         card_id (int): Card Id of the card. Optional if PAN is passed, else
             Mandatory.
         reissue_setting (bool): Reissue setting of the card.   Values:  True –
@@ -36,6 +38,7 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
         "account_number": 'AccountNumber',
         "account_id": 'AccountId',
         "pan": 'PAN',
+        "panid": 'PANID',
         "card_id": 'CardId'
     }
 
@@ -43,6 +46,7 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
         'account_number',
         'account_id',
         'pan',
+        'panid',
         'card_id',
     ]
 
@@ -51,6 +55,7 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
                  account_number=APIHelper.SKIP,
                  account_id=APIHelper.SKIP,
                  pan=APIHelper.SKIP,
+                 panid=APIHelper.SKIP,
                  card_id=APIHelper.SKIP):
         """Constructor for the AutoRenewCardRequestAutoRenewCardsItems class"""
 
@@ -61,6 +66,8 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
             self.account_id = account_id 
         if pan is not APIHelper.SKIP:
             self.pan = pan 
+        if panid is not APIHelper.SKIP:
+            self.panid = panid 
         if card_id is not APIHelper.SKIP:
             self.card_id = card_id 
         self.reissue_setting = reissue_setting 
@@ -88,10 +95,12 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
         account_number = dictionary.get("AccountNumber") if dictionary.get("AccountNumber") else APIHelper.SKIP
         account_id = dictionary.get("AccountId") if dictionary.get("AccountId") else APIHelper.SKIP
         pan = dictionary.get("PAN") if dictionary.get("PAN") else APIHelper.SKIP
+        panid = dictionary.get("PANID") if dictionary.get("PANID") else APIHelper.SKIP
         card_id = dictionary.get("CardId") if dictionary.get("CardId") else APIHelper.SKIP
         # Return an object of this model
         return cls(reissue_setting,
                    account_number,
                    account_id,
                    pan,
+                   panid,
                    card_id)

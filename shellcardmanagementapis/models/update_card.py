@@ -87,6 +87,7 @@ class UpdateCard(object):
             Optional if ColCoCode is passed, else Mandatory.<br />
         pan (str): PAN of the card.<br /> Optional if CardId is passed, else
             Mandatory.<br />
+        panid (float): PANID of the card
         payer_id (int): Payer id of the customer.<br /> Optional if
             PayerNumber is passed, else Mandatory.
         payer_number (str): PayerNumber of the customer.<br /> Optional if
@@ -112,6 +113,7 @@ class UpdateCard(object):
         "col_co_code": 'ColCoCode',
         "col_co_id": 'ColCoId',
         "pan": 'PAN',
+        "panid": 'PANID',
         "payer_id": 'PayerId',
         "payer_number": 'PayerNumber'
     }
@@ -133,6 +135,7 @@ class UpdateCard(object):
         'col_co_code',
         'col_co_id',
         'pan',
+        'panid',
         'payer_id',
         'payer_number',
     ]
@@ -148,6 +151,7 @@ class UpdateCard(object):
         'col_co_code',
         'col_co_id',
         'pan',
+        'panid',
         'payer_id',
         'payer_number',
     ]
@@ -169,6 +173,7 @@ class UpdateCard(object):
                  col_co_code=APIHelper.SKIP,
                  col_co_id=APIHelper.SKIP,
                  pan=APIHelper.SKIP,
+                 panid=APIHelper.SKIP,
                  payer_id=APIHelper.SKIP,
                  payer_number=APIHelper.SKIP):
         """Constructor for the UpdateCard class"""
@@ -206,6 +211,8 @@ class UpdateCard(object):
             self.col_co_id = col_co_id 
         if pan is not APIHelper.SKIP:
             self.pan = pan 
+        if panid is not APIHelper.SKIP:
+            self.panid = panid 
         if payer_id is not APIHelper.SKIP:
             self.payer_id = payer_id 
         if payer_number is not APIHelper.SKIP:
@@ -246,6 +253,7 @@ class UpdateCard(object):
         col_co_code = dictionary.get("ColCoCode") if "ColCoCode" in dictionary.keys() else APIHelper.SKIP
         col_co_id = dictionary.get("ColCoId") if "ColCoId" in dictionary.keys() else APIHelper.SKIP
         pan = dictionary.get("PAN") if "PAN" in dictionary.keys() else APIHelper.SKIP
+        panid = dictionary.get("PANID") if "PANID" in dictionary.keys() else APIHelper.SKIP
         payer_id = dictionary.get("PayerId") if "PayerId" in dictionary.keys() else APIHelper.SKIP
         payer_number = dictionary.get("PayerNumber") if "PayerNumber" in dictionary.keys() else APIHelper.SKIP
         # Return an object of this model
@@ -265,5 +273,6 @@ class UpdateCard(object):
                    col_co_code,
                    col_co_id,
                    pan,
+                   panid,
                    payer_id,
                    payer_number)

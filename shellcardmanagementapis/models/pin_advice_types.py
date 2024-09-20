@@ -17,7 +17,7 @@ class PINAdviceTypes(object):
 
     Attributes:
         pin_advice_type_id (int): Id of of PIN advice type. Possible Values:
-            1. Paper 2. Email 3. SMS 4. None
+            1.    Paper 2.    Email 3.    SMS 4.    None
         is_card_order_option (bool): Whether the PIN advice type is available
             for card ordering
         is_pin_reminder_option (bool): Whether the PIN advice type is

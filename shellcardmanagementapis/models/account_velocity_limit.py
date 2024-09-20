@@ -17,34 +17,33 @@ class AccountVelocityLimit(object):
 
     Attributes:
         mtype (str): Type of velocity (COUNT type is not present for limits of
-            PERTRX period  Possible Values: VALUE, VOLUME, COUNT
-        period (str): Duration of the velocity or threshold alert.  Possible
+            PERTRX period Possible Values: VALUE, VOLUME, COUNT
+        period (str): Duration of the velocity or threshold alert. Possible
             Values: DAILY, WEEKLY, MONTHLY, ANNUAL, LIFETIME, PERTRX
         limit (float): The limit associated with this velocity with the
             correct number of digits after the decimal point according to the
-            minor denomination of the currency of the card issuer.  Example:
+            minor denomination of the currency of the card issuer. Example:
             1500.55
         accumulation (float): The transaction accumulation during the current
             period with the correct number of digits after the decimal point
             according to the minor denomination of the currency of the card
             issuer (except for COUNT type velocity). Not present for PERTRX
-            period.  Example: 1100.55
+            period. Example: 1100.55
         balance (float): The remaining/available balance at this point in time
             with the correct number of digits after the decimal point
             according to the minor denomination of the currency of the card
             issuer (except for COUNT type velocity). Not present for PERTRX
-            period.  Example: 400.55
+            period. Example: 400.55
         override (bool): Indicate if the limit is overridden or default.
-            (false for default).  Example: false
+            (false for default). Example: false
         product_group (str): The reference group name for product
             differentiated velocities. This field cannot be used with Volume
-            type velocity.  Example: RoadSvc  This is an optional output
-            field.
+            type velocity. Example: RoadSvc This is an optional output field.
         threshold (float): The limit to trigger an alert if the balance after
             a transaction reaches it or below. 0 indicates no alerts will be
             sent. Not present if not set (issuer value threshold limit applies
-            if available). Not present for COUNT type velocity.  Example:
-            50.55  This is an optional output field.
+            if available). Not present for COUNT type velocity. Example: 50.55
+            This is an optional output field.
 
     """
 

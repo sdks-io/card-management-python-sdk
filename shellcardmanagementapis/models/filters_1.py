@@ -146,8 +146,8 @@ class Filters1(object):
             ReIssueSetting value is true.<br /> If ‘False’, the API will
             return cards with ReIsssueSetting value is false.<br /> If ‘ALL’,
             API will return cards with ReIssueSetting value True &amp; False
-            both.<br /> Allowed Values:<br /> 1. All<br /> 2. True<br /> 3.
-            False
+            both.<br /> Allowed Values:<br /> 1.    All<br /> 2.    True<br />
+            3.    False
         request_id (str): TODO: type description here.
 
     """

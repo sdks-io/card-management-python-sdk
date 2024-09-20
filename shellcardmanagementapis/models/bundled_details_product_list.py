@@ -16,14 +16,14 @@ class BundledDetailsProductList(object):
     TODO: type model description here.
 
     Attributes:
-        purchase_category_id (int): Purchase category Id  Example: 123, 124,
+        purchase_category_id (int): Purchase category Id Example: 123, 124,
             etc.,
         purchase_category_code (str): Purchase category name.  Example:   0 -
             All Fuels (without VP) and Lubricants  1 - FuelSave only  2 -
             FuelSave and Lubricants  3 - No Restrictions
-        products (List[str]): An array of 3-digit global product codes. 
+        products (List[str]): An array of 3-digit global product codes.
             Example: [ "033", "021", "023" ]
-        product_groups (List[str]): An array of product group ids.  Example: [
+        product_groups (List[str]): An array of product group ids. Example: [
             "670246404", "40557126" ]
         fuel_set_id (str): Fuel set id that is allowed to be purchased with
             the card

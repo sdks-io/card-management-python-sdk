@@ -16,7 +16,7 @@ class BundleCardRestrictionStatus(object):
     TODO: type model description here.
 
     Attributes:
-        pan (str): Card PAN.  Example: 7002051006629890645
+        pan (str): Card PAN. Example: 7002051006629890645
 
     """
 

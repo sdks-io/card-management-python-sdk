@@ -20,28 +20,33 @@ class AutoRenewCardResponseDataItems(object):
             Semicolon is used as delimiter.
         card_id_and_pan (str): Reference number for each individual auto renew
             card in the order.
+        panid (float): PANID of the card
 
     """
 
     # Create a mapping from Model property names to API property names
     _names = {
         "auto_renew_reference_id": 'AutoRenewReferenceId',
-        "card_id_and_pan": 'CardIdAndPAN'
+        "card_id_and_pan": 'CardIdAndPAN',
+        "panid": 'PANID'
     }
 
     _optionals = [
         'auto_renew_reference_id',
         'card_id_and_pan',
+        'panid',
     ]
 
     _nullables = [
         'auto_renew_reference_id',
         'card_id_and_pan',
+        'panid',
     ]
 
     def __init__(self,
                  auto_renew_reference_id=APIHelper.SKIP,
-                 card_id_and_pan=APIHelper.SKIP):
+                 card_id_and_pan=APIHelper.SKIP,
+                 panid=APIHelper.SKIP):
         """Constructor for the AutoRenewCardResponseDataItems class"""
 
         # Initialize members of the class
@@ -49,6 +54,8 @@ class AutoRenewCardResponseDataItems(object):
             self.auto_renew_reference_id = auto_renew_reference_id 
         if card_id_and_pan is not APIHelper.SKIP:
             self.card_id_and_pan = card_id_and_pan 
+        if panid is not APIHelper.SKIP:
+            self.panid = panid 
 
     @classmethod
     def from_dictionary(cls,
@@ -71,6 +78,8 @@ class AutoRenewCardResponseDataItems(object):
         # Extract variables from the dictionary
         auto_renew_reference_id = dictionary.get("AutoRenewReferenceId") if "AutoRenewReferenceId" in dictionary.keys() else APIHelper.SKIP
         card_id_and_pan = dictionary.get("CardIdAndPAN") if "CardIdAndPAN" in dictionary.keys() else APIHelper.SKIP
+        panid = dictionary.get("PANID") if "PANID" in dictionary.keys() else APIHelper.SKIP
         # Return an object of this model
         return cls(auto_renew_reference_id,
-                   card_id_and_pan)
+                   card_id_and_pan,
+                   panid)

@@ -18,20 +18,20 @@ class BundleDetailsResponse(object):
     TODO: type model description here.
 
     Attributes:
-        payer_id (int): Payer Id of the bundles and cards.  Example: 123456
-        payer_number (str): Payer Number of the bundles and cards.  Example:
+        payer_id (int): Payer Id of the bundles and cards. Example: 123456
+        payer_number (str): Payer Number of the bundles and cards. Example:
             GB000000123
-        account_id (int): Account ID of the bundle.  Example: 123456
-        account_number (str): Account Number of the bundle.  Example:
+        account_id (int): Account ID of the bundle. Example: 123456
+        account_number (str): Account Number of the bundle. Example:
             GB000000123
         bundle_id (str): unique identifier for the Card Bundle
         external_bundle_id (str): External system allocated Card Bundle
             identifier for Card Bundle.
         description (str): Card Bundle Description.
         pans (List[str]): List of Card Pans added to the card bundle.
-        restriction_currency_code (str): ISO currency code of the country. 
+        restriction_currency_code (str): ISO currency code of the country.
             Example: GBP
-        restriction_currency_symbol (str): Currency symbol of the country. 
+        restriction_currency_symbol (str): Currency symbol of the country.
             Example: £, $
         restrictions (BundledRestrictionsList): TODO: type description here.
         error (ErrorStatus): TODO: type description here.

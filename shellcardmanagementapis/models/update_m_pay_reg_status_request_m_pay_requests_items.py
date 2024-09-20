@@ -20,7 +20,7 @@ class UpdateMPayRegStatusRequestMPayRequestsItems(object):
             Manager approval status. Mandatory Maximum number of requests that
             can be submitted are 50
         status (str): Status of mobile payment registration request Mandatory.
-            Allowed values – • Approved •   Rejected
+            Allowed values – •    Approved •   Rejected
         approver_user_id (str): Approver’s User ID ApproverUserID is mandatory
             when Status is Approved else optional
         approver_user_display_name (str): Approver’s display name Mandatory

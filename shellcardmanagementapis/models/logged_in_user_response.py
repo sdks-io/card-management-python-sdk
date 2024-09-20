@@ -47,9 +47,9 @@ class LoggedInUserResponse(object):
             matrix and client Vs API access matrix.
         roles (List[Role]): List of roles the user have access to
         payers (List[PayerAccess]): List of payers which the user has access
-            to. • It will return 250 payers only and it is configurable. If
-            the user has more than that, the remaining will be ignored. • The
-            payer which is marked as default will be the first item in the
+            to. •    It will return 250 payers only and it is configurable. If
+            the user has more than that, the remaining will be ignored. •   
+            The payer which is marked as default will be the first item in the
             output.   Note: This list will be empty for users mapped with
             roles which has either IsShellAdmin or IsServiceAccount set to
             true as their access level is controlled at ColCo level only.

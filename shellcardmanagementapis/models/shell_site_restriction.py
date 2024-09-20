@@ -17,17 +17,17 @@ class ShellSiteRestriction(object):
 
     Attributes:
         country (str): ISO 3166-1 Numeric-3 code of the country where the site
-            restriction is applied.  Example: 826 for United Kingdom.
+            restriction is applied. Example: 826 for United Kingdom.
         sites (List[str]): A list of Site IDs in this country, in the format
             “AA1111” where “AA” is a 2-character country code and “1111” is a
             4-digit site number in that country, which is either restricted or
-            allowed.  For example, “GB1234”.
+            allowed. For example, “GB1234”.
         site_groups (List[str]): A list of site group ids in this country
             which is either restricted or allowed.
         exclusive (bool): Flag indicates whether the profile is inclusive or
-            exclusive.  Example: False - (inclusive), i.e. the “Sites” &
+            exclusive. Example: False - (inclusive), i.e. the “Sites” &
             “SiteGroups” properties lists the sites & site groups where the
-            transaction will be allowed.  True - (exclusive), i.e. the “Sites”
+            transaction will be allowed. True - (exclusive), i.e. the “Sites”
             & “SiteGroups” properties lists the sites and site groups where
             the transactions will be declined.
 

@@ -35,8 +35,8 @@ class CardGroupRequest(object):
         card_group_name (str): Card Group Name   Optional.   Minimum of 2
             characters should be provided else not considered.  CardGroups
             those have the entered value at any part
-        status (str): Card Group Status Mandatory Allowed values: • ALL •
-            TERMINATED • ACTIVE
+        status (str): Card Group Status Mandatory Allowed values: •    ALL •  
+            TERMINATED •    ACTIVE
         current_page (int): Page Number (as shown to the users) Optional
             Default value 1
         page_size (int): Page Size – Number of records to show on a page.

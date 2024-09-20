@@ -101,17 +101,17 @@ class CardDetail(object):
             ‘PrintOnCard’ set for the CardGroup will determine whether the
             CardGroupName should be embossed on the Card.
         card_delivery_type (int): Card delivery type.<br /> Mandatory <br />
-            Allowed Value: <br /> 1. Customer Address(Default) <br /> 2. New
-            Delivery Address
+            Allowed Value: <br /> 1.    Customer Address(Default) <br /> 2.   
+            New Delivery Address
         card_contact (CardContact): TODO: type description here.
         pin_delivery_address_type (int): PIN delivery address type
-            selection.<br /> Optional<br /> Allowed Values:<br /> 1. Customer
-            Address(Default)<br /> 2. Card Address<br /> 3. New Delivery
-            Address
+            selection.<br /> Optional<br /> Allowed Values:<br /> 1.   
+            Customer Address(Default)<br /> 2.    Card Address<br /> 3.    New
+            Delivery Address
         pin_advice_type (int): PIN delivery method.<br /> Mandatory<br />
-            Allowed Values:<br /> 1. Paper<br /> 2. Email<br /> 3. SMS<br />
-            4. None <br /> **Note:** Paper delivery not applicable for
-            selfselctedPIN type
+            Allowed Values:<br /> 1.    Paper<br /> 2.    Email<br /> 3.   
+            SMS<br /> 4.    None <br /> **Note:** Paper delivery not
+            applicable for selfselctedPIN type
         pin_contact (PINContact): TODO: type description here.
         notify_caller (bool): True/False.<br /> Optional.<br /> Default:
             False<br /> If true, the caller would be notified back with the
@@ -120,8 +120,8 @@ class CardDetail(object):
             use , please refer the API documentation for the more details.
         caller (str): The caller to be notified with the status of the card
             order.<br /> Mandatory, if NotifyCaller is true.<br /> Maximum
-            field length: 20<br /> Allowed values:<br /> • “NextGenUI”: This
-            value to be used by next gen UI application.<br /> •
+            field length: 20<br /> Allowed values:<br /> •    “NextGenUI”:
+            This value to be used by next gen UI application.<br /> •   
             “FleetHubUILifeTime”: This value to be used by Fleet Hub UI
             application for life time restriction cards.<br /> Note: The
             values passed in this field are case insensitive
@@ -137,10 +137,10 @@ class CardDetail(object):
             value passed on this parameter.
         fleet_option (str): Type of action will be performed for the card when
             the fleet Id is validated.<br /> Optional.<br /> Default:
-            NO_VALIDATION<br /> Allowed values:<br /> • ALERT<br /> •
-            DECLINE<br /> • DECLINE_ALERT<br /> • NO_VALIDATION<br /> Note:
-            When FleetIdOption is not provided and validatefleetid is true
-            then by default allowed value is NO_VALIDATION.
+            NO_VALIDATION<br /> Allowed values:<br /> •    ALERT<br /> •   
+            DECLINE<br /> •    DECLINE_ALERT<br /> •    NO_VALIDATION<br />
+            Note: When FleetIdOption is not provided and validatefleetid is
+            true then by default allowed value is NO_VALIDATION.
         bundle_id (str): Gateway Bundle Id to which the ordered card will be
             added.<br /> Optional.<br /> When a valid bundle Id is passed,
             upon successful processing of Card Order, the card will be added
@@ -181,7 +181,10 @@ class CardDetail(object):
         client_reference_id (str): This is the Client Reference Id of card in
             the order which needs to be passed by the client.This will be
             playback in the ordercard enquiry<br /> Optional
-        auto_renew (CardDetailAutoRenewEnum): TODO: type description here.
+        auto_renew (CardDetailAutoRenewEnum): Whether to reissue card
+            automatically when nearing the expiry.   Allowed values: - 1.   
+            As per card type setting (Default). 2.    Card will be Reissued
+            when nearing its expiry date. 3.    Card will not be Reissued.
 
     """
 

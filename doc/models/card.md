@@ -41,7 +41,9 @@
 | `local_currency_code` | `str` | Optional | ISO code of the local currency. <br /> |
 | `local_currency_symbol` | `str` | Optional | Local currency symbol. <br /> |
 | `odometer_input` | `bool` | Optional | True/False True if odometer input is enabled on the card, else false |
-| `pan` | `str` | Optional | Card PAN Mask PAN (Mask all digits except the Last 6 digits of the PAN) |
+| `pan` | `str` | Optional | Card PAN |
+| `masked_pan` | `str` | Optional | Card PAN Mask PAN (Mask all digits except the Last 6 digits of the PAN) |
+| `panid` | `float` | Optional | Card PAN ID. |
 | `purchase_category_code` | `str` | Optional | Purchase category code |
 | `purchase_category_id` | `int` | Optional | Purchase category Id <br /><br>Note: Not Purchase code. |
 | `purchase_category_name` | `str` | Optional | Purchase category name |

@@ -23,27 +23,27 @@ class RestrictionCardList(object):
         status_id (int): Card Status id
         status_description (str): Status Description (Active, Temporarily
             Blocked, etc.,)
-        driver_name (str): Driver name  Example:  ANDREW GILBERRY
-        vrn (str): Vehicle registration number  Example: MV65YLH
-        issue_date (str): Issue date  Format: yyyyMMdd  Note: Clients to
-            convert this to appropriate DateTime type.
+        driver_name (str): Driver name Example:  ANDREW GILBERRY
+        vrn (str): Vehicle registration number Example: MV65YLH
+        issue_date (str): Issue date Format: yyyyMMdd Note: Clients to convert
+            this to appropriate DateTime type.
         issue_number (int): Issue Number
-        account_id (int): Account ID  Example: 29484
-        account_number (str): Account Number  Example: GB99215176
-        account_name (str): Account Name  Example: MATTHEW ALGIE & COMPANY
+        account_id (int): Account ID Example: 29484
+        account_number (str): Account Number Example: GB99215176
+        account_name (str): Account Name Example: MATTHEW ALGIE & COMPANY
             LIMITED
         account_short_name (str): Account Short Name
-        currency_code (str): ISO currency code of the Customer Currency 
+        currency_code (str): ISO currency code of the Customer Currency
             Example: GBP
-        col_co_currency_code (str): ISO currency code of the country. 
+        col_co_currency_code (str): ISO currency code of the country. Example:
+            GBP
+        col_co_currency_symbol (str): Currency symbol of the country. Example:
+            £, $
+        restriction_currency_code (str): ISO currency code of the country.
             Example: GBP
-        col_co_currency_symbol (str): Currency symbol of the country. 
+        restriction_currency_symbol (str): Currency symbol of the country.
             Example: £, $
-        restriction_currency_code (str): ISO currency code of the country. 
-            Example: GBP
-        restriction_currency_symbol (str): Currency symbol of the country. 
-            Example: £, $
-        purchase_category_id (str): Purchase category Id  Example: 123, 124,
+        purchase_category_id (str): Purchase category Id Example: 123, 124,
             etc.,
         purchase_category_code (str): Purchase category code   Example:   0 -
             All Fuels (without VP) and Lubricants  1 - FuelSave only  2 -
@@ -55,39 +55,39 @@ class RestrictionCardList(object):
             FuelSave and Lubricants  3 - No Restrictions  4 - VP and FuelSave 
             5 - Diesel ONLY  6 - Diesel and Lubricants  7 - VP and Lubricants 
             8 - VP and FuelSave and Lubricants
-        is_superseded (bool): True/False  True if a new card is issued with
-            the same PAN, else false
-        is_virtual_card (bool): True/False  True if it is a virtual card, else
+        is_superseded (bool): True/False True if a new card is issued with the
+            same PAN, else false
+        is_virtual_card (bool): True/False True if it is a virtual card, else
             false
-        is_national (bool): True/False  True if it is a national card, else
+        is_national (bool): True/False True if it is a national card, else
             false
-        is_international (bool): True/False  True if it is an international
+        is_international (bool): True/False True if it is an international
             card, else false
-        is_crt (bool): True/False  True if it is a CRT type card, else false
-        is_fleet (bool): True/False  True if it is a Fleet type card, else
+        is_crt (bool): True/False True if it is a CRT type card, else false
+        is_fleet (bool): True/False True if it is a Fleet type card, else
             false
-        is_shell_sites_only (bool): True/False  True if it is only allowed at
+        is_shell_sites_only (bool): True/False True if it is only allowed at
             Shell sites, else false
-        is_partner_sites_included (bool): True/False  True if it is allowed at
+        is_partner_sites_included (bool): True/False True if it is allowed at
             all partner sites, else false
-        card_type_id (int): Card Type ID  Example Id & Description:  1 -
-            Philippines CRT 7077861  2- Philippines Fleet 7002861  5-SHELL
-            FLEET- HONG KONG 7002821  6-SHELL NHF- HONG KONG 7002821  7-SHELL
+        card_type_id (int): Card Type ID Example Id & Description: 1 -
+            Philippines CRT 7077861 2- Philippines Fleet 7002861 5-SHELL
+            FLEET- HONG KONG 7002821 6-SHELL NHF- HONG KONG 7002821 7-SHELL
             CRT- HONG KONG 7077821
         card_type_code (str): ISO code of the card i.e. first 7 digits of the
             PAN
-        card_type_name (str): Card Type Name  Example Id & Description:  1 -
-            Philippines CRT 7077861  2- Philippines Fleet 7002861  5-SHELL
-            FLEET- HONG KONG 7002821  6-SHELL NHF- HONG KONG 7002821  7-SHELL
+        card_type_name (str): Card Type Name Example Id & Description: 1 -
+            Philippines CRT 7077861 2- Philippines Fleet 7002861 5-SHELL
+            FLEET- HONG KONG 7002821 6-SHELL NHF- HONG KONG 7002821 7-SHELL
             CRT- HONG KONG 7077821
-        bundle_id (str): Bundle Id associated with card in the Gateway.  This
+        bundle_id (str): Bundle Id associated with card in the Gateway. This
             field will have a null value if the card is not associated with
-            any bundle of IncludeBundleDetails in request is false.  If the
+            any bundle of IncludeBundleDetails in request is false. If the
             search is based on a bundle Id, the same will be returned.
-        medium_type_id (int): Id of the medium type identifier.  Example:
-            1,2,4  Full list below:  1 - Fuel Card  2 - Fuel Card with EV  4 -
-            Fuel Card and Key fob Card  5 - Key fob  6 - Virtual Card  7 -
-            NPII Token  8 – Smartpay
+        medium_type_id (int): Id of the medium type identifier. Example: 1,2,4
+            Full list below: 1 - Fuel Card 2 - Fuel Card with EV 4 - Fuel Card
+            and Key fob Card 5 - Key fob 6 - Virtual Card 7 - NPII Token 8 –
+            Smartpay
         medium_type (str): Name of the medium type identifier.    Example:
             Fuel Card, Fuel Card with EV, Key fob    Full list below:  1 -
             Fuel Card  2 - Fuel Card with EV  4 - Fuel Card and Key fob Card 

@@ -24,16 +24,16 @@ class SummaryofbundlerRequest(object):
             Latvia, Lithuania, Estonia, Ukraine etc. It is optional for other
             countries if ColCoID is provided.  Example:  86 for Philippines  5
             for UK
-        payer_id (int): Payer Id  of the selected payer.  Optional if
-            PayerNumber is passed else Mandatory  Example: 123456
-        payer_number (str): Payer Number of the selected payer.  Optional if
-            PayerId is passed else Mandatory  Example: GB000000123
-        account_id (int): Account Id of the customer.  Optional if Account
-            Number is passed else Mandatory  Example: 123456
-        account_number (str): Account Number of the customer.  Optional if
-            Account Id is passed else Mandatory  Example: GB000000123
-        bundle_id (List[str]): List of Bundle Id associated with account 
-            Optional.  When not present all the bundles in the given account
+        payer_id (int): Payer Id  of the selected payer. Optional if
+            PayerNumber is passed else Mandatory Example: 123456
+        payer_number (str): Payer Number of the selected payer. Optional if
+            PayerId is passed else Mandatory Example: GB000000123
+        account_id (int): Account Id of the customer. Optional if Account
+            Number is passed else Mandatory Example: 123456
+        account_number (str): Account Number of the customer. Optional if
+            Account Id is passed else Mandatory Example: GB000000123
+        bundle_id (List[str]): List of Bundle Id associated with account
+            Optional. When not present all the bundles in the given account
             will be returned in the response.
 
     """

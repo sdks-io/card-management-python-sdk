@@ -24,11 +24,12 @@ class PurchaseCategory1AllOf0(object):
             order cards requests if true else will not be used for ordering
             cards.
         product_groups (List[ProductGroup]): List of product sets
-        title (str): Purchase category Title by given language code.  1. Basic
-            2. Essentials  3. Extra   4. Premium  5. Basic and LNG  6.
-            Essentials and LNG  7. Extra and LNG  8. Premium and LNG  Note:
-            Purchase Category name (GFN) is returned when Title does not exist
-            for the given language Code and default language code (en-GB).
+        title (str): Purchase category Title by given language code.  1.   
+            Basic   2.    Essentials  3.    Extra   4.    Premium  5.    Basic
+            and LNG  6.    Essentials and LNG  7.    Extra and LNG  8.   
+            Premium and LNG  Note: Purchase Category name (GFN) is returned
+            when Title does not exist for the given language Code and default
+            language code (en-GB).
         description (str): Purchase category description by given language
             code.  Example:   0 - Diesel Products and TMF  1 - All Fuel
             Products and TMF  2 - All Fuels Products, Car related items and

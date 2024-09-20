@@ -37,6 +37,8 @@ class SubmittedCard(object):
             Optional if ColCoCode is passed, else Mandatory.<br />
         pan (str): PAN of the card.<br /> Optional if CardId is passed, else
             Mandatory.<br />
+        panid (float): PANID of the card
+        masked_pan (str): Card PAN
         payer_id (int): Payer id of the customer.<br /> Optional if
             PayerNumber is passed, else Mandatory.
         payer_number (str): PayerNumber of the customer.<br /> Optional if
@@ -55,6 +57,8 @@ class SubmittedCard(object):
         "col_co_code": 'ColCoCode',
         "col_co_id": 'ColCoId',
         "pan": 'PAN',
+        "panid": 'PANID',
+        "masked_pan": 'MaskedPAN',
         "payer_id": 'PayerId',
         "payer_number": 'PayerNumber'
     }
@@ -69,6 +73,8 @@ class SubmittedCard(object):
         'col_co_code',
         'col_co_id',
         'pan',
+        'panid',
+        'masked_pan',
         'payer_id',
         'payer_number',
     ]
@@ -83,6 +89,8 @@ class SubmittedCard(object):
         'col_co_code',
         'col_co_id',
         'pan',
+        'panid',
+        'masked_pan',
         'payer_id',
         'payer_number',
     ]
@@ -97,6 +105,8 @@ class SubmittedCard(object):
                  col_co_code=APIHelper.SKIP,
                  col_co_id=APIHelper.SKIP,
                  pan=APIHelper.SKIP,
+                 panid=APIHelper.SKIP,
+                 masked_pan=APIHelper.SKIP,
                  payer_id=APIHelper.SKIP,
                  payer_number=APIHelper.SKIP):
         """Constructor for the SubmittedCard class"""
@@ -120,6 +130,10 @@ class SubmittedCard(object):
             self.col_co_id = col_co_id 
         if pan is not APIHelper.SKIP:
             self.pan = pan 
+        if panid is not APIHelper.SKIP:
+            self.panid = panid 
+        if masked_pan is not APIHelper.SKIP:
+            self.masked_pan = masked_pan 
         if payer_id is not APIHelper.SKIP:
             self.payer_id = payer_id 
         if payer_number is not APIHelper.SKIP:
@@ -153,6 +167,8 @@ class SubmittedCard(object):
         col_co_code = dictionary.get("ColCoCode") if "ColCoCode" in dictionary.keys() else APIHelper.SKIP
         col_co_id = dictionary.get("ColCoId") if "ColCoId" in dictionary.keys() else APIHelper.SKIP
         pan = dictionary.get("PAN") if "PAN" in dictionary.keys() else APIHelper.SKIP
+        panid = dictionary.get("PANID") if "PANID" in dictionary.keys() else APIHelper.SKIP
+        masked_pan = dictionary.get("MaskedPAN") if "MaskedPAN" in dictionary.keys() else APIHelper.SKIP
         payer_id = dictionary.get("PayerId") if "PayerId" in dictionary.keys() else APIHelper.SKIP
         payer_number = dictionary.get("PayerNumber") if "PayerNumber" in dictionary.keys() else APIHelper.SKIP
         # Return an object of this model
@@ -165,5 +181,7 @@ class SubmittedCard(object):
                    col_co_code,
                    col_co_id,
                    pan,
+                   panid,
+                   masked_pan,
                    payer_id,
                    payer_number)

@@ -46,9 +46,10 @@ class UpdateCardGroupRequest(object):
             updated. Otherwise set to ‘null’.
         card_type_id (int): Card Type ID of the card group.   Populate this
             field if the value needs to be updated. Otherwise set to ‘null’. 
-            Optional  Note:   1) If a card type is passed, the cardgorup will
-            allow cards with same card type to be moved in to the card group. 
-            2) Pass ‘-1’ to remove the card type from the card group.
+            Optional  Note:   1)    If a card type is passed, the cardgorup
+            will allow cards with same card type to be moved in to the card
+            group.  2)    Pass ‘-1’ to remove the card type from the card
+            group.
         terminate_card_group (bool): Whether to terminate the card group. When
             set to true, the card group will be terminated by setting current
             date as it’s termination date. Optional, False by default .

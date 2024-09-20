@@ -26,11 +26,11 @@ class DayTimeRestriction(object):
         saturday (bool): True if card could be used on a Saturday, else false
         sunday (bool): True if card could be used on a Sunday, else false.
         time_from (str): Card could be used from this time in a day.  Format:
-            HH:mm (24-hour format)  Note:   1. Clients to convert this to
+            HH:mm (24-hour format)  Note:   1.    Clients to convert this to
             appropriate DateTime or TimeSpan type.  “00:00” is the lowest time
             value and “23:59” is the highest time value.
         time_to (str): Card could be used up to this time in a day.   Format:
-            HH:mm (24-hour format)  Note:   1. Clients to convert this to
+            HH:mm (24-hour format)  Note:   1.    Clients to convert this to
             appropriate DateTime or TimeSpan type.   “00:00” is the lowest
             time value and “23:59” is the highest time value.
 

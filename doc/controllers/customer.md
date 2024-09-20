@@ -68,7 +68,6 @@ result = customer_controller.loggedinuser(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -225,7 +224,6 @@ result = customer_controller.payers(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -480,7 +478,6 @@ result = customer_controller.customer(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -648,7 +645,6 @@ result = customer_controller.accounts(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -793,7 +789,6 @@ result = customer_controller.card_type(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -955,7 +950,6 @@ result = customer_controller.cardgroups(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1085,7 +1079,6 @@ result = customer_controller.auditreport(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1214,7 +1207,6 @@ result = customer_controller.createcardgroup(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*
@@ -1315,7 +1307,6 @@ result = customer_controller.updatecardgroup(
     request_id,
     body=body
 )
-print(result)
 ```
 
 ## Example Response *(as JSON)*

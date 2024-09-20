@@ -29,6 +29,8 @@ class OrderCardEnquiry(object):
         card_pan (str): Card PAN.<br /> Mask PAN (Mask all digits except the
             Last 6 digits of the PAN).<br /> The field will be null if the
             card order request is not successly processed.
+        masked_pan (str): Card PAN
+        panid (float): Card PAN ID as a unique number for each PAN
         card_type_code (str): CardTypeCode<br /> ISO code of the card i.e.
             first 7 digits of the PAN
         card_type_id (int): CardTypeId
@@ -55,10 +57,10 @@ class OrderCardEnquiry(object):
             order card request.<br /> This field will be null if the order is
             through BCO.
         order_status (str): Order status.<br /> Possible values:<br /> P  
-            Pending<br /> I   Picked up for processing<br /> PX Failed at
-            Queue but retry attempts pending<br /> X Failed  at Queue<br /> R
-            Card is processed, awaiting for PAN update.<br /> S Processed<br
-            /> F Failed
+            Pending<br /> I   Picked up for processing<br /> PX    Failed at
+            Queue but retry attempts pending<br /> X    Failed  at Queue<br />
+            R    Card is processed, awaiting for PAN update.<br /> S   
+            Processed<br /> F    Failed
         payer_id (int): Payer ID on the card request.
         payer_number (str): Payer Number on the card request
         processed_date (str): Date and time (in cutomers local time) when the
@@ -111,6 +113,8 @@ class OrderCardEnquiry(object):
         "card_group_name": 'CardGroupName',
         "card_id": 'CardId',
         "card_pan": 'CardPAN',
+        "masked_pan": 'MaskedPAN',
+        "panid": 'PANID',
         "card_type_code": 'CardTypeCode',
         "card_type_id": 'CardTypeId',
         "card_type_name": 'CardTypeName',
@@ -149,6 +153,8 @@ class OrderCardEnquiry(object):
         'card_group_name',
         'card_id',
         'card_pan',
+        'masked_pan',
+        'panid',
         'card_type_code',
         'card_type_id',
         'card_type_name',
@@ -187,6 +193,8 @@ class OrderCardEnquiry(object):
         'card_group_name',
         'card_id',
         'card_pan',
+        'masked_pan',
+        'panid',
         'card_type_code',
         'card_type_id',
         'card_type_name',
@@ -222,6 +230,8 @@ class OrderCardEnquiry(object):
                  card_group_name=APIHelper.SKIP,
                  card_id=APIHelper.SKIP,
                  card_pan=APIHelper.SKIP,
+                 masked_pan=APIHelper.SKIP,
+                 panid=APIHelper.SKIP,
                  card_type_code=APIHelper.SKIP,
                  card_type_id=APIHelper.SKIP,
                  card_type_name=APIHelper.SKIP,
@@ -268,6 +278,10 @@ class OrderCardEnquiry(object):
             self.card_id = card_id 
         if card_pan is not APIHelper.SKIP:
             self.card_pan = card_pan 
+        if masked_pan is not APIHelper.SKIP:
+            self.masked_pan = masked_pan 
+        if panid is not APIHelper.SKIP:
+            self.panid = panid 
         if card_type_code is not APIHelper.SKIP:
             self.card_type_code = card_type_code 
         if card_type_id is not APIHelper.SKIP:
@@ -350,6 +364,8 @@ class OrderCardEnquiry(object):
         card_group_name = dictionary.get("CardGroupName") if "CardGroupName" in dictionary.keys() else APIHelper.SKIP
         card_id = dictionary.get("CardId") if "CardId" in dictionary.keys() else APIHelper.SKIP
         card_pan = dictionary.get("CardPAN") if "CardPAN" in dictionary.keys() else APIHelper.SKIP
+        masked_pan = dictionary.get("MaskedPAN") if "MaskedPAN" in dictionary.keys() else APIHelper.SKIP
+        panid = dictionary.get("PANID") if "PANID" in dictionary.keys() else APIHelper.SKIP
         card_type_code = dictionary.get("CardTypeCode") if "CardTypeCode" in dictionary.keys() else APIHelper.SKIP
         card_type_id = dictionary.get("CardTypeId") if "CardTypeId" in dictionary.keys() else APIHelper.SKIP
         card_type_name = dictionary.get("CardTypeName") if "CardTypeName" in dictionary.keys() else APIHelper.SKIP
@@ -386,6 +402,8 @@ class OrderCardEnquiry(object):
                    card_group_name,
                    card_id,
                    card_pan,
+                   masked_pan,
+                   panid,
                    card_type_code,
                    card_type_id,
                    card_type_name,

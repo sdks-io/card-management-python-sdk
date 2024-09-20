@@ -18,7 +18,7 @@
 | `external_bundle_id` | `str` | Optional | Identifier of the bundle in external system.<br>Optional. |
 | `description` | `str` | Optional | A bundle description.<br>Optional. |
 | `cards` | `List[str]` | Optional | List of Card PANs to be added in the bundle.<br>Mandatory.<br>Example: 7002051006629890645<br>When PAN matches with multiple cards, the restriction will be applied on the latest issued card. |
-| `restrictions` | [`BundleRestriction`](../../doc/models/bundle-restriction.md) | Optional | - |
+| `restrictions` | `object` | Optional | - |
 
 ## Example (as JSON)
 

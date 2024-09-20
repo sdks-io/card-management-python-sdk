@@ -12,7 +12,7 @@ from shellcardmanagementapis.models.update_card import UpdateCard
 
 class CardManagementV1CancelRequest(object):
 
-    """Implementation of the 'Card Management V1 Cancel Request' model.
+    """Implementation of the 'CardManagementV1CancelRequest' model.
 
     TODO: type model description here.
 

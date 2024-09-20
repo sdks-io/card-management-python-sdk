@@ -16,11 +16,11 @@ class RestrictioncardsRes(object):
     TODO: type model description here.
 
     Attributes:
-        account_id (int): Account Id of the customer.  Example: 123456
-        account_number (str): Account Number of the customer.  Example:
+        account_id (int): Account Id of the customer. Example: 123456
+        account_number (str): Account Number of the customer. Example:
             GB000000123
-        card_id (str): Unique Card Id  Example: 275549
-        pan (str): Card PAN.  Example: 7002051006629890645
+        card_id (str): Unique Card Id Example: 275549
+        pan (str): Card PAN. Example: 7002051006629890645
         usage_restriction_status (str): Status of the card usage restriction
             submitted. Based on the response the value will be set as either
             “Success” or “Failed”.

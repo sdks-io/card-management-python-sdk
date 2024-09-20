@@ -18,9 +18,9 @@ class AccountRestrictionResponse(object):
 
     Attributes:
         request_id (str): Request Id of the API call
-        account_id (int): Account Id on which restriction is applied. 
-            Example: 123456
-        account_number (str): Account Number on which restriction is applied. 
+        account_id (int): Account Id on which restriction is applied. Example:
+            123456
+        account_number (str): Account Number on which restriction is applied.
             Example: GB000000123
         usage_restriction_status (str): Status of the card usage restriction
             submitted to Gateway. Based on the response from Gateway value

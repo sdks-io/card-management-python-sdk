@@ -12,7 +12,7 @@ from shellcardmanagementapis.models.update_card import UpdateCard
 
 class CardManagementV1UpdatestatusRequest(object):
 
-    """Implementation of the 'Card Management V1 Updatestatus Request' model.
+    """Implementation of the 'CardManagementV1UpdatestatusRequest' model.
 
     TODO: type model description here.
 

@@ -12,7 +12,7 @@ from shellcardmanagementapis.models.card_detail import CardDetail
 
 class CardManagementV1OrdercardRequest(object):
 
-    """Implementation of the 'Card Management V1 Ordercard Request' model.
+    """Implementation of the 'CardManagementV1OrdercardRequest' model.
 
     TODO: type model description here.
 

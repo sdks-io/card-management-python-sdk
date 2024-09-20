@@ -14,9 +14,9 @@
 | `account_number` | `str` | Optional | Account Number |
 | `account_short_name` | `str` | Optional | Account Short Name |
 | `best_of_indicator` | `bool` | Optional | Best of Indicator of the Pricing customer/account configured. |
-| `billing_frequency_type` | `str` | Optional | Billing/Invoice frequency. The frequency in which the transactions will be considered for invoicing in a bulling run<br>E.g.:<br>1	Daily (all days)<br>2	Daily (only working days)<br>3	Weekly - Monday<br>4	Weekly – Tuesday<br>Etc. |
+| `billing_frequency_type` | `str` | Optional | Billing/Invoice frequency. The frequency in which the transactions will be considered for invoicing in a bulling run<br>E.g.:<br>1    Daily (all days)<br>2    Daily (only working days)<br>3    Weekly - Monday<br>4    Weekly – Tuesday<br>Etc. |
 | `billing_frequency_type_id` | `int` | Optional | Billing/Invoice frequency Identifier. Indicates the frequency in which the transactions will be considered for invoicing in a bulling run |
-| `billing_run_frequency` | `str` | Optional | Frequency at which the billing process is triggered. E.g.:<br>1	Daily (all days)<br>2	Daily (only working days)<br>3	Weekly - Monday<br>4	Weekly – Tuesday<br>Etc. |
+| `billing_run_frequency` | `str` | Optional | Frequency at which the billing process is triggered. E.g.:<br>1    Daily (all days)<br>2    Daily (only working days)<br>3    Weekly - Monday<br>4    Weekly – Tuesday<br>Etc. |
 | `billing_run_frequency_type_id` | `int` | Optional | Frequency at which the billing process is triggered.<br>E.g.: 1, 2, 3, etc. |
 | `col_co_country_code` | `str` | Optional | The 2-character ISO Code for the customer and card owning country. |
 | `currency_code` | `str` | Optional | ISO code of customer currency. |

@@ -31,8 +31,8 @@ class CustomerDetailResponse(object):
         band (str): Band Id and Description of the Payer in Card Platform e.g.
             (Id – Description): 1-Platinum 2-Gold 3-Silver 4-Bronze
         billing_address (Address): TODO: type description here.
-        card_group_position (str): Card group position at – • Payer – Payer
-            level • Account – Account level
+        card_group_position (str): Card group position at – •    Payer – Payer
+            level •    Account – Account level
         correspondence_address (Address): TODO: type description here.
         delivery_addresses (List[DeliveryAddresses]): TODO: type description
             here.
@@ -58,7 +58,7 @@ class CustomerDetailResponse(object):
             Description):  1-Active  2-Requested from UTA   3-Awaiting
             embossing   4-Manufactured  5-Awaiting despatch
         default_pin_advice_type (int): Default PIN AdviceType of the customer.
-            Possible Values: 1. Paper 2. Email 3. SMS 4. None
+            Possible Values: 1.    Paper 2.    Email 3.    SMS 4.    None
         pin_advice_types (List[PINAdviceTypes]): TODO: type description here.
         error (ErrorStatus): TODO: type description here.
         request_id (str): API Request id

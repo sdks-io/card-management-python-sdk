@@ -20,18 +20,22 @@ class SearchCard(object):
             mandatory.
         pan (str): Card PAN. Optional if CardId is given, else mandatory.
             Note: PAN is ignored if CardId is given.
+        panid (float): Card PANID    optional id cardid given, else mandatory 
+            Note: PANID is ignored if CardId is given.
 
     """
 
     # Create a mapping from Model property names to API property names
     _names = {
         "card_id": 'CardId',
-        "pan": 'PAN'
+        "pan": 'PAN',
+        "panid": 'PANID'
     }
 
     _optionals = [
         'card_id',
         'pan',
+        'panid',
     ]
 
     _nullables = [
@@ -41,7 +45,8 @@ class SearchCard(object):
 
     def __init__(self,
                  card_id=APIHelper.SKIP,
-                 pan=APIHelper.SKIP):
+                 pan=APIHelper.SKIP,
+                 panid=APIHelper.SKIP):
         """Constructor for the SearchCard class"""
 
         # Initialize members of the class
@@ -49,6 +54,8 @@ class SearchCard(object):
             self.card_id = card_id 
         if pan is not APIHelper.SKIP:
             self.pan = pan 
+        if panid is not APIHelper.SKIP:
+            self.panid = panid 
 
     @classmethod
     def from_dictionary(cls,
@@ -71,6 +78,8 @@ class SearchCard(object):
         # Extract variables from the dictionary
         card_id = dictionary.get("CardId") if "CardId" in dictionary.keys() else APIHelper.SKIP
         pan = dictionary.get("PAN") if "PAN" in dictionary.keys() else APIHelper.SKIP
+        panid = dictionary.get("PANID") if dictionary.get("PANID") else APIHelper.SKIP
         # Return an object of this model
         return cls(card_id,
-                   pan)
+                   pan,
+                   panid)

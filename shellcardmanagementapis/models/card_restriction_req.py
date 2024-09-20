@@ -24,10 +24,10 @@ class CardRestrictionReq(object):
             Mandatory for serviced OUs such as Romania, Latvia, Lithuania,
             Estonia, Ukraine etc. It is optional for other countries if
             ColCoID is provided.  Example:  86 for Philippines  5 for UK
-        payer_id (int): Payer Id of the selected payer.  Optional if
-            PayerNumber is passed else Mandatory  Example: 123456
-        payer_number (str): Payer Number of the selected payer.  Optional if
-            PayerId is passed else Mandatory  Example: GB000000123
+        payer_id (int): Payer Id of the selected payer. Optional if
+            PayerNumber is passed else Mandatory Example: 123456
+        payer_number (str): Payer Number of the selected payer. Optional if
+            PayerId is passed else Mandatory Example: GB000000123
         cards (RestrictionCardsList): TODO: type description here.
 
     """
