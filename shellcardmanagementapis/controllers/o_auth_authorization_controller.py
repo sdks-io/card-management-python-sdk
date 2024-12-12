@@ -34,8 +34,7 @@ class OAuthAuthorizationController(BaseController):
 
         Args:
             authorization (str): Authorization header in Basic auth format
-            scope (str, optional): Requested scopes as a space-delimited
-                list.
+            scope (str, optional): Requested scopes as a space-delimited list.
             _optional_form_parameters (Array, optional): Additional optional
                 form parameters are supported by this endpoint
 

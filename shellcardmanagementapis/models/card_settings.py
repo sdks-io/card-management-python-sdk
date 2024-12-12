@@ -75,8 +75,7 @@ class CardSettings(object):
         phone_number (str): Phone number for to send SMS. <br /> Optional<br
             /> Max field length: 20
         email_address (str): Email address for to send email.<br /> Mandatory
-            if PINAdviceType is email else optional.<br /> Max field length:
-            90
+            if PINAdviceType is email else optional.<br /> Max field length: 90
         pin_delivery_address_type (int): PIN delivery address type
             selection.<br /> Optional<br /> Allowed Values:<br /> 1.   
             Customer Address(Default)<br /> 2.    Card Address<br /> 3.    New
@@ -92,8 +91,7 @@ class CardSettings(object):
         pin_delivery_company_name (str): Company name.<br /> Mandatory - If
             PINAdviceType is paper else optional.<br /> Max field length: 50
         pin_delivery_address_line_1 (str): Address line 1.<br /> Mandatory -
-            If PINAdviceType is paper else optional.<br /> Max field length:
-            40
+            If PINAdviceType is paper else optional.<br /> Max field length: 40
         pin_delivery_address_line_2 (str): Address line 2.<br /> Optional <br
             /> Max field length: 40
         pin_delivery_address_line_3 (str): Address line 3.<br /> Optional <br
@@ -389,7 +387,7 @@ class CardSettings(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

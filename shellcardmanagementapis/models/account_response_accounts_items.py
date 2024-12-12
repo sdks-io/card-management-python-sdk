@@ -41,22 +41,17 @@ class AccountResponseAccountsItems(object):
         currency_code (str): ISO code of customer currency.
         currency_symbol (str): €
         day_1_run (int): The first day in a month when the billing should run
-            in case of multiple billing runs configured with in a single
-            month
+            in case of multiple billing runs configured with in a single month
         day_2_run (int): The second day in a month when the billing should run
-            in case of multiple billing runs configured with in a single
-            month
+            in case of multiple billing runs configured with in a single month
         day_3_run (int): The third day in a month when the billing should run
-            in case of multiple billing runs configured with in a single
-            month
+            in case of multiple billing runs configured with in a single month
         day_4_run (int): The fourth day in a month when the billing should run
-            in case of multiple billing runs configured with in a single
-            month
+            in case of multiple billing runs configured with in a single month
         frequency_type (str): Frequency type unit id & description E.g.: 1 -
             Daily 2 - Weekly 3 - Monthly 4 - Invoicing 6 - Calendar quarter
         gross_amount (float): Gross amount in customer currency.
-        international_pos_language_code (str): POS international language
-            code
+        international_pos_language_code (str): POS international language code
         international_pos_language_id (int): POS international language ID
         invoice_account_id (int): The Account ID of the account on which the
             invoice is generated.
@@ -74,8 +69,7 @@ class AccountResponseAccountsItems(object):
         local_pos_language_code (str): POS local language code
         local_pos_language_id (int): POS local language ID
         net_amount (float): Net amount in customer currency.
-        outstanding_balance (float): Outstanding balance in customer
-            currency.
+        outstanding_balance (float): Outstanding balance in customer currency.
         paid_amount (float): Amount paid in customer currency.
         status (str): Account Status
         status_reason (str): Account status change reason id-description for
@@ -105,11 +99,9 @@ class AccountResponseAccountsItems(object):
         is_partner_card (int): The account / sub-account is partner card
             account or not. Possible values (1= Non-PC account, 2= PC account,
             3= PC Payer with Card Types, 4= PC Payer) Note: A partner card
-            account is assumed to have only partner card card-types
-            associated
+            account is assumed to have only partner card card-types associated
         tolls_customer_id (str): Customer id in e-TM system
-        tolls_colco_country_type_id (str): Colco country type id in e-TM
-            system
+        tolls_colco_country_type_id (str): Colco country type id in e-TM system
         contracts (List[CustomerContract]): TODO: type description here.
         is_consortium_member (str): true
 
@@ -466,7 +458,7 @@ class AccountResponseAccountsItems(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

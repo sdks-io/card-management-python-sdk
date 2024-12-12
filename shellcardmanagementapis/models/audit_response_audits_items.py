@@ -20,24 +20,15 @@ class AuditResponseAuditsItems(object):
             account id in case of “Fund Transfer
         account_number (str): Account number of the customer. It will be the
             source account number in case of “Fund Transfer”
-        additional_information_1 (str): Additional information in the
-            request.
-        additional_information_2 (str): Additional information in the
-            request.
-        additional_information_3 (str): Additional information in the
-            request.
-        additional_information_4 (str): Additional information in the
-            request.
-        additional_information_5 (str): Additional information in the
-            request.
-        additional_information_6 (str): Additional information in the
-            request.
-        additional_information_7 (str): Additional information in the
-            request.
-        additional_information_8 (str): Additional information in the
-            request.
-        additional_information_9 (str): Additional information in the
-            request.
+        additional_information_1 (str): Additional information in the request.
+        additional_information_2 (str): Additional information in the request.
+        additional_information_3 (str): Additional information in the request.
+        additional_information_4 (str): Additional information in the request.
+        additional_information_5 (str): Additional information in the request.
+        additional_information_6 (str): Additional information in the request.
+        additional_information_7 (str): Additional information in the request.
+        additional_information_8 (str): Additional information in the request.
+        additional_information_9 (str): Additional information in the request.
         card_group_id (int): Additional information in the request.
         card_group_name (str): Card group name in the request.
         card_id (int): Card Id in the request
@@ -64,8 +55,7 @@ class AuditResponseAuditsItems(object):
             BulkCardOrderMultiAccount  •    MobilePaymentRegistration  •   
             UpdateCompanyInfo  •    BCOSummary  •    BCOMultiAccountSummary  •
             BCBSummary  •    FundTransfer  •    DeliveryAddressUpdate
-        request_reference (int): Reference number for the requested
-            operation.
+        request_reference (int): Reference number for the requested operation.
         request_type (str): Request type initiated under the requested
             operation.   Possible values:  •    OrderCard  •   
             CreateCardGroup  •    PINReminder  •    MoveCard  •   
@@ -302,7 +292,7 @@ class AuditResponseAuditsItems(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

@@ -131,8 +131,7 @@ class RestrictionController(BaseController):
         ‘Reset’ is set to ‘True’ or applied on the card.
         •    All the limits in the usage restriction profile for a card is not
         set to ‘0’/null.
-        •    If IsVelocityCeiling is ‘true’, API will validate below
-        condition:
+        •    If IsVelocityCeiling is ‘true’, API will validate below condition:
         Usage restrictions for a card are lower than Customer Card Type level
         limits, if there are no customer level overrides available then lower
         than OU card type limits.
@@ -157,8 +156,7 @@ class RestrictionController(BaseController):
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
                 for requests and responses. This will be played back in the
                 response from the request.
-            body (CardRestrictionReq, optional): Card Restriction request
-                body
+            body (CardRestrictionReq, optional): Card Restriction request body
 
         Returns:
             CardRestrictionResponse: Response from the API. OK
@@ -215,29 +213,28 @@ class RestrictionController(BaseController):
             * Usage, day/time, product and location restrictions
             * List of cards to add to bundle
           * Create bundle and include optional identifier of bundle in
-          external system
+        external system
         #### Validation rules
           The following are the key validation rules with the associated error
-          codes for failed validation-
+        codes for failed validation-
           * `7012` - At least one card must be added to the bundle
           *  `7011` - The total number of cards passed in the input must be
-          500 or less.
+        500 or less.
           *  `7014` - All the cards passed in the input are part of the
-          selected account.
+        selected account.
           *  `7013` - At least one restriction must be applied to the bundle
-          i.e. either of usage, day/time, location or product restriction.
+        i.e. either of usage, day/time, location or product restriction.
           *  `7005` - Day time restriction cannot be set to restrict the use
-          of a card on all days of the week.
+        of a card on all days of the week.
           *  `7000` - Usage restriction of the bundle is not open ended i.e.
-          all the limits within the usage restriction must not be set to
-          0/null.
+        all the limits within the usage restriction must not be set to 0/null.
           *  `7004` - In the usage restrictions, the limits per transaction
-          should be less than or equal to Daily, Daily should be less than or
-          equal to Weekly, Weekly should be less than or equal to Monthly.
-          Exception being 0/blank will be skipped, i.e. Daily value should be
-          less than equal to Monthly value if Weekly value is 0/blank. 
+        should be less than or equal to Daily, Daily should be less than or
+        equal to Weekly, Weekly should be less than or equal to Monthly.
+        Exception being 0/blank will be skipped, i.e. Daily value should be
+        less than equal to Monthly value if Weekly value is 0/blank. 
           *  `0007` - Error returned if request parameters fail validation
-          e.g. mandatory check.
+        e.g. mandatory check.
 
         Args:
             apikey (str): This is the API key of the specific environment
@@ -302,36 +299,36 @@ class RestrictionController(BaseController):
           * Remove cards from existing bundle
           * Update restrictions applied to existing bundle
           The following are the key validation rules with the associated error
-          codes for failed validation-      
+        codes for failed validation-      
         #### Validation rules
           *  `9007` - The cards must exist in the cards platform for adding or
-          removing cards.
+        removing cards.
           *  `7014` - All the cards passed in the input are part of the
-          selected account.
+        selected account.
           *  `7018` - All the cards passed in the input are part of the
-          selected bundle.
+        selected bundle.
           *  `7011` - The total number of cards passed in the input must be
-          500 or less.
+        500 or less.
           *  `7012` - The action to remove cards should not result in removing
-          all the cards from the bundle.
+        all the cards from the bundle.
           *  `7016` - At least one restriction must be modified for
-          â€œUpdateâ€ request action.
+        â€œUpdateâ€ request action.
           *  `7013` - All restrictions cannot be marked for â€œResetâ€ for
-          â€œUpdateâ€ request action.
+        â€œUpdateâ€ request action.
           *  `7005` - Day time restriction cannot be set to restrict the use
-          of a card on all days of the week. This validation is applicable for
-          Update request action.
+        of a card on all days of the week. This validation is applicable for
+        Update request action.
           *  `7000` - Usage restriction of the bundle is not open ended i.e.,
-          all the limits within the usage restriction must not be set to
-          0/null. This validation is applicable for Update request action.
+        all the limits within the usage restriction must not be set to 0/null.
+        This validation is applicable for Update request action.
           *  `7004` - In the usage restrictions, the limits per transaction
-          should be less than or equal to Daily, Daily should be less than or
-          equal to Weekly, Weekly should be less than or equal to Monthly.
-          Exception being 0/blank will be skipped, i.e., Daily value should be
-          less than equal to Monthly value if Weekly value is 0/blank. This
-          validation is applicable for Update request action.
+        should be less than or equal to Daily, Daily should be less than or
+        equal to Weekly, Weekly should be less than or equal to Monthly.
+        Exception being 0/blank will be skipped, i.e., Daily value should be
+        less than equal to Monthly value if Weekly value is 0/blank. This
+        validation is applicable for Update request action.
           *  `0007` - Error returned if request parameters fail validation
-          e.g. at least one card must be provided in the input.
+        e.g. at least one card must be provided in the input.
 
         Args:
             apikey (str): This is the API key of the specific environment
@@ -397,11 +394,11 @@ class RestrictionController(BaseController):
           * Delete card bundle by bundle Id
         #### Validation rules
           The following are the key validation rules with the associated error
-          codes for failed validation-
+        codes for failed validation-
           *  `7019` - The given card bundle is not available in the Shell Card
-          Platform. 
+        Platform. 
           *  `0007` - Error returned if request parameters fail validation
-          e.g. mandatory check.
+        e.g. mandatory check.
 
         Args:
             apikey (str): This is the API key of the specific environment

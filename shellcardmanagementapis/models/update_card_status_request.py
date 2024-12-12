@@ -38,8 +38,7 @@ class UpdateCardStatusRequest(object):
             will be validated with the allowed list of values configured for
             the card type of the card.<br />   If the text is not allowed,
             request will be rejected as invaid ResonText.<br />   Note:<br /> 
-            Customer blocked’ will be used as the reason for ‘Temporary
-            Block’.
+            Customer blocked’ will be used as the reason for ‘Temporary Block’.
         target_status (str): The list of cards passed in Cards parameter will
             be updated to this status.<br /> Mandatory<br /> Allowed
             values:<br /> -TemporaryBlock<br /> -Unblock<br /> -Block<br />
@@ -95,7 +94,7 @@ class UpdateCardStatusRequest(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

@@ -39,8 +39,7 @@ class CardDetailsRequest(object):
             Mandatory.
         token_type_id (int): Token Type ID for the Card Optional
         token_type_name (str): Token Type name for the Card Optional
-        creation_date (str): Card Creation Date time Optional Format:
-            yyyyMMdd
+        creation_date (str): Card Creation Date time Optional Format: yyyyMMdd
         effective_date (str): Effective date for the Card Optional Format:
             yyyyMMdd
         include_bundle_details (bool): When the value is True, API will return
@@ -182,7 +181,7 @@ class CardDetailsRequest(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

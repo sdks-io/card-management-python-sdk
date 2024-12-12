@@ -35,8 +35,8 @@ class ScheduleCardBlockCardsItems(object):
             Mandatory.
         pan (str): PAN of the card. Optional if CardId is passed, else
             Mandatory.
-        panid (str): Card PAN ID.  Optional if CardId is given, else
-            mandatory.  Note: PANID is ignored if CardId is given.
+        panid (str): Card PAN ID. Optional if CardId is given, else mandatory.
+            Note: PANID is ignored if CardId is given.
         card_expiry_date (str): Expiry date of the card. Optional if CardId is
             passed, else Mandatory. Format: yyyyMMdd Example: 20170930
         action (str): Action Mandatory Possible values are: •    AddOrUpdate –
@@ -183,7 +183,7 @@ class ScheduleCardBlockCardsItems(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

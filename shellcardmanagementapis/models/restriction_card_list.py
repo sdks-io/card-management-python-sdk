@@ -64,8 +64,7 @@ class RestrictionCardList(object):
         is_international (bool): True/False True if it is an international
             card, else false
         is_crt (bool): True/False True if it is a CRT type card, else false
-        is_fleet (bool): True/False True if it is a Fleet type card, else
-            false
+        is_fleet (bool): True/False True if it is a Fleet type card, else false
         is_shell_sites_only (bool): True/False True if it is only allowed at
             Shell sites, else false
         is_partner_sites_included (bool): True/False True if it is allowed at
@@ -297,7 +296,7 @@ class RestrictionCardList(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

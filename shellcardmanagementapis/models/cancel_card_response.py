@@ -23,8 +23,7 @@ class CancelCardResponse(object):
         main_reference (int): Cancel card reference number for tracking the
             execution of the request.
         order_replacement_reference (int): Order replacement reference number
-            for tracking the execution of the order replacement cards
-            request.
+            for tracking the execution of the order replacement cards request.
         status (str): Indicates overall status of the request. Allowed values:
             SUCCESS, FAILED, PARTIAL_SUCCESS
         data (List[SubmittedCard]): TODO: type description here.
@@ -89,7 +88,7 @@ class CancelCardResponse(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

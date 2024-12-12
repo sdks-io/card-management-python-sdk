@@ -53,7 +53,7 @@ class FleetmanagementV2RestrictionSearchcard500Error1(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

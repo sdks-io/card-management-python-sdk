@@ -26,8 +26,7 @@ class CardSearchResponse(object):
         page_size (int): Specifies the number of records to be returned which
             could be less than the PageSize in the request
         total_pages (int): Specifies the total pages available in the result
-        total_records (int): Specifies the total pages available in the
-            result
+        total_records (int): Specifies the total pages available in the result
 
     """
 
@@ -98,7 +97,7 @@ class CardSearchResponse(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

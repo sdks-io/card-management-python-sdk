@@ -26,8 +26,7 @@ class FinanceCurrency(object):
         credit_limit_exchange_rate (float): Factor to be used for converting
             the amounts in credit limit currency to finance widget currency.
             (If finance currency is same as credit limit currency, then the
-            value of this field will be “1” so that the value does not
-            change)
+            value of this field will be “1” so that the value does not change)
 
     """
 
@@ -85,7 +84,7 @@ class FinanceCurrency(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

@@ -41,8 +41,7 @@ class UsageRestriction(object):
             Card limit ‘0’ represents the value is inherited and inherited
             limit could be calculated by adding accumulated and balance. 
             However, Inherited limit ‘0’ represents unlimited.
-        weekly_spend_accumulated (float): Value (amount) spent during the
-            week.
+        weekly_spend_accumulated (float): Value (amount) spent during the week.
         weekly_spend_balance (float): Balance spend value (amount) available
             for rest of the week.
         weekly_spend_override (bool): Indicate if the limit is overridden or
@@ -73,8 +72,7 @@ class UsageRestriction(object):
             Card limit ‘0’ represents the value is inherited and inherited
             limit could be calculated by adding accumulated and balance. 
             However, Inherited limit ‘0’ represents unlimited.
-        annual_spend_accumulated (float): Value (amount) spent during the
-            year.
+        annual_spend_accumulated (float): Value (amount) spent during the year.
         annual_spend_balance (float): Balance spend value (amount) available
             for rest of the year.
         annual_spend_override (bool): Indicate if the limit is overridden or
@@ -686,7 +684,7 @@ class UsageRestriction(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

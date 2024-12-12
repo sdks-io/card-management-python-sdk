@@ -55,8 +55,7 @@ class Card(object):
         fleet_id_input (bool): True/False True if fleet id input is enabled,
             else false
         is_crt (bool): True/False True if it is a CRT type card, else false
-        is_fleet (bool): True/False True if it is a Fleet type card, else
-            false
+        is_fleet (bool): True/False True if it is a Fleet type card, else false
         is_international (bool): True/False True if it is an international
             card, else false
         is_national (bool): True/False True if it is a national card, else
@@ -482,7 +481,7 @@ class Card(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

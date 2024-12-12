@@ -38,8 +38,7 @@ class SummaryResponse(object):
             search criteria that are temporarily blocked by customer
         temporary_block_by_shell (int): Total number of cards for the given
             search criteria that are temporarily blocked by Shell
-        total_cards (int): Total number of cards for the given search
-            criteria
+        total_cards (int): Total number of cards for the given search criteria
 
     """
 
@@ -145,7 +144,7 @@ class SummaryResponse(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

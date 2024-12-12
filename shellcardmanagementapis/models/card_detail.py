@@ -181,10 +181,7 @@ class CardDetail(object):
         client_reference_id (str): This is the Client Reference Id of card in
             the order which needs to be passed by the client.This will be
             playback in the ordercard enquiry<br /> Optional
-        auto_renew (CardDetailAutoRenewEnum): Whether to reissue card
-            automatically when nearing the expiry.   Allowed values: - 1.   
-            As per card type setting (Default). 2.    Card will be Reissued
-            when nearing its expiry date. 3.    Card will not be Reissued.
+        auto_renew (CardDetailAutoRenewEnum): TODO: type description here.
 
     """
 
@@ -435,7 +432,7 @@ class CardDetail(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

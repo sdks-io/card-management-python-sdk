@@ -20,8 +20,7 @@ class CardDayTimeRestrictions(object):
             Possible values:  OU = Restriction set at ColCo card type  
             Customer = Restriction set at customer card type
         monday (bool): Whether the transaction is allowed on Mondays or not.
-        tuesday (bool): Whether the transaction is allowed on Tuesdays or
-            not.
+        tuesday (bool): Whether the transaction is allowed on Tuesdays or not.
         wednesday (bool): Whether the transaction is allowed on Wednesdays or
             not.
         thursday (bool): Whether the transaction is allowed on Thursdays or
@@ -125,7 +124,7 @@ class CardDayTimeRestrictions(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

@@ -122,8 +122,7 @@ class CustomerController(BaseController):
         Paging is applicable only when all the
         payers passed in the input are from the same ColCo. 
         However, paging will
-        be ignored and the API will return all the matching data by merging
-        the
+        be ignored and the API will return all the matching data by merging the
         data queried from each ColCo when payers passed in the input are from
         multiple ColCos.
 
@@ -533,8 +532,8 @@ class CustomerController(BaseController):
         It will
         also allow moving of cards (up to 500 cards) into the newly created
         card-group. 
-        ### Move Card requests are queued after passing the below validations
-                * Given PAN matches with only one card. 
+        ### Move Card requests are queued after passing the below validations 
+        * Given PAN matches with only one card. 
         * Card is allowed to be moved to the Target Card Group and/or
         * Target account requested. 
         * There is no pending Move Card request for the same card in the queue

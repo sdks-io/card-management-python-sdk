@@ -31,8 +31,7 @@ class LoggedInUserRequest(object):
         payer_number (str): PayerNumber of the customer.</br> Optional</br>
             This input is a search criterion.</br> Note: If Payerid or
             PayerNumber is provided in the input, the given payer will be
-            available in the output if the user has access to the given
-            payer.
+            available in the output if the user has access to the given payer.
 
     """
 
@@ -92,7 +91,7 @@ class LoggedInUserRequest(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

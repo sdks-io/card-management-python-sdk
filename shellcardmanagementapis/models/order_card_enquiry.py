@@ -51,8 +51,7 @@ class OrderCardEnquiry(object):
             sync with CFGW.<br /> Possible values:<br /> -Success<br />
             -Failed<br /> -In Progress<br /> -Not Submitted
         main_reference (int): Main reference number for the order card
-            request.<br /> This field will be null if the order is through
-            BCO.
+            request.<br /> This field will be null if the order is through BCO.
         order_card_reference (int): Indivitual card reference number for the
             order card request.<br /> This field will be null if the order is
             through BCO.
@@ -352,7 +351,7 @@ class OrderCardEnquiry(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

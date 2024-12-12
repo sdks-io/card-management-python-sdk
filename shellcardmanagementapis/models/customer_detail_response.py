@@ -52,8 +52,7 @@ class CustomerDetailResponse(object):
         payer_id (int): Payer Id of the selected account.
         payer_name (str): Payer Name of the selected account.
         payer_number (str): Payer Number of the selected account.
-        self_selected_pin (bool): Is Self-selected Pin enabled for the
-            account
+        self_selected_pin (bool): Is Self-selected Pin enabled for the account
         status (str): Payer current status id and description  e.g. (Id –
             Description):  1-Active  2-Requested from UTA   3-Awaiting
             embossing   4-Manufactured  5-Awaiting despatch
@@ -264,7 +263,7 @@ class CustomerDetailResponse(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

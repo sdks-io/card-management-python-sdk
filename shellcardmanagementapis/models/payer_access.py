@@ -16,11 +16,9 @@ class PayerAccess(object):
     TODO: type model description here.
 
     Attributes:
-        is_default (bool): Whether this payer is the default payer of the
-            user.
+        is_default (bool): Whether this payer is the default payer of the user.
         colco_id (int): Collecting company id.
-        colco_code (int): Collecting company code. Example: 86-Philippines
-            5-UK
+        colco_code (int): Collecting company code. Example: 86-Philippines 5-UK
         col_co_country_code (str): The 2-character ISO Code for the customer
             and card owning country
         payer_group_id (int): Payer Group Id of the payer.
@@ -116,7 +114,7 @@ class PayerAccess(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

@@ -39,15 +39,8 @@ class Filters2(object):
         reference_number (int): Reference number of the Card Order/ Bulk Card
             Order/ Order Card Request.<br /> Mandatory when ColCo and Payer
             fields are not provided. Else, optional.
-        reference_type (OrderCardEnquiryReqReferenceTypeEnum): Type of the
-            reference number provided.<br /> Mandatory if ReferenceNumber is
-            provided. Else optional.<br /> Allowed Values:<br /> 1=Main
-            Reference(Main Order Reference Number returned in the output of
-            Card/OrderCard service. <br /> 2=Order Card Reference (Reference
-            number for each individual card in the order submitted via
-            Card/OrderCard service. <br /> 3=Bulk Order Card Reference
-            (Reference number returned in the response of bulkcardinterface
-            /UploadOrderCardTemplate. )
+        reference_type (OrderCardEnquiryReqReferenceTypeEnum): TODO: type
+            description here.
         from_date (str): Card Orders from Date/Time.<br /> Optional.<br />
             Value should be with in last 7 days<br /> This field is ignored if
             ReferenceNumber is provided <br /> This field is optional when not
@@ -164,7 +157,7 @@ class Filters2(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

@@ -27,8 +27,7 @@ class CardGroupResponseCardGroupsItems(object):
         cancelled_cards (int): Total number of cards for the given search
             criteria that are cancelled
         card_delivery_point (bool): card delivery point enabled or not
-        card_group_id (int): Id of the card group matching the search
-            criteria.
+        card_group_id (int): Id of the card group matching the search criteria.
         card_group_name (str): Name of the card group matching the search
             criteria.
         card_type_code (str): Card Type Code
@@ -49,8 +48,7 @@ class CardGroupResponseCardGroupsItems(object):
             search criteria that are temporarily blocked by Shell
         terminated_date (str): Terminated Date.   Format: yyyyMMdd  Note:
             Clients to convert this to appropriate Date Time type.
-        total_cards (int): Total number of cards for the given search
-            criteria
+        total_cards (int): Total number of cards for the given search criteria
 
     """
 
@@ -216,7 +214,7 @@ class CardGroupResponseCardGroupsItems(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

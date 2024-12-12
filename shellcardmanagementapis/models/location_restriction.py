@@ -20,8 +20,7 @@ class LocationRestriction(object):
     TODO: type model description here.
 
     Attributes:
-        country_restrictions (CountryRestriction): TODO: type description
-            here.
+        country_restrictions (CountryRestriction): TODO: type description here.
         network_restrictions (List[NetworkRestriction]): TODO: type
             description here.
         shell_site_restrictions (List[ShellSiteRestriction]): TODO: type
@@ -78,7 +77,7 @@ class LocationRestriction(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

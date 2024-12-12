@@ -76,17 +76,13 @@ class PayerDetails(object):
             triggered.E.g.:   1    Daily (all days)  2    Daily (only working
             days)  3    Weekly - Monday  4    Weekly – Tuesday  Etc.
         day_1_run (int): The first day in a month when the billing should run
-            in case of multiple billing runs configured with in a single
-            month.
+            in case of multiple billing runs configured with in a single month.
         day_2_run (int): The second day in a month when the billing should run
-            in case of multiple billing runs configured with in a single
-            month.
+            in case of multiple billing runs configured with in a single month.
         day_3_run (int): The third day in a month when the billing should run
-            in case of multiple billing runs configured with in a single
-            month.
+            in case of multiple billing runs configured with in a single month.
         day_4_run (int): The fourth day in a month when the billing should run
-            in case of multiple billing runs configured with in a single
-            month.
+            in case of multiple billing runs configured with in a single month.
         invoice_distribution_methods (List[InvoiceDistributionMethod]): TODO:
             type description here.
         output_type (str): Invoice output type (Id-Description) E.g.: 1-PDF
@@ -104,8 +100,7 @@ class PayerDetails(object):
         total_active_accounts (int): Total number of active accounts under the
             payer.
         total_cards (int): Total number of cards under the payer.
-        total_active_cards (int): Total number of active cards under the
-            payer.
+        total_active_cards (int): Total number of active cards under the payer.
         total_blocked_cards (int): Total number of cards under the payer that
             are permanently blocked
         total_cancelled_cards (int): Total number of cards under the payer
@@ -136,13 +131,11 @@ class PayerDetails(object):
         customer_classification (str): Payer/Company Classification id and
             description
         industry_class (str): Payer/Company Industry class id and description
-        marketing_segmentation (str): Marketing Segmentation id and
-            description
+        marketing_segmentation (str): Marketing Segmentation id and description
         line_of_business (str): Payer/Company Line of Business Id and
             Description
         print_credit_limit (bool): Is Credit Limit printed on the statement of
-            account: True/False If True Credit Limit is printed on
-            invoice/SOA
+            account: True/False If True Credit Limit is printed on invoice/SOA
         card_group_type (str): Card Group Type configured for Payer e.g. (Id –
             Description): 1-Horizontal only 2-Vertical only 3-Both
         renew_cards (bool): If set to True cards will be automatically renewed
@@ -847,7 +840,7 @@ class PayerDetails(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

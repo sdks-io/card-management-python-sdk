@@ -50,7 +50,7 @@ class CardController(BaseController):
         #### New version updates
           * Oauth authentication to access the API
           * New parameters have been added in the response. Below are the list
-          of parameters added
+        of parameters added
               * IsEMVContact
               * IsEMVContactless
               * IsRFID
@@ -129,8 +129,8 @@ class CardController(BaseController):
         #### New version updates
           * Oauth authentication to access the API
           * Minor change in response structure with addition of Status
-          parameter
-          
+        parameter
+
         #### Supported operations
           * Search cards by card id or PAN
           * Search cards by card status
@@ -201,17 +201,17 @@ class CardController(BaseController):
         #### New version updates
           * Oauth authentication to access the API
           * New parameters have been added in the response for the new PIN
-          management changes. Below parameters needs to be derived from the
-          new PIN encryption method explained in our Mobility Card PIN
-          Management product.  
+        management changes. Below parameters needs to be derived from the new
+        PIN encryption method explained in our Mobility Card PIN Management
+        product.  
               * SelfSelectedEncryptedPIN
               * SelfSelectedPINKeyID
               * SelfSelectedPINSessionKey
           * New parameters have been added in the response for card and pin
-          delivery mechanism which gives the opportunity to deliver card & pin
-          by email, SMS or post. 
+        delivery mechanism which gives the opportunity to deliver card & pin
+        by email, SMS or post. 
             Also the possibility to deliver card and pin to different address
-            if the use case demands. 
+        if the use case demands. 
               * CardDeliveryType
               * PINDeliveryAddressType
               * PINAdviceType
@@ -292,13 +292,13 @@ class CardController(BaseController):
           #### New version updates
             * Oauth authentication to access the API
             * Minor change in response structure with addition of Status
-            parameter
+        parameter
           #### Supported operations
             * Get order status by Bulk Card Order Reference
             * Get order status by Order Reference (main reference for the
-            order)
+        order)
             * Get order status by Card Reference (individual card reference
-            belonging to an order reference)
+        belonging to an order reference)
 
         Args:
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
@@ -364,42 +364,41 @@ class CardController(BaseController):
           * Oauth authentication to access the API
           * Change in the request body
             * PIN delivery address details have been added along with Email
-            and Phone number for card and PIN delivery.
+        and Phone number for card and PIN delivery.
         Requests that passed the below validations are queued-
           * All Mandatory fields are passed.
           *  Card is present in the Shell Card Platform.
           *  Only one matching card is available in the cards platform for the
-          given PAN and expiry date for Block requests.
+        given PAN and expiry date for Block requests.
           *  Card is allowed to be moved to proposed state as per the card
-          status transition configuration in cards platform.
+        status transition configuration in cards platform.
           *  A valid Reason Id or Reason Text is provided. The reason for card
-          cancellation can be “Damaged” or “NoLongerRequired”. 
+        cancellation can be “Damaged” or “NoLongerRequired”. 
           *  For the given card, there is no Cancel request already submitted
-          via this API and is being processed.
+        via this API and is being processed.
           *  ‘IsReplacementChargeable’ is set to ‘False’ only to the
-          configured customer, other customers need to set it as ‘True’ only.
-          If other customers pass this value as ‘False’.
+        configured customer, other customers need to set it as ‘True’ only. If
+        other customers pass this value as ‘False’.
           Note- Shell Card Platform will maintain the list of   customers, to
-          whom ‘IsReplacementChargeable’ can be set as ‘False’.
+        whom ‘IsReplacementChargeable’ can be set as ‘False’.
         If all validations are passed, the request will be accepted and the
         API will return reference numbers for tracking purpose. If any of the
         validations fail, the API will return the appropriate error details on
         response.  The API response will include-
           *  A main reference number for the API request.
           *  A list of successfully validated and accepted cards along with
-          the individual reference numbers for each of the successful
-          requests.
+        the individual reference numbers for each of the successful requests.
           *  A list of cards for which at least validation has failed along
-          with the appropriate error code and details.
+        with the appropriate error code and details.
           A permanent block (cancelled) request for the card will be queued in
-          Shell Card Platform after the configured damaged card active period
-          (configured as number of days).
-          
+        Shell Card Platform after the configured damaged card active period
+        (configured as number of days).
+
           When a card is requested to be Blocked permanently (cancelled) for
-          which a request has already been submitted to report as Damaged and
-          the damaged card active period is not yet completed, the damaged
-          card request will be marked as superseded and the new Block
-          (cancelled) request will be processed.
+        which a request has already been submitted to report as Damaged and
+        the damaged card active period is not yet completed, the damaged card
+        request will be marked as superseded and the new Block (cancelled)
+        request will be processed.
 
         Args:
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
@@ -465,70 +464,70 @@ class CardController(BaseController):
           * Oauth authentication to access the API
           * Change in the request body
             * Pin change related parameters - SelfSelectedEncryptedPIN,
-            SelfSelectedPINKeyID, SelfSelectedPINSessionKey
+        SelfSelectedPINKeyID, SelfSelectedPINSessionKey
             * PIN delivery address details have been added along with Email
-            and Phone number for card and PIN delivery. 
+        and Phone number for card and PIN delivery. 
             * SaveForPINReminder - The given address will be used for sending
-            PIN reminders in future when requested.
+        PIN reminders in future when requested.
             * SaveForCardReissue - If this is specified, the contact address
-            will be saved in cards platform for card reissue processing.
+        will be saved in cards platform for card reissue processing.
         #### Supported operations
           * Updating a card status to Temporary block, Unblock, Block
-          (Cancelled)
+        (Cancelled)
             or Damaged
           * Requesting a replacement card when status is set to Block or
-          Damaged
+        Damaged
         #### Validation rules 
           * Number of cards per request does not exceed 500
           * A card can be changed to proposed status as per the card status
-          transition configuration in the Shell Card Platform
+        transition configuration in the Shell Card Platform
           * Locating a card -
             * If target status set to **TemporaryBlock**, then only one
-            matching active card should exist in the Shell Card Platform for
-            the given **PAN** and **CardExpiryDate**
+        matching active card should exist in the Shell Card Platform for the
+        given **PAN** and **CardExpiryDate**
             * If target status set to **Unblock** or **Block**, then only one
-            matching card should exist in the Shell Card Platform for the
-            given **PAN** and **CardExpiryDate**
+        matching card should exist in the Shell Card Platform for the given
+        **PAN** and **CardExpiryDate**
           * A valid Reason Id or Reason Text is provided
             * If target status set to **Block** or **Damaged** and a
-            **ReasonText** is provided, the value must be from the fixed list
-            - *'Lost'*, *'Stolen'* or *'Card no longer required'*
+        **ReasonText** is provided, the value must be from the fixed list -
+        *'Lost'*, *'Stolen'* or *'Card no longer required'*
           * For the given card, there is no Status Update request already
-          submitted via this API and is being processed
+        submitted via this API and is being processed
           * The **OrderReplacementCard** field is set to True only for cards
-          with a target status set to Block or Damaged
+        with a target status set to Block or Damaged
         #### API response 
           * A main reference number for the API request
-          (**OrderReplacementReference**)
+        (**OrderReplacementReference**)
           * A list of successfully validated and accepted cards along with the
-          individual reference numbers (**UpdateCardReference**) for each of
-          the successful  request 
+        individual reference numbers (**UpdateCardReference**) for each of the
+        successful  request 
           * A list of cards (**ErrorCards**) that failed validation along with
-          the appropriate error code and message
+        the appropriate error code and message
         #### Asynchronous processing of valid API request 
           * Replacement cards
             * Request for a replacement card will be placed only when the
-            Block card or Block damaged card request is successfully placed.
+        Block card or Block damaged card request is successfully placed.
             * The Replacement card request will be processed only when the
-            permanent Block card request is successfully processed. In case of
-            damaged card request, the replacement card request will be
-            processed immediately.
+        permanent Block card request is successfully processed. In case of
+        damaged card request, the replacement card request will be processed
+        immediately.
           * Damaged cards
             * Setting a card to Damaged will automatically trigger a request
-            to permanently block the card. This will only take effect once the
-            ‘Damaged Active’ period has passed.
+        to permanently block the card. This will only take effect once the
+        ‘Damaged Active’ period has passed.
             * The Damaged card active period is the number of days after which
-            a "Damaged" card request will be processed. This value is
-            configured at ColCo level.
+        a "Damaged" card request will be processed. This value is configured
+        at ColCo level.
             * If a card is reported as damaged at 10pm local time on 1st Nov
-            and the damaged card period is set to 10 days, then the block
-            request will be submitted to the Shell Card Platform on 11th Nov
-            00-01 local time.
+        and the damaged card period is set to 10 days, then the block request
+        will be submitted to the Shell Card Platform on 11th Nov 00-01 local
+        time.
             * If during the damage card active period another request is made
-            to set the card to Temporarily Blocked or Blocked permanently
-            (cancelled), then the damaged card request will be marked as
-            superseded and the new Temporary Block or Block (cancelled) will
-            be processed.
+        to set the card to Temporarily Blocked or Blocked permanently
+        (cancelled), then the damaged card request will be marked as
+        superseded and the new Temporary Block or Block (cancelled) will be
+        processed.
 
         Args:
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
@@ -590,7 +589,7 @@ class CardController(BaseController):
         This API will allow querying the purchase categories of Card
          for the given country and/or card type.
           It will also include the below data associated with each of the
-          purchase categories on it’s response.
+        purchase categories on it’s response.
           *  List of fuel and non-fuel product sets associated. 
           *  List of products configured in each product set
 
@@ -737,21 +736,21 @@ class CardController(BaseController):
           * Number of cards per request does not exceed 500
           * Given **PAN** for a card matches with only one card
           * A card is allowed to be moved to the **TargetCardGroupId** or
-          **TargetAccountNumber**
+        **TargetAccountNumber**
           * A pending move request does not exist in the queue for a card
-          submitted on the same date (customers local)
+        submitted on the same date (customers local)
           * A card has not been moved as part of a previous request on the
-          same date (customers local)
+        same date (customers local)
         #### API response 
           * A main reference number for the API request
-          (**MoveCardRequestReference**)
+        (**MoveCardRequestReference**)
           * Individual reference numbers (**MoveCardReference**) for each card
-          move request that passes validation  
+        move request that passes validation  
           * A list of cards (**ErrorCards**) that failed validation along with
-          the appropriate error code and message
+        the appropriate error code and message
         #### Asynchronous processing of valid API request 
           * Move card requests that have been submitted and processed will be
-          reflected after midnight according to the customers local date
+        reflected after midnight according to the customers local date
 
         Args:
             apikey (str): This is the API key of the specific environment
@@ -819,16 +818,16 @@ class CardController(BaseController):
         #### New version updates
           * Oauth authentication to access the API
           * Change in request body where PIN delivery type can be requested
-          via Email, SMS or Post. PIN delivery contact can be set to different
-          values based on previous contact details of card or pin delivery or
-          can set specific contact details for this request. 
+        via Email, SMS or Post. PIN delivery contact can be set to different
+        values based on previous contact details of card or pin delivery or
+        can set specific contact details for this request. 
             * PINAdviceType
             * PINContactType
             * PINDeliverTo 
           * Please note that we have a **savePINReminder** parameter in order
-          to save the contact details for future such requests. 
+        to save the contact details for future such requests. 
           * Change in response body where Card details are also provided along
-          with expiry date and PAN details. 
+        with expiry date and PAN details. 
         #### Supported operations
           * Request a pin reminder by card Id or PAN
         #### Validation rules
@@ -836,9 +835,9 @@ class CardController(BaseController):
           * Given **PAN** matches only one active card
           * Requested card has PIN
           * There is no pending PIN Reminder request in the queue awaiting to
-          be processed for the card
+        be processed for the card
           * A PIN reminder request has not been successfully processed in the
-          last 48 hours for the card
+        last 48 hours for the card
 
         Args:
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
@@ -896,14 +895,13 @@ class CardController(BaseController):
         This API is used to perform the following Actions:
         >  
            *  AddOrUpdate (Schedule a new request or update an existing    
-           scheduled request for the overlapping period.
+        scheduled request for the overlapping period.
            *  AddAndOverwriteAll (all the existing requests of the given card
-           will be removed and a new request with the specified FromDate and
-           ToDate will be added.)
+        will be removed and a new request with the specified FromDate and
+        ToDate will be added.)
            *  Delete (Deletes the scheduled request for the same From and To
-           date)
-           *  DeleteAll (Deletes all the scheduled requests for the given
-           card)
+        date)
+           *  DeleteAll (Deletes all the scheduled requests for the given card)
         > Requests that passed the below validations are queue:
         *  All Mandatory fields are passed in the request.
         *  Card is present in the Shell Card Platform. Only one matching card
@@ -916,25 +914,25 @@ class CardController(BaseController):
         numbers for tracking purpose. 
         > A background service will execute the block/unblock requests on a
         daily basis, based on the scheduled block or unblock date.
-          
+
           *  The newly added block/unblock request will have a status ‘A’ when
-          it is yet to be moved to the actual queue. 
+        it is yet to be moved to the actual queue. 
           *  When the request is moved to the actual queue table, the status
-          will be updated as ‘P’ if the request has a value for ‘ToDate’,
-          else, the status will be updated as ‘S’ or ‘F’ based on whether the
-          request has been successfully moved to the actual queue table or if
-          an error is encountered during processing. 
-          
+        will be updated as ‘P’ if the request has a value for ‘ToDate’, else,
+        the status will be updated as ‘S’ or ‘F’ based on whether the request
+        has been successfully moved to the actual queue table or if an error
+        is encountered during processing. 
+
           *  When the unblock request is moved to the actual queue table, the
-          status of the request will be changed from ‘P’ to ‘S’ or ‘F’ based
-          on whether the request has been successfully moved to the actual
-          queue table or if an error has occurred during processing.
+        status of the request will be changed from ‘P’ to ‘S’ or ‘F’ based on
+        whether the request has been successfully moved to the actual queue
+        table or if an error has occurred during processing.
         > If any of the validations fail, the API will return the appropriate
         error details in the response. 
         > The API response will include:
           *  An error entity holding the details of any error encountered.
           * A list of submitted cards along with the individual reference
-          numbers for each of the request.
+        numbers for each of the request.
 
         Args:
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
@@ -999,19 +997,19 @@ class CardController(BaseController):
           * Update the reissue indicator of a card to disable auto renewal
         #### Validation rules
           * Card status must be either Active, Temporary Block (Customer),
-          Temporary Block (Shell) or Pending Renewal, otherwise an error code
-          9016 is returned
-          
+        Temporary Block (Shell) or Pending Renewal, otherwise an error code
+        9016 is returned
+
         #### API response
           * Returns a reference number for the API request
-          (**AutoRenewReference**)
+        (**AutoRenewReference**)
         #### Asynchronous processing of valid API request
           * If the provided card is superseded i.e. a replacement/new card is
-          already issued, then the latest card's reissue indicator should be
-          updated in the Shell Card Platform.
+        already issued, then the latest card's reissue indicator should be
+        updated in the Shell Card Platform.
           * Providing a **PAN** request paramter may result in multiple fuel
-          cards being located in the Shell Card Platform. The card details of
-          the most recently issued card will be considered.
+        cards being located in the Shell Card Platform. The card details of
+        the most recently issued card will be considered.
 
         Args:
             request_id (str): Mandatory UUID (according to RFC 4122 standards)

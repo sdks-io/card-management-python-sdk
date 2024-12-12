@@ -19,12 +19,9 @@ class UpdateBundleResponse(object):
     Attributes:
         request_id (str): Request Id of the API call
         request_action_status (ErrorStatus): TODO: type description here.
-        day_time_restriction_status (ErrorStatus): TODO: type description
-            here.
-        location_restriction_status (ErrorStatus): TODO: type description
-            here.
-        product_restriction_status (ErrorStatus): TODO: type description
-            here.
+        day_time_restriction_status (ErrorStatus): TODO: type description here.
+        location_restriction_status (ErrorStatus): TODO: type description here.
+        product_restriction_status (ErrorStatus): TODO: type description here.
         usage_restriction_status (ErrorStatus): TODO: type description here.
         error (ErrorStatus): TODO: type description here.
 
@@ -96,7 +93,7 @@ class UpdateBundleResponse(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

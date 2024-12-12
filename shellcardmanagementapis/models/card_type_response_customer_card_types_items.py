@@ -32,8 +32,7 @@ class CardTypeResponseCustomerCardTypesItems(object):
         emboss_account_name (str): Default Name to be embossed on the card
         expiry_period (int): Default Expiry period.
         is_crt (bool): True/False – Wether it is a CRT Card type or not.
-        is_fleet (bool): True/False – Whether it is it a Fleet Card typeor
-            not.
+        is_fleet (bool): True/False – Whether it is it a Fleet Card typeor not.
         is_international (bool): True/False – Whether it is an International
             Card type or not.
         is_national (bool): True/False – Whether it is a National Card type or
@@ -302,7 +301,7 @@ class CardTypeResponseCustomerCardTypesItems(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

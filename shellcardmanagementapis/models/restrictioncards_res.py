@@ -45,8 +45,7 @@ class RestrictioncardsRes(object):
             location restriction in case of an error. This field will have a
             value only when “LocationRestrictionStatus” is “Failed”.
         validation_error_code (str): Error code for validation failure.
-        validation_error_description (str): Description of validation
-            failure.
+        validation_error_description (str): Description of validation failure.
 
     """
 
@@ -147,7 +146,7 @@ class RestrictioncardsRes(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

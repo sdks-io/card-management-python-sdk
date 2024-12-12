@@ -52,27 +52,6 @@ class UpdateCard(object):
             request, the replacement card request will be processed
             immediately.
         card_settings (CardSettings): TODO: type description here.
-        reason_id (int): Reason id for updating the card status. Either Reason
-            ID or Text is madatory when TargetStatus is ‘Block’ or ‘Damaged’.
-            Else ignored. Possible values: 1 (Lost) 2 (Stolen) 3 (Card no
-            longer required)   <br>When passed, the reason Id will be mapped
-            to allowed reason IDs configured for the card type of the card. If
-            the given reason Id is not allowed for certain card types, then
-            the request will be rejected as invalid ResonId
-        reason_text (str): Reason text for updating the card status.  Possible
-            Values:  1) Lost  2) Stolen  3) Card no longer required   
-            Optional – However, either Reason ID or Text is madatory when
-            TargetStatus is ‘Block’ or ‘Damaged’. Else, Ignored.  When Reason
-            Text is passed and the Target Status is either Block or Damaged,
-            the text will be validated with the allowed list of values
-            configured for the card type of the card. If the text is not
-            allowed, request will be rejected as invaid ResonText.   Note: 
-            ‘Customer blocked’ will be used as the reason for ‘Temporary
-            Block’.
-        target_status (int): The list of cards passed in ‘Cards’ parameter
-            will be updated to this status.<br /> Mandatory.<br /> Allowed
-            values –<br /> - TemporaryBlock<br /> - Unblock<br /> - Block<br
-            /> - Damaged<br />
         account_id (int): Account Id of the customer.<br /> Optional if
             AccountNumber is passed, else Mandatory.
         account_number (str): Account Number of the customer.<br /> Optional
@@ -103,9 +82,6 @@ class UpdateCard(object):
         "notify_caller_on_sync": 'NotifyCallerOnSync',
         "order_card_replacement": 'OrderCardReplacement',
         "card_settings": 'CardSettings',
-        "reason_id": 'ReasonId',
-        "reason_text": 'ReasonText',
-        "target_status": 'TargetStatus',
         "account_id": 'AccountId',
         "account_number": 'AccountNumber',
         "card_expiry_date": 'CardExpiryDate',
@@ -125,9 +101,6 @@ class UpdateCard(object):
         'notify_caller_on_sync',
         'order_card_replacement',
         'card_settings',
-        'reason_id',
-        'reason_text',
-        'target_status',
         'account_id',
         'account_number',
         'card_expiry_date',
@@ -142,8 +115,6 @@ class UpdateCard(object):
 
     _nullables = [
         'caller',
-        'reason_text',
-        'target_status',
         'account_id',
         'account_number',
         'card_expiry_date',
@@ -163,9 +134,6 @@ class UpdateCard(object):
                  notify_caller_on_sync=APIHelper.SKIP,
                  order_card_replacement=APIHelper.SKIP,
                  card_settings=APIHelper.SKIP,
-                 reason_id=APIHelper.SKIP,
-                 reason_text=APIHelper.SKIP,
-                 target_status=APIHelper.SKIP,
                  account_id=APIHelper.SKIP,
                  account_number=APIHelper.SKIP,
                  card_expiry_date=APIHelper.SKIP,
@@ -191,12 +159,6 @@ class UpdateCard(object):
             self.order_card_replacement = order_card_replacement 
         if card_settings is not APIHelper.SKIP:
             self.card_settings = card_settings 
-        if reason_id is not APIHelper.SKIP:
-            self.reason_id = reason_id 
-        if reason_text is not APIHelper.SKIP:
-            self.reason_text = reason_text 
-        if target_status is not APIHelper.SKIP:
-            self.target_status = target_status 
         if account_id is not APIHelper.SKIP:
             self.account_id = account_id 
         if account_number is not APIHelper.SKIP:
@@ -233,7 +195,7 @@ class UpdateCard(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary
@@ -243,9 +205,6 @@ class UpdateCard(object):
         notify_caller_on_sync = dictionary.get("NotifyCallerOnSync") if "NotifyCallerOnSync" in dictionary.keys() else APIHelper.SKIP
         order_card_replacement = dictionary.get("OrderCardReplacement") if "OrderCardReplacement" in dictionary.keys() else APIHelper.SKIP
         card_settings = CardSettings.from_dictionary(dictionary.get('CardSettings')) if 'CardSettings' in dictionary.keys() else APIHelper.SKIP
-        reason_id = dictionary.get("ReasonId") if dictionary.get("ReasonId") else APIHelper.SKIP
-        reason_text = dictionary.get("ReasonText") if "ReasonText" in dictionary.keys() else APIHelper.SKIP
-        target_status = dictionary.get("TargetStatus") if "TargetStatus" in dictionary.keys() else APIHelper.SKIP
         account_id = dictionary.get("AccountId") if "AccountId" in dictionary.keys() else APIHelper.SKIP
         account_number = dictionary.get("AccountNumber") if "AccountNumber" in dictionary.keys() else APIHelper.SKIP
         card_expiry_date = dictionary.get("CardExpiryDate") if "CardExpiryDate" in dictionary.keys() else APIHelper.SKIP
@@ -263,9 +222,6 @@ class UpdateCard(object):
                    notify_caller_on_sync,
                    order_card_replacement,
                    card_settings,
-                   reason_id,
-                   reason_text,
-                   target_status,
                    account_id,
                    account_number,
                    card_expiry_date,

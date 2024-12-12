@@ -21,17 +21,14 @@ class CreateBundleResponse(object):
         request_id (str): Request Id of the API call
         bundle_creation_status (ErrorStatus): TODO: type description here.
         bundle_id (str): Identifier of the newly created bundle
-        day_time_restriction_status (ErrorStatus): TODO: type description
-            here.
+        day_time_restriction_status (ErrorStatus): TODO: type description here.
         day_time_restriction_profile_id (str): Identifier of the day/time
             restriction profile created
-        location_restriction_status (ErrorStatus): TODO: type description
-            here.
+        location_restriction_status (ErrorStatus): TODO: type description here.
         location_restriction_profile_id (str): Identifier of the location
             restriction profile created
         usage_restriction_status (ErrorStatus): TODO: type description here.
-        product_restriction_status (ErrorStatus): TODO: type description
-            here.
+        product_restriction_status (ErrorStatus): TODO: type description here.
         cards (BundleCardRestrictionStatus): TODO: type description here.
         error (ErrorStatus): TODO: type description here.
 
@@ -123,7 +120,7 @@ class CreateBundleResponse(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary

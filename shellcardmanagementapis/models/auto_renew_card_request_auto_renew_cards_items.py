@@ -22,8 +22,8 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
             AccountNumber is passed, else Mandatory.
         pan (str): PAN of the card. Optional if CardId is passed, else
             Mandatory.
-        panid (float): Card PAN ID.  Optional if CardId is given, else
-            mandatory.  Note: PANID is ignored if CardId is given.
+        panid (float): Card PAN ID. Optional if CardId is given, else
+            mandatory. Note: PANID is ignored if CardId is given.
         card_id (int): Card Id of the card. Optional if PAN is passed, else
             Mandatory.
         reissue_setting (bool): Reissue setting of the card.   Values:  True –
@@ -87,7 +87,7 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
 
         """
 
-        if dictionary is None:
+        if not isinstance(dictionary, dict) or dictionary is None:
             return None
 
         # Extract variables from the dictionary
