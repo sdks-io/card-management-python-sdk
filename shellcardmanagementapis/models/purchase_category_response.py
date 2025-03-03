@@ -15,12 +15,10 @@ class PurchaseCategoryResponse(object):
 
     """Implementation of the 'PurchaseCategoryResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
-        purchase_categories (List[PurchaseCategory1AllOf0]): TODO: type
-            description here.
-        error (ErrorStatus): TODO: type description here.
+        purchase_categories (List[PurchaseCategory1AllOf0]): The model
+            property of type List[PurchaseCategory1AllOf0].
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -74,3 +72,13 @@ class PurchaseCategoryResponse(object):
         # Return an object of this model
         return cls(purchase_categories,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'purchase_categories={(self.purchase_categories if hasattr(self, "purchase_categories") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'purchase_categories={(self.purchase_categories if hasattr(self, "purchase_categories") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

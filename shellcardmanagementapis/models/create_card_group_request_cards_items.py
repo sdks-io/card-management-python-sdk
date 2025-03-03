@@ -13,8 +13,6 @@ class CreateCardGroupRequestCardsItems(object):
 
     """Implementation of the 'CreateCardGroupRequestCardsItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         account_id (int): Account Id of the account of the card. Optional if
             AccountNumber is passed, else Mandatory.
@@ -87,3 +85,17 @@ class CreateCardGroupRequestCardsItems(object):
                    account_number,
                    card_id,
                    pan)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s})')

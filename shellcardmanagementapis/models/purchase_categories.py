@@ -13,8 +13,6 @@ class PurchaseCategories(object):
 
     """Implementation of the 'PurchaseCategories' model.
 
-    TODO: type model description here.
-
     Attributes:
         id (int): Purchase category Id
         code (str): Purchase category code Example: 0,1, 2 etc. Full list
@@ -101,3 +99,19 @@ class PurchaseCategories(object):
                    name,
                    is_visible,
                    product_groups)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'id={(self.id if hasattr(self, "id") else None)!r}, '
+                f'code={(self.code if hasattr(self, "code") else None)!r}, '
+                f'name={(self.name if hasattr(self, "name") else None)!r}, '
+                f'is_visible={(self.is_visible if hasattr(self, "is_visible") else None)!r}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'id={(self.id if hasattr(self, "id") else None)!s}, '
+                f'code={(self.code if hasattr(self, "code") else None)!s}, '
+                f'name={(self.name if hasattr(self, "name") else None)!s}, '
+                f'is_visible={(self.is_visible if hasattr(self, "is_visible") else None)!s}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!s})')

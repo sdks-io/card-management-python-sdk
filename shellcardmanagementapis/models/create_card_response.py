@@ -75,3 +75,13 @@ class CreateCardResponse(object):
         # Return an object of this model
         return cls(driver_and_vrn,
                    order_card_reference)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'driver_and_vrn={(self.driver_and_vrn if hasattr(self, "driver_and_vrn") else None)!r}, '
+                f'order_card_reference={(self.order_card_reference if hasattr(self, "order_card_reference") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'driver_and_vrn={(self.driver_and_vrn if hasattr(self, "driver_and_vrn") else None)!s}, '
+                f'order_card_reference={(self.order_card_reference if hasattr(self, "order_card_reference") else None)!s})')

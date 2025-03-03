@@ -14,8 +14,6 @@ class Filters1(object):
 
     """Implementation of the 'Filters1' model.
 
-    TODO: type model description here.
-
     Attributes:
         account_id (int): Account ID of the customer.<br/> Optional.<br/> This
             input is a search criterion, if given.
@@ -148,7 +146,7 @@ class Filters1(object):
             API will return cards with ReIssueSetting value True &amp; False
             both.<br /> Allowed Values:<br /> 1.    All<br /> 2.    True<br />
             3.    False
-        request_id (str): TODO: type description here.
+        request_id (str): The model property of type str.
 
     """
 
@@ -462,3 +460,79 @@ class Filters1(object):
                    expiry_month,
                    exclude_old_cards,
                    reissue_setting)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!r}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!r}, '
+                f'card_status={self.card_status!r}, '
+                f'expiring_in_days={(self.expiring_in_days if hasattr(self, "expiring_in_days") else None)!r}, '
+                f'issued_after={(self.issued_after if hasattr(self, "issued_after") else None)!r}, '
+                f'pan_ends_with={(self.pan_ends_with if hasattr(self, "pan_ends_with") else None)!r}, '
+                f'driver_name={(self.driver_name if hasattr(self, "driver_name") else None)!r}, '
+                f'vehicle_registration_number={(self.vehicle_registration_number if hasattr(self, "vehicle_registration_number") else None)!r}, '
+                f'include_cards={(self.include_cards if hasattr(self, "include_cards") else None)!r}, '
+                f'exclude_cards={(self.exclude_cards if hasattr(self, "exclude_cards") else None)!r}, '
+                f'exclude_bundle_id={(self.exclude_bundle_id if hasattr(self, "exclude_bundle_id") else None)!r}, '
+                f'card_segment={(self.card_segment if hasattr(self, "card_segment") else None)!r}, '
+                f'purchase_category_code={(self.purchase_category_code if hasattr(self, "purchase_category_code") else None)!r}, '
+                f'card_type_code={(self.card_type_code if hasattr(self, "card_type_code") else None)!r}, '
+                f'exclude_pending_renewal_cards={(self.exclude_pending_renewal_cards if hasattr(self, "exclude_pending_renewal_cards") else None)!r}, '
+                f'exclude_cancelled_cards={(self.exclude_cancelled_cards if hasattr(self, "exclude_cancelled_cards") else None)!r}, '
+                f'exclude_replaced_cards={(self.exclude_replaced_cards if hasattr(self, "exclude_replaced_cards") else None)!r}, '
+                f'exclude_fraud_cards={(self.exclude_fraud_cards if hasattr(self, "exclude_fraud_cards") else None)!r}, '
+                f'exclude_card_group_id={(self.exclude_card_group_id if hasattr(self, "exclude_card_group_id") else None)!r}, '
+                f'exclude_card_group_name={(self.exclude_card_group_name if hasattr(self, "exclude_card_group_name") else None)!r}, '
+                f'creation_date={(self.creation_date if hasattr(self, "creation_date") else None)!r}, '
+                f'effective_date={(self.effective_date if hasattr(self, "effective_date") else None)!r}, '
+                f'network={(self.network if hasattr(self, "network") else None)!r}, '
+                f'coverage={(self.coverage if hasattr(self, "coverage") else None)!r}, '
+                f'expiry_month={(self.expiry_month if hasattr(self, "expiry_month") else None)!r}, '
+                f'exclude_old_cards={(self.exclude_old_cards if hasattr(self, "exclude_old_cards") else None)!r}, '
+                f'reissue_setting={(self.reissue_setting if hasattr(self, "reissue_setting") else None)!r}, '
+                f'request_id={self.request_id!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!s}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!s}, '
+                f'card_status={self.card_status!s}, '
+                f'expiring_in_days={(self.expiring_in_days if hasattr(self, "expiring_in_days") else None)!s}, '
+                f'issued_after={(self.issued_after if hasattr(self, "issued_after") else None)!s}, '
+                f'pan_ends_with={(self.pan_ends_with if hasattr(self, "pan_ends_with") else None)!s}, '
+                f'driver_name={(self.driver_name if hasattr(self, "driver_name") else None)!s}, '
+                f'vehicle_registration_number={(self.vehicle_registration_number if hasattr(self, "vehicle_registration_number") else None)!s}, '
+                f'include_cards={(self.include_cards if hasattr(self, "include_cards") else None)!s}, '
+                f'exclude_cards={(self.exclude_cards if hasattr(self, "exclude_cards") else None)!s}, '
+                f'exclude_bundle_id={(self.exclude_bundle_id if hasattr(self, "exclude_bundle_id") else None)!s}, '
+                f'card_segment={(self.card_segment if hasattr(self, "card_segment") else None)!s}, '
+                f'purchase_category_code={(self.purchase_category_code if hasattr(self, "purchase_category_code") else None)!s}, '
+                f'card_type_code={(self.card_type_code if hasattr(self, "card_type_code") else None)!s}, '
+                f'exclude_pending_renewal_cards={(self.exclude_pending_renewal_cards if hasattr(self, "exclude_pending_renewal_cards") else None)!s}, '
+                f'exclude_cancelled_cards={(self.exclude_cancelled_cards if hasattr(self, "exclude_cancelled_cards") else None)!s}, '
+                f'exclude_replaced_cards={(self.exclude_replaced_cards if hasattr(self, "exclude_replaced_cards") else None)!s}, '
+                f'exclude_fraud_cards={(self.exclude_fraud_cards if hasattr(self, "exclude_fraud_cards") else None)!s}, '
+                f'exclude_card_group_id={(self.exclude_card_group_id if hasattr(self, "exclude_card_group_id") else None)!s}, '
+                f'exclude_card_group_name={(self.exclude_card_group_name if hasattr(self, "exclude_card_group_name") else None)!s}, '
+                f'creation_date={(self.creation_date if hasattr(self, "creation_date") else None)!s}, '
+                f'effective_date={(self.effective_date if hasattr(self, "effective_date") else None)!s}, '
+                f'network={(self.network if hasattr(self, "network") else None)!s}, '
+                f'coverage={(self.coverage if hasattr(self, "coverage") else None)!s}, '
+                f'expiry_month={(self.expiry_month if hasattr(self, "expiry_month") else None)!s}, '
+                f'exclude_old_cards={(self.exclude_old_cards if hasattr(self, "exclude_old_cards") else None)!s}, '
+                f'reissue_setting={(self.reissue_setting if hasattr(self, "reissue_setting") else None)!s}, '
+                f'request_id={self.request_id!s})')

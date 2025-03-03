@@ -19,8 +19,6 @@ class LoggedInUserResponse(object):
 
     """Implementation of the 'LoggedInUserResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         user_name (str): Logged in User Identifier
         display_name (str): Name of the logged in user.
@@ -78,7 +76,7 @@ class LoggedInUserResponse(object):
         card_count (int): Count of cards at the time when the user was created
             or last updated.  Note:   Count may vary based on customer
             operations hence it may not be an up to date value.
-        error (ErrorStatus): TODO: type description here.
+        error (ErrorStatus): The model property of type ErrorStatus.
         request_id (str): Request Id of the API call
 
     """
@@ -325,3 +323,59 @@ class LoggedInUserResponse(object):
                    card_count,
                    error,
                    request_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'user_name={(self.user_name if hasattr(self, "user_name") else None)!r}, '
+                f'display_name={(self.display_name if hasattr(self, "display_name") else None)!r}, '
+                f'id_mssoid={(self.id_mssoid if hasattr(self, "id_mssoid") else None)!r}, '
+                f'preferred_language={(self.preferred_language if hasattr(self, "preferred_language") else None)!r}, '
+                f'is_super_admin={(self.is_super_admin if hasattr(self, "is_super_admin") else None)!r}, '
+                f'date_format={(self.date_format if hasattr(self, "date_format") else None)!r}, '
+                f'time_format={(self.time_format if hasattr(self, "time_format") else None)!r}, '
+                f'week_begins={(self.week_begins if hasattr(self, "week_begins") else None)!r}, '
+                f'display_week={(self.display_week if hasattr(self, "display_week") else None)!r}, '
+                f'csv_separator={(self.csv_separator if hasattr(self, "csv_separator") else None)!r}, '
+                f'decimal_separator={(self.decimal_separator if hasattr(self, "decimal_separator") else None)!r}, '
+                f'report_format={(self.report_format if hasattr(self, "report_format") else None)!r}, '
+                f'has_api_access={(self.has_api_access if hasattr(self, "has_api_access") else None)!r}, '
+                f'roles={(self.roles if hasattr(self, "roles") else None)!r}, '
+                f'payers={(self.payers if hasattr(self, "payers") else None)!r}, '
+                f'accounts={(self.accounts if hasattr(self, "accounts") else None)!r}, '
+                f'collecting_companies={(self.collecting_companies if hasattr(self, "collecting_companies") else None)!r}, '
+                f'eid_access_details={(self.eid_access_details if hasattr(self, "eid_access_details") else None)!r}, '
+                f'user_classification_by_system={(self.user_classification_by_system if hasattr(self, "user_classification_by_system") else None)!r}, '
+                f'user_classification_by_shell={(self.user_classification_by_shell if hasattr(self, "user_classification_by_shell") else None)!r}, '
+                f'payer_count={(self.payer_count if hasattr(self, "payer_count") else None)!r}, '
+                f'account_count={(self.account_count if hasattr(self, "account_count") else None)!r}, '
+                f'card_count={(self.card_count if hasattr(self, "card_count") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'user_name={(self.user_name if hasattr(self, "user_name") else None)!s}, '
+                f'display_name={(self.display_name if hasattr(self, "display_name") else None)!s}, '
+                f'id_mssoid={(self.id_mssoid if hasattr(self, "id_mssoid") else None)!s}, '
+                f'preferred_language={(self.preferred_language if hasattr(self, "preferred_language") else None)!s}, '
+                f'is_super_admin={(self.is_super_admin if hasattr(self, "is_super_admin") else None)!s}, '
+                f'date_format={(self.date_format if hasattr(self, "date_format") else None)!s}, '
+                f'time_format={(self.time_format if hasattr(self, "time_format") else None)!s}, '
+                f'week_begins={(self.week_begins if hasattr(self, "week_begins") else None)!s}, '
+                f'display_week={(self.display_week if hasattr(self, "display_week") else None)!s}, '
+                f'csv_separator={(self.csv_separator if hasattr(self, "csv_separator") else None)!s}, '
+                f'decimal_separator={(self.decimal_separator if hasattr(self, "decimal_separator") else None)!s}, '
+                f'report_format={(self.report_format if hasattr(self, "report_format") else None)!s}, '
+                f'has_api_access={(self.has_api_access if hasattr(self, "has_api_access") else None)!s}, '
+                f'roles={(self.roles if hasattr(self, "roles") else None)!s}, '
+                f'payers={(self.payers if hasattr(self, "payers") else None)!s}, '
+                f'accounts={(self.accounts if hasattr(self, "accounts") else None)!s}, '
+                f'collecting_companies={(self.collecting_companies if hasattr(self, "collecting_companies") else None)!s}, '
+                f'eid_access_details={(self.eid_access_details if hasattr(self, "eid_access_details") else None)!s}, '
+                f'user_classification_by_system={(self.user_classification_by_system if hasattr(self, "user_classification_by_system") else None)!s}, '
+                f'user_classification_by_shell={(self.user_classification_by_shell if hasattr(self, "user_classification_by_shell") else None)!s}, '
+                f'payer_count={(self.payer_count if hasattr(self, "payer_count") else None)!s}, '
+                f'account_count={(self.account_count if hasattr(self, "account_count") else None)!s}, '
+                f'card_count={(self.card_count if hasattr(self, "card_count") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s})')

@@ -103,7 +103,7 @@ class CardDetail(object):
         card_delivery_type (int): Card delivery type.<br /> Mandatory <br />
             Allowed Value: <br /> 1.    Customer Address(Default) <br /> 2.   
             New Delivery Address
-        card_contact (CardContact): TODO: type description here.
+        card_contact (CardContact): The model property of type CardContact.
         pin_delivery_address_type (int): PIN delivery address type
             selection.<br /> Optional<br /> Allowed Values:<br /> 1.   
             Customer Address(Default)<br /> 2.    Card Address<br /> 3.    New
@@ -112,7 +112,7 @@ class CardDetail(object):
             Allowed Values:<br /> 1.    Paper<br /> 2.    Email<br /> 3.   
             SMS<br /> 4.    None <br /> **Note:** Paper delivery not
             applicable for selfselctedPIN type
-        pin_contact (PINContact): TODO: type description here.
+        pin_contact (PINContact): The model property of type PINContact.
         notify_caller (bool): True/False.<br /> Optional.<br /> Default:
             False<br /> If true, the caller would be notified back with the
             status as success or failure after the card order is processed.
@@ -181,7 +181,10 @@ class CardDetail(object):
         client_reference_id (str): This is the Client Reference Id of card in
             the order which needs to be passed by the client.This will be
             playback in the ordercard enquiry<br /> Optional
-        auto_renew (CardDetailAutoRenewEnum): TODO: type description here.
+        auto_renew (CardDetailAutoRenewEnum): Whether to reissue card
+            automatically when nearing the expiry.   Allowed values: - 1.   
+            As per card type setting (Default). 2.    Card will be Reissued
+            when nearing its expiry date. 3.    Card will not be Reissued.
 
     """
 
@@ -515,3 +518,87 @@ class CardDetail(object):
                    expiry_date,
                    client_reference_id,
                    auto_renew)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!r}, '
+                f'token_type_id={(self.token_type_id if hasattr(self, "token_type_id") else None)!r}, '
+                f'emboss_text={(self.emboss_text if hasattr(self, "emboss_text") else None)!r}, '
+                f'vrn={(self.vrn if hasattr(self, "vrn") else None)!r}, '
+                f'driver_name={(self.driver_name if hasattr(self, "driver_name") else None)!r}, '
+                f'odometer_input_required={(self.odometer_input_required if hasattr(self, "odometer_input_required") else None)!r}, '
+                f'fleet_id_input_required={(self.fleet_id_input_required if hasattr(self, "fleet_id_input_required") else None)!r}, '
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!r}, '
+                f'self_selected_encrypted_pin={(self.self_selected_encrypted_pin if hasattr(self, "self_selected_encrypted_pin") else None)!r}, '
+                f'self_selected_pin_key_id={(self.self_selected_pin_key_id if hasattr(self, "self_selected_pin_key_id") else None)!r}, '
+                f'self_selected_pin_session_key={(self.self_selected_pin_session_key if hasattr(self, "self_selected_pin_session_key") else None)!r}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!r}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!r}, '
+                f'is_new_card_group={(self.is_new_card_group if hasattr(self, "is_new_card_group") else None)!r}, '
+                f'emboss_card_group={(self.emboss_card_group if hasattr(self, "emboss_card_group") else None)!r}, '
+                f'card_delivery_type={self.card_delivery_type!r}, '
+                f'card_contact={(self.card_contact if hasattr(self, "card_contact") else None)!r}, '
+                f'pin_delivery_address_type={(self.pin_delivery_address_type if hasattr(self, "pin_delivery_address_type") else None)!r}, '
+                f'pin_advice_type={self.pin_advice_type!r}, '
+                f'pin_contact={(self.pin_contact if hasattr(self, "pin_contact") else None)!r}, '
+                f'notify_caller={(self.notify_caller if hasattr(self, "notify_caller") else None)!r}, '
+                f'caller={(self.caller if hasattr(self, "caller") else None)!r}, '
+                f'notify_caller_on_sync={(self.notify_caller_on_sync if hasattr(self, "notify_caller_on_sync") else None)!r}, '
+                f'validate_fleet_id={(self.validate_fleet_id if hasattr(self, "validate_fleet_id") else None)!r}, '
+                f'fleet_option={(self.fleet_option if hasattr(self, "fleet_option") else None)!r}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!r}, '
+                f'usage_restriction_action={(self.usage_restriction_action if hasattr(self, "usage_restriction_action") else None)!r}, '
+                f'product_restriction_action={(self.product_restriction_action if hasattr(self, "product_restriction_action") else None)!r}, '
+                f'products={(self.products if hasattr(self, "products") else None)!r}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!r}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!r}, '
+                f'client_reference_id={(self.client_reference_id if hasattr(self, "client_reference_id") else None)!r}, '
+                f'auto_renew={(self.auto_renew if hasattr(self, "auto_renew") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!s}, '
+                f'token_type_id={(self.token_type_id if hasattr(self, "token_type_id") else None)!s}, '
+                f'emboss_text={(self.emboss_text if hasattr(self, "emboss_text") else None)!s}, '
+                f'vrn={(self.vrn if hasattr(self, "vrn") else None)!s}, '
+                f'driver_name={(self.driver_name if hasattr(self, "driver_name") else None)!s}, '
+                f'odometer_input_required={(self.odometer_input_required if hasattr(self, "odometer_input_required") else None)!s}, '
+                f'fleet_id_input_required={(self.fleet_id_input_required if hasattr(self, "fleet_id_input_required") else None)!s}, '
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!s}, '
+                f'self_selected_encrypted_pin={(self.self_selected_encrypted_pin if hasattr(self, "self_selected_encrypted_pin") else None)!s}, '
+                f'self_selected_pin_key_id={(self.self_selected_pin_key_id if hasattr(self, "self_selected_pin_key_id") else None)!s}, '
+                f'self_selected_pin_session_key={(self.self_selected_pin_session_key if hasattr(self, "self_selected_pin_session_key") else None)!s}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!s}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!s}, '
+                f'is_new_card_group={(self.is_new_card_group if hasattr(self, "is_new_card_group") else None)!s}, '
+                f'emboss_card_group={(self.emboss_card_group if hasattr(self, "emboss_card_group") else None)!s}, '
+                f'card_delivery_type={self.card_delivery_type!s}, '
+                f'card_contact={(self.card_contact if hasattr(self, "card_contact") else None)!s}, '
+                f'pin_delivery_address_type={(self.pin_delivery_address_type if hasattr(self, "pin_delivery_address_type") else None)!s}, '
+                f'pin_advice_type={self.pin_advice_type!s}, '
+                f'pin_contact={(self.pin_contact if hasattr(self, "pin_contact") else None)!s}, '
+                f'notify_caller={(self.notify_caller if hasattr(self, "notify_caller") else None)!s}, '
+                f'caller={(self.caller if hasattr(self, "caller") else None)!s}, '
+                f'notify_caller_on_sync={(self.notify_caller_on_sync if hasattr(self, "notify_caller_on_sync") else None)!s}, '
+                f'validate_fleet_id={(self.validate_fleet_id if hasattr(self, "validate_fleet_id") else None)!s}, '
+                f'fleet_option={(self.fleet_option if hasattr(self, "fleet_option") else None)!s}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!s}, '
+                f'usage_restriction_action={(self.usage_restriction_action if hasattr(self, "usage_restriction_action") else None)!s}, '
+                f'product_restriction_action={(self.product_restriction_action if hasattr(self, "product_restriction_action") else None)!s}, '
+                f'products={(self.products if hasattr(self, "products") else None)!s}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!s}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!s}, '
+                f'client_reference_id={(self.client_reference_id if hasattr(self, "client_reference_id") else None)!s}, '
+                f'auto_renew={(self.auto_renew if hasattr(self, "auto_renew") else None)!s})')

@@ -15,8 +15,6 @@ class BundleRestrictionUpdate(object):
 
     """Implementation of the 'BundleRestrictionUpdate' model.
 
-    TODO: type model description here.
-
     Attributes:
         reset_day_time_restriction (bool): True/False A value indicates if the
             day/time restriction is to be reset for card bundle. Optional
@@ -27,18 +25,18 @@ class BundleRestrictionUpdate(object):
         reset_product_restriction (bool): True/False A value indicates if the
             product restriction is to be reset for card bundle. Optional
             Default value is False.
-        usage_restrictions (object): TODO: type description here.
+        usage_restrictions (object): The model property of type object.
         day_time_restriction_profile_id (str): Identifier of the day/time
             restriction profile to be updated for the bundle in Gateway.
             Optional
-        day_time_restrictions (CardDayTimeRestrictions): TODO: type
-            description here.
-        product_restrictions (object): TODO: type description here.
+        day_time_restrictions (CardDayTimeRestrictions): The model property of
+            type CardDayTimeRestrictions.
+        product_restrictions (object): The model property of type object.
         location_restriction_profile_id (str): Identifier of the location
             restriction profile to be updated for the bundle in Gateway.
             Optional
-        location_restrictions (LocationRestriction): TODO: type description
-            here.
+        location_restrictions (LocationRestriction): The model property of
+            type LocationRestriction.
 
     """
 
@@ -144,3 +142,27 @@ class BundleRestrictionUpdate(object):
                    product_restrictions,
                    location_restriction_profile_id,
                    location_restrictions)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'reset_day_time_restriction={(self.reset_day_time_restriction if hasattr(self, "reset_day_time_restriction") else None)!r}, '
+                f'reset_location_restriction={(self.reset_location_restriction if hasattr(self, "reset_location_restriction") else None)!r}, '
+                f'reset_product_restriction={(self.reset_product_restriction if hasattr(self, "reset_product_restriction") else None)!r}, '
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!r}, '
+                f'day_time_restriction_profile_id={(self.day_time_restriction_profile_id if hasattr(self, "day_time_restriction_profile_id") else None)!r}, '
+                f'day_time_restrictions={(self.day_time_restrictions if hasattr(self, "day_time_restrictions") else None)!r}, '
+                f'product_restrictions={(self.product_restrictions if hasattr(self, "product_restrictions") else None)!r}, '
+                f'location_restriction_profile_id={(self.location_restriction_profile_id if hasattr(self, "location_restriction_profile_id") else None)!r}, '
+                f'location_restrictions={(self.location_restrictions if hasattr(self, "location_restrictions") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'reset_day_time_restriction={(self.reset_day_time_restriction if hasattr(self, "reset_day_time_restriction") else None)!s}, '
+                f'reset_location_restriction={(self.reset_location_restriction if hasattr(self, "reset_location_restriction") else None)!s}, '
+                f'reset_product_restriction={(self.reset_product_restriction if hasattr(self, "reset_product_restriction") else None)!s}, '
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!s}, '
+                f'day_time_restriction_profile_id={(self.day_time_restriction_profile_id if hasattr(self, "day_time_restriction_profile_id") else None)!s}, '
+                f'day_time_restrictions={(self.day_time_restrictions if hasattr(self, "day_time_restrictions") else None)!s}, '
+                f'product_restrictions={(self.product_restrictions if hasattr(self, "product_restrictions") else None)!s}, '
+                f'location_restriction_profile_id={(self.location_restriction_profile_id if hasattr(self, "location_restriction_profile_id") else None)!s}, '
+                f'location_restrictions={(self.location_restrictions if hasattr(self, "location_restrictions") else None)!s})')

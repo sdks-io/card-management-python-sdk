@@ -13,8 +13,6 @@ class RestrictionProduct(object):
 
     """Implementation of the 'RestrictionProduct' model.
 
-    TODO: type model description here.
-
     Attributes:
         global_product_code (str): The productCode returned by the Gateway
             API. Example: 021
@@ -69,3 +67,13 @@ class RestrictionProduct(object):
         # Return an object of this model
         return cls(global_product_code,
                    description)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'global_product_code={(self.global_product_code if hasattr(self, "global_product_code") else None)!r}, '
+                f'description={(self.description if hasattr(self, "description") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'global_product_code={(self.global_product_code if hasattr(self, "global_product_code") else None)!s}, '
+                f'description={(self.description if hasattr(self, "description") else None)!s})')

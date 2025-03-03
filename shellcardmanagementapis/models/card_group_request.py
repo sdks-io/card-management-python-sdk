@@ -14,8 +14,6 @@ class CardGroupRequest(object):
 
     """Implementation of the 'CardGroupRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting Company Id of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example:  1 for
@@ -31,7 +29,7 @@ class CardGroupRequest(object):
         payer_number (str): PayerNumber of the customer.  Optional if PayerId
             is passed, else Mandatory.   This input is a search criterion. 
             Example: GB00123456
-        account (List[Accounts]): TODO: type description here.
+        account (List[Accounts]): The model property of type List[Accounts].
         card_group_name (str): Card Group Name   Optional.   Minimum of 2
             characters should be provided else not considered.  CardGroups
             those have the entered value at any part
@@ -153,3 +151,27 @@ class CardGroupRequest(object):
                    status,
                    current_page,
                    page_size)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account={(self.account if hasattr(self, "account") else None)!r}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!r}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account={(self.account if hasattr(self, "account") else None)!s}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!s}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!s})')

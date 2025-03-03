@@ -23,9 +23,9 @@ class OrderCardEnquiryReqReferenceTypeEnum(object):
     bulkcardinterface /UploadOrderCardTemplate. )
 
     Attributes:
-        ENUM_1: TODO: type description here.
-        ENUM_2: TODO: type description here.
-        ENUM_3: TODO: type description here.
+        ENUM_1: The enum member of type int.
+        ENUM_2: The enum member of type int.
+        ENUM_3: The enum member of type int.
 
     """
     ENUM_1 = 1

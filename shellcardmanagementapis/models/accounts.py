@@ -13,8 +13,6 @@ class Accounts(object):
 
     """Implementation of the 'Accounts' model.
 
-    TODO: type model description here.
-
     Attributes:
         account_id (int): Account Id of the customer. Optional, if
             AccountNumber is passed, else mandatory.
@@ -74,3 +72,13 @@ class Accounts(object):
         # Return an object of this model
         return cls(account_id,
                    account_number)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s})')

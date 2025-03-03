@@ -15,8 +15,6 @@ class BundleRestriction(object):
 
     """Implementation of the 'BundleRestriction' model.
 
-    TODO: type model description here.
-
     Attributes:
         day_time_restriction_action (str): The value indicates what actions to
             be performed with respect to day time restriction.   Mandatory 
@@ -28,12 +26,12 @@ class BundleRestriction(object):
             Allowed values –  •    Add: Apply the given restriction on the
             bundle.  •    Default: No location restriction will be applied on
             the bundle in Gateway.
-        usage_restrictions (object): TODO: type description here.
-        day_time_restrictions (DayTimeRestrictions): TODO: type description
-            here.
-        product_restrictions (object): TODO: type description here.
-        location_restrictions (LocationRestriction): TODO: type description
-            here.
+        usage_restrictions (object): The model property of type object.
+        day_time_restrictions (DayTimeRestrictions): The model property of
+            type DayTimeRestrictions.
+        product_restrictions (object): The model property of type object.
+        location_restrictions (LocationRestriction): The model property of
+            type LocationRestriction.
 
     """
 
@@ -116,3 +114,21 @@ class BundleRestriction(object):
                    day_time_restrictions,
                    product_restrictions,
                    location_restrictions)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'day_time_restriction_action={(self.day_time_restriction_action if hasattr(self, "day_time_restriction_action") else None)!r}, '
+                f'location_restriction_action={(self.location_restriction_action if hasattr(self, "location_restriction_action") else None)!r}, '
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!r}, '
+                f'day_time_restrictions={(self.day_time_restrictions if hasattr(self, "day_time_restrictions") else None)!r}, '
+                f'product_restrictions={(self.product_restrictions if hasattr(self, "product_restrictions") else None)!r}, '
+                f'location_restrictions={(self.location_restrictions if hasattr(self, "location_restrictions") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'day_time_restriction_action={(self.day_time_restriction_action if hasattr(self, "day_time_restriction_action") else None)!s}, '
+                f'location_restriction_action={(self.location_restriction_action if hasattr(self, "location_restriction_action") else None)!s}, '
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!s}, '
+                f'day_time_restrictions={(self.day_time_restrictions if hasattr(self, "day_time_restrictions") else None)!s}, '
+                f'product_restrictions={(self.product_restrictions if hasattr(self, "product_restrictions") else None)!s}, '
+                f'location_restrictions={(self.location_restrictions if hasattr(self, "location_restrictions") else None)!s})')

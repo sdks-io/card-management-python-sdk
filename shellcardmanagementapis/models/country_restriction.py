@@ -13,8 +13,6 @@ class CountryRestriction(object):
 
     """Implementation of the 'CountryRestriction' model.
 
-    TODO: type model description here.
-
     Attributes:
         countries (List[str]): A list of ISO 3166-1 Numeric-3 country codes.
             Example: 826 for United Kingdom.
@@ -72,3 +70,13 @@ class CountryRestriction(object):
         # Return an object of this model
         return cls(countries,
                    exclusive)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'countries={(self.countries if hasattr(self, "countries") else None)!r}, '
+                f'exclusive={(self.exclusive if hasattr(self, "exclusive") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'countries={(self.countries if hasattr(self, "countries") else None)!s}, '
+                f'exclusive={(self.exclusive if hasattr(self, "exclusive") else None)!s})')

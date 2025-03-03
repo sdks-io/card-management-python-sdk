@@ -13,8 +13,6 @@ class SearchCardRestriction(object):
 
     """Implementation of the 'SearchCardRestriction' model.
 
-    TODO: type model description here.
-
     Attributes:
         card_id (int): Unique Card Id   Optional if PAN is given, else
             mandatory.
@@ -75,3 +73,13 @@ class SearchCardRestriction(object):
         # Return an object of this model
         return cls(card_id,
                    pan)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s})')

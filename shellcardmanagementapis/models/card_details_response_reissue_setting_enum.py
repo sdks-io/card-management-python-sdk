@@ -19,8 +19,8 @@ class CardDetailsResponseReissueSettingEnum(object):
       * `False` - Card will not be Reissued
 
     Attributes:
-        TRUE: TODO: type description here.
-        FALSE: TODO: type description here.
+        TRUE: The enum member of type str.
+        FALSE: The enum member of type str.
 
     """
     ENUM_TRUE = 'True'

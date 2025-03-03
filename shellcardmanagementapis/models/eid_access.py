@@ -13,8 +13,6 @@ class EIDAccess(object):
 
     """Implementation of the 'EIDAccess' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (str): Collecting company id.
         col_co_code (int): Collecting company Code
@@ -82,3 +80,15 @@ class EIDAccess(object):
         return cls(col_co_id,
                    col_co_code,
                    account_group_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'account_group_id={(self.account_group_id if hasattr(self, "account_group_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'account_group_id={(self.account_group_id if hasattr(self, "account_group_id") else None)!s})')

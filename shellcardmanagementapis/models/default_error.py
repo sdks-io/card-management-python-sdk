@@ -17,7 +17,7 @@ class DefaultError(object):
     Error response
 
     Attributes:
-        fault (Fault): TODO: type description here.
+        fault (Fault): The model property of type Fault.
 
     """
 
@@ -60,3 +60,11 @@ class DefaultError(object):
         fault = Fault.from_dictionary(dictionary.get('fault')) if 'fault' in dictionary.keys() else APIHelper.SKIP
         # Return an object of this model
         return cls(fault)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'fault={(self.fault if hasattr(self, "fault") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'fault={(self.fault if hasattr(self, "fault") else None)!s})')

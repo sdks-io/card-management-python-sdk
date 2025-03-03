@@ -13,8 +13,6 @@ class AuditResponseAuditsItems(object):
 
     """Implementation of the 'AuditResponseAuditsItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         account_id (int): Account id of the customer. It will be the source
             account id in case of “Fund Transfer
@@ -359,3 +357,71 @@ class AuditResponseAuditsItems(object):
                    submitted_on,
                    sub_request_reference,
                    user_display_name)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'additional_information_1={(self.additional_information_1 if hasattr(self, "additional_information_1") else None)!r}, '
+                f'additional_information_2={(self.additional_information_2 if hasattr(self, "additional_information_2") else None)!r}, '
+                f'additional_information_3={(self.additional_information_3 if hasattr(self, "additional_information_3") else None)!r}, '
+                f'additional_information_4={(self.additional_information_4 if hasattr(self, "additional_information_4") else None)!r}, '
+                f'additional_information_5={(self.additional_information_5 if hasattr(self, "additional_information_5") else None)!r}, '
+                f'additional_information_6={(self.additional_information_6 if hasattr(self, "additional_information_6") else None)!r}, '
+                f'additional_information_7={(self.additional_information_7 if hasattr(self, "additional_information_7") else None)!r}, '
+                f'additional_information_8={(self.additional_information_8 if hasattr(self, "additional_information_8") else None)!r}, '
+                f'additional_information_9={(self.additional_information_9 if hasattr(self, "additional_information_9") else None)!r}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!r}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!r}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'error_code={(self.error_code if hasattr(self, "error_code") else None)!r}, '
+                f'error_string={(self.error_string if hasattr(self, "error_string") else None)!r}, '
+                f'global_request_id={(self.global_request_id if hasattr(self, "global_request_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'processed_on={(self.processed_on if hasattr(self, "processed_on") else None)!r}, '
+                f'requested_by={(self.requested_by if hasattr(self, "requested_by") else None)!r}, '
+                f'requested_operation={(self.requested_operation if hasattr(self, "requested_operation") else None)!r}, '
+                f'request_reference={(self.request_reference if hasattr(self, "request_reference") else None)!r}, '
+                f'request_type={(self.request_type if hasattr(self, "request_type") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'submitted_on={(self.submitted_on if hasattr(self, "submitted_on") else None)!r}, '
+                f'sub_request_reference={(self.sub_request_reference if hasattr(self, "sub_request_reference") else None)!r}, '
+                f'user_display_name={(self.user_display_name if hasattr(self, "user_display_name") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'additional_information_1={(self.additional_information_1 if hasattr(self, "additional_information_1") else None)!s}, '
+                f'additional_information_2={(self.additional_information_2 if hasattr(self, "additional_information_2") else None)!s}, '
+                f'additional_information_3={(self.additional_information_3 if hasattr(self, "additional_information_3") else None)!s}, '
+                f'additional_information_4={(self.additional_information_4 if hasattr(self, "additional_information_4") else None)!s}, '
+                f'additional_information_5={(self.additional_information_5 if hasattr(self, "additional_information_5") else None)!s}, '
+                f'additional_information_6={(self.additional_information_6 if hasattr(self, "additional_information_6") else None)!s}, '
+                f'additional_information_7={(self.additional_information_7 if hasattr(self, "additional_information_7") else None)!s}, '
+                f'additional_information_8={(self.additional_information_8 if hasattr(self, "additional_information_8") else None)!s}, '
+                f'additional_information_9={(self.additional_information_9 if hasattr(self, "additional_information_9") else None)!s}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!s}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!s}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'error_code={(self.error_code if hasattr(self, "error_code") else None)!s}, '
+                f'error_string={(self.error_string if hasattr(self, "error_string") else None)!s}, '
+                f'global_request_id={(self.global_request_id if hasattr(self, "global_request_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'processed_on={(self.processed_on if hasattr(self, "processed_on") else None)!s}, '
+                f'requested_by={(self.requested_by if hasattr(self, "requested_by") else None)!s}, '
+                f'requested_operation={(self.requested_operation if hasattr(self, "requested_operation") else None)!s}, '
+                f'request_reference={(self.request_reference if hasattr(self, "request_reference") else None)!s}, '
+                f'request_type={(self.request_type if hasattr(self, "request_type") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'submitted_on={(self.submitted_on if hasattr(self, "submitted_on") else None)!s}, '
+                f'sub_request_reference={(self.sub_request_reference if hasattr(self, "sub_request_reference") else None)!s}, '
+                f'user_display_name={(self.user_display_name if hasattr(self, "user_display_name") else None)!s})')

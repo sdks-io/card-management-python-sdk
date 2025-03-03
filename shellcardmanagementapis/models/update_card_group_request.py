@@ -13,8 +13,6 @@ class UpdateCardGroupRequest(object):
 
     """Implementation of the 'UpdateCardGroupRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_code (int): Collecting Company Code (Shell Code) of the
             selected payer.   Mandatory for serviced OUs such as Romania,
@@ -220,3 +218,41 @@ class UpdateCardGroupRequest(object):
                    target_account_number,
                    target_new_card_group_name,
                    target_card_group_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!r}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!r}, '
+                f'print_on_card={(self.print_on_card if hasattr(self, "print_on_card") else None)!r}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!r}, '
+                f'terminate_card_group={(self.terminate_card_group if hasattr(self, "terminate_card_group") else None)!r}, '
+                f'move_cards={(self.move_cards if hasattr(self, "move_cards") else None)!r}, '
+                f'target_account_id={(self.target_account_id if hasattr(self, "target_account_id") else None)!r}, '
+                f'target_account_number={(self.target_account_number if hasattr(self, "target_account_number") else None)!r}, '
+                f'target_new_card_group_name={(self.target_new_card_group_name if hasattr(self, "target_new_card_group_name") else None)!r}, '
+                f'target_card_group_id={(self.target_card_group_id if hasattr(self, "target_card_group_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!s}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!s}, '
+                f'print_on_card={(self.print_on_card if hasattr(self, "print_on_card") else None)!s}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!s}, '
+                f'terminate_card_group={(self.terminate_card_group if hasattr(self, "terminate_card_group") else None)!s}, '
+                f'move_cards={(self.move_cards if hasattr(self, "move_cards") else None)!s}, '
+                f'target_account_id={(self.target_account_id if hasattr(self, "target_account_id") else None)!s}, '
+                f'target_account_number={(self.target_account_number if hasattr(self, "target_account_number") else None)!s}, '
+                f'target_new_card_group_name={(self.target_new_card_group_name if hasattr(self, "target_new_card_group_name") else None)!s}, '
+                f'target_card_group_id={(self.target_card_group_id if hasattr(self, "target_card_group_id") else None)!s})')

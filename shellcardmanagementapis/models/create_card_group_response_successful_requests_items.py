@@ -13,8 +13,6 @@ class CreateCardGroupResponseSuccessfulRequestsItems(object):
 
     """Implementation of the 'CreateCardGroupResponseSuccessfulRequestsItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         card_id (int): Card Id of the card.
         pan (str): PAN of the card.
@@ -76,3 +74,15 @@ class CreateCardGroupResponseSuccessfulRequestsItems(object):
         return cls(card_id,
                    pan,
                    reference)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'reference={(self.reference if hasattr(self, "reference") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'reference={(self.reference if hasattr(self, "reference") else None)!s})')

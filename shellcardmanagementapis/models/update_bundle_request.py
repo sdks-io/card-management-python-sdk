@@ -14,8 +14,6 @@ class UpdateBundleRequest(object):
 
     """Implementation of the 'UpdateBundleRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting Company Id  of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example:  1 for
@@ -46,7 +44,8 @@ class UpdateBundleRequest(object):
             performed with respect to usage restrictions on the list of cards
             being added or removed. Mandatory for Add / Remove request action.
             Ignored for Update action. Allowed values: •    Update •    None
-        restrictions (BundleRestrictionUpdate): TODO: type description here.
+        restrictions (BundleRestrictionUpdate): The model property of type
+            BundleRestrictionUpdate.
 
     """
 
@@ -163,3 +162,31 @@ class UpdateBundleRequest(object):
                    account_id,
                    account_number,
                    restrictions)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'bundle_id={self.bundle_id!r}, '
+                f'request_action={self.request_action!r}, '
+                f'cards={self.cards!r}, '
+                f'usage_restriction_action={self.usage_restriction_action!r}, '
+                f'restrictions={(self.restrictions if hasattr(self, "restrictions") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'bundle_id={self.bundle_id!s}, '
+                f'request_action={self.request_action!s}, '
+                f'cards={self.cards!s}, '
+                f'usage_restriction_action={self.usage_restriction_action!s}, '
+                f'restrictions={(self.restrictions if hasattr(self, "restrictions") else None)!s})')

@@ -15,18 +15,17 @@ class PayerResponse(object):
 
     """Implementation of the 'PayerResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Request Id of the API call
-        payers (List[PayerDetails]): TODO: type description here.
+        payers (List[PayerDetails]): The model property of type
+            List[PayerDetails].
         current_page (int): Current Page
         row_count (int): Total row count matched for the given input criteria
         total_pages (int): Calculated page count based on page size from the
             incoming API request and total number of rows matched for the
             given input criteria. Return 1 if the page size is -1 as all
             records are returned
-        error (ErrorStatus): TODO: type description here.
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -112,3 +111,21 @@ class PayerResponse(object):
                    row_count,
                    total_pages,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'payers={(self.payers if hasattr(self, "payers") else None)!r}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!r}, '
+                f'row_count={(self.row_count if hasattr(self, "row_count") else None)!r}, '
+                f'total_pages={(self.total_pages if hasattr(self, "total_pages") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'payers={(self.payers if hasattr(self, "payers") else None)!s}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!s}, '
+                f'row_count={(self.row_count if hasattr(self, "row_count") else None)!s}, '
+                f'total_pages={(self.total_pages if hasattr(self, "total_pages") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

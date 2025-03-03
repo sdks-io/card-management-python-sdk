@@ -14,8 +14,6 @@ class AccountRequest(object):
 
     """Implementation of the 'AccountRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         status (str): Account Status. Optional if StatusList is passed, else
             mandatory. Ignored if StatusList is passed. Allowed values: •   
@@ -51,7 +49,7 @@ class AccountRequest(object):
             Mandatory.
         return_tolls_customer_id (bool): Return e-Toll Customer details When
             True.
-        accounts (List[Accounts]): TODO: type description here.
+        accounts (List[Accounts]): The model property of type List[Accounts].
         account_name (str): Account Name of the customer.  Optional.   Minimum
             of 4 characters should be provided else not considered.  Accounts
             those have the entered value at any part of the Name will be
@@ -216,3 +214,39 @@ class AccountRequest(object):
                    accounts,
                    account_name,
                    status_list)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'include_card_summary={(self.include_card_summary if hasattr(self, "include_card_summary") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!r}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!r}, '
+                f'invoice_points_only={(self.invoice_points_only if hasattr(self, "invoice_points_only") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'return_tolls_customer_id={(self.return_tolls_customer_id if hasattr(self, "return_tolls_customer_id") else None)!r}, '
+                f'accounts={(self.accounts if hasattr(self, "accounts") else None)!r}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!r}, '
+                f'status_list={(self.status_list if hasattr(self, "status_list") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'include_card_summary={(self.include_card_summary if hasattr(self, "include_card_summary") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!s}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!s}, '
+                f'invoice_points_only={(self.invoice_points_only if hasattr(self, "invoice_points_only") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'return_tolls_customer_id={(self.return_tolls_customer_id if hasattr(self, "return_tolls_customer_id") else None)!s}, '
+                f'accounts={(self.accounts if hasattr(self, "accounts") else None)!s}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!s}, '
+                f'status_list={(self.status_list if hasattr(self, "status_list") else None)!s})')

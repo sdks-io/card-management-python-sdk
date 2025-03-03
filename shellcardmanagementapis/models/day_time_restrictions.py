@@ -13,8 +13,6 @@ class DayTimeRestrictions(object):
 
     """Implementation of the 'DayTimeRestrictions' model.
 
-    TODO: type model description here.
-
     Attributes:
         monday (bool): True if card could be used on a Monday, else false
         tuesday (bool): True if card could be used on a Tuesday, else false.
@@ -130,3 +128,27 @@ class DayTimeRestrictions(object):
                    sunday,
                    time_from,
                    time_to)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'monday={(self.monday if hasattr(self, "monday") else None)!r}, '
+                f'tuesday={(self.tuesday if hasattr(self, "tuesday") else None)!r}, '
+                f'wednesday={(self.wednesday if hasattr(self, "wednesday") else None)!r}, '
+                f'thursday={(self.thursday if hasattr(self, "thursday") else None)!r}, '
+                f'friday={(self.friday if hasattr(self, "friday") else None)!r}, '
+                f'saturday={(self.saturday if hasattr(self, "saturday") else None)!r}, '
+                f'sunday={(self.sunday if hasattr(self, "sunday") else None)!r}, '
+                f'time_from={(self.time_from if hasattr(self, "time_from") else None)!r}, '
+                f'time_to={(self.time_to if hasattr(self, "time_to") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'monday={(self.monday if hasattr(self, "monday") else None)!s}, '
+                f'tuesday={(self.tuesday if hasattr(self, "tuesday") else None)!s}, '
+                f'wednesday={(self.wednesday if hasattr(self, "wednesday") else None)!s}, '
+                f'thursday={(self.thursday if hasattr(self, "thursday") else None)!s}, '
+                f'friday={(self.friday if hasattr(self, "friday") else None)!s}, '
+                f'saturday={(self.saturday if hasattr(self, "saturday") else None)!s}, '
+                f'sunday={(self.sunday if hasattr(self, "sunday") else None)!s}, '
+                f'time_from={(self.time_from if hasattr(self, "time_from") else None)!s}, '
+                f'time_to={(self.time_to if hasattr(self, "time_to") else None)!s})')

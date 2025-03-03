@@ -13,8 +13,6 @@ class CardBundle(object):
 
     """Implementation of the 'CardBundle' model.
 
-    TODO: type model description here.
-
     Attributes:
         bundle_id (str): Unique identifier for the Card Bundle
         external_bundle_id (str): External system allocated Card Bundle
@@ -84,3 +82,17 @@ class CardBundle(object):
                    external_bundle_id,
                    description,
                    total_cards)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!r}, '
+                f'external_bundle_id={(self.external_bundle_id if hasattr(self, "external_bundle_id") else None)!r}, '
+                f'description={(self.description if hasattr(self, "description") else None)!r}, '
+                f'total_cards={(self.total_cards if hasattr(self, "total_cards") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!s}, '
+                f'external_bundle_id={(self.external_bundle_id if hasattr(self, "external_bundle_id") else None)!s}, '
+                f'description={(self.description if hasattr(self, "description") else None)!s}, '
+                f'total_cards={(self.total_cards if hasattr(self, "total_cards") else None)!s})')

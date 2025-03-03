@@ -13,8 +13,6 @@ class CustomerContract(object):
 
     """Implementation of the 'CustomerContract' model.
 
-    TODO: type model description here.
-
     Attributes:
         partner_id (str): Partner Id in e-TM system
         partner_name (str): Partner Name in e-TM system
@@ -72,3 +70,13 @@ class CustomerContract(object):
         # Return an object of this model
         return cls(partner_id,
                    partner_name)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'partner_id={(self.partner_id if hasattr(self, "partner_id") else None)!r}, '
+                f'partner_name={(self.partner_name if hasattr(self, "partner_name") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'partner_id={(self.partner_id if hasattr(self, "partner_id") else None)!s}, '
+                f'partner_name={(self.partner_name if hasattr(self, "partner_name") else None)!s})')

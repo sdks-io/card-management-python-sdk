@@ -13,11 +13,9 @@ class GeneratePINKeyResponse(object):
 
     """Implementation of the 'GeneratePINKeyResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         uid (str): Random generated unique identifier.
-        value (str): TODO: type description here.
+        value (str): The model property of type str.
 
     """
 
@@ -67,3 +65,13 @@ class GeneratePINKeyResponse(object):
         # Return an object of this model
         return cls(uid,
                    value)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'uid={(self.uid if hasattr(self, "uid") else None)!r}, '
+                f'value={(self.value if hasattr(self, "value") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'uid={(self.uid if hasattr(self, "uid") else None)!s}, '
+                f'value={(self.value if hasattr(self, "value") else None)!s})')

@@ -13,8 +13,6 @@ class AutoRenewCardResponseDataItems(object):
 
     """Implementation of the 'AutoRenewCardResponseDataItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         auto_renew_reference_id (int): CardId and PAN of the card. ;(
             Semicolon is used as delimiter.
@@ -83,3 +81,15 @@ class AutoRenewCardResponseDataItems(object):
         return cls(auto_renew_reference_id,
                    card_id_and_pan,
                    panid)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'auto_renew_reference_id={(self.auto_renew_reference_id if hasattr(self, "auto_renew_reference_id") else None)!r}, '
+                f'card_id_and_pan={(self.card_id_and_pan if hasattr(self, "card_id_and_pan") else None)!r}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'auto_renew_reference_id={(self.auto_renew_reference_id if hasattr(self, "auto_renew_reference_id") else None)!s}, '
+                f'card_id_and_pan={(self.card_id_and_pan if hasattr(self, "card_id_and_pan") else None)!s}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!s})')

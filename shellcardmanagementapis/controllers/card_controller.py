@@ -40,9 +40,9 @@ class CardController(BaseController):
     def __init__(self, config):
         super(CardController, self).__init__(config)
 
-    def searchcard(self,
-                   request_id,
-                   body=None):
+    def search_card(self,
+                    request_id,
+                    body=None):
         """Does a POST request to /card-management/v1/search.
 
         This API allows to search for Shell Cards in the Shell Card Platform.
@@ -118,9 +118,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.', ErrorObjectException)
         ).execute()
 
-    def cardsummary(self,
-                    request_id,
-                    body=None):
+    def card_summary(self,
+                     request_id,
+                     body=None):
         """Does a POST request to /card-management/v1/summary.
 
         This API allows to search for fuel cards in the Shell Card Platform
@@ -190,9 +190,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.', ErrorObjectException)
         ).execute()
 
-    def cardordercard(self,
-                      request_id,
-                      body=None):
+    def order_card(self,
+                   request_id,
+                   body=None):
         """Does a POST request to /card-management/v1/ordercard.
 
         This API allows ordering one or more fuel cards (up to 50). If the API
@@ -282,9 +282,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def cardordercardenquiry(self,
-                             request_id,
-                             body=None):
+    def order_card_enquiry(self,
+                           request_id,
+                           body=None):
         """Does a POST request to /card-management/v1/ordercardenquiry.
 
         This API retrieves the card order status from the Shell Card Platform
@@ -351,9 +351,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def cardcancel(self,
-                   request_id,
-                   body=None):
+    def card_cancel(self,
+                    request_id,
+                    body=None):
         """Does a POST request to /card-management/v1/cancel.
 
         This API allows cancelling one or multiple cards (up to 500) within a
@@ -451,9 +451,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def cardupdatestatus(self,
-                         request_id,
-                         body=None):
+    def card_update_status(self,
+                           request_id,
+                           body=None):
         """Does a POST request to /card-management/v1/updatestatus.
 
         This API allows updating of the card status for one or more cards (up
@@ -648,10 +648,10 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def carddetails(self,
-                    apikey,
-                    request_id,
-                    body=None):
+    def card_details(self,
+                     apikey,
+                     request_id,
+                     body=None):
         """Does a POST request to /fleetmanagement/v1/card/card.
 
         This API allows to fetch details of a single fuel card from the Shell
@@ -807,9 +807,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def cardpinreminder(self,
-                        request_id,
-                        body=None):
+    def card_pin_reminder(self,
+                          request_id,
+                          body=None):
         """Does a POST request to /card-management/v1/pinreminder.
 
         This API allows requesting a PIN reminder for a fuel card. If the API
@@ -984,9 +984,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def autorenew(self,
-                  request_id,
-                  body=None):
+    def auto_renew(self,
+                   request_id,
+                   body=None):
         """Does a POST request to /card-management/v1/autorenew.
 
         This API allows to update the reissue indicator of a single card. If
@@ -1061,9 +1061,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def updatemobilepaymentregistrationstatus(self,
-                                              request_id,
-                                              body=None):
+    def update_mobile_payment_registration_status(self,
+                                                  request_id,
+                                                  body=None):
         """Does a POST request to /card-management/v1/updatemobilepaymentregistrationstatus.
 
         This operation allows  update the approval status of Mobile Payment
@@ -1119,9 +1119,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition that  prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def getkey(self,
-               request_id,
-               fleet=None):
+    def get_key(self,
+                request_id,
+                fleet=None):
         """Does a GET request to /pin-management/v1/generatepinkeys.
 
         Get a new public key that will be used to encrypt data for selected
@@ -1174,9 +1174,9 @@ class CardController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def deliveryaddressupdate(self,
-                              apikey,
-                              body=None):
+    def delivery_address_update(self,
+                                apikey,
+                                body=None):
         """Does a POST request to /fleetmanagement/v1/card/deliveryaddressupdate.
 
         This API allows users to update the card’s delivery addresses (card

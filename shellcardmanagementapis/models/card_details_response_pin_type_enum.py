@@ -17,8 +17,8 @@ class CardDetailsResponsePINTypeEnum(object):
       * `Fleet` - Fleet PIN
 
     Attributes:
-        CARD: TODO: type description here.
-        FLEET: TODO: type description here.
+        CARD: The enum member of type str.
+        FLEET: The enum member of type str.
 
     """
     CARD = 'Card'

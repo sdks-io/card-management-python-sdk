@@ -46,37 +46,37 @@ class CardDetailsResponseLocalPOSLanguageCodeEnum(object):
       * `lit` - Lithuanian
 
     Attributes:
-        DEU: TODO: type description here.
-        FRA: TODO: type description here.
-        BUL: TODO: type description here.
-        HRV: TODO: type description here.
-        CES: TODO: type description here.
-        DAN: TODO: type description here.
-        FIN: TODO: type description here.
-        ENG: TODO: type description here.
-        ELL: TODO: type description here.
-        ZHO: TODO: type description here.
-        HUN: TODO: type description here.
-        ITA: TODO: type description here.
-        LTZ: TODO: type description here.
-        MSA: TODO: type description here.
-        NLD: TODO: type description here.
-        NOB: TODO: type description here.
-        URD: TODO: type description here.
-        POL: TODO: type description here.
-        POR: TODO: type description here.
-        RON: TODO: type description here.
-        RUS: TODO: type description here.
-        SLK: TODO: type description here.
-        SLV: TODO: type description here.
-        SPA: TODO: type description here.
-        SWE: TODO: type description here.
-        TUR: TODO: type description here.
-        THA: TODO: type description here.
-        FIL: TODO: type description here.
-        EST: TODO: type description here.
-        LAV: TODO: type description here.
-        LIT: TODO: type description here.
+        DEU: The enum member of type str.
+        FRA: The enum member of type str.
+        BUL: The enum member of type str.
+        HRV: The enum member of type str.
+        CES: The enum member of type str.
+        DAN: The enum member of type str.
+        FIN: The enum member of type str.
+        ENG: The enum member of type str.
+        ELL: The enum member of type str.
+        ZHO: The enum member of type str.
+        HUN: The enum member of type str.
+        ITA: The enum member of type str.
+        LTZ: The enum member of type str.
+        MSA: The enum member of type str.
+        NLD: The enum member of type str.
+        NOB: The enum member of type str.
+        URD: The enum member of type str.
+        POL: The enum member of type str.
+        POR: The enum member of type str.
+        RON: The enum member of type str.
+        RUS: The enum member of type str.
+        SLK: The enum member of type str.
+        SLV: The enum member of type str.
+        SPA: The enum member of type str.
+        SWE: The enum member of type str.
+        TUR: The enum member of type str.
+        THA: The enum member of type str.
+        FIL: The enum member of type str.
+        EST: The enum member of type str.
+        LAV: The enum member of type str.
+        LIT: The enum member of type str.
 
     """
     DEU = 'deu'

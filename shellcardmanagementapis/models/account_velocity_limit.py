@@ -13,8 +13,6 @@ class AccountVelocityLimit(object):
 
     """Implementation of the 'AccountVelocityLimit' model.
 
-    TODO: type model description here.
-
     Attributes:
         mtype (str): Type of velocity (COUNT type is not present for limits of
             PERTRX period Possible Values: VALUE, VOLUME, COUNT
@@ -135,3 +133,25 @@ class AccountVelocityLimit(object):
                    override,
                    product_group,
                    threshold)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'mtype={(self.mtype if hasattr(self, "mtype") else None)!r}, '
+                f'period={(self.period if hasattr(self, "period") else None)!r}, '
+                f'limit={(self.limit if hasattr(self, "limit") else None)!r}, '
+                f'accumulation={(self.accumulation if hasattr(self, "accumulation") else None)!r}, '
+                f'balance={(self.balance if hasattr(self, "balance") else None)!r}, '
+                f'override={(self.override if hasattr(self, "override") else None)!r}, '
+                f'product_group={(self.product_group if hasattr(self, "product_group") else None)!r}, '
+                f'threshold={(self.threshold if hasattr(self, "threshold") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'mtype={(self.mtype if hasattr(self, "mtype") else None)!s}, '
+                f'period={(self.period if hasattr(self, "period") else None)!s}, '
+                f'limit={(self.limit if hasattr(self, "limit") else None)!s}, '
+                f'accumulation={(self.accumulation if hasattr(self, "accumulation") else None)!s}, '
+                f'balance={(self.balance if hasattr(self, "balance") else None)!s}, '
+                f'override={(self.override if hasattr(self, "override") else None)!s}, '
+                f'product_group={(self.product_group if hasattr(self, "product_group") else None)!s}, '
+                f'threshold={(self.threshold if hasattr(self, "threshold") else None)!s})')

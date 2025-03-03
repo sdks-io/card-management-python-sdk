@@ -14,8 +14,6 @@ class AutoRenewCardRequest(object):
 
     """Implementation of the 'AutoRenewCardRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting Company Id of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example: 
@@ -28,8 +26,9 @@ class AutoRenewCardRequest(object):
             payer. Optional if PayerId is passed else Mandatory
         payer_id (int): Payer Id  of the selected payer. Optional if
             PayerNumber is passed else Mandatory
-        auto_renew_cards (List[AutoRenewCardRequestAutoRenewCardsItems]):
-            TODO: type description here.
+        auto_renew_cards (List[AutoRenewCardRequestAutoRenewCardsItems]): The
+            model property of type
+            List[AutoRenewCardRequestAutoRenewCardsItems].
 
     """
 
@@ -104,3 +103,19 @@ class AutoRenewCardRequest(object):
                    payer_number,
                    payer_id,
                    auto_renew_cards)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'auto_renew_cards={(self.auto_renew_cards if hasattr(self, "auto_renew_cards") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'auto_renew_cards={(self.auto_renew_cards if hasattr(self, "auto_renew_cards") else None)!s})')

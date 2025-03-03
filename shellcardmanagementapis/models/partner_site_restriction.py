@@ -13,8 +13,6 @@ class PartnerSiteRestriction(object):
 
     """Implementation of the 'PartnerSiteRestriction' model.
 
-    TODO: type model description here.
-
     Attributes:
         network_code (str): Gateway network codes, typically 7 or 10 digits,
             where sites and site groups belong to. Example: 0002003250
@@ -96,3 +94,17 @@ class PartnerSiteRestriction(object):
                    sites,
                    site_groups,
                    exclusive)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'network_code={(self.network_code if hasattr(self, "network_code") else None)!r}, '
+                f'sites={(self.sites if hasattr(self, "sites") else None)!r}, '
+                f'site_groups={(self.site_groups if hasattr(self, "site_groups") else None)!r}, '
+                f'exclusive={(self.exclusive if hasattr(self, "exclusive") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'network_code={(self.network_code if hasattr(self, "network_code") else None)!s}, '
+                f'sites={(self.sites if hasattr(self, "sites") else None)!s}, '
+                f'site_groups={(self.site_groups if hasattr(self, "site_groups") else None)!s}, '
+                f'exclusive={(self.exclusive if hasattr(self, "exclusive") else None)!s})')

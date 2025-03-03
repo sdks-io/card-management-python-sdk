@@ -74,3 +74,13 @@ class CardBlockSchedule(object):
         # Return an object of this model
         return cls(from_date,
                    to_date)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!r}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!s}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!s})')

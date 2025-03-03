@@ -38,7 +38,7 @@ class PINReminderCardDetails(object):
             card 3.    Use default PIN Delivery contact details stored for
             this customer 4.    Use new specific contact for PIN Reminder only
             Note: - PINContactType “3” is only allowed for Paper delivery
-        pin_deliver_to (PINDeliverTo): TODO: type description here.
+        pin_deliver_to (PINDeliverTo): The model property of type PINDeliverTo.
 
     """
 
@@ -125,3 +125,23 @@ class PINReminderCardDetails(object):
                    card_expiry_date,
                    pin_contact_type,
                    pin_deliver_to)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'card_expiry_date={(self.card_expiry_date if hasattr(self, "card_expiry_date") else None)!r}, '
+                f'pin_advice_type={self.pin_advice_type!r}, '
+                f'pin_contact_type={(self.pin_contact_type if hasattr(self, "pin_contact_type") else None)!r}, '
+                f'pin_deliver_to={(self.pin_deliver_to if hasattr(self, "pin_deliver_to") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'card_expiry_date={(self.card_expiry_date if hasattr(self, "card_expiry_date") else None)!s}, '
+                f'pin_advice_type={self.pin_advice_type!s}, '
+                f'pin_contact_type={(self.pin_contact_type if hasattr(self, "pin_contact_type") else None)!s}, '
+                f'pin_deliver_to={(self.pin_deliver_to if hasattr(self, "pin_deliver_to") else None)!s})')

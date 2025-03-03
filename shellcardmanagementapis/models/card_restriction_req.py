@@ -14,8 +14,6 @@ class CardRestrictionReq(object):
 
     """Implementation of the 'CardRestrictionReq' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting Company Id of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example:  1 for
@@ -28,7 +26,8 @@ class CardRestrictionReq(object):
             PayerNumber is passed else Mandatory Example: 123456
         payer_number (str): Payer Number of the selected payer. Optional if
             PayerId is passed else Mandatory Example: GB000000123
-        cards (RestrictionCardsList): TODO: type description here.
+        cards (RestrictionCardsList): The model property of type
+            RestrictionCardsList.
 
     """
 
@@ -106,3 +105,19 @@ class CardRestrictionReq(object):
                    payer_id,
                    payer_number,
                    cards)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!s})')

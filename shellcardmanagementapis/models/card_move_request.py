@@ -14,19 +14,18 @@ class CardMoveRequest(object):
 
     """Implementation of the 'CardMoveRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
-        col_co_code (int): TODO: type description here.
-        col_co_id (int): TODO: type description here.
-        col_co_country_code (str): TODO: type description here.
-        payer_number (str): TODO: type description here.
-        payer_id (int): TODO: type description here.
-        cards (List[CardMoveRequestCardsItems]): TODO: type description here.
-        target_account_id (int): TODO: type description here.
-        target_account_number (str): TODO: type description here.
-        target_card_group_id (int): TODO: type description here.
-        target_new_card_group_name (str): TODO: type description here.
+        col_co_code (int): The model property of type int.
+        col_co_id (int): The model property of type int.
+        col_co_country_code (str): The model property of type str.
+        payer_number (str): The model property of type str.
+        payer_id (int): The model property of type int.
+        cards (List[CardMoveRequestCardsItems]): The model property of type
+            List[CardMoveRequestCardsItems].
+        target_account_id (int): The model property of type int.
+        target_account_number (str): The model property of type str.
+        target_card_group_id (int): The model property of type int.
+        target_new_card_group_name (str): The model property of type str.
 
     """
 
@@ -144,3 +143,29 @@ class CardMoveRequest(object):
                    target_account_number,
                    target_card_group_id,
                    target_new_card_group_name)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!r}, '
+                f'target_account_id={(self.target_account_id if hasattr(self, "target_account_id") else None)!r}, '
+                f'target_account_number={(self.target_account_number if hasattr(self, "target_account_number") else None)!r}, '
+                f'target_card_group_id={(self.target_card_group_id if hasattr(self, "target_card_group_id") else None)!r}, '
+                f'target_new_card_group_name={(self.target_new_card_group_name if hasattr(self, "target_new_card_group_name") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!s}, '
+                f'target_account_id={(self.target_account_id if hasattr(self, "target_account_id") else None)!s}, '
+                f'target_account_number={(self.target_account_number if hasattr(self, "target_account_number") else None)!s}, '
+                f'target_card_group_id={(self.target_card_group_id if hasattr(self, "target_card_group_id") else None)!s}, '
+                f'target_new_card_group_name={(self.target_new_card_group_name if hasattr(self, "target_new_card_group_name") else None)!s})')

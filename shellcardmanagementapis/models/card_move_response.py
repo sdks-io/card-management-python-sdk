@@ -16,16 +16,15 @@ class CardMoveResponse(object):
 
     """Implementation of the 'CardMoveResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
-        move_card_request_reference (int): TODO: type description here.
+        move_card_request_reference (int): The model property of type int.
         successful_requests (List[CardMoveResponseSuccessfulRequestsItems]):
-            TODO: type description here.
-        error_cards (List[CardMoveResponseErrorCardsItems]): TODO: type
-            description here.
-        request_id (str): TODO: type description here.
-        error (ErrorStatus): TODO: type description here.
+            The model property of type
+            List[CardMoveResponseSuccessfulRequestsItems].
+        error_cards (List[CardMoveResponseErrorCardsItems]): The model
+            property of type List[CardMoveResponseErrorCardsItems].
+        request_id (str): The model property of type str.
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -104,3 +103,19 @@ class CardMoveResponse(object):
                    error_cards,
                    request_id,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'move_card_request_reference={(self.move_card_request_reference if hasattr(self, "move_card_request_reference") else None)!r}, '
+                f'successful_requests={(self.successful_requests if hasattr(self, "successful_requests") else None)!r}, '
+                f'error_cards={(self.error_cards if hasattr(self, "error_cards") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'move_card_request_reference={(self.move_card_request_reference if hasattr(self, "move_card_request_reference") else None)!s}, '
+                f'successful_requests={(self.successful_requests if hasattr(self, "successful_requests") else None)!s}, '
+                f'error_cards={(self.error_cards if hasattr(self, "error_cards") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

@@ -18,8 +18,6 @@ class PayerDetails(object):
 
     """Implementation of the 'PayerDetails' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting company id of the customer.
         col_co_code (int): Collecting company code of the customer.
@@ -83,8 +81,8 @@ class PayerDetails(object):
             in case of multiple billing runs configured with in a single month.
         day_4_run (int): The fourth day in a month when the billing should run
             in case of multiple billing runs configured with in a single month.
-        invoice_distribution_methods (List[InvoiceDistributionMethod]): TODO:
-            type description here.
+        invoice_distribution_methods (List[InvoiceDistributionMethod]): The
+            model property of type List[InvoiceDistributionMethod].
         output_type (str): Invoice output type (Id-Description) E.g.: 1-PDF
             6-Print
         invoice_account_id (int): The Account ID of the account on which the
@@ -174,10 +172,11 @@ class PayerDetails(object):
             Temporary Credit limit increase value
         temporary_credit_limit_expiry_date (str): Temporary Credit limit
             expiry date
-        payer_bank_account (List[BankAccount]): TODO: type description here.
-        card_delivery_address (Address): TODO: type description here.
-        correspondance_address (Address): TODO: type description here.
-        billing_address (Address): TODO: type description here.
+        payer_bank_account (List[BankAccount]): The model property of type
+            List[BankAccount].
+        card_delivery_address (Address): The model property of type Address.
+        correspondance_address (Address): The model property of type Address.
+        billing_address (Address): The model property of type Address.
         has_active_vol_based_pricing (bool): True, if the payer is setup for
             volume-based pricing and is active on the current date, else
             false.   This field is returned only when IncludeBonusParameters
@@ -191,7 +190,8 @@ class PayerDetails(object):
             current date, else false. This field is returned only when
             IncludeBonusParameters is set to True in the request. Else set to
             null.
-        finance_currency (FinanceCurrency2): TODO: type description here.
+        finance_currency (FinanceCurrency2): The model property of type
+            FinanceCurrency2.
         tolls_customer_id (str): Customer id in e-TM system This field will
             have value only when ReturnTollsCustomerId is set to true in the
             request else set to null or empty.
@@ -199,7 +199,8 @@ class PayerDetails(object):
             e-TM system This field will have value only when
             ReturnTollsCustomerId is set to true in the request else set to
             null or empty.
-        contracts (List[CustomerContract]): TODO: type description here.
+        contracts (List[CustomerContract]): The model property of type
+            List[CustomerContract].
 
     """
 
@@ -1067,3 +1068,219 @@ class PayerDetails(object):
                    tolls_customer_id,
                    tolls_colco_country_type_id,
                    contracts)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'country_code={(self.country_code if hasattr(self, "country_code") else None)!r}, '
+                f'country={(self.country if hasattr(self, "country") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'payer_full_name={(self.payer_full_name if hasattr(self, "payer_full_name") else None)!r}, '
+                f'payer_short_name={(self.payer_short_name if hasattr(self, "payer_short_name") else None)!r}, '
+                f'payer_group_id={(self.payer_group_id if hasattr(self, "payer_group_id") else None)!r}, '
+                f'amount_due={(self.amount_due if hasattr(self, "amount_due") else None)!r}, '
+                f'amount_overdue={(self.amount_overdue if hasattr(self, "amount_overdue") else None)!r}, '
+                f'amount_not_overdue={(self.amount_not_overdue if hasattr(self, "amount_not_overdue") else None)!r}, '
+                f'outstanding_balance={(self.outstanding_balance if hasattr(self, "outstanding_balance") else None)!r}, '
+                f'unallocated_payment={(self.unallocated_payment if hasattr(self, "unallocated_payment") else None)!r}, '
+                f'soa_currency_code={(self.soa_currency_code if hasattr(self, "soa_currency_code") else None)!r}, '
+                f'soa_currency_symbol={(self.soa_currency_symbol if hasattr(self, "soa_currency_symbol") else None)!r}, '
+                f'soa_credit_limit_currency_code={(self.soa_credit_limit_currency_code if hasattr(self, "soa_credit_limit_currency_code") else None)!r}, '
+                f'soa_credit_limit_currency_symbol={(self.soa_credit_limit_currency_symbol if hasattr(self, "soa_credit_limit_currency_symbol") else None)!r}, '
+                f'last_payment_currency_code={(self.last_payment_currency_code if hasattr(self, "last_payment_currency_code") else None)!r}, '
+                f'last_payment_currency_symbol={(self.last_payment_currency_symbol if hasattr(self, "last_payment_currency_symbol") else None)!r}, '
+                f'last_payment_amount={(self.last_payment_amount if hasattr(self, "last_payment_amount") else None)!r}, '
+                f'last_payment_date={(self.last_payment_date if hasattr(self, "last_payment_date") else None)!r}, '
+                f'soa_last_payment_amount={(self.soa_last_payment_amount if hasattr(self, "soa_last_payment_amount") else None)!r}, '
+                f'soa_last_payment_date={(self.soa_last_payment_date if hasattr(self, "soa_last_payment_date") else None)!r}, '
+                f'currency_code={(self.currency_code if hasattr(self, "currency_code") else None)!r}, '
+                f'currency_symbol={(self.currency_symbol if hasattr(self, "currency_symbol") else None)!r}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!r}, '
+                f'local_currency_code={(self.local_currency_code if hasattr(self, "local_currency_code") else None)!r}, '
+                f'local_currency_symbol={(self.local_currency_symbol if hasattr(self, "local_currency_symbol") else None)!r}, '
+                f'local_currency_exchange_rate={(self.local_currency_exchange_rate if hasattr(self, "local_currency_exchange_rate") else None)!r}, '
+                f'local_currency_exchange_rate_so_a={(self.local_currency_exchange_rate_so_a if hasattr(self, "local_currency_exchange_rate_so_a") else None)!r}, '
+                f'billing_frequency_type_id={(self.billing_frequency_type_id if hasattr(self, "billing_frequency_type_id") else None)!r}, '
+                f'billing_frequency_type={(self.billing_frequency_type if hasattr(self, "billing_frequency_type") else None)!r}, '
+                f'billing_run_frequency_type_id={(self.billing_run_frequency_type_id if hasattr(self, "billing_run_frequency_type_id") else None)!r}, '
+                f'billing_run_frequnecy={(self.billing_run_frequnecy if hasattr(self, "billing_run_frequnecy") else None)!r}, '
+                f'day_1_run={(self.day_1_run if hasattr(self, "day_1_run") else None)!r}, '
+                f'day_2_run={(self.day_2_run if hasattr(self, "day_2_run") else None)!r}, '
+                f'day_3_run={(self.day_3_run if hasattr(self, "day_3_run") else None)!r}, '
+                f'day_4_run={(self.day_4_run if hasattr(self, "day_4_run") else None)!r}, '
+                f'invoice_distribution_methods={(self.invoice_distribution_methods if hasattr(self, "invoice_distribution_methods") else None)!r}, '
+                f'output_type={(self.output_type if hasattr(self, "output_type") else None)!r}, '
+                f'invoice_account_id={(self.invoice_account_id if hasattr(self, "invoice_account_id") else None)!r}, '
+                f'invoice_account_number={(self.invoice_account_number if hasattr(self, "invoice_account_number") else None)!r}, '
+                f'invoice_account_short_name={(self.invoice_account_short_name if hasattr(self, "invoice_account_short_name") else None)!r}, '
+                f'best_of_indicator={(self.best_of_indicator if hasattr(self, "best_of_indicator") else None)!r}, '
+                f'is_international={(self.is_international if hasattr(self, "is_international") else None)!r}, '
+                f'total_accounts={(self.total_accounts if hasattr(self, "total_accounts") else None)!r}, '
+                f'total_active_accounts={(self.total_active_accounts if hasattr(self, "total_active_accounts") else None)!r}, '
+                f'total_cards={(self.total_cards if hasattr(self, "total_cards") else None)!r}, '
+                f'total_active_cards={(self.total_active_cards if hasattr(self, "total_active_cards") else None)!r}, '
+                f'total_blocked_cards={(self.total_blocked_cards if hasattr(self, "total_blocked_cards") else None)!r}, '
+                f'total_cancelled_cards={(self.total_cancelled_cards if hasattr(self, "total_cancelled_cards") else None)!r}, '
+                f'total_expired_cards={(self.total_expired_cards if hasattr(self, "total_expired_cards") else None)!r}, '
+                f'total_renewal_pending_cards={(self.total_renewal_pending_cards if hasattr(self, "total_renewal_pending_cards") else None)!r}, '
+                f'total_replaced_cards={(self.total_replaced_cards if hasattr(self, "total_replaced_cards") else None)!r}, '
+                f'total_temporary_block_cards_by_customer={(self.total_temporary_block_cards_by_customer if hasattr(self, "total_temporary_block_cards_by_customer") else None)!r}, '
+                f'total_temporary_block_cards_by_shell={(self.total_temporary_block_cards_by_shell if hasattr(self, "total_temporary_block_cards_by_shell") else None)!r}, '
+                f'total_new_cards={(self.total_new_cards if hasattr(self, "total_new_cards") else None)!r}, '
+                f'total_fraud_cards={(self.total_fraud_cards if hasattr(self, "total_fraud_cards") else None)!r}, '
+                f'total_blocked_accounts={(self.total_blocked_accounts if hasattr(self, "total_blocked_accounts") else None)!r}, '
+                f'total_cancelled_accounts={(self.total_cancelled_accounts if hasattr(self, "total_cancelled_accounts") else None)!r}, '
+                f'payer_trading_name={(self.payer_trading_name if hasattr(self, "payer_trading_name") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'billing_language={(self.billing_language if hasattr(self, "billing_language") else None)!r}, '
+                f'legal_entity={(self.legal_entity if hasattr(self, "legal_entity") else None)!r}, '
+                f'date_established={(self.date_established if hasattr(self, "date_established") else None)!r}, '
+                f'customer_classification={(self.customer_classification if hasattr(self, "customer_classification") else None)!r}, '
+                f'industry_class={(self.industry_class if hasattr(self, "industry_class") else None)!r}, '
+                f'marketing_segmentation={(self.marketing_segmentation if hasattr(self, "marketing_segmentation") else None)!r}, '
+                f'line_of_business={(self.line_of_business if hasattr(self, "line_of_business") else None)!r}, '
+                f'print_credit_limit={(self.print_credit_limit if hasattr(self, "print_credit_limit") else None)!r}, '
+                f'card_group_type={(self.card_group_type if hasattr(self, "card_group_type") else None)!r}, '
+                f'renew_cards={(self.renew_cards if hasattr(self, "renew_cards") else None)!r}, '
+                f'allow_select_pin={(self.allow_select_pin if hasattr(self, "allow_select_pin") else None)!r}, '
+                f'use_fleet_pin={(self.use_fleet_pin if hasattr(self, "use_fleet_pin") else None)!r}, '
+                f'vat_reg_number={(self.vat_reg_number if hasattr(self, "vat_reg_number") else None)!r}, '
+                f'vat_reg_number_2={(self.vat_reg_number_2 if hasattr(self, "vat_reg_number_2") else None)!r}, '
+                f'registration_number={(self.registration_number if hasattr(self, "registration_number") else None)!r}, '
+                f'registration_number_2={(self.registration_number_2 if hasattr(self, "registration_number_2") else None)!r}, '
+                f'sales_ledger_balance={(self.sales_ledger_balance if hasattr(self, "sales_ledger_balance") else None)!r}, '
+                f'exposure={(self.exposure if hasattr(self, "exposure") else None)!r}, '
+                f'outstanding_debt={(self.outstanding_debt if hasattr(self, "outstanding_debt") else None)!r}, '
+                f'available_credit={(self.available_credit if hasattr(self, "available_credit") else None)!r}, '
+                f'band={(self.band if hasattr(self, "band") else None)!r}, '
+                f'global_customer_reference_id={(self.global_customer_reference_id if hasattr(self, "global_customer_reference_id") else None)!r}, '
+                f'credit_limit={(self.credit_limit if hasattr(self, "credit_limit") else None)!r}, '
+                f'credit_limit_in_customer_currency={(self.credit_limit_in_customer_currency if hasattr(self, "credit_limit_in_customer_currency") else None)!r}, '
+                f'billing_currency_code={(self.billing_currency_code if hasattr(self, "billing_currency_code") else None)!r}, '
+                f'billing_currency_symbol={(self.billing_currency_symbol if hasattr(self, "billing_currency_symbol") else None)!r}, '
+                f'payment_method={(self.payment_method if hasattr(self, "payment_method") else None)!r}, '
+                f'payment_terms={(self.payment_terms if hasattr(self, "payment_terms") else None)!r}, '
+                f'temporary_credit_limit_increase={(self.temporary_credit_limit_increase if hasattr(self, "temporary_credit_limit_increase") else None)!r}, '
+                f'temporary_credit_limit_increase_in_customer_currency={(self.temporary_credit_limit_increase_in_customer_currency if hasattr(self, "temporary_credit_limit_increase_in_customer_currency") else None)!r}, '
+                f'temporary_credit_limit_expiry_date={(self.temporary_credit_limit_expiry_date if hasattr(self, "temporary_credit_limit_expiry_date") else None)!r}, '
+                f'payer_bank_account={(self.payer_bank_account if hasattr(self, "payer_bank_account") else None)!r}, '
+                f'card_delivery_address={(self.card_delivery_address if hasattr(self, "card_delivery_address") else None)!r}, '
+                f'correspondance_address={(self.correspondance_address if hasattr(self, "correspondance_address") else None)!r}, '
+                f'billing_address={(self.billing_address if hasattr(self, "billing_address") else None)!r}, '
+                f'has_active_vol_based_pricing={(self.has_active_vol_based_pricing if hasattr(self, "has_active_vol_based_pricing") else None)!r}, '
+                f'has_active_vol_based_bonus={(self.has_active_vol_based_bonus if hasattr(self, "has_active_vol_based_bonus") else None)!r}, '
+                f'has_active_vol_based_association_bonus={(self.has_active_vol_based_association_bonus if hasattr(self, "has_active_vol_based_association_bonus") else None)!r}, '
+                f'finance_currency={(self.finance_currency if hasattr(self, "finance_currency") else None)!r}, '
+                f'tolls_customer_id={(self.tolls_customer_id if hasattr(self, "tolls_customer_id") else None)!r}, '
+                f'tolls_colco_country_type_id={(self.tolls_colco_country_type_id if hasattr(self, "tolls_colco_country_type_id") else None)!r}, '
+                f'contracts={(self.contracts if hasattr(self, "contracts") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'country_code={(self.country_code if hasattr(self, "country_code") else None)!s}, '
+                f'country={(self.country if hasattr(self, "country") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'payer_full_name={(self.payer_full_name if hasattr(self, "payer_full_name") else None)!s}, '
+                f'payer_short_name={(self.payer_short_name if hasattr(self, "payer_short_name") else None)!s}, '
+                f'payer_group_id={(self.payer_group_id if hasattr(self, "payer_group_id") else None)!s}, '
+                f'amount_due={(self.amount_due if hasattr(self, "amount_due") else None)!s}, '
+                f'amount_overdue={(self.amount_overdue if hasattr(self, "amount_overdue") else None)!s}, '
+                f'amount_not_overdue={(self.amount_not_overdue if hasattr(self, "amount_not_overdue") else None)!s}, '
+                f'outstanding_balance={(self.outstanding_balance if hasattr(self, "outstanding_balance") else None)!s}, '
+                f'unallocated_payment={(self.unallocated_payment if hasattr(self, "unallocated_payment") else None)!s}, '
+                f'soa_currency_code={(self.soa_currency_code if hasattr(self, "soa_currency_code") else None)!s}, '
+                f'soa_currency_symbol={(self.soa_currency_symbol if hasattr(self, "soa_currency_symbol") else None)!s}, '
+                f'soa_credit_limit_currency_code={(self.soa_credit_limit_currency_code if hasattr(self, "soa_credit_limit_currency_code") else None)!s}, '
+                f'soa_credit_limit_currency_symbol={(self.soa_credit_limit_currency_symbol if hasattr(self, "soa_credit_limit_currency_symbol") else None)!s}, '
+                f'last_payment_currency_code={(self.last_payment_currency_code if hasattr(self, "last_payment_currency_code") else None)!s}, '
+                f'last_payment_currency_symbol={(self.last_payment_currency_symbol if hasattr(self, "last_payment_currency_symbol") else None)!s}, '
+                f'last_payment_amount={(self.last_payment_amount if hasattr(self, "last_payment_amount") else None)!s}, '
+                f'last_payment_date={(self.last_payment_date if hasattr(self, "last_payment_date") else None)!s}, '
+                f'soa_last_payment_amount={(self.soa_last_payment_amount if hasattr(self, "soa_last_payment_amount") else None)!s}, '
+                f'soa_last_payment_date={(self.soa_last_payment_date if hasattr(self, "soa_last_payment_date") else None)!s}, '
+                f'currency_code={(self.currency_code if hasattr(self, "currency_code") else None)!s}, '
+                f'currency_symbol={(self.currency_symbol if hasattr(self, "currency_symbol") else None)!s}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!s}, '
+                f'local_currency_code={(self.local_currency_code if hasattr(self, "local_currency_code") else None)!s}, '
+                f'local_currency_symbol={(self.local_currency_symbol if hasattr(self, "local_currency_symbol") else None)!s}, '
+                f'local_currency_exchange_rate={(self.local_currency_exchange_rate if hasattr(self, "local_currency_exchange_rate") else None)!s}, '
+                f'local_currency_exchange_rate_so_a={(self.local_currency_exchange_rate_so_a if hasattr(self, "local_currency_exchange_rate_so_a") else None)!s}, '
+                f'billing_frequency_type_id={(self.billing_frequency_type_id if hasattr(self, "billing_frequency_type_id") else None)!s}, '
+                f'billing_frequency_type={(self.billing_frequency_type if hasattr(self, "billing_frequency_type") else None)!s}, '
+                f'billing_run_frequency_type_id={(self.billing_run_frequency_type_id if hasattr(self, "billing_run_frequency_type_id") else None)!s}, '
+                f'billing_run_frequnecy={(self.billing_run_frequnecy if hasattr(self, "billing_run_frequnecy") else None)!s}, '
+                f'day_1_run={(self.day_1_run if hasattr(self, "day_1_run") else None)!s}, '
+                f'day_2_run={(self.day_2_run if hasattr(self, "day_2_run") else None)!s}, '
+                f'day_3_run={(self.day_3_run if hasattr(self, "day_3_run") else None)!s}, '
+                f'day_4_run={(self.day_4_run if hasattr(self, "day_4_run") else None)!s}, '
+                f'invoice_distribution_methods={(self.invoice_distribution_methods if hasattr(self, "invoice_distribution_methods") else None)!s}, '
+                f'output_type={(self.output_type if hasattr(self, "output_type") else None)!s}, '
+                f'invoice_account_id={(self.invoice_account_id if hasattr(self, "invoice_account_id") else None)!s}, '
+                f'invoice_account_number={(self.invoice_account_number if hasattr(self, "invoice_account_number") else None)!s}, '
+                f'invoice_account_short_name={(self.invoice_account_short_name if hasattr(self, "invoice_account_short_name") else None)!s}, '
+                f'best_of_indicator={(self.best_of_indicator if hasattr(self, "best_of_indicator") else None)!s}, '
+                f'is_international={(self.is_international if hasattr(self, "is_international") else None)!s}, '
+                f'total_accounts={(self.total_accounts if hasattr(self, "total_accounts") else None)!s}, '
+                f'total_active_accounts={(self.total_active_accounts if hasattr(self, "total_active_accounts") else None)!s}, '
+                f'total_cards={(self.total_cards if hasattr(self, "total_cards") else None)!s}, '
+                f'total_active_cards={(self.total_active_cards if hasattr(self, "total_active_cards") else None)!s}, '
+                f'total_blocked_cards={(self.total_blocked_cards if hasattr(self, "total_blocked_cards") else None)!s}, '
+                f'total_cancelled_cards={(self.total_cancelled_cards if hasattr(self, "total_cancelled_cards") else None)!s}, '
+                f'total_expired_cards={(self.total_expired_cards if hasattr(self, "total_expired_cards") else None)!s}, '
+                f'total_renewal_pending_cards={(self.total_renewal_pending_cards if hasattr(self, "total_renewal_pending_cards") else None)!s}, '
+                f'total_replaced_cards={(self.total_replaced_cards if hasattr(self, "total_replaced_cards") else None)!s}, '
+                f'total_temporary_block_cards_by_customer={(self.total_temporary_block_cards_by_customer if hasattr(self, "total_temporary_block_cards_by_customer") else None)!s}, '
+                f'total_temporary_block_cards_by_shell={(self.total_temporary_block_cards_by_shell if hasattr(self, "total_temporary_block_cards_by_shell") else None)!s}, '
+                f'total_new_cards={(self.total_new_cards if hasattr(self, "total_new_cards") else None)!s}, '
+                f'total_fraud_cards={(self.total_fraud_cards if hasattr(self, "total_fraud_cards") else None)!s}, '
+                f'total_blocked_accounts={(self.total_blocked_accounts if hasattr(self, "total_blocked_accounts") else None)!s}, '
+                f'total_cancelled_accounts={(self.total_cancelled_accounts if hasattr(self, "total_cancelled_accounts") else None)!s}, '
+                f'payer_trading_name={(self.payer_trading_name if hasattr(self, "payer_trading_name") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'billing_language={(self.billing_language if hasattr(self, "billing_language") else None)!s}, '
+                f'legal_entity={(self.legal_entity if hasattr(self, "legal_entity") else None)!s}, '
+                f'date_established={(self.date_established if hasattr(self, "date_established") else None)!s}, '
+                f'customer_classification={(self.customer_classification if hasattr(self, "customer_classification") else None)!s}, '
+                f'industry_class={(self.industry_class if hasattr(self, "industry_class") else None)!s}, '
+                f'marketing_segmentation={(self.marketing_segmentation if hasattr(self, "marketing_segmentation") else None)!s}, '
+                f'line_of_business={(self.line_of_business if hasattr(self, "line_of_business") else None)!s}, '
+                f'print_credit_limit={(self.print_credit_limit if hasattr(self, "print_credit_limit") else None)!s}, '
+                f'card_group_type={(self.card_group_type if hasattr(self, "card_group_type") else None)!s}, '
+                f'renew_cards={(self.renew_cards if hasattr(self, "renew_cards") else None)!s}, '
+                f'allow_select_pin={(self.allow_select_pin if hasattr(self, "allow_select_pin") else None)!s}, '
+                f'use_fleet_pin={(self.use_fleet_pin if hasattr(self, "use_fleet_pin") else None)!s}, '
+                f'vat_reg_number={(self.vat_reg_number if hasattr(self, "vat_reg_number") else None)!s}, '
+                f'vat_reg_number_2={(self.vat_reg_number_2 if hasattr(self, "vat_reg_number_2") else None)!s}, '
+                f'registration_number={(self.registration_number if hasattr(self, "registration_number") else None)!s}, '
+                f'registration_number_2={(self.registration_number_2 if hasattr(self, "registration_number_2") else None)!s}, '
+                f'sales_ledger_balance={(self.sales_ledger_balance if hasattr(self, "sales_ledger_balance") else None)!s}, '
+                f'exposure={(self.exposure if hasattr(self, "exposure") else None)!s}, '
+                f'outstanding_debt={(self.outstanding_debt if hasattr(self, "outstanding_debt") else None)!s}, '
+                f'available_credit={(self.available_credit if hasattr(self, "available_credit") else None)!s}, '
+                f'band={(self.band if hasattr(self, "band") else None)!s}, '
+                f'global_customer_reference_id={(self.global_customer_reference_id if hasattr(self, "global_customer_reference_id") else None)!s}, '
+                f'credit_limit={(self.credit_limit if hasattr(self, "credit_limit") else None)!s}, '
+                f'credit_limit_in_customer_currency={(self.credit_limit_in_customer_currency if hasattr(self, "credit_limit_in_customer_currency") else None)!s}, '
+                f'billing_currency_code={(self.billing_currency_code if hasattr(self, "billing_currency_code") else None)!s}, '
+                f'billing_currency_symbol={(self.billing_currency_symbol if hasattr(self, "billing_currency_symbol") else None)!s}, '
+                f'payment_method={(self.payment_method if hasattr(self, "payment_method") else None)!s}, '
+                f'payment_terms={(self.payment_terms if hasattr(self, "payment_terms") else None)!s}, '
+                f'temporary_credit_limit_increase={(self.temporary_credit_limit_increase if hasattr(self, "temporary_credit_limit_increase") else None)!s}, '
+                f'temporary_credit_limit_increase_in_customer_currency={(self.temporary_credit_limit_increase_in_customer_currency if hasattr(self, "temporary_credit_limit_increase_in_customer_currency") else None)!s}, '
+                f'temporary_credit_limit_expiry_date={(self.temporary_credit_limit_expiry_date if hasattr(self, "temporary_credit_limit_expiry_date") else None)!s}, '
+                f'payer_bank_account={(self.payer_bank_account if hasattr(self, "payer_bank_account") else None)!s}, '
+                f'card_delivery_address={(self.card_delivery_address if hasattr(self, "card_delivery_address") else None)!s}, '
+                f'correspondance_address={(self.correspondance_address if hasattr(self, "correspondance_address") else None)!s}, '
+                f'billing_address={(self.billing_address if hasattr(self, "billing_address") else None)!s}, '
+                f'has_active_vol_based_pricing={(self.has_active_vol_based_pricing if hasattr(self, "has_active_vol_based_pricing") else None)!s}, '
+                f'has_active_vol_based_bonus={(self.has_active_vol_based_bonus if hasattr(self, "has_active_vol_based_bonus") else None)!s}, '
+                f'has_active_vol_based_association_bonus={(self.has_active_vol_based_association_bonus if hasattr(self, "has_active_vol_based_association_bonus") else None)!s}, '
+                f'finance_currency={(self.finance_currency if hasattr(self, "finance_currency") else None)!s}, '
+                f'tolls_customer_id={(self.tolls_customer_id if hasattr(self, "tolls_customer_id") else None)!s}, '
+                f'tolls_colco_country_type_id={(self.tolls_colco_country_type_id if hasattr(self, "tolls_colco_country_type_id") else None)!s}, '
+                f'contracts={(self.contracts if hasattr(self, "contracts") else None)!s})')

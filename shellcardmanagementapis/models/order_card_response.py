@@ -14,14 +14,13 @@ class OrderCardResponse(object):
 
     """Implementation of the 'OrderCardResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Unique request identifier passed from end user. This
             identifier helps in tracing a transaction
         status (str): Indicates overall status of the request. Allowed values:
             SUCCESS, FAILED
-        data (List[CreateCardResponse]): TODO: type description here.
+        data (List[CreateCardResponse]): The model property of type
+            List[CreateCardResponse].
         main_reference (int): Main order reference number for tracking.
 
     """
@@ -90,3 +89,17 @@ class OrderCardResponse(object):
                    status,
                    data,
                    main_reference)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'data={(self.data if hasattr(self, "data") else None)!r}, '
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'data={(self.data if hasattr(self, "data") else None)!s}, '
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!s})')

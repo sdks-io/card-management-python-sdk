@@ -13,8 +13,6 @@ class BundledDetailsProductList(object):
 
     """Implementation of the 'BundledDetailsProductList' model.
 
-    TODO: type model description here.
-
     Attributes:
         purchase_category_id (int): Purchase category Id Example: 123, 124,
             etc.,
@@ -115,3 +113,23 @@ class BundledDetailsProductList(object):
                    fuel_set_id,
                    fuel_set_name,
                    non_fuel_sets)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!r}, '
+                f'purchase_category_code={(self.purchase_category_code if hasattr(self, "purchase_category_code") else None)!r}, '
+                f'products={(self.products if hasattr(self, "products") else None)!r}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!r}, '
+                f'fuel_set_id={(self.fuel_set_id if hasattr(self, "fuel_set_id") else None)!r}, '
+                f'fuel_set_name={(self.fuel_set_name if hasattr(self, "fuel_set_name") else None)!r}, '
+                f'non_fuel_sets={(self.non_fuel_sets if hasattr(self, "non_fuel_sets") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!s}, '
+                f'purchase_category_code={(self.purchase_category_code if hasattr(self, "purchase_category_code") else None)!s}, '
+                f'products={(self.products if hasattr(self, "products") else None)!s}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!s}, '
+                f'fuel_set_id={(self.fuel_set_id if hasattr(self, "fuel_set_id") else None)!s}, '
+                f'fuel_set_name={(self.fuel_set_name if hasattr(self, "fuel_set_name") else None)!s}, '
+                f'non_fuel_sets={(self.non_fuel_sets if hasattr(self, "non_fuel_sets") else None)!s})')

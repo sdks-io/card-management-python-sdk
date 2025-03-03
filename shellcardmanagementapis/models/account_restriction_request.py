@@ -13,8 +13,6 @@ class AccountRestrictionRequest(object):
 
     """Implementation of the 'AccountRestrictionRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting Company Id of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example:  1 for
@@ -37,7 +35,7 @@ class AccountRestrictionRequest(object):
         reset_usage_restrictions (bool): True/False. If true, the usage
             restrictions applied on the account will be removed. Optional
             Default: False
-        usage_restrictions (object): TODO: type description here.
+        usage_restrictions (object): The model property of type object.
 
     """
 
@@ -139,3 +137,25 @@ class AccountRestrictionRequest(object):
                    account_number,
                    reset_usage_restrictions,
                    usage_restrictions)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'reset_usage_restrictions={(self.reset_usage_restrictions if hasattr(self, "reset_usage_restrictions") else None)!r}, '
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'reset_usage_restrictions={(self.reset_usage_restrictions if hasattr(self, "reset_usage_restrictions") else None)!s}, '
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!s})')

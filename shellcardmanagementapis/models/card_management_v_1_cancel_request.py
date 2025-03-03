@@ -14,8 +14,6 @@ class CardManagementV1CancelRequest(object):
 
     """Implementation of the 'CardManagementV1CancelRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         cards (List[UpdateCard]): List of CancelCardRequest entity.   Each
             card in the list will be Cancelled.   The details of the entity
@@ -97,3 +95,15 @@ class CardManagementV1CancelRequest(object):
         return cls(cards,
                    reason_id,
                    reason_text)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'cards={self.cards!r}, '
+                f'reason_id={(self.reason_id if hasattr(self, "reason_id") else None)!r}, '
+                f'reason_text={(self.reason_text if hasattr(self, "reason_text") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'cards={self.cards!s}, '
+                f'reason_id={(self.reason_id if hasattr(self, "reason_id") else None)!s}, '
+                f'reason_text={(self.reason_text if hasattr(self, "reason_text") else None)!s})')

@@ -13,8 +13,6 @@ class BundleCardRestrictionStatus(object):
 
     """Implementation of the 'BundleCardRestrictionStatus' model.
 
-    TODO: type model description here.
-
     Attributes:
         pan (str): Card PAN. Example: 7002051006629890645
 
@@ -59,3 +57,11 @@ class BundleCardRestrictionStatus(object):
         pan = dictionary.get("PAN") if dictionary.get("PAN") else APIHelper.SKIP
         # Return an object of this model
         return cls(pan)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s})')

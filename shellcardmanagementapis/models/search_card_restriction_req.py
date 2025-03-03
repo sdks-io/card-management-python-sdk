@@ -15,8 +15,6 @@ class SearchCardRestrictionReq(object):
 
     """Implementation of the 'SearchCardRestrictionReq' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting Company Id of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example:  1 for
@@ -31,11 +29,12 @@ class SearchCardRestrictionReq(object):
             Mandatory Example: 123456
         payer_number (str): Payer Number of the selected payer. Optional if
             PayerId is passed else Mandatory Example: GB000000123
-        accounts (Accounts): TODO: type description here.
+        accounts (Accounts): The model property of type Accounts.
         bundle_id (str): Identifier of the Card bundle Optional if cards list
             is given, else mandatory. This input is a search criterion, if
             given.
-        cards (SearchCardRestriction): TODO: type description here.
+        cards (SearchCardRestriction): The model property of type
+            SearchCardRestriction.
         include_location_restrictions (bool): True/False Whether to include
             location restriction of the cards in the response. Optional
             Default ‘false’
@@ -162,3 +161,29 @@ class SearchCardRestrictionReq(object):
                    include_location_restrictions,
                    include_bundle_details,
                    include_inherited_limits)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'accounts={(self.accounts if hasattr(self, "accounts") else None)!r}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!r}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!r}, '
+                f'include_location_restrictions={(self.include_location_restrictions if hasattr(self, "include_location_restrictions") else None)!r}, '
+                f'include_bundle_details={(self.include_bundle_details if hasattr(self, "include_bundle_details") else None)!r}, '
+                f'include_inherited_limits={(self.include_inherited_limits if hasattr(self, "include_inherited_limits") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'accounts={(self.accounts if hasattr(self, "accounts") else None)!s}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!s}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!s}, '
+                f'include_location_restrictions={(self.include_location_restrictions if hasattr(self, "include_location_restrictions") else None)!s}, '
+                f'include_bundle_details={(self.include_bundle_details if hasattr(self, "include_bundle_details") else None)!s}, '
+                f'include_inherited_limits={(self.include_inherited_limits if hasattr(self, "include_inherited_limits") else None)!s})')

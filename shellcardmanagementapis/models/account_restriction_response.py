@@ -14,8 +14,6 @@ class AccountRestrictionResponse(object):
 
     """Implementation of the 'AccountRestrictionResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Request Id of the API call
         account_id (int): Account Id on which restriction is applied. Example:
@@ -28,7 +26,7 @@ class AccountRestrictionResponse(object):
         usage_restriction_description (str): Response for the usage
             restriction in case of an error. This field will have a value only
             when “UsageRestrictionStatus” is “Failed”.
-        error (ErrorStatus): TODO: type description here.
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -110,3 +108,21 @@ class AccountRestrictionResponse(object):
                    usage_restriction_status,
                    usage_restriction_description,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'usage_restriction_status={(self.usage_restriction_status if hasattr(self, "usage_restriction_status") else None)!r}, '
+                f'usage_restriction_description={(self.usage_restriction_description if hasattr(self, "usage_restriction_description") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'usage_restriction_status={(self.usage_restriction_status if hasattr(self, "usage_restriction_status") else None)!s}, '
+                f'usage_restriction_description={(self.usage_restriction_description if hasattr(self, "usage_restriction_description") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

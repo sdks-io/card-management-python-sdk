@@ -450,10 +450,10 @@ class RestrictionController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def summaryofbundles(self,
-                         apikey,
-                         request_id,
-                         body=None):
+    def summary_of_bundles(self,
+                           apikey,
+                           request_id,
+                           body=None):
         """Does a POST request to /fleetmanagement/v1/restriction/summaryofbundles.
 
         This API allows clients to get a summary of card bundles associated
@@ -651,10 +651,10 @@ class RestrictionController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def bundledetails(self,
-                      apikey,
-                      request_id,
-                      body=None):
+    def bundle_details(self,
+                       apikey,
+                       request_id,
+                       body=None):
         """Does a POST request to /fleetmanagement/v1/restriction/bundledetails.
 
         This API allows to get the details of a specific card bundle. It

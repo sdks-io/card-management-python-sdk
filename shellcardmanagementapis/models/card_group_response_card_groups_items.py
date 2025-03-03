@@ -13,8 +13,6 @@ class CardGroupResponseCardGroupsItems(object):
 
     """Implementation of the 'CardGroupResponseCardGroupsItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         account_id (int): Account Id for the associated card group
         account_number (str): Account number for the associated card group
@@ -40,7 +38,7 @@ class CardGroupResponseCardGroupsItems(object):
         print_on_card (bool): PrintOnCard true/false
         renewal_pending_cards (int): Total number of Renewal Pending Cards for
             the given search criteria
-        replaced_cards (int): TODO: type description here.
+        replaced_cards (int): The model property of type int.
         status (str): Status of the card group.
         temporary_block_by_customer (int): Total number of cards for the given
             search criteria that are temporarily blocked by customer
@@ -263,3 +261,53 @@ class CardGroupResponseCardGroupsItems(object):
                    temporary_block_by_shell,
                    terminated_date,
                    total_cards)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'account_short_name={(self.account_short_name if hasattr(self, "account_short_name") else None)!r}, '
+                f'active_cards={(self.active_cards if hasattr(self, "active_cards") else None)!r}, '
+                f'blocked_cards={(self.blocked_cards if hasattr(self, "blocked_cards") else None)!r}, '
+                f'cancelled_cards={(self.cancelled_cards if hasattr(self, "cancelled_cards") else None)!r}, '
+                f'card_delivery_point={(self.card_delivery_point if hasattr(self, "card_delivery_point") else None)!r}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!r}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!r}, '
+                f'card_type_code={(self.card_type_code if hasattr(self, "card_type_code") else None)!r}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!r}, '
+                f'card_type_name={(self.card_type_name if hasattr(self, "card_type_name") else None)!r}, '
+                f'expired_cards={(self.expired_cards if hasattr(self, "expired_cards") else None)!r}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!r}, '
+                f'print_on_card={(self.print_on_card if hasattr(self, "print_on_card") else None)!r}, '
+                f'renewal_pending_cards={(self.renewal_pending_cards if hasattr(self, "renewal_pending_cards") else None)!r}, '
+                f'replaced_cards={(self.replaced_cards if hasattr(self, "replaced_cards") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'temporary_block_by_customer={(self.temporary_block_by_customer if hasattr(self, "temporary_block_by_customer") else None)!r}, '
+                f'temporary_block_by_shell={(self.temporary_block_by_shell if hasattr(self, "temporary_block_by_shell") else None)!r}, '
+                f'terminated_date={(self.terminated_date if hasattr(self, "terminated_date") else None)!r}, '
+                f'total_cards={(self.total_cards if hasattr(self, "total_cards") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'account_short_name={(self.account_short_name if hasattr(self, "account_short_name") else None)!s}, '
+                f'active_cards={(self.active_cards if hasattr(self, "active_cards") else None)!s}, '
+                f'blocked_cards={(self.blocked_cards if hasattr(self, "blocked_cards") else None)!s}, '
+                f'cancelled_cards={(self.cancelled_cards if hasattr(self, "cancelled_cards") else None)!s}, '
+                f'card_delivery_point={(self.card_delivery_point if hasattr(self, "card_delivery_point") else None)!s}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!s}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!s}, '
+                f'card_type_code={(self.card_type_code if hasattr(self, "card_type_code") else None)!s}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!s}, '
+                f'card_type_name={(self.card_type_name if hasattr(self, "card_type_name") else None)!s}, '
+                f'expired_cards={(self.expired_cards if hasattr(self, "expired_cards") else None)!s}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!s}, '
+                f'print_on_card={(self.print_on_card if hasattr(self, "print_on_card") else None)!s}, '
+                f'renewal_pending_cards={(self.renewal_pending_cards if hasattr(self, "renewal_pending_cards") else None)!s}, '
+                f'replaced_cards={(self.replaced_cards if hasattr(self, "replaced_cards") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'temporary_block_by_customer={(self.temporary_block_by_customer if hasattr(self, "temporary_block_by_customer") else None)!s}, '
+                f'temporary_block_by_shell={(self.temporary_block_by_shell if hasattr(self, "temporary_block_by_shell") else None)!s}, '
+                f'terminated_date={(self.terminated_date if hasattr(self, "terminated_date") else None)!s}, '
+                f'total_cards={(self.total_cards if hasattr(self, "total_cards") else None)!s})')

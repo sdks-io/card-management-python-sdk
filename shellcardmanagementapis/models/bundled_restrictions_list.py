@@ -16,16 +16,14 @@ class BundledRestrictionsList(object):
 
     """Implementation of the 'BundledRestrictionsList' model.
 
-    TODO: type model description here.
-
     Attributes:
-        usage_restrictions (object): TODO: type description here.
-        day_time_restrictions (DayTimeRestrictions): TODO: type description
-            here.
-        product_restrictions (BundledDetailsProductList): TODO: type
-            description here.
-        location_restrictions (LocationRestriction): TODO: type description
-            here.
+        usage_restrictions (object): The model property of type object.
+        day_time_restrictions (DayTimeRestrictions): The model property of
+            type DayTimeRestrictions.
+        product_restrictions (BundledDetailsProductList): The model property
+            of type BundledDetailsProductList.
+        location_restrictions (LocationRestriction): The model property of
+            type LocationRestriction.
 
     """
 
@@ -89,3 +87,17 @@ class BundledRestrictionsList(object):
                    day_time_restrictions,
                    product_restrictions,
                    location_restrictions)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!r}, '
+                f'day_time_restrictions={(self.day_time_restrictions if hasattr(self, "day_time_restrictions") else None)!r}, '
+                f'product_restrictions={(self.product_restrictions if hasattr(self, "product_restrictions") else None)!r}, '
+                f'location_restrictions={(self.location_restrictions if hasattr(self, "location_restrictions") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!s}, '
+                f'day_time_restrictions={(self.day_time_restrictions if hasattr(self, "day_time_restrictions") else None)!s}, '
+                f'product_restrictions={(self.product_restrictions if hasattr(self, "product_restrictions") else None)!s}, '
+                f'location_restrictions={(self.location_restrictions if hasattr(self, "location_restrictions") else None)!s})')

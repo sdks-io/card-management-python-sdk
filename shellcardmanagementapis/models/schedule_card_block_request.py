@@ -14,8 +14,6 @@ class ScheduleCardBlockRequest(object):
 
     """Implementation of the 'ScheduleCardBlockRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         is_time_supported (bool): Default: False True – It supports both date
             & time. False – It supports only date. Time will be ignored if it
@@ -77,3 +75,13 @@ class ScheduleCardBlockRequest(object):
         # Return an object of this model
         return cls(is_time_supported,
                    schedule_card_block_cards)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'is_time_supported={(self.is_time_supported if hasattr(self, "is_time_supported") else None)!r}, '
+                f'schedule_card_block_cards={(self.schedule_card_block_cards if hasattr(self, "schedule_card_block_cards") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'is_time_supported={(self.is_time_supported if hasattr(self, "is_time_supported") else None)!s}, '
+                f'schedule_card_block_cards={(self.schedule_card_block_cards if hasattr(self, "schedule_card_block_cards") else None)!s})')

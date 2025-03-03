@@ -14,8 +14,6 @@ class DeliveryAddressUpdateRequest(object):
 
     """Implementation of the 'DeliveryAddressUpdateRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting Company Id of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.
@@ -33,8 +31,8 @@ class DeliveryAddressUpdateRequest(object):
         account_number (str): Account Number of the customer. Optional if
             AccountId is passed, else mandatory. This input is a search
             criterion, if given.
-        delivery_address_updates (List[DeliveryAddressUpdate]): TODO: type
-            description here.
+        delivery_address_updates (List[DeliveryAddressUpdate]): The model
+            property of type List[DeliveryAddressUpdate].
 
     """
 
@@ -123,3 +121,23 @@ class DeliveryAddressUpdateRequest(object):
                    account_id,
                    account_number,
                    delivery_address_updates)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'delivery_address_updates={(self.delivery_address_updates if hasattr(self, "delivery_address_updates") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'delivery_address_updates={(self.delivery_address_updates if hasattr(self, "delivery_address_updates") else None)!s})')

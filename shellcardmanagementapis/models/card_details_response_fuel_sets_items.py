@@ -59,3 +59,13 @@ class CardDetailsResponseFuelSetsItems(object):
         # Return an object of this model
         return cls(product_restriction_id,
                    description)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'product_restriction_id={self.product_restriction_id!r}, '
+                f'description={self.description!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'product_restriction_id={self.product_restriction_id!s}, '
+                f'description={self.description!s})')

@@ -15,15 +15,13 @@ class CardGroupResponse(object):
 
     """Implementation of the 'CardGroupResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
-        card_groups (List[CardGroupResponseCardGroupsItems]): TODO: type
-            description here.
+        card_groups (List[CardGroupResponseCardGroupsItems]): The model
+            property of type List[CardGroupResponseCardGroupsItems].
         current_page (int): current page
         row_count (int): number of records in current response
         total_pages (int): Total pages available
-        error (ErrorStatus): TODO: type description here.
+        error (ErrorStatus): The model property of type ErrorStatus.
         request_id (str): API Request id
 
     """
@@ -106,3 +104,21 @@ class CardGroupResponse(object):
                    total_pages,
                    error,
                    request_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_groups={(self.card_groups if hasattr(self, "card_groups") else None)!r}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!r}, '
+                f'row_count={(self.row_count if hasattr(self, "row_count") else None)!r}, '
+                f'total_pages={(self.total_pages if hasattr(self, "total_pages") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_groups={(self.card_groups if hasattr(self, "card_groups") else None)!s}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!s}, '
+                f'row_count={(self.row_count if hasattr(self, "row_count") else None)!s}, '
+                f'total_pages={(self.total_pages if hasattr(self, "total_pages") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s})')

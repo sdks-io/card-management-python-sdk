@@ -13,8 +13,6 @@ class ColCoAccess(object):
 
     """Implementation of the 'ColCoAccess' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (str): Collecting company ID.
         col_co_code (str): Collecting company code.
@@ -92,3 +90,17 @@ class ColCoAccess(object):
                    col_co_code,
                    col_co_country_name,
                    issuing_country_number)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_country_name={(self.col_co_country_name if hasattr(self, "col_co_country_name") else None)!r}, '
+                f'issuing_country_number={(self.issuing_country_number if hasattr(self, "issuing_country_number") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_country_name={(self.col_co_country_name if hasattr(self, "col_co_country_name") else None)!s}, '
+                f'issuing_country_number={(self.issuing_country_number if hasattr(self, "issuing_country_number") else None)!s})')

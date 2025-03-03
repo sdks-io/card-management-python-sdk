@@ -13,8 +13,6 @@ class RestrictionCardList(object):
 
     """Implementation of the 'RestrictionCardList' model.
 
-    TODO: type model description here.
-
     Attributes:
         card_id (int): Unique Card Id
         pan (str): Card PAN
@@ -371,3 +369,79 @@ class RestrictionCardList(object):
                    bundle_id,
                    medium_type_id,
                    medium_type)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!r}, '
+                f'status_id={(self.status_id if hasattr(self, "status_id") else None)!r}, '
+                f'status_description={(self.status_description if hasattr(self, "status_description") else None)!r}, '
+                f'driver_name={(self.driver_name if hasattr(self, "driver_name") else None)!r}, '
+                f'vrn={(self.vrn if hasattr(self, "vrn") else None)!r}, '
+                f'issue_date={(self.issue_date if hasattr(self, "issue_date") else None)!r}, '
+                f'issue_number={(self.issue_number if hasattr(self, "issue_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!r}, '
+                f'account_short_name={(self.account_short_name if hasattr(self, "account_short_name") else None)!r}, '
+                f'currency_code={(self.currency_code if hasattr(self, "currency_code") else None)!r}, '
+                f'col_co_currency_code={(self.col_co_currency_code if hasattr(self, "col_co_currency_code") else None)!r}, '
+                f'col_co_currency_symbol={(self.col_co_currency_symbol if hasattr(self, "col_co_currency_symbol") else None)!r}, '
+                f'restriction_currency_code={(self.restriction_currency_code if hasattr(self, "restriction_currency_code") else None)!r}, '
+                f'restriction_currency_symbol={(self.restriction_currency_symbol if hasattr(self, "restriction_currency_symbol") else None)!r}, '
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!r}, '
+                f'purchase_category_code={(self.purchase_category_code if hasattr(self, "purchase_category_code") else None)!r}, '
+                f'purchase_category_name={(self.purchase_category_name if hasattr(self, "purchase_category_name") else None)!r}, '
+                f'is_superseded={(self.is_superseded if hasattr(self, "is_superseded") else None)!r}, '
+                f'is_virtual_card={(self.is_virtual_card if hasattr(self, "is_virtual_card") else None)!r}, '
+                f'is_national={(self.is_national if hasattr(self, "is_national") else None)!r}, '
+                f'is_international={(self.is_international if hasattr(self, "is_international") else None)!r}, '
+                f'is_crt={(self.is_crt if hasattr(self, "is_crt") else None)!r}, '
+                f'is_fleet={(self.is_fleet if hasattr(self, "is_fleet") else None)!r}, '
+                f'is_shell_sites_only={(self.is_shell_sites_only if hasattr(self, "is_shell_sites_only") else None)!r}, '
+                f'is_partner_sites_included={(self.is_partner_sites_included if hasattr(self, "is_partner_sites_included") else None)!r}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!r}, '
+                f'card_type_code={(self.card_type_code if hasattr(self, "card_type_code") else None)!r}, '
+                f'card_type_name={(self.card_type_name if hasattr(self, "card_type_name") else None)!r}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!r}, '
+                f'medium_type_id={(self.medium_type_id if hasattr(self, "medium_type_id") else None)!r}, '
+                f'medium_type={(self.medium_type if hasattr(self, "medium_type") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!s}, '
+                f'status_id={(self.status_id if hasattr(self, "status_id") else None)!s}, '
+                f'status_description={(self.status_description if hasattr(self, "status_description") else None)!s}, '
+                f'driver_name={(self.driver_name if hasattr(self, "driver_name") else None)!s}, '
+                f'vrn={(self.vrn if hasattr(self, "vrn") else None)!s}, '
+                f'issue_date={(self.issue_date if hasattr(self, "issue_date") else None)!s}, '
+                f'issue_number={(self.issue_number if hasattr(self, "issue_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!s}, '
+                f'account_short_name={(self.account_short_name if hasattr(self, "account_short_name") else None)!s}, '
+                f'currency_code={(self.currency_code if hasattr(self, "currency_code") else None)!s}, '
+                f'col_co_currency_code={(self.col_co_currency_code if hasattr(self, "col_co_currency_code") else None)!s}, '
+                f'col_co_currency_symbol={(self.col_co_currency_symbol if hasattr(self, "col_co_currency_symbol") else None)!s}, '
+                f'restriction_currency_code={(self.restriction_currency_code if hasattr(self, "restriction_currency_code") else None)!s}, '
+                f'restriction_currency_symbol={(self.restriction_currency_symbol if hasattr(self, "restriction_currency_symbol") else None)!s}, '
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!s}, '
+                f'purchase_category_code={(self.purchase_category_code if hasattr(self, "purchase_category_code") else None)!s}, '
+                f'purchase_category_name={(self.purchase_category_name if hasattr(self, "purchase_category_name") else None)!s}, '
+                f'is_superseded={(self.is_superseded if hasattr(self, "is_superseded") else None)!s}, '
+                f'is_virtual_card={(self.is_virtual_card if hasattr(self, "is_virtual_card") else None)!s}, '
+                f'is_national={(self.is_national if hasattr(self, "is_national") else None)!s}, '
+                f'is_international={(self.is_international if hasattr(self, "is_international") else None)!s}, '
+                f'is_crt={(self.is_crt if hasattr(self, "is_crt") else None)!s}, '
+                f'is_fleet={(self.is_fleet if hasattr(self, "is_fleet") else None)!s}, '
+                f'is_shell_sites_only={(self.is_shell_sites_only if hasattr(self, "is_shell_sites_only") else None)!s}, '
+                f'is_partner_sites_included={(self.is_partner_sites_included if hasattr(self, "is_partner_sites_included") else None)!s}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!s}, '
+                f'card_type_code={(self.card_type_code if hasattr(self, "card_type_code") else None)!s}, '
+                f'card_type_name={(self.card_type_name if hasattr(self, "card_type_name") else None)!s}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!s}, '
+                f'medium_type_id={(self.medium_type_id if hasattr(self, "medium_type_id") else None)!s}, '
+                f'medium_type={(self.medium_type if hasattr(self, "medium_type") else None)!s})')

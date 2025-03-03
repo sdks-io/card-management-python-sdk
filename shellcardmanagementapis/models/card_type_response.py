@@ -15,12 +15,12 @@ class CardTypeResponse(object):
 
     """Implementation of the 'CardTypeResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         customer_card_types (List[CardTypeResponseCustomerCardTypesItems]):
-            TODO: type description here.
-        error (CardTypeResponseError): TODO: type description here.
+            The model property of type
+            List[CardTypeResponseCustomerCardTypesItems].
+        error (CardTypeResponseError): The model property of type
+            CardTypeResponseError.
         request_id (str): API Request Id
 
     """
@@ -82,3 +82,15 @@ class CardTypeResponse(object):
         return cls(customer_card_types,
                    error,
                    request_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'customer_card_types={(self.customer_card_types if hasattr(self, "customer_card_types") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'customer_card_types={(self.customer_card_types if hasattr(self, "customer_card_types") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s})')

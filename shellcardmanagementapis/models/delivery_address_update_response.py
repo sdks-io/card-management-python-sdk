@@ -15,14 +15,12 @@ class DeliveryAddressUpdateResponse(object):
 
     """Implementation of the 'DeliveryAddressUpdateResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Request ID to which was passed on the API request.
         service_reference (int): Service reference number for tracking.
         delivery_address_update_references (DeliveryAddressUpdateReferences2):
-            TODO: type description here.
-        error (ErrorStatus): TODO: type description here.
+            The model property of type DeliveryAddressUpdateReferences2.
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -86,3 +84,17 @@ class DeliveryAddressUpdateResponse(object):
                    service_reference,
                    delivery_address_update_references,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'service_reference={(self.service_reference if hasattr(self, "service_reference") else None)!r}, '
+                f'delivery_address_update_references={(self.delivery_address_update_references if hasattr(self, "delivery_address_update_references") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'service_reference={(self.service_reference if hasattr(self, "service_reference") else None)!s}, '
+                f'delivery_address_update_references={(self.delivery_address_update_references if hasattr(self, "delivery_address_update_references") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

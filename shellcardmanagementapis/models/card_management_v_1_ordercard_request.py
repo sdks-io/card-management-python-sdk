@@ -14,8 +14,6 @@ class CardManagementV1OrdercardRequest(object):
 
     """Implementation of the 'CardManagementV1OrdercardRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         card_details (List[CardDetail]): List of CardOrder entity. The fields
             in this entity are described below.
@@ -65,3 +63,11 @@ class CardManagementV1OrdercardRequest(object):
             card_details = APIHelper.SKIP
         # Return an object of this model
         return cls(card_details)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_details={(self.card_details if hasattr(self, "card_details") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_details={(self.card_details if hasattr(self, "card_details") else None)!s})')

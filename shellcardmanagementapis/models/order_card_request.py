@@ -66,3 +66,11 @@ class OrderCardRequest(object):
             card_details = APIHelper.SKIP
         # Return an object of this model
         return cls(card_details)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_details={(self.card_details if hasattr(self, "card_details") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_details={(self.card_details if hasattr(self, "card_details") else None)!s})')

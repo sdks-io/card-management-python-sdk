@@ -13,15 +13,13 @@ class CardMoveResponseErrorCardsItems(object):
 
     """Implementation of the 'CardMoveResponseErrorCardsItems' model.
 
-    TODO: type model description here.
-
     Attributes:
-        account_number (str): TODO: type description here.
-        account_id (int): TODO: type description here.
-        pan (str): TODO: type description here.
-        card_id (int): TODO: type description here.
-        validation_error_code (str): TODO: type description here.
-        validation_error_description (str): TODO: type description here.
+        account_number (str): The model property of type str.
+        account_id (int): The model property of type int.
+        pan (str): The model property of type str.
+        card_id (int): The model property of type int.
+        validation_error_code (str): The model property of type str.
+        validation_error_description (str): The model property of type str.
 
     """
 
@@ -108,3 +106,21 @@ class CardMoveResponseErrorCardsItems(object):
                    card_id,
                    validation_error_code,
                    validation_error_description)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'validation_error_code={(self.validation_error_code if hasattr(self, "validation_error_code") else None)!r}, '
+                f'validation_error_description={(self.validation_error_description if hasattr(self, "validation_error_description") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'validation_error_code={(self.validation_error_code if hasattr(self, "validation_error_code") else None)!s}, '
+                f'validation_error_description={(self.validation_error_description if hasattr(self, "validation_error_description") else None)!s})')

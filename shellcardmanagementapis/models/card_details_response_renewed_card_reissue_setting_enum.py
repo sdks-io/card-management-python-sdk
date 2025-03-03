@@ -17,8 +17,8 @@ class CardDetailsResponseRenewedCardReissueSettingEnum(object):
       * `False` - Parent Card is Dormant or the Card is not to be produced
 
     Attributes:
-        TRUE: TODO: type description here.
-        FALSE: TODO: type description here.
+        TRUE: The enum member of type str.
+        FALSE: The enum member of type str.
 
     """
     ENUM_TRUE = 'True'

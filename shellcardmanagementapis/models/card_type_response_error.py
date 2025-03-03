@@ -13,11 +13,9 @@ class CardTypeResponseError(object):
 
     """Implementation of the 'CardTypeResponseError' model.
 
-    TODO: type model description here.
-
     Attributes:
-        code (str): TODO: type description here.
-        description (str): TODO: type description here.
+        code (str): The model property of type str.
+        description (str): The model property of type str.
 
     """
 
@@ -67,3 +65,13 @@ class CardTypeResponseError(object):
         # Return an object of this model
         return cls(code,
                    description)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'code={(self.code if hasattr(self, "code") else None)!r}, '
+                f'description={(self.description if hasattr(self, "description") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'code={(self.code if hasattr(self, "code") else None)!s}, '
+                f'description={(self.description if hasattr(self, "description") else None)!s})')

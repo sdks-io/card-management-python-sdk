@@ -13,8 +13,6 @@ class PINDeliverTo(object):
 
     """Implementation of the 'PINDeliverTo' model.
 
-    TODO: type model description here.
-
     Attributes:
         contact_name (str): Contact Name Max Length: 50
         contact_title (str): Contact Title Max Length: 50
@@ -147,3 +145,31 @@ class PINDeliverTo(object):
                    phone_number,
                    email_address,
                    save_pin_reminder)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'contact_name={(self.contact_name if hasattr(self, "contact_name") else None)!r}, '
+                f'contact_title={(self.contact_title if hasattr(self, "contact_title") else None)!r}, '
+                f'company_name={self.company_name!r}, '
+                f'address_line={self.address_line!r}, '
+                f'zip_code={self.zip_code!r}, '
+                f'city={self.city!r}, '
+                f'region_id={(self.region_id if hasattr(self, "region_id") else None)!r}, '
+                f'country_id={(self.country_id if hasattr(self, "country_id") else None)!r}, '
+                f'phone_number={(self.phone_number if hasattr(self, "phone_number") else None)!r}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!r}, '
+                f'save_pin_reminder={(self.save_pin_reminder if hasattr(self, "save_pin_reminder") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'contact_name={(self.contact_name if hasattr(self, "contact_name") else None)!s}, '
+                f'contact_title={(self.contact_title if hasattr(self, "contact_title") else None)!s}, '
+                f'company_name={self.company_name!s}, '
+                f'address_line={self.address_line!s}, '
+                f'zip_code={self.zip_code!s}, '
+                f'city={self.city!s}, '
+                f'region_id={(self.region_id if hasattr(self, "region_id") else None)!s}, '
+                f'country_id={(self.country_id if hasattr(self, "country_id") else None)!s}, '
+                f'phone_number={(self.phone_number if hasattr(self, "phone_number") else None)!s}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!s}, '
+                f'save_pin_reminder={(self.save_pin_reminder if hasattr(self, "save_pin_reminder") else None)!s})')

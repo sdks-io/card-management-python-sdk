@@ -14,10 +14,9 @@ class ErrorUserAccess(object):
 
     """Implementation of the 'ErrorUserAccess' model.
 
-    TODO: type model description here.
-
     Attributes:
-        error (ErrorUserAccessError): TODO: type description here.
+        error (ErrorUserAccessError): The model property of type
+            ErrorUserAccessError.
 
     """
 
@@ -60,3 +59,11 @@ class ErrorUserAccess(object):
         error = ErrorUserAccessError.from_dictionary(dictionary.get('Error')) if 'Error' in dictionary.keys() else APIHelper.SKIP
         # Return an object of this model
         return cls(error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

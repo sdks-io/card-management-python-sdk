@@ -15,8 +15,6 @@ class CancelCardResponse(object):
 
     """Implementation of the 'CancelCardResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Unique request identifier passed from end user. This
             identifier helps in tracing a transaction
@@ -26,8 +24,10 @@ class CancelCardResponse(object):
             for tracking the execution of the order replacement cards request.
         status (str): Indicates overall status of the request. Allowed values:
             SUCCESS, FAILED, PARTIAL_SUCCESS
-        data (List[SubmittedCard]): TODO: type description here.
-        errors (List[ErrorDetails]): TODO: type description here.
+        data (List[SubmittedCard]): The model property of type
+            List[SubmittedCard].
+        errors (List[ErrorDetails]): The model property of type
+            List[ErrorDetails].
 
     """
 
@@ -113,3 +113,21 @@ class CancelCardResponse(object):
                    status,
                    data,
                    errors)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!r}, '
+                f'order_replacement_reference={(self.order_replacement_reference if hasattr(self, "order_replacement_reference") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'data={(self.data if hasattr(self, "data") else None)!r}, '
+                f'errors={(self.errors if hasattr(self, "errors") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!s}, '
+                f'order_replacement_reference={(self.order_replacement_reference if hasattr(self, "order_replacement_reference") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'data={(self.data if hasattr(self, "data") else None)!s}, '
+                f'errors={(self.errors if hasattr(self, "errors") else None)!s})')

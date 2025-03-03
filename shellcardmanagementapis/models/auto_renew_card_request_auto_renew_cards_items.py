@@ -13,8 +13,6 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
 
     """Implementation of the 'AutoRenewCardRequestAutoRenewCardsItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         account_number (str): Account Number of the customer. Optional if
             AccountId is passed, else Mandatory.
@@ -104,3 +102,21 @@ class AutoRenewCardRequestAutoRenewCardsItems(object):
                    pan,
                    panid,
                    card_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!r}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'reissue_setting={self.reissue_setting!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!s}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'reissue_setting={self.reissue_setting!s})')

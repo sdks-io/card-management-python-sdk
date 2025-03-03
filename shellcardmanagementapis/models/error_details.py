@@ -13,8 +13,6 @@ class ErrorDetails(object):
 
     """Implementation of the 'ErrorDetails' model.
 
-    TODO: type model description here.
-
     Attributes:
         code (str): Error code representing the error encountered
         title (str): Error type description
@@ -84,3 +82,17 @@ class ErrorDetails(object):
                    title,
                    detail,
                    additional_info)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'code={(self.code if hasattr(self, "code") else None)!r}, '
+                f'title={(self.title if hasattr(self, "title") else None)!r}, '
+                f'detail={(self.detail if hasattr(self, "detail") else None)!r}, '
+                f'additional_info={(self.additional_info if hasattr(self, "additional_info") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'code={(self.code if hasattr(self, "code") else None)!s}, '
+                f'title={(self.title if hasattr(self, "title") else None)!s}, '
+                f'detail={(self.detail if hasattr(self, "detail") else None)!s}, '
+                f'additional_info={(self.additional_info if hasattr(self, "additional_info") else None)!s})')

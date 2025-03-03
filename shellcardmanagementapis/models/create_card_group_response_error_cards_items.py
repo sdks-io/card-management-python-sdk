@@ -13,8 +13,6 @@ class CreateCardGroupResponseErrorCardsItems(object):
 
     """Implementation of the 'CreateCardGroupResponseErrorCardsItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         card_id (int): Card Id of the card.
         pan (str): PAN of the card.
@@ -83,3 +81,17 @@ class CreateCardGroupResponseErrorCardsItems(object):
                    pan,
                    error_code,
                    error_description)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'error_code={(self.error_code if hasattr(self, "error_code") else None)!r}, '
+                f'error_description={(self.error_description if hasattr(self, "error_description") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'error_code={(self.error_code if hasattr(self, "error_code") else None)!s}, '
+                f'error_description={(self.error_description if hasattr(self, "error_description") else None)!s})')

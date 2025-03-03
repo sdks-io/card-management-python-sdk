@@ -16,8 +16,6 @@ class CreateCardGroupResponse(object):
 
     """Implementation of the 'CreateCardGroupResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         main_reference (int): Reference number for tracking the execution of
             the requests – new Card Group creation and to move the cards to
@@ -33,7 +31,7 @@ class CreateCardGroupResponse(object):
             cards that failed validation and not submitted for processing.
             Entity: FailedCardReference This list will be empty when the
             validations of new card group parameters fail.
-        error (ErrorStatus): TODO: type description here.
+        error (ErrorStatus): The model property of type ErrorStatus.
         request_id (str): API Request Id
 
     """
@@ -120,3 +118,21 @@ class CreateCardGroupResponse(object):
                    error_cards,
                    error,
                    request_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!r}, '
+                f'new_card_group_reference={(self.new_card_group_reference if hasattr(self, "new_card_group_reference") else None)!r}, '
+                f'successful_requests={(self.successful_requests if hasattr(self, "successful_requests") else None)!r}, '
+                f'error_cards={(self.error_cards if hasattr(self, "error_cards") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!s}, '
+                f'new_card_group_reference={(self.new_card_group_reference if hasattr(self, "new_card_group_reference") else None)!s}, '
+                f'successful_requests={(self.successful_requests if hasattr(self, "successful_requests") else None)!s}, '
+                f'error_cards={(self.error_cards if hasattr(self, "error_cards") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s})')

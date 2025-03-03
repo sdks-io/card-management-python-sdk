@@ -13,8 +13,6 @@ class UpdateCardRenewalAddress2(object):
 
     """Implementation of the 'UpdateCardRenewalAddress2' model.
 
-    TODO: type model description here.
-
     Attributes:
         contact_name (str): Contact name Note: Mandatory when
             ‘UseCustomerDefaultAddress’ is set to ‘false’. The field is
@@ -136,3 +134,29 @@ class UpdateCardRenewalAddress2(object):
                    region_id,
                    email_address,
                    phone_number)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'contact_name={self.contact_name!r}, '
+                f'contact_title={(self.contact_title if hasattr(self, "contact_title") else None)!r}, '
+                f'company_name={self.company_name!r}, '
+                f'address_line={self.address_line!r}, '
+                f'zip_code={self.zip_code!r}, '
+                f'city={(self.city if hasattr(self, "city") else None)!r}, '
+                f'region_id={(self.region_id if hasattr(self, "region_id") else None)!r}, '
+                f'country_id={self.country_id!r}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!r}, '
+                f'phone_number={(self.phone_number if hasattr(self, "phone_number") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'contact_name={self.contact_name!s}, '
+                f'contact_title={(self.contact_title if hasattr(self, "contact_title") else None)!s}, '
+                f'company_name={self.company_name!s}, '
+                f'address_line={self.address_line!s}, '
+                f'zip_code={self.zip_code!s}, '
+                f'city={(self.city if hasattr(self, "city") else None)!s}, '
+                f'region_id={(self.region_id if hasattr(self, "region_id") else None)!s}, '
+                f'country_id={self.country_id!s}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!s}, '
+                f'phone_number={(self.phone_number if hasattr(self, "phone_number") else None)!s})')

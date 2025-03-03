@@ -15,8 +15,6 @@ class UpdateCardGroupResponse(object):
 
     """Implementation of the 'UpdateCardGroupResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         main_reference (int): Reference number for tracking the overall
             request. The value will be null when the validation fails.
@@ -36,7 +34,7 @@ class UpdateCardGroupResponse(object):
             empty when the validations fail or there are no cards in the
             card-group that is getting terminated or MoveCards in the request
             object is false
-        error (ErrorStatus): TODO: type description here.
+        error (ErrorStatus): The model property of type ErrorStatus.
         request_id (str): API Request ID
 
     """
@@ -119,3 +117,21 @@ class UpdateCardGroupResponse(object):
                    move_card_references,
                    error,
                    request_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!r}, '
+                f'update_card_group_reference={(self.update_card_group_reference if hasattr(self, "update_card_group_reference") else None)!r}, '
+                f'new_card_group_reference={(self.new_card_group_reference if hasattr(self, "new_card_group_reference") else None)!r}, '
+                f'move_card_references={(self.move_card_references if hasattr(self, "move_card_references") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!s}, '
+                f'update_card_group_reference={(self.update_card_group_reference if hasattr(self, "update_card_group_reference") else None)!s}, '
+                f'new_card_group_reference={(self.new_card_group_reference if hasattr(self, "new_card_group_reference") else None)!s}, '
+                f'move_card_references={(self.move_card_references if hasattr(self, "move_card_references") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s})')

@@ -14,14 +14,12 @@ class CardSearchResponse(object):
 
     """Implementation of the 'CardSearchResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Unique request identifier passed from end user. This
             identifier helps in tracing a transaction
         status (str): Indicates overall status of the request. Allowed values:
             SUCCES, FAILED, PARTIAL_SUCCES
-        data (List[Card]): TODO: type description here.
+        data (List[Card]): The model property of type List[Card].
         page (int): Specifies the returned page of the results
         page_size (int): Specifies the number of records to be returned which
             could be less than the PageSize in the request
@@ -120,3 +118,23 @@ class CardSearchResponse(object):
                    page_size,
                    total_pages,
                    total_records)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'data={(self.data if hasattr(self, "data") else None)!r}, '
+                f'page={(self.page if hasattr(self, "page") else None)!r}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!r}, '
+                f'total_pages={(self.total_pages if hasattr(self, "total_pages") else None)!r}, '
+                f'total_records={(self.total_records if hasattr(self, "total_records") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'data={(self.data if hasattr(self, "data") else None)!s}, '
+                f'page={(self.page if hasattr(self, "page") else None)!s}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!s}, '
+                f'total_pages={(self.total_pages if hasattr(self, "total_pages") else None)!s}, '
+                f'total_records={(self.total_records if hasattr(self, "total_records") else None)!s})')

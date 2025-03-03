@@ -19,8 +19,6 @@ class CardDetailsResponse(object):
 
     """Implementation of the 'CardDetailsResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         payer_id (int): Payer Id (i.e. Customer Id of the Payment Customer in
             the Shell Card Platform) of the selected payer.
@@ -36,8 +34,21 @@ class CardDetailsResponse(object):
         card_id (int): Unique Card Id in Cards platform.
         pan (str): Card PAN. In the response body the PAN will be masked if
             the option is enabled in the Shell Card Platform.
-        status_id (CardDetailsResponseStatusIdEnum): TODO: type description
-            here.
+        status_id (CardDetailsResponseStatusIdEnum): Possible Id’s and
+            description: * 1  Active * 7  Blocked Card * 8  Expired * 9 
+            Cancelled * 10  New * 23  Pending Renewal * 31  Replaced * 41 
+            Temporary Block (Customer) * 42  Temporary Block (Shell) * 43 
+            Fraud * 101 Active (Block in progress) * * 102 Blocked Card
+            (Unblock in progress) * * 103 Active (Cancel in progress) * * 104
+            Active (Marked as damaged) * * 105 New (Cancel as damaged) * * 106
+            Active(Scheduled for block) ”# * 107 Blocked Card(Scheduled for
+            unblock)*# * 108 Blocked Card (Cancel in progress) * > Note: • 
+            Items marked with * are intermediate statuses  to indicate that
+            there are pending requests in progress. , The response can contain
+            these intermediate statuses only if the IncludeIntermediateStatus
+            flag is true. •  The placeholder “<Shell Card Platform Status>” in
+            the items marked with # will be replaced with the Shell Card
+            Platform status description. E.g., “Active (Scheduled for block)”
         status (str): Possible Id’s and description: * 1  Active * 7  Blocked
             Card * 8  Expired * 9  Cancelled * 10  New * 23  Pending Renewal *
             31  Replaced * 41  Temporary Block (Customer) * 42  Temporary
@@ -56,7 +67,8 @@ class CardDetailsResponse(object):
         odometer_prompt (bool): True if odometer input is enabled on the card,
             else false
         fleet_id_prompt (bool): True if fleet id input is enabled, else false
-        pin_type (CardDetailsResponsePINTypeEnum): TODO: type description here.
+        pin_type (CardDetailsResponsePINTypeEnum): PIN type:   * `Card` - Card
+            PIN   * `Fleet` - Fleet PIN
         has_pin (bool): True if card has PIN, else false
         is_self_selected_pin (bool): True if card has Self Selected PIN, else
             false
@@ -67,19 +79,57 @@ class CardDetailsResponse(object):
         permanent_block_allowed (bool): True if card can be blocked
             permanently, else false
         issue_number (int): Issue number of the card
-        reissue_setting (object): TODO: type description here.
+        reissue_setting (object): The model property of type object.
         international_pos_language_id
-            (CardDetailsResponseInternationalPOSLanguageIDEnum): TODO: type
-            description here.
+            (CardDetailsResponseInternationalPOSLanguageIDEnum): POS language
+            identifier. Language Id:   * `1` - German   * `2` - French   * `3`
+            - Bulgarian   * `4` - Croatian   * `5` - Czech   * `6` - Danish  
+            * `7` - Finnish   * `8` - English   * `9` - Greek   * `10` -
+            Chinese   * `11` - Hungarian   * `12` - Italian   * `13` -
+            Luxembourgish   * `14` - Malay   * `15` - Dutch   * `16` -
+            Norwegian, Bokmal   * `17` - Urdu   * `18` - Polish   * `19` -
+            Portuguese   * `20` - Romanian   * `21` - Russian   * `22` -
+            Slovak   * `23` - Slovenian   * `24` - Spanish   * `25` - Swedish 
+            * `26` - Turkish   * `27` - Thai   * `28` - Filipino   * `29` -
+            Estonian   * `30` - Latvian   * `31` - Lithuanian
         international_pos_language_code
-            (CardDetailsResponseInternationalPOSLanguageCodeEnum): TODO: type
-            description here.
+            (CardDetailsResponseInternationalPOSLanguageCodeEnum): POS
+            language code. Language code:   * `deu` - German   * `fra` -
+            French   * `bul` - Bulgarian   * `hrv` - Croatian   * `ces` -
+            Czech   * `dan` - Danish   * `fin` - Finnish   * `eng` - English  
+            * `ell` - Greek   * `zho` - Chinese   * `hun` - Hungarian   *
+            `ita` - Italian   * `ltz` - Luxembourgish   * `msa` - Malay   *
+            `nld` - Dutch   * `nob` - Norwegian, Bokmal   * `urd` - Urdu   *
+            `pol` - Polish   * `por` - Portuguese   * `ron` - Romanian   *
+            `rus` - Russian   * `slk` - Slovak   * `slv` - Slovenian   * `spa`
+            - Spanish   * `swe` - Swedish   * `tur` - Turkish   * `tha` - Thai
+            * `fil` - Filipino   * `est` - Estonian   * `lav` - Latvian   *
+            `lit` - Lithuanian
         local_pos_language_id
-            (CardDetailsResponseInternationalPOSLanguageIDEnum): TODO: type
-            description here.
+            (CardDetailsResponseInternationalPOSLanguageIDEnum): POS language
+            identifier. Language Id:   * `1` - German   * `2` - French   * `3`
+            - Bulgarian   * `4` - Croatian   * `5` - Czech   * `6` - Danish  
+            * `7` - Finnish   * `8` - English   * `9` - Greek   * `10` -
+            Chinese   * `11` - Hungarian   * `12` - Italian   * `13` -
+            Luxembourgish   * `14` - Malay   * `15` - Dutch   * `16` -
+            Norwegian, Bokmal   * `17` - Urdu   * `18` - Polish   * `19` -
+            Portuguese   * `20` - Romanian   * `21` - Russian   * `22` -
+            Slovak   * `23` - Slovenian   * `24` - Spanish   * `25` - Swedish 
+            * `26` - Turkish   * `27` - Thai   * `28` - Filipino   * `29` -
+            Estonian   * `30` - Latvian   * `31` - Lithuanian
         local_pos_language_code
-            (CardDetailsResponseInternationalPOSLanguageCodeEnum): TODO: type
-            description here.
+            (CardDetailsResponseInternationalPOSLanguageCodeEnum): POS
+            language code. Language code:   * `deu` - German   * `fra` -
+            French   * `bul` - Bulgarian   * `hrv` - Croatian   * `ces` -
+            Czech   * `dan` - Danish   * `fin` - Finnish   * `eng` - English  
+            * `ell` - Greek   * `zho` - Chinese   * `hun` - Hungarian   *
+            `ita` - Italian   * `ltz` - Luxembourgish   * `msa` - Malay   *
+            `nld` - Dutch   * `nob` - Norwegian, Bokmal   * `urd` - Urdu   *
+            `pol` - Polish   * `por` - Portuguese   * `ron` - Romanian   *
+            `rus` - Russian   * `slk` - Slovak   * `slv` - Slovenian   * `spa`
+            - Spanish   * `swe` - Swedish   * `tur` - Turkish   * `tha` - Thai
+            * `fil` - Filipino   * `est` - Estonian   * `lav` - Latvian   *
+            `lit` - Lithuanian
         card_type_code (str): ISO code of the card i.e. first 7 digits of the
             PAN.
         card_type_id (int): Card Type ID
@@ -133,8 +183,10 @@ class CardDetailsResponse(object):
         renewed_card_expiry_date (str): Renewed card expiry date.
         renewed_card_issue_number (int): Renewed card issue number.
         renewed_card_reissue_setting
-            (CardDetailsResponseRenewedCardReissueSettingEnum): TODO: type
-            description here.
+            (CardDetailsResponseRenewedCardReissueSettingEnum): Reissue
+            setting of the renewed new card. Reissue Setting:   * `True` -
+            Card will be sent to production   * `False` - Parent Card is
+            Dormant or the Card is not to be produced
         creation_date (str): Card Creation Date time
         effective_date (str): Effective date for the Card
         last_modified_date (str): Card last modified date
@@ -142,13 +194,15 @@ class CardDetailsResponse(object):
             field will have a null value if the card is not associated with
             any bundle in Gateway or the value of IncludeBundleDetails in
             request is false.
-        card_delivery_address (CardDeliveryAddress): TODO: type description
-            here.
-        pin_delivery_address (PINDeliveryAddress): TODO: type description here.
+        card_delivery_address (CardDeliveryAddress): The model property of
+            type CardDeliveryAddress.
+        pin_delivery_address (PINDeliveryAddress): The model property of type
+            PINDeliveryAddress.
         card_block_schedules
-            (List[CardDetailsResponseCardBlockSchedulesItemsAllOf0]): TODO:
-            type description here.
-        error (ErrorStatus): TODO: type description here.
+            (List[CardDetailsResponseCardBlockSchedulesItemsAllOf0]): The
+            model property of type
+            List[CardDetailsResponseCardBlockSchedulesItemsAllOf0].
+        error (ErrorStatus): The model property of type ErrorStatus.
         request_id (str): API Request
 
     """
@@ -727,3 +781,151 @@ class CardDetailsResponse(object):
                    card_block_schedules,
                    error,
                    request_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'account_short_name={(self.account_short_name if hasattr(self, "account_short_name") else None)!r}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!r}, '
+                f'local_currency_code={(self.local_currency_code if hasattr(self, "local_currency_code") else None)!r}, '
+                f'local_currency_symbol={(self.local_currency_symbol if hasattr(self, "local_currency_symbol") else None)!r}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'status_id={(self.status_id if hasattr(self, "status_id") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'odometer_prompt={(self.odometer_prompt if hasattr(self, "odometer_prompt") else None)!r}, '
+                f'fleet_id_prompt={(self.fleet_id_prompt if hasattr(self, "fleet_id_prompt") else None)!r}, '
+                f'pin_type={(self.pin_type if hasattr(self, "pin_type") else None)!r}, '
+                f'has_pin={(self.has_pin if hasattr(self, "has_pin") else None)!r}, '
+                f'is_self_selected_pin={(self.is_self_selected_pin if hasattr(self, "is_self_selected_pin") else None)!r}, '
+                f'temporary_block_allowed={(self.temporary_block_allowed if hasattr(self, "temporary_block_allowed") else None)!r}, '
+                f'unblock_allowed={(self.unblock_allowed if hasattr(self, "unblock_allowed") else None)!r}, '
+                f'permanent_block_allowed={(self.permanent_block_allowed if hasattr(self, "permanent_block_allowed") else None)!r}, '
+                f'issue_number={(self.issue_number if hasattr(self, "issue_number") else None)!r}, '
+                f'reissue_setting={(self.reissue_setting if hasattr(self, "reissue_setting") else None)!r}, '
+                f'international_pos_language_id={(self.international_pos_language_id if hasattr(self, "international_pos_language_id") else None)!r}, '
+                f'international_pos_language_code={(self.international_pos_language_code if hasattr(self, "international_pos_language_code") else None)!r}, '
+                f'local_pos_language_id={(self.local_pos_language_id if hasattr(self, "local_pos_language_id") else None)!r}, '
+                f'local_pos_language_code={(self.local_pos_language_code if hasattr(self, "local_pos_language_code") else None)!r}, '
+                f'card_type_code={(self.card_type_code if hasattr(self, "card_type_code") else None)!r}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!r}, '
+                f'card_type_name={(self.card_type_name if hasattr(self, "card_type_name") else None)!r}, '
+                f'token_type_id={(self.token_type_id if hasattr(self, "token_type_id") else None)!r}, '
+                f'token_type_name={(self.token_type_name if hasattr(self, "token_type_name") else None)!r}, '
+                f'is_chip_card={(self.is_chip_card if hasattr(self, "is_chip_card") else None)!r}, '
+                f'is_mag_strip_card={(self.is_mag_strip_card if hasattr(self, "is_mag_strip_card") else None)!r}, '
+                f'is_virtual_card={(self.is_virtual_card if hasattr(self, "is_virtual_card") else None)!r}, '
+                f'purchase_category_code={(self.purchase_category_code if hasattr(self, "purchase_category_code") else None)!r}, '
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!r}, '
+                f'purchase_category_name={(self.purchase_category_name if hasattr(self, "purchase_category_name") else None)!r}, '
+                f'is_crt={(self.is_crt if hasattr(self, "is_crt") else None)!r}, '
+                f'is_fleet={(self.is_fleet if hasattr(self, "is_fleet") else None)!r}, '
+                f'is_international={(self.is_international if hasattr(self, "is_international") else None)!r}, '
+                f'is_national={(self.is_national if hasattr(self, "is_national") else None)!r}, '
+                f'is_partner_sites_included={(self.is_partner_sites_included if hasattr(self, "is_partner_sites_included") else None)!r}, '
+                f'is_shell_sites_only={(self.is_shell_sites_only if hasattr(self, "is_shell_sites_only") else None)!r}, '
+                f'fuel_sets={(self.fuel_sets if hasattr(self, "fuel_sets") else None)!r}, '
+                f'non_fuel_sets={(self.non_fuel_sets if hasattr(self, "non_fuel_sets") else None)!r}, '
+                f'issued_date={(self.issued_date if hasattr(self, "issued_date") else None)!r}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!r}, '
+                f'last_used_date={(self.last_used_date if hasattr(self, "last_used_date") else None)!r}, '
+                f'misuse_date={(self.misuse_date if hasattr(self, "misuse_date") else None)!r}, '
+                f'temperature={(self.temperature if hasattr(self, "temperature") else None)!r}, '
+                f'driver_name={(self.driver_name if hasattr(self, "driver_name") else None)!r}, '
+                f'vrn={(self.vrn if hasattr(self, "vrn") else None)!r}, '
+                f'emboss_text={(self.emboss_text if hasattr(self, "emboss_text") else None)!r}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!r}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!r}, '
+                f'renewal_date={(self.renewal_date if hasattr(self, "renewal_date") else None)!r}, '
+                f'renewed_card_id={(self.renewed_card_id if hasattr(self, "renewed_card_id") else None)!r}, '
+                f'renewed_card_status_id={(self.renewed_card_status_id if hasattr(self, "renewed_card_status_id") else None)!r}, '
+                f'renewed_card_status={(self.renewed_card_status if hasattr(self, "renewed_card_status") else None)!r}, '
+                f'renewed_card_expiry_date={(self.renewed_card_expiry_date if hasattr(self, "renewed_card_expiry_date") else None)!r}, '
+                f'renewed_card_issue_number={(self.renewed_card_issue_number if hasattr(self, "renewed_card_issue_number") else None)!r}, '
+                f'renewed_card_reissue_setting={(self.renewed_card_reissue_setting if hasattr(self, "renewed_card_reissue_setting") else None)!r}, '
+                f'creation_date={(self.creation_date if hasattr(self, "creation_date") else None)!r}, '
+                f'effective_date={(self.effective_date if hasattr(self, "effective_date") else None)!r}, '
+                f'last_modified_date={(self.last_modified_date if hasattr(self, "last_modified_date") else None)!r}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!r}, '
+                f'card_delivery_address={(self.card_delivery_address if hasattr(self, "card_delivery_address") else None)!r}, '
+                f'pin_delivery_address={(self.pin_delivery_address if hasattr(self, "pin_delivery_address") else None)!r}, '
+                f'card_block_schedules={(self.card_block_schedules if hasattr(self, "card_block_schedules") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'account_short_name={(self.account_short_name if hasattr(self, "account_short_name") else None)!s}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!s}, '
+                f'local_currency_code={(self.local_currency_code if hasattr(self, "local_currency_code") else None)!s}, '
+                f'local_currency_symbol={(self.local_currency_symbol if hasattr(self, "local_currency_symbol") else None)!s}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'status_id={(self.status_id if hasattr(self, "status_id") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'odometer_prompt={(self.odometer_prompt if hasattr(self, "odometer_prompt") else None)!s}, '
+                f'fleet_id_prompt={(self.fleet_id_prompt if hasattr(self, "fleet_id_prompt") else None)!s}, '
+                f'pin_type={(self.pin_type if hasattr(self, "pin_type") else None)!s}, '
+                f'has_pin={(self.has_pin if hasattr(self, "has_pin") else None)!s}, '
+                f'is_self_selected_pin={(self.is_self_selected_pin if hasattr(self, "is_self_selected_pin") else None)!s}, '
+                f'temporary_block_allowed={(self.temporary_block_allowed if hasattr(self, "temporary_block_allowed") else None)!s}, '
+                f'unblock_allowed={(self.unblock_allowed if hasattr(self, "unblock_allowed") else None)!s}, '
+                f'permanent_block_allowed={(self.permanent_block_allowed if hasattr(self, "permanent_block_allowed") else None)!s}, '
+                f'issue_number={(self.issue_number if hasattr(self, "issue_number") else None)!s}, '
+                f'reissue_setting={(self.reissue_setting if hasattr(self, "reissue_setting") else None)!s}, '
+                f'international_pos_language_id={(self.international_pos_language_id if hasattr(self, "international_pos_language_id") else None)!s}, '
+                f'international_pos_language_code={(self.international_pos_language_code if hasattr(self, "international_pos_language_code") else None)!s}, '
+                f'local_pos_language_id={(self.local_pos_language_id if hasattr(self, "local_pos_language_id") else None)!s}, '
+                f'local_pos_language_code={(self.local_pos_language_code if hasattr(self, "local_pos_language_code") else None)!s}, '
+                f'card_type_code={(self.card_type_code if hasattr(self, "card_type_code") else None)!s}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!s}, '
+                f'card_type_name={(self.card_type_name if hasattr(self, "card_type_name") else None)!s}, '
+                f'token_type_id={(self.token_type_id if hasattr(self, "token_type_id") else None)!s}, '
+                f'token_type_name={(self.token_type_name if hasattr(self, "token_type_name") else None)!s}, '
+                f'is_chip_card={(self.is_chip_card if hasattr(self, "is_chip_card") else None)!s}, '
+                f'is_mag_strip_card={(self.is_mag_strip_card if hasattr(self, "is_mag_strip_card") else None)!s}, '
+                f'is_virtual_card={(self.is_virtual_card if hasattr(self, "is_virtual_card") else None)!s}, '
+                f'purchase_category_code={(self.purchase_category_code if hasattr(self, "purchase_category_code") else None)!s}, '
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!s}, '
+                f'purchase_category_name={(self.purchase_category_name if hasattr(self, "purchase_category_name") else None)!s}, '
+                f'is_crt={(self.is_crt if hasattr(self, "is_crt") else None)!s}, '
+                f'is_fleet={(self.is_fleet if hasattr(self, "is_fleet") else None)!s}, '
+                f'is_international={(self.is_international if hasattr(self, "is_international") else None)!s}, '
+                f'is_national={(self.is_national if hasattr(self, "is_national") else None)!s}, '
+                f'is_partner_sites_included={(self.is_partner_sites_included if hasattr(self, "is_partner_sites_included") else None)!s}, '
+                f'is_shell_sites_only={(self.is_shell_sites_only if hasattr(self, "is_shell_sites_only") else None)!s}, '
+                f'fuel_sets={(self.fuel_sets if hasattr(self, "fuel_sets") else None)!s}, '
+                f'non_fuel_sets={(self.non_fuel_sets if hasattr(self, "non_fuel_sets") else None)!s}, '
+                f'issued_date={(self.issued_date if hasattr(self, "issued_date") else None)!s}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!s}, '
+                f'last_used_date={(self.last_used_date if hasattr(self, "last_used_date") else None)!s}, '
+                f'misuse_date={(self.misuse_date if hasattr(self, "misuse_date") else None)!s}, '
+                f'temperature={(self.temperature if hasattr(self, "temperature") else None)!s}, '
+                f'driver_name={(self.driver_name if hasattr(self, "driver_name") else None)!s}, '
+                f'vrn={(self.vrn if hasattr(self, "vrn") else None)!s}, '
+                f'emboss_text={(self.emboss_text if hasattr(self, "emboss_text") else None)!s}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!s}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!s}, '
+                f'renewal_date={(self.renewal_date if hasattr(self, "renewal_date") else None)!s}, '
+                f'renewed_card_id={(self.renewed_card_id if hasattr(self, "renewed_card_id") else None)!s}, '
+                f'renewed_card_status_id={(self.renewed_card_status_id if hasattr(self, "renewed_card_status_id") else None)!s}, '
+                f'renewed_card_status={(self.renewed_card_status if hasattr(self, "renewed_card_status") else None)!s}, '
+                f'renewed_card_expiry_date={(self.renewed_card_expiry_date if hasattr(self, "renewed_card_expiry_date") else None)!s}, '
+                f'renewed_card_issue_number={(self.renewed_card_issue_number if hasattr(self, "renewed_card_issue_number") else None)!s}, '
+                f'renewed_card_reissue_setting={(self.renewed_card_reissue_setting if hasattr(self, "renewed_card_reissue_setting") else None)!s}, '
+                f'creation_date={(self.creation_date if hasattr(self, "creation_date") else None)!s}, '
+                f'effective_date={(self.effective_date if hasattr(self, "effective_date") else None)!s}, '
+                f'last_modified_date={(self.last_modified_date if hasattr(self, "last_modified_date") else None)!s}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!s}, '
+                f'card_delivery_address={(self.card_delivery_address if hasattr(self, "card_delivery_address") else None)!s}, '
+                f'pin_delivery_address={(self.pin_delivery_address if hasattr(self, "pin_delivery_address") else None)!s}, '
+                f'card_block_schedules={(self.card_block_schedules if hasattr(self, "card_block_schedules") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s})')

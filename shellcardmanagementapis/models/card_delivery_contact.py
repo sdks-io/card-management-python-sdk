@@ -184,3 +184,37 @@ class CardDeliveryContact(object):
                    phone_number,
                    email_address,
                    save_for_card_reissue)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'delivery_contact_title={(self.delivery_contact_title if hasattr(self, "delivery_contact_title") else None)!r}, '
+                f'delivery_contact_name={self.delivery_contact_name!r}, '
+                f'delivery_company_name={self.delivery_company_name!r}, '
+                f'delivery_address_line_1={self.delivery_address_line_1!r}, '
+                f'delivery_address_line_2={(self.delivery_address_line_2 if hasattr(self, "delivery_address_line_2") else None)!r}, '
+                f'delivery_address_line_3={(self.delivery_address_line_3 if hasattr(self, "delivery_address_line_3") else None)!r}, '
+                f'delivery_zip_code={self.delivery_zip_code!r}, '
+                f'delivery_city={self.delivery_city!r}, '
+                f'delivery_region_id={(self.delivery_region_id if hasattr(self, "delivery_region_id") else None)!r}, '
+                f'delivery_region={(self.delivery_region if hasattr(self, "delivery_region") else None)!r}, '
+                f'delivery_country={self.delivery_country!r}, '
+                f'phone_number={(self.phone_number if hasattr(self, "phone_number") else None)!r}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!r}, '
+                f'save_for_card_reissue={(self.save_for_card_reissue if hasattr(self, "save_for_card_reissue") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'delivery_contact_title={(self.delivery_contact_title if hasattr(self, "delivery_contact_title") else None)!s}, '
+                f'delivery_contact_name={self.delivery_contact_name!s}, '
+                f'delivery_company_name={self.delivery_company_name!s}, '
+                f'delivery_address_line_1={self.delivery_address_line_1!s}, '
+                f'delivery_address_line_2={(self.delivery_address_line_2 if hasattr(self, "delivery_address_line_2") else None)!s}, '
+                f'delivery_address_line_3={(self.delivery_address_line_3 if hasattr(self, "delivery_address_line_3") else None)!s}, '
+                f'delivery_zip_code={self.delivery_zip_code!s}, '
+                f'delivery_city={self.delivery_city!s}, '
+                f'delivery_region_id={(self.delivery_region_id if hasattr(self, "delivery_region_id") else None)!s}, '
+                f'delivery_region={(self.delivery_region if hasattr(self, "delivery_region") else None)!s}, '
+                f'delivery_country={self.delivery_country!s}, '
+                f'phone_number={(self.phone_number if hasattr(self, "phone_number") else None)!s}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!s}, '
+                f'save_for_card_reissue={(self.save_for_card_reissue if hasattr(self, "save_for_card_reissue") else None)!s})')

@@ -46,37 +46,37 @@ class CardDetailsResponseInternationalPOSLanguageIDEnum(object):
       * `31` - Lithuanian
 
     Attributes:
-        ENUM_1: TODO: type description here.
-        ENUM_2: TODO: type description here.
-        ENUM_3: TODO: type description here.
-        ENUM_4: TODO: type description here.
-        ENUM_5: TODO: type description here.
-        ENUM_6: TODO: type description here.
-        ENUM_7: TODO: type description here.
-        ENUM_8: TODO: type description here.
-        ENUM_9: TODO: type description here.
-        ENUM_10: TODO: type description here.
-        ENUM_11: TODO: type description here.
-        ENUM_12: TODO: type description here.
-        ENUM_13: TODO: type description here.
-        ENUM_14: TODO: type description here.
-        ENUM_15: TODO: type description here.
-        ENUM_16: TODO: type description here.
-        ENUM_17: TODO: type description here.
-        ENUM_18: TODO: type description here.
-        ENUM_19: TODO: type description here.
-        ENUM_20: TODO: type description here.
-        ENUM_21: TODO: type description here.
-        ENUM_22: TODO: type description here.
-        ENUM_23: TODO: type description here.
-        ENUM_24: TODO: type description here.
-        ENUM_25: TODO: type description here.
-        ENUM_26: TODO: type description here.
-        ENUM_27: TODO: type description here.
-        ENUM_28: TODO: type description here.
-        ENUM_29: TODO: type description here.
-        ENUM_30: TODO: type description here.
-        ENUM_31: TODO: type description here.
+        ENUM_1: The enum member of type int.
+        ENUM_2: The enum member of type int.
+        ENUM_3: The enum member of type int.
+        ENUM_4: The enum member of type int.
+        ENUM_5: The enum member of type int.
+        ENUM_6: The enum member of type int.
+        ENUM_7: The enum member of type int.
+        ENUM_8: The enum member of type int.
+        ENUM_9: The enum member of type int.
+        ENUM_10: The enum member of type int.
+        ENUM_11: The enum member of type int.
+        ENUM_12: The enum member of type int.
+        ENUM_13: The enum member of type int.
+        ENUM_14: The enum member of type int.
+        ENUM_15: The enum member of type int.
+        ENUM_16: The enum member of type int.
+        ENUM_17: The enum member of type int.
+        ENUM_18: The enum member of type int.
+        ENUM_19: The enum member of type int.
+        ENUM_20: The enum member of type int.
+        ENUM_21: The enum member of type int.
+        ENUM_22: The enum member of type int.
+        ENUM_23: The enum member of type int.
+        ENUM_24: The enum member of type int.
+        ENUM_25: The enum member of type int.
+        ENUM_26: The enum member of type int.
+        ENUM_27: The enum member of type int.
+        ENUM_28: The enum member of type int.
+        ENUM_29: The enum member of type int.
+        ENUM_30: The enum member of type int.
+        ENUM_31: The enum member of type int.
 
     """
     ENUM_1 = 1

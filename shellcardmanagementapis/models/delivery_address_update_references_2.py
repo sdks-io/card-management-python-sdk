@@ -13,8 +13,6 @@ class DeliveryAddressUpdateReferences2(object):
 
     """Implementation of the 'DeliveryAddressUpdateReferences2' model.
 
-    TODO: type model description here.
-
     Attributes:
         card_id (int): CardId
         card_pan (str): PAN of the card.
@@ -101,3 +99,21 @@ class DeliveryAddressUpdateReferences2(object):
                    account_number,
                    reference_id,
                    error_info)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'card_pan={(self.card_pan if hasattr(self, "card_pan") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'reference_id={(self.reference_id if hasattr(self, "reference_id") else None)!r}, '
+                f'error_info={(self.error_info if hasattr(self, "error_info") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'card_pan={(self.card_pan if hasattr(self, "card_pan") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'reference_id={(self.reference_id if hasattr(self, "reference_id") else None)!s}, '
+                f'error_info={(self.error_info if hasattr(self, "error_info") else None)!s})')

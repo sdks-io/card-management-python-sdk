@@ -17,8 +17,6 @@ class CustomerDetailResponse(object):
 
     """Implementation of the 'CustomerDetailResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         account_id (int): Account Id of the selected account.
         account_name (str): Account Name of the selected account.
@@ -30,12 +28,12 @@ class CustomerDetailResponse(object):
             under this account.
         band (str): Band Id and Description of the Payer in Card Platform e.g.
             (Id – Description): 1-Platinum 2-Gold 3-Silver 4-Bronze
-        billing_address (Address): TODO: type description here.
+        billing_address (Address): The model property of type Address.
         card_group_position (str): Card group position at – •    Payer – Payer
             level •    Account – Account level
-        correspondence_address (Address): TODO: type description here.
-        delivery_addresses (List[DeliveryAddresses]): TODO: type description
-            here.
+        correspondence_address (Address): The model property of type Address.
+        delivery_addresses (List[DeliveryAddresses]): The model property of
+            type List[DeliveryAddresses].
         fleet_pin (bool): Is Fleet Pin optional enabled for the selected
             account
         full_name (str): Full Name of the customer
@@ -58,8 +56,9 @@ class CustomerDetailResponse(object):
             embossing   4-Manufactured  5-Awaiting despatch
         default_pin_advice_type (int): Default PIN AdviceType of the customer.
             Possible Values: 1.    Paper 2.    Email 3.    SMS 4.    None
-        pin_advice_types (List[PINAdviceTypes]): TODO: type description here.
-        error (ErrorStatus): TODO: type description here.
+        pin_advice_types (List[PINAdviceTypes]): The model property of type
+            List[PINAdviceTypes].
+        error (ErrorStatus): The model property of type ErrorStatus.
         request_id (str): API Request id
         pin_change_allowed_by_cardholder (bool): PIN change allowed for card
             holder or not.
@@ -334,3 +333,67 @@ class CustomerDetailResponse(object):
                    request_id,
                    pin_change_allowed_by_cardholder,
                    pin_change_allowed_from_fleet_pin)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'account_short_name={(self.account_short_name if hasattr(self, "account_short_name") else None)!r}, '
+                f'account_trading_name={(self.account_trading_name if hasattr(self, "account_trading_name") else None)!r}, '
+                f'allow_fleet_id_input={(self.allow_fleet_id_input if hasattr(self, "allow_fleet_id_input") else None)!r}, '
+                f'band={(self.band if hasattr(self, "band") else None)!r}, '
+                f'billing_address={(self.billing_address if hasattr(self, "billing_address") else None)!r}, '
+                f'card_group_position={(self.card_group_position if hasattr(self, "card_group_position") else None)!r}, '
+                f'correspondence_address={(self.correspondence_address if hasattr(self, "correspondence_address") else None)!r}, '
+                f'delivery_addresses={(self.delivery_addresses if hasattr(self, "delivery_addresses") else None)!r}, '
+                f'fleet_pin={(self.fleet_pin if hasattr(self, "fleet_pin") else None)!r}, '
+                f'full_name={(self.full_name if hasattr(self, "full_name") else None)!r}, '
+                f'invoice_customer_id={(self.invoice_customer_id if hasattr(self, "invoice_customer_id") else None)!r}, '
+                f'invoice_customer_short_name={(self.invoice_customer_short_name if hasattr(self, "invoice_customer_short_name") else None)!r}, '
+                f'is_invoice_point={(self.is_invoice_point if hasattr(self, "is_invoice_point") else None)!r}, '
+                f'marketing_segmentation={(self.marketing_segmentation if hasattr(self, "marketing_segmentation") else None)!r}, '
+                f'vat_number={(self.vat_number if hasattr(self, "vat_number") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_name={(self.payer_name if hasattr(self, "payer_name") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'self_selected_pin={(self.self_selected_pin if hasattr(self, "self_selected_pin") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'default_pin_advice_type={(self.default_pin_advice_type if hasattr(self, "default_pin_advice_type") else None)!r}, '
+                f'pin_advice_types={(self.pin_advice_types if hasattr(self, "pin_advice_types") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'pin_change_allowed_by_cardholder={(self.pin_change_allowed_by_cardholder if hasattr(self, "pin_change_allowed_by_cardholder") else None)!r}, '
+                f'pin_change_allowed_from_fleet_pin={(self.pin_change_allowed_from_fleet_pin if hasattr(self, "pin_change_allowed_from_fleet_pin") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'account_short_name={(self.account_short_name if hasattr(self, "account_short_name") else None)!s}, '
+                f'account_trading_name={(self.account_trading_name if hasattr(self, "account_trading_name") else None)!s}, '
+                f'allow_fleet_id_input={(self.allow_fleet_id_input if hasattr(self, "allow_fleet_id_input") else None)!s}, '
+                f'band={(self.band if hasattr(self, "band") else None)!s}, '
+                f'billing_address={(self.billing_address if hasattr(self, "billing_address") else None)!s}, '
+                f'card_group_position={(self.card_group_position if hasattr(self, "card_group_position") else None)!s}, '
+                f'correspondence_address={(self.correspondence_address if hasattr(self, "correspondence_address") else None)!s}, '
+                f'delivery_addresses={(self.delivery_addresses if hasattr(self, "delivery_addresses") else None)!s}, '
+                f'fleet_pin={(self.fleet_pin if hasattr(self, "fleet_pin") else None)!s}, '
+                f'full_name={(self.full_name if hasattr(self, "full_name") else None)!s}, '
+                f'invoice_customer_id={(self.invoice_customer_id if hasattr(self, "invoice_customer_id") else None)!s}, '
+                f'invoice_customer_short_name={(self.invoice_customer_short_name if hasattr(self, "invoice_customer_short_name") else None)!s}, '
+                f'is_invoice_point={(self.is_invoice_point if hasattr(self, "is_invoice_point") else None)!s}, '
+                f'marketing_segmentation={(self.marketing_segmentation if hasattr(self, "marketing_segmentation") else None)!s}, '
+                f'vat_number={(self.vat_number if hasattr(self, "vat_number") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_name={(self.payer_name if hasattr(self, "payer_name") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'self_selected_pin={(self.self_selected_pin if hasattr(self, "self_selected_pin") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'default_pin_advice_type={(self.default_pin_advice_type if hasattr(self, "default_pin_advice_type") else None)!s}, '
+                f'pin_advice_types={(self.pin_advice_types if hasattr(self, "pin_advice_types") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'pin_change_allowed_by_cardholder={(self.pin_change_allowed_by_cardholder if hasattr(self, "pin_change_allowed_by_cardholder") else None)!s}, '
+                f'pin_change_allowed_from_fleet_pin={(self.pin_change_allowed_from_fleet_pin if hasattr(self, "pin_change_allowed_from_fleet_pin") else None)!s})')

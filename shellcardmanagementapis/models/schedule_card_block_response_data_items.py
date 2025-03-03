@@ -13,8 +13,6 @@ class ScheduleCardBlockResponseDataItems(object):
 
     """Implementation of the 'ScheduleCardBlockResponseDataItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         card_id (int): Unique Id of the card.
         from_date (str): Effective start date & time of Block / Unblock as
@@ -89,3 +87,17 @@ class ScheduleCardBlockResponseDataItems(object):
                    from_date,
                    to_date,
                    reference_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!r}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!r}, '
+                f'reference_id={(self.reference_id if hasattr(self, "reference_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!s}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!s}, '
+                f'reference_id={(self.reference_id if hasattr(self, "reference_id") else None)!s})')

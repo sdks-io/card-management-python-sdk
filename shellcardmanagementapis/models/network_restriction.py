@@ -13,8 +13,6 @@ class NetworkRestriction(object):
 
     """Implementation of the 'NetworkRestriction' model.
 
-    TODO: type model description here.
-
     Attributes:
         country (str): ISO 3166-1 Numeric-3 code of the country where the
             network restriction is applied. Example: 826 for United Kingdom.
@@ -81,3 +79,15 @@ class NetworkRestriction(object):
         return cls(country,
                    networks,
                    exclusive)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'country={(self.country if hasattr(self, "country") else None)!r}, '
+                f'networks={(self.networks if hasattr(self, "networks") else None)!r}, '
+                f'exclusive={(self.exclusive if hasattr(self, "exclusive") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'country={(self.country if hasattr(self, "country") else None)!s}, '
+                f'networks={(self.networks if hasattr(self, "networks") else None)!s}, '
+                f'exclusive={(self.exclusive if hasattr(self, "exclusive") else None)!s})')

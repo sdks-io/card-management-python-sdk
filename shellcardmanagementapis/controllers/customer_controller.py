@@ -41,10 +41,10 @@ class CustomerController(BaseController):
     def __init__(self, config):
         super(CustomerController, self).__init__(config)
 
-    def loggedinuser(self,
-                     apikey,
-                     request_id,
-                     body=None):
+    def loggedin_user(self,
+                      apikey,
+                      request_id,
+                      body=None):
         """Does a POST request to /fleetmanagement/v1/user/loggedinuser.
 
         This API allows querying the user data of the logged in user.</br>
@@ -258,7 +258,7 @@ class CustomerController(BaseController):
             request_id (str): Mandatory UUID (according to RFC 4122 standards)
                 for requests and responses. This will be played back in the
                 response from the request.
-            body (AccountRequest, optional): TODO: type description here.
+            body (AccountRequest, optional): The request body parameter.
 
         Returns:
             AccountResponse: Response from the API. List of fuel cards. The
@@ -370,10 +370,10 @@ class CustomerController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def cardgroups(self,
-                   apikey,
-                   request_id,
-                   body=None):
+    def card_groups(self,
+                    apikey,
+                    request_id,
+                    body=None):
         """Does a POST request to /fleetmanagement/v1/customer/cardgroups.
 
         This operation allows querying the card group details . It provides
@@ -442,10 +442,10 @@ class CustomerController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def auditreport(self,
-                    apikey,
-                    request_id,
-                    body=None):
+    def audit_report(self,
+                     apikey,
+                     request_id,
+                     body=None):
         """Does a POST request to /fleetmanagement/v1/customer/auditreport.
 
         This operation allows users to fetch audit data of account or card
@@ -522,10 +522,10 @@ class CustomerController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def createcardgroup(self,
-                        apikey,
-                        request_id,
-                        body=None):
+    def create_card_group(self,
+                          apikey,
+                          request_id,
+                          body=None):
         """Does a POST request to /fleetmanagement/v1/customer/createcardgroup.
 
         This API allows creating a new Card Group in the Shell Cards Platform.
@@ -597,10 +597,10 @@ class CustomerController(BaseController):
             .local_error('500', 'The server encountered an unexpected condition the prevented it from fulfilling the request.', APIException)
         ).execute()
 
-    def updatecardgroup(self,
-                        apikey,
-                        request_id,
-                        body=None):
+    def update_card_group(self,
+                          apikey,
+                          request_id,
+                          body=None):
         """Does a POST request to /fleetmanagement/v1/customer/updatecardgroup.
 
         This API allows updating or removing a Card Group in the Shell Cards

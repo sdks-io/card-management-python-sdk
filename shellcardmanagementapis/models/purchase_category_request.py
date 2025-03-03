@@ -13,8 +13,6 @@ class PurchaseCategoryRequest(object):
 
     """Implementation of the 'PurchaseCategoryRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Mandatory UUID (according to RFC 4122 standards) for
             requests and responses. This will be played back in the response
@@ -111,3 +109,21 @@ class PurchaseCategoryRequest(object):
                    card_type_id,
                    purchase_category_id,
                    language_code)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!r}, '
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!r}, '
+                f'language_code={(self.language_code if hasattr(self, "language_code") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!s}, '
+                f'purchase_category_id={(self.purchase_category_id if hasattr(self, "purchase_category_id") else None)!s}, '
+                f'language_code={(self.language_code if hasattr(self, "language_code") else None)!s})')

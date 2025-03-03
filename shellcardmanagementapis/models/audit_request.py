@@ -14,8 +14,6 @@ class AuditRequest(object):
 
     """Implementation of the 'AuditRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         status (str): Status of requests to be fetched. •    Success •   
             Failed •    InProgress •    Submitted •    Rejected •   
@@ -25,7 +23,7 @@ class AuditRequest(object):
             PayerId is passed else Mandatory
         payer_id (int): Payer Id  of the selected payer. Optional if
             PayerNumber is passed else Mandatory Example: 123456
-        account_number (str): TODO: type description here.
+        account_number (str): The model property of type str.
         col_co_code (int): Collecting Company Code (Shell Code) of the
             selected payer.   Mandatory for serviced OUs such as Romania,
             Latvia, Lithuania, Estonia, Ukraine etc. It is optional for other
@@ -34,7 +32,7 @@ class AuditRequest(object):
         col_co_id (int): Collecting Company Id  of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example:  1 for
             Philippines  5 for UK
-        accounts (Accounts): TODO: type description here.
+        accounts (Accounts): The model property of type Accounts.
         page_size (int): Page Size – Number of records to show on a page
             Optional Default value 50
         requested_operation (List[str]): Type of requests to be fetched.
@@ -215,3 +213,37 @@ class AuditRequest(object):
                    current_page,
                    from_date,
                    to_date)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'accounts={(self.accounts if hasattr(self, "accounts") else None)!r}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!r}, '
+                f'requested_operation={(self.requested_operation if hasattr(self, "requested_operation") else None)!r}, '
+                f'sort_order={(self.sort_order if hasattr(self, "sort_order") else None)!r}, '
+                f'search_text={(self.search_text if hasattr(self, "search_text") else None)!r}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!r}, '
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!r}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'accounts={(self.accounts if hasattr(self, "accounts") else None)!s}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!s}, '
+                f'requested_operation={(self.requested_operation if hasattr(self, "requested_operation") else None)!s}, '
+                f'sort_order={(self.sort_order if hasattr(self, "sort_order") else None)!s}, '
+                f'search_text={(self.search_text if hasattr(self, "search_text") else None)!s}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!s}, '
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!s}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!s})')

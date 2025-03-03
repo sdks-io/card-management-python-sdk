@@ -13,8 +13,6 @@ class FinanceCurrency2(object):
 
     """Implementation of the 'FinanceCurrency2' model.
 
-    TODO: type model description here.
-
     Attributes:
         currency_code (str): Currency ISO Code used for the Finance Widget.
         currency_symbol (str): Currency Symbol
@@ -96,3 +94,17 @@ class FinanceCurrency2(object):
                    currency_symbol,
                    invoice_exchange_rate,
                    credit_limit_exchange_rate)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'currency_code={(self.currency_code if hasattr(self, "currency_code") else None)!r}, '
+                f'currency_symbol={(self.currency_symbol if hasattr(self, "currency_symbol") else None)!r}, '
+                f'invoice_exchange_rate={(self.invoice_exchange_rate if hasattr(self, "invoice_exchange_rate") else None)!r}, '
+                f'credit_limit_exchange_rate={(self.credit_limit_exchange_rate if hasattr(self, "credit_limit_exchange_rate") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'currency_code={(self.currency_code if hasattr(self, "currency_code") else None)!s}, '
+                f'currency_symbol={(self.currency_symbol if hasattr(self, "currency_symbol") else None)!s}, '
+                f'invoice_exchange_rate={(self.invoice_exchange_rate if hasattr(self, "invoice_exchange_rate") else None)!s}, '
+                f'credit_limit_exchange_rate={(self.credit_limit_exchange_rate if hasattr(self, "credit_limit_exchange_rate") else None)!s})')

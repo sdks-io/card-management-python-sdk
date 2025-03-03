@@ -13,8 +13,6 @@ class CardSettings(object):
 
     """Implementation of the 'CardSettings' model.
 
-    TODO: type model description here.
-
     Attributes:
         self_selected_encrypted_pin (str): The encrypted value of
             self-selected PIN.<br /> Optional – When not provided, the PIN
@@ -470,3 +468,87 @@ class CardSettings(object):
                    save_for_pin_reminder,
                    save_for_card_reissue,
                    expiry_date)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'self_selected_encrypted_pin={(self.self_selected_encrypted_pin if hasattr(self, "self_selected_encrypted_pin") else None)!r}, '
+                f'self_selected_pin_key_id={(self.self_selected_pin_key_id if hasattr(self, "self_selected_pin_key_id") else None)!r}, '
+                f'self_selected_pin_session_key={(self.self_selected_pin_session_key if hasattr(self, "self_selected_pin_session_key") else None)!r}, '
+                f'validate_fleet_id={(self.validate_fleet_id if hasattr(self, "validate_fleet_id") else None)!r}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!r}, '
+                f'card_delivery_type={self.card_delivery_type!r}, '
+                f'delivery_contact_title={(self.delivery_contact_title if hasattr(self, "delivery_contact_title") else None)!r}, '
+                f'delivery_contact_name={(self.delivery_contact_name if hasattr(self, "delivery_contact_name") else None)!r}, '
+                f'delivery_company_name={(self.delivery_company_name if hasattr(self, "delivery_company_name") else None)!r}, '
+                f'delivery_address_line_1={(self.delivery_address_line_1 if hasattr(self, "delivery_address_line_1") else None)!r}, '
+                f'delivery_address_line_2={(self.delivery_address_line_2 if hasattr(self, "delivery_address_line_2") else None)!r}, '
+                f'delivery_address_line_3={(self.delivery_address_line_3 if hasattr(self, "delivery_address_line_3") else None)!r}, '
+                f'delivery_zip_code={(self.delivery_zip_code if hasattr(self, "delivery_zip_code") else None)!r}, '
+                f'delivery_city={(self.delivery_city if hasattr(self, "delivery_city") else None)!r}, '
+                f'delivery_region_id={(self.delivery_region_id if hasattr(self, "delivery_region_id") else None)!r}, '
+                f'delivery_region={(self.delivery_region if hasattr(self, "delivery_region") else None)!r}, '
+                f'delivery_country={(self.delivery_country if hasattr(self, "delivery_country") else None)!r}, '
+                f'delivery_country_id={(self.delivery_country_id if hasattr(self, "delivery_country_id") else None)!r}, '
+                f'phone_number={(self.phone_number if hasattr(self, "phone_number") else None)!r}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!r}, '
+                f'pin_delivery_address_type={(self.pin_delivery_address_type if hasattr(self, "pin_delivery_address_type") else None)!r}, '
+                f'pin_advice_type={(self.pin_advice_type if hasattr(self, "pin_advice_type") else None)!r}, '
+                f'pin_delivery_contact_title={(self.pin_delivery_contact_title if hasattr(self, "pin_delivery_contact_title") else None)!r}, '
+                f'pin_delivery_contact_name={(self.pin_delivery_contact_name if hasattr(self, "pin_delivery_contact_name") else None)!r}, '
+                f'pin_delivery_company_name={(self.pin_delivery_company_name if hasattr(self, "pin_delivery_company_name") else None)!r}, '
+                f'pin_delivery_address_line_1={(self.pin_delivery_address_line_1 if hasattr(self, "pin_delivery_address_line_1") else None)!r}, '
+                f'pin_delivery_address_line_2={(self.pin_delivery_address_line_2 if hasattr(self, "pin_delivery_address_line_2") else None)!r}, '
+                f'pin_delivery_address_line_3={(self.pin_delivery_address_line_3 if hasattr(self, "pin_delivery_address_line_3") else None)!r}, '
+                f'pin_delivery_zip_code={(self.pin_delivery_zip_code if hasattr(self, "pin_delivery_zip_code") else None)!r}, '
+                f'pin_delivery_city={(self.pin_delivery_city if hasattr(self, "pin_delivery_city") else None)!r}, '
+                f'pin_delivery_region_id={(self.pin_delivery_region_id if hasattr(self, "pin_delivery_region_id") else None)!r}, '
+                f'pin_delivery_region={(self.pin_delivery_region if hasattr(self, "pin_delivery_region") else None)!r}, '
+                f'pin_delivery_country={(self.pin_delivery_country if hasattr(self, "pin_delivery_country") else None)!r}, '
+                f'pin_delivery_country_id={(self.pin_delivery_country_id if hasattr(self, "pin_delivery_country_id") else None)!r}, '
+                f'pin_phone_number={(self.pin_phone_number if hasattr(self, "pin_phone_number") else None)!r}, '
+                f'pin_email_address={(self.pin_email_address if hasattr(self, "pin_email_address") else None)!r}, '
+                f'save_for_pin_reminder={(self.save_for_pin_reminder if hasattr(self, "save_for_pin_reminder") else None)!r}, '
+                f'save_for_card_reissue={(self.save_for_card_reissue if hasattr(self, "save_for_card_reissue") else None)!r}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'self_selected_encrypted_pin={(self.self_selected_encrypted_pin if hasattr(self, "self_selected_encrypted_pin") else None)!s}, '
+                f'self_selected_pin_key_id={(self.self_selected_pin_key_id if hasattr(self, "self_selected_pin_key_id") else None)!s}, '
+                f'self_selected_pin_session_key={(self.self_selected_pin_session_key if hasattr(self, "self_selected_pin_session_key") else None)!s}, '
+                f'validate_fleet_id={(self.validate_fleet_id if hasattr(self, "validate_fleet_id") else None)!s}, '
+                f'card_group_id={(self.card_group_id if hasattr(self, "card_group_id") else None)!s}, '
+                f'card_delivery_type={self.card_delivery_type!s}, '
+                f'delivery_contact_title={(self.delivery_contact_title if hasattr(self, "delivery_contact_title") else None)!s}, '
+                f'delivery_contact_name={(self.delivery_contact_name if hasattr(self, "delivery_contact_name") else None)!s}, '
+                f'delivery_company_name={(self.delivery_company_name if hasattr(self, "delivery_company_name") else None)!s}, '
+                f'delivery_address_line_1={(self.delivery_address_line_1 if hasattr(self, "delivery_address_line_1") else None)!s}, '
+                f'delivery_address_line_2={(self.delivery_address_line_2 if hasattr(self, "delivery_address_line_2") else None)!s}, '
+                f'delivery_address_line_3={(self.delivery_address_line_3 if hasattr(self, "delivery_address_line_3") else None)!s}, '
+                f'delivery_zip_code={(self.delivery_zip_code if hasattr(self, "delivery_zip_code") else None)!s}, '
+                f'delivery_city={(self.delivery_city if hasattr(self, "delivery_city") else None)!s}, '
+                f'delivery_region_id={(self.delivery_region_id if hasattr(self, "delivery_region_id") else None)!s}, '
+                f'delivery_region={(self.delivery_region if hasattr(self, "delivery_region") else None)!s}, '
+                f'delivery_country={(self.delivery_country if hasattr(self, "delivery_country") else None)!s}, '
+                f'delivery_country_id={(self.delivery_country_id if hasattr(self, "delivery_country_id") else None)!s}, '
+                f'phone_number={(self.phone_number if hasattr(self, "phone_number") else None)!s}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!s}, '
+                f'pin_delivery_address_type={(self.pin_delivery_address_type if hasattr(self, "pin_delivery_address_type") else None)!s}, '
+                f'pin_advice_type={(self.pin_advice_type if hasattr(self, "pin_advice_type") else None)!s}, '
+                f'pin_delivery_contact_title={(self.pin_delivery_contact_title if hasattr(self, "pin_delivery_contact_title") else None)!s}, '
+                f'pin_delivery_contact_name={(self.pin_delivery_contact_name if hasattr(self, "pin_delivery_contact_name") else None)!s}, '
+                f'pin_delivery_company_name={(self.pin_delivery_company_name if hasattr(self, "pin_delivery_company_name") else None)!s}, '
+                f'pin_delivery_address_line_1={(self.pin_delivery_address_line_1 if hasattr(self, "pin_delivery_address_line_1") else None)!s}, '
+                f'pin_delivery_address_line_2={(self.pin_delivery_address_line_2 if hasattr(self, "pin_delivery_address_line_2") else None)!s}, '
+                f'pin_delivery_address_line_3={(self.pin_delivery_address_line_3 if hasattr(self, "pin_delivery_address_line_3") else None)!s}, '
+                f'pin_delivery_zip_code={(self.pin_delivery_zip_code if hasattr(self, "pin_delivery_zip_code") else None)!s}, '
+                f'pin_delivery_city={(self.pin_delivery_city if hasattr(self, "pin_delivery_city") else None)!s}, '
+                f'pin_delivery_region_id={(self.pin_delivery_region_id if hasattr(self, "pin_delivery_region_id") else None)!s}, '
+                f'pin_delivery_region={(self.pin_delivery_region if hasattr(self, "pin_delivery_region") else None)!s}, '
+                f'pin_delivery_country={(self.pin_delivery_country if hasattr(self, "pin_delivery_country") else None)!s}, '
+                f'pin_delivery_country_id={(self.pin_delivery_country_id if hasattr(self, "pin_delivery_country_id") else None)!s}, '
+                f'pin_phone_number={(self.pin_phone_number if hasattr(self, "pin_phone_number") else None)!s}, '
+                f'pin_email_address={(self.pin_email_address if hasattr(self, "pin_email_address") else None)!s}, '
+                f'save_for_pin_reminder={(self.save_for_pin_reminder if hasattr(self, "save_for_pin_reminder") else None)!s}, '
+                f'save_for_card_reissue={(self.save_for_card_reissue if hasattr(self, "save_for_card_reissue") else None)!s}, '
+                f'expiry_date={(self.expiry_date if hasattr(self, "expiry_date") else None)!s})')

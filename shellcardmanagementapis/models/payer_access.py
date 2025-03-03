@@ -13,8 +13,6 @@ class PayerAccess(object):
 
     """Implementation of the 'PayerAccess' model.
 
-    TODO: type model description here.
-
     Attributes:
         is_default (bool): Whether this payer is the default payer of the user.
         colco_id (int): Collecting company id.
@@ -137,3 +135,27 @@ class PayerAccess(object):
                    payer_id,
                    payer_number,
                    payer_name)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'is_default={(self.is_default if hasattr(self, "is_default") else None)!r}, '
+                f'colco_id={(self.colco_id if hasattr(self, "colco_id") else None)!r}, '
+                f'colco_code={(self.colco_code if hasattr(self, "colco_code") else None)!r}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!r}, '
+                f'payer_group_id={(self.payer_group_id if hasattr(self, "payer_group_id") else None)!r}, '
+                f'payer_group={(self.payer_group if hasattr(self, "payer_group") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'payer_name={(self.payer_name if hasattr(self, "payer_name") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'is_default={(self.is_default if hasattr(self, "is_default") else None)!s}, '
+                f'colco_id={(self.colco_id if hasattr(self, "colco_id") else None)!s}, '
+                f'colco_code={(self.colco_code if hasattr(self, "colco_code") else None)!s}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!s}, '
+                f'payer_group_id={(self.payer_group_id if hasattr(self, "payer_group_id") else None)!s}, '
+                f'payer_group={(self.payer_group if hasattr(self, "payer_group") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'payer_name={(self.payer_name if hasattr(self, "payer_name") else None)!s})')

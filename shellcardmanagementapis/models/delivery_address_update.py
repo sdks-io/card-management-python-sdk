@@ -31,8 +31,8 @@ class DeliveryAddressUpdate(object):
             false then ‘UpdateCardRenewalAddress’ is mandatory. If value set
             to ‘True’ then ‘UpdateCardRenewalAddress’ may be null/empty. It
             will be ignored if provided.
-        update_card_renewal_address (UpdateCardRenewalAddress2): TODO: type
-            description here.
+        update_card_renewal_address (UpdateCardRenewalAddress2): The model
+            property of type UpdateCardRenewalAddress2.
 
     """
 
@@ -101,3 +101,19 @@ class DeliveryAddressUpdate(object):
                    pan,
                    card_expiry_date,
                    update_card_renewal_address)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'card_expiry_date={(self.card_expiry_date if hasattr(self, "card_expiry_date") else None)!r}, '
+                f'use_customer_default_address={self.use_customer_default_address!r}, '
+                f'update_card_renewal_address={(self.update_card_renewal_address if hasattr(self, "update_card_renewal_address") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'card_expiry_date={(self.card_expiry_date if hasattr(self, "card_expiry_date") else None)!s}, '
+                f'use_customer_default_address={self.use_customer_default_address!s}, '
+                f'update_card_renewal_address={(self.update_card_renewal_address if hasattr(self, "update_card_renewal_address") else None)!s})')

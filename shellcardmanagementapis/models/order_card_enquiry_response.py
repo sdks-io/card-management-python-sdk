@@ -14,12 +14,11 @@ class OrderCardEnquiryResponse(object):
 
     """Implementation of the 'OrderCardEnquiryResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
-        request_id (str): TODO: type description here.
-        status (str): TODO: type description here.
-        data (List[OrderCardEnquiry]): TODO: type description here.
+        request_id (str): The model property of type str.
+        status (str): The model property of type str.
+        data (List[OrderCardEnquiry]): The model property of type
+            List[OrderCardEnquiry].
 
     """
 
@@ -80,3 +79,15 @@ class OrderCardEnquiryResponse(object):
         return cls(request_id,
                    status,
                    data)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'data={(self.data if hasattr(self, "data") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'data={(self.data if hasattr(self, "data") else None)!s})')

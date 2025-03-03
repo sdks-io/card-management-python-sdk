@@ -13,8 +13,6 @@ class Role(object):
 
     """Implementation of the 'Role' model.
 
-    TODO: type model description here.
-
     Attributes:
         role_name (str): Role Name of the user
         is_customer_admin (bool): Whether the role is an administrator.
@@ -96,3 +94,21 @@ class Role(object):
                    is_shell_admin,
                    is_service_account,
                    is_user_admin)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'role_name={(self.role_name if hasattr(self, "role_name") else None)!r}, '
+                f'is_customer_admin={(self.is_customer_admin if hasattr(self, "is_customer_admin") else None)!r}, '
+                f'is_customer_user={(self.is_customer_user if hasattr(self, "is_customer_user") else None)!r}, '
+                f'is_shell_admin={(self.is_shell_admin if hasattr(self, "is_shell_admin") else None)!r}, '
+                f'is_service_account={(self.is_service_account if hasattr(self, "is_service_account") else None)!r}, '
+                f'is_user_admin={(self.is_user_admin if hasattr(self, "is_user_admin") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'role_name={(self.role_name if hasattr(self, "role_name") else None)!s}, '
+                f'is_customer_admin={(self.is_customer_admin if hasattr(self, "is_customer_admin") else None)!s}, '
+                f'is_customer_user={(self.is_customer_user if hasattr(self, "is_customer_user") else None)!s}, '
+                f'is_shell_admin={(self.is_shell_admin if hasattr(self, "is_shell_admin") else None)!s}, '
+                f'is_service_account={(self.is_service_account if hasattr(self, "is_service_account") else None)!s}, '
+                f'is_user_admin={(self.is_user_admin if hasattr(self, "is_user_admin") else None)!s})')

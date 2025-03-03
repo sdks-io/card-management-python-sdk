@@ -16,8 +16,6 @@ class CardTypeResponseCustomerCardTypesItems(object):
 
     """Implementation of the 'CardTypeResponseCustomerCardTypesItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         can_have_pin (bool): True/False – Whether the cards of this card type
             can have PIN.
@@ -25,8 +23,8 @@ class CardTypeResponseCustomerCardTypesItems(object):
         card_type_name (str): Card Type Name.
         col_co_currency_code (str): ISO currency code of the country.
         customer_card_type_id (int): Customer Card Type Id
-        day_time_restrictions (CardDayTimeRestrictions): TODO: type
-            description here.
+        day_time_restrictions (CardDayTimeRestrictions): The model property of
+            type CardDayTimeRestrictions.
         default_purchase_category_id (int): Default Purchase category of the
             card type.
         emboss_account_name (str): Default Name to be embossed on the card
@@ -46,15 +44,15 @@ class CardTypeResponseCustomerCardTypesItems(object):
         is_visible_to_customers (bool): True/False – Whether this card type is
             visible in SFH for card ordering.
         is_active (bool): Whether card type is active or not.
-        is_card_available_for_download (bool): TODO: type description here.
-        is_card_visible_to_customers (bool): TODO: type description here.
+        is_card_available_for_download (bool): The model property of type bool.
+        is_card_visible_to_customers (bool): The model property of type bool.
         pan_length (int): PAN Length
-        purchase_categories (List[PurchaseCategories]): TODO: type description
-            here.
+        purchase_categories (List[PurchaseCategories]): The model property of
+            type List[PurchaseCategories].
         token_type_id (int): Token type identifier.
         token_type_name (str): Token Type Name.
-        usage_restrictions (CardUsageRestrictions): TODO: type description
-            here.
+        usage_restrictions (CardUsageRestrictions): The model property of type
+            CardUsageRestrictions.
         emv_contactless (bool): Is Europay, MasterCard, and Visa Contactless
             enabled or not.
         rfid (bool): Whether the card type is enabled for RFID (Radio
@@ -379,3 +377,79 @@ class CardTypeResponseCustomerCardTypesItems(object):
                    medium_type_id,
                    medium_type,
                    col_co_currency_symbol)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'can_have_pin={(self.can_have_pin if hasattr(self, "can_have_pin") else None)!r}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!r}, '
+                f'card_type_name={(self.card_type_name if hasattr(self, "card_type_name") else None)!r}, '
+                f'col_co_currency_code={(self.col_co_currency_code if hasattr(self, "col_co_currency_code") else None)!r}, '
+                f'customer_card_type_id={(self.customer_card_type_id if hasattr(self, "customer_card_type_id") else None)!r}, '
+                f'day_time_restrictions={(self.day_time_restrictions if hasattr(self, "day_time_restrictions") else None)!r}, '
+                f'default_purchase_category_id={(self.default_purchase_category_id if hasattr(self, "default_purchase_category_id") else None)!r}, '
+                f'emboss_account_name={(self.emboss_account_name if hasattr(self, "emboss_account_name") else None)!r}, '
+                f'expiry_period={(self.expiry_period if hasattr(self, "expiry_period") else None)!r}, '
+                f'is_crt={(self.is_crt if hasattr(self, "is_crt") else None)!r}, '
+                f'is_fleet={(self.is_fleet if hasattr(self, "is_fleet") else None)!r}, '
+                f'is_international={(self.is_international if hasattr(self, "is_international") else None)!r}, '
+                f'is_national={(self.is_national if hasattr(self, "is_national") else None)!r}, '
+                f'is_partner_sites_included={(self.is_partner_sites_included if hasattr(self, "is_partner_sites_included") else None)!r}, '
+                f'is_shell_sites_only={(self.is_shell_sites_only if hasattr(self, "is_shell_sites_only") else None)!r}, '
+                f'is_virtual={(self.is_virtual if hasattr(self, "is_virtual") else None)!r}, '
+                f'is_visible_to_customers={(self.is_visible_to_customers if hasattr(self, "is_visible_to_customers") else None)!r}, '
+                f'is_active={(self.is_active if hasattr(self, "is_active") else None)!r}, '
+                f'is_card_available_for_download={(self.is_card_available_for_download if hasattr(self, "is_card_available_for_download") else None)!r}, '
+                f'is_card_visible_to_customers={(self.is_card_visible_to_customers if hasattr(self, "is_card_visible_to_customers") else None)!r}, '
+                f'pan_length={(self.pan_length if hasattr(self, "pan_length") else None)!r}, '
+                f'purchase_categories={(self.purchase_categories if hasattr(self, "purchase_categories") else None)!r}, '
+                f'token_type_id={(self.token_type_id if hasattr(self, "token_type_id") else None)!r}, '
+                f'token_type_name={(self.token_type_name if hasattr(self, "token_type_name") else None)!r}, '
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!r}, '
+                f'emv_contactless={(self.emv_contactless if hasattr(self, "emv_contactless") else None)!r}, '
+                f'rfid={(self.rfid if hasattr(self, "rfid") else None)!r}, '
+                f'pin_change_supported={(self.pin_change_supported if hasattr(self, "pin_change_supported") else None)!r}, '
+                f'require_pin={(self.require_pin if hasattr(self, "require_pin") else None)!r}, '
+                f'offline_pin={(self.offline_pin if hasattr(self, "offline_pin") else None)!r}, '
+                f'is_default={(self.is_default if hasattr(self, "is_default") else None)!r}, '
+                f'applications_to_show_npii_tokens={(self.applications_to_show_npii_tokens if hasattr(self, "applications_to_show_npii_tokens") else None)!r}, '
+                f'medium_type_id={(self.medium_type_id if hasattr(self, "medium_type_id") else None)!r}, '
+                f'medium_type={(self.medium_type if hasattr(self, "medium_type") else None)!r}, '
+                f'col_co_currency_symbol={(self.col_co_currency_symbol if hasattr(self, "col_co_currency_symbol") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'can_have_pin={(self.can_have_pin if hasattr(self, "can_have_pin") else None)!s}, '
+                f'card_type_id={(self.card_type_id if hasattr(self, "card_type_id") else None)!s}, '
+                f'card_type_name={(self.card_type_name if hasattr(self, "card_type_name") else None)!s}, '
+                f'col_co_currency_code={(self.col_co_currency_code if hasattr(self, "col_co_currency_code") else None)!s}, '
+                f'customer_card_type_id={(self.customer_card_type_id if hasattr(self, "customer_card_type_id") else None)!s}, '
+                f'day_time_restrictions={(self.day_time_restrictions if hasattr(self, "day_time_restrictions") else None)!s}, '
+                f'default_purchase_category_id={(self.default_purchase_category_id if hasattr(self, "default_purchase_category_id") else None)!s}, '
+                f'emboss_account_name={(self.emboss_account_name if hasattr(self, "emboss_account_name") else None)!s}, '
+                f'expiry_period={(self.expiry_period if hasattr(self, "expiry_period") else None)!s}, '
+                f'is_crt={(self.is_crt if hasattr(self, "is_crt") else None)!s}, '
+                f'is_fleet={(self.is_fleet if hasattr(self, "is_fleet") else None)!s}, '
+                f'is_international={(self.is_international if hasattr(self, "is_international") else None)!s}, '
+                f'is_national={(self.is_national if hasattr(self, "is_national") else None)!s}, '
+                f'is_partner_sites_included={(self.is_partner_sites_included if hasattr(self, "is_partner_sites_included") else None)!s}, '
+                f'is_shell_sites_only={(self.is_shell_sites_only if hasattr(self, "is_shell_sites_only") else None)!s}, '
+                f'is_virtual={(self.is_virtual if hasattr(self, "is_virtual") else None)!s}, '
+                f'is_visible_to_customers={(self.is_visible_to_customers if hasattr(self, "is_visible_to_customers") else None)!s}, '
+                f'is_active={(self.is_active if hasattr(self, "is_active") else None)!s}, '
+                f'is_card_available_for_download={(self.is_card_available_for_download if hasattr(self, "is_card_available_for_download") else None)!s}, '
+                f'is_card_visible_to_customers={(self.is_card_visible_to_customers if hasattr(self, "is_card_visible_to_customers") else None)!s}, '
+                f'pan_length={(self.pan_length if hasattr(self, "pan_length") else None)!s}, '
+                f'purchase_categories={(self.purchase_categories if hasattr(self, "purchase_categories") else None)!s}, '
+                f'token_type_id={(self.token_type_id if hasattr(self, "token_type_id") else None)!s}, '
+                f'token_type_name={(self.token_type_name if hasattr(self, "token_type_name") else None)!s}, '
+                f'usage_restrictions={(self.usage_restrictions if hasattr(self, "usage_restrictions") else None)!s}, '
+                f'emv_contactless={(self.emv_contactless if hasattr(self, "emv_contactless") else None)!s}, '
+                f'rfid={(self.rfid if hasattr(self, "rfid") else None)!s}, '
+                f'pin_change_supported={(self.pin_change_supported if hasattr(self, "pin_change_supported") else None)!s}, '
+                f'require_pin={(self.require_pin if hasattr(self, "require_pin") else None)!s}, '
+                f'offline_pin={(self.offline_pin if hasattr(self, "offline_pin") else None)!s}, '
+                f'is_default={(self.is_default if hasattr(self, "is_default") else None)!s}, '
+                f'applications_to_show_npii_tokens={(self.applications_to_show_npii_tokens if hasattr(self, "applications_to_show_npii_tokens") else None)!s}, '
+                f'medium_type_id={(self.medium_type_id if hasattr(self, "medium_type_id") else None)!s}, '
+                f'medium_type={(self.medium_type if hasattr(self, "medium_type") else None)!s}, '
+                f'col_co_currency_symbol={(self.col_co_currency_symbol if hasattr(self, "col_co_currency_symbol") else None)!s})')

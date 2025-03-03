@@ -12,8 +12,6 @@ class ProductAllOf0(object):
 
     """Implementation of the 'ProductAllOf0' model.
 
-    TODO: type model description here.
-
     Attributes:
         global_product_code (str): The productCode returned by the Gateway
             API. Example: 021
@@ -65,3 +63,13 @@ class ProductAllOf0(object):
         # Return an object of this model
         return cls(global_product_code,
                    description)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'global_product_code={self.global_product_code!r}, '
+                f'description={self.description!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'global_product_code={self.global_product_code!s}, '
+                f'description={self.description!s})')

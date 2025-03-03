@@ -40,24 +40,24 @@ class CardDetailsResponseStatusIdEnum(object):
     “Active (Scheduled for block)”
 
     Attributes:
-        ENUM_1: TODO: type description here.
-        ENUM_7: TODO: type description here.
-        ENUM_8: TODO: type description here.
-        ENUM_9: TODO: type description here.
-        ENUM_10: TODO: type description here.
-        ENUM_23: TODO: type description here.
-        ENUM_31: TODO: type description here.
-        ENUM_41: TODO: type description here.
-        ENUM_42: TODO: type description here.
-        ENUM_43: TODO: type description here.
-        ENUM_101: TODO: type description here.
-        ENUM_102: TODO: type description here.
-        ENUM_103: TODO: type description here.
-        ENUM_104: TODO: type description here.
-        ENUM_105: TODO: type description here.
-        ENUM_106: TODO: type description here.
-        ENUM_107: TODO: type description here.
-        ENUM_108: TODO: type description here.
+        ENUM_1: The enum member of type int.
+        ENUM_7: The enum member of type int.
+        ENUM_8: The enum member of type int.
+        ENUM_9: The enum member of type int.
+        ENUM_10: The enum member of type int.
+        ENUM_23: The enum member of type int.
+        ENUM_31: The enum member of type int.
+        ENUM_41: The enum member of type int.
+        ENUM_42: The enum member of type int.
+        ENUM_43: The enum member of type int.
+        ENUM_101: The enum member of type int.
+        ENUM_102: The enum member of type int.
+        ENUM_103: The enum member of type int.
+        ENUM_104: The enum member of type int.
+        ENUM_105: The enum member of type int.
+        ENUM_106: The enum member of type int.
+        ENUM_107: The enum member of type int.
+        ENUM_108: The enum member of type int.
 
     """
     ENUM_1 = 1

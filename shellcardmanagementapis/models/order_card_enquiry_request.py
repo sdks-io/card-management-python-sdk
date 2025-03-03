@@ -14,10 +14,8 @@ class OrderCardEnquiryRequest(object):
 
     """Implementation of the 'OrderCardEnquiryRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
-        filters (Filters2): TODO: type description here.
+        filters (Filters2): The model property of type Filters2.
 
     """
 
@@ -60,3 +58,11 @@ class OrderCardEnquiryRequest(object):
         filters = Filters2.from_dictionary(dictionary.get('Filters')) if 'Filters' in dictionary.keys() else APIHelper.SKIP
         # Return an object of this model
         return cls(filters)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'filters={(self.filters if hasattr(self, "filters") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'filters={(self.filters if hasattr(self, "filters") else None)!s})')

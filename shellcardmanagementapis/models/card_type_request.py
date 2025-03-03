@@ -13,8 +13,6 @@ class CardTypeRequest(object):
 
     """Implementation of the 'CardTypeRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting Company Id of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.
@@ -134,3 +132,25 @@ class CardTypeRequest(object):
                    account_number,
                    include_usage_restrictions,
                    include_purchase_categories)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'include_usage_restrictions={(self.include_usage_restrictions if hasattr(self, "include_usage_restrictions") else None)!r}, '
+                f'include_purchase_categories={(self.include_purchase_categories if hasattr(self, "include_purchase_categories") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'include_usage_restrictions={(self.include_usage_restrictions if hasattr(self, "include_usage_restrictions") else None)!s}, '
+                f'include_purchase_categories={(self.include_purchase_categories if hasattr(self, "include_purchase_categories") else None)!s})')

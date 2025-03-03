@@ -100,3 +100,19 @@ class PINReminderReference(object):
                    pan,
                    card_expiry_date,
                    reference_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'card_expiry_date={(self.card_expiry_date if hasattr(self, "card_expiry_date") else None)!r}, '
+                f'reference_id={(self.reference_id if hasattr(self, "reference_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'card_expiry_date={(self.card_expiry_date if hasattr(self, "card_expiry_date") else None)!s}, '
+                f'reference_id={(self.reference_id if hasattr(self, "reference_id") else None)!s})')

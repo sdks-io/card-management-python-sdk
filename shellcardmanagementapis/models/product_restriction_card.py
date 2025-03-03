@@ -13,8 +13,6 @@ class ProductRestrictionCard(object):
 
     """Implementation of the 'ProductRestrictionCard' model.
 
-    TODO: type model description here.
-
     Attributes:
         products (List[str]): An array of 3-digit global product codes.
             Optional. Example: [ "033", "021", "023”]
@@ -69,3 +67,13 @@ class ProductRestrictionCard(object):
         # Return an object of this model
         return cls(products,
                    product_groups)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'products={(self.products if hasattr(self, "products") else None)!r}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'products={(self.products if hasattr(self, "products") else None)!s}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!s})')

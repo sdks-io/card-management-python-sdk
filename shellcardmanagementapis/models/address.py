@@ -13,8 +13,6 @@ class Address(object):
 
     """Implementation of the 'Address' model.
 
-    TODO: type model description here.
-
     Attributes:
         address_id (int): Address Id in cards platform.
         address_line_1 (str): Address line1
@@ -162,3 +160,33 @@ class Address(object):
                    telephone,
                    email_address,
                    fax)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'address_id={(self.address_id if hasattr(self, "address_id") else None)!r}, '
+                f'address_line_1={(self.address_line_1 if hasattr(self, "address_line_1") else None)!r}, '
+                f'address_line_2={(self.address_line_2 if hasattr(self, "address_line_2") else None)!r}, '
+                f'address_line_3={(self.address_line_3 if hasattr(self, "address_line_3") else None)!r}, '
+                f'zip_code={(self.zip_code if hasattr(self, "zip_code") else None)!r}, '
+                f'city={(self.city if hasattr(self, "city") else None)!r}, '
+                f'region_id={(self.region_id if hasattr(self, "region_id") else None)!r}, '
+                f'country_iso_code={(self.country_iso_code if hasattr(self, "country_iso_code") else None)!r}, '
+                f'country={(self.country if hasattr(self, "country") else None)!r}, '
+                f'telephone={(self.telephone if hasattr(self, "telephone") else None)!r}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!r}, '
+                f'fax={(self.fax if hasattr(self, "fax") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'address_id={(self.address_id if hasattr(self, "address_id") else None)!s}, '
+                f'address_line_1={(self.address_line_1 if hasattr(self, "address_line_1") else None)!s}, '
+                f'address_line_2={(self.address_line_2 if hasattr(self, "address_line_2") else None)!s}, '
+                f'address_line_3={(self.address_line_3 if hasattr(self, "address_line_3") else None)!s}, '
+                f'zip_code={(self.zip_code if hasattr(self, "zip_code") else None)!s}, '
+                f'city={(self.city if hasattr(self, "city") else None)!s}, '
+                f'region_id={(self.region_id if hasattr(self, "region_id") else None)!s}, '
+                f'country_iso_code={(self.country_iso_code if hasattr(self, "country_iso_code") else None)!s}, '
+                f'country={(self.country if hasattr(self, "country") else None)!s}, '
+                f'telephone={(self.telephone if hasattr(self, "telephone") else None)!s}, '
+                f'email_address={(self.email_address if hasattr(self, "email_address") else None)!s}, '
+                f'fax={(self.fax if hasattr(self, "fax") else None)!s})')

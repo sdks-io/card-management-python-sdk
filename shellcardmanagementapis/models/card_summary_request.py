@@ -14,10 +14,8 @@ class CardSummaryRequest(object):
 
     """Implementation of the 'CardSummaryRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
-        filters (Filters1): TODO: type description here.
+        filters (Filters1): The model property of type Filters1.
 
     """
 
@@ -60,3 +58,11 @@ class CardSummaryRequest(object):
         filters = Filters1.from_dictionary(dictionary.get('Filters')) if 'Filters' in dictionary.keys() else APIHelper.SKIP
         # Return an object of this model
         return cls(filters)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'filters={(self.filters if hasattr(self, "filters") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'filters={(self.filters if hasattr(self, "filters") else None)!s})')

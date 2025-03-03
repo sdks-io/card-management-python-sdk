@@ -14,8 +14,6 @@ class CreateCardGroupRequest(object):
 
     """Implementation of the 'CreateCardGroupRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_code (int): Collecting Company Code (Shell Code) of the
             selected payer.   Mandatory for serviced OUs such as Romania,
@@ -35,7 +33,7 @@ class CreateCardGroupRequest(object):
             AccountId is passed else Mandatory.
         print_on_card (bool): Whether card group name to be embossed on the
             cards or not.
-        card_group_name (str): TODO: type description here.
+        card_group_name (str): The model property of type str.
         cards (List[CreateCardGroupRequestCardsItems]): List of cards to be
             moved to the new card group. This list is optional – no card will
             be moved to the new card group when the list is empty. The fields
@@ -149,3 +147,27 @@ class CreateCardGroupRequest(object):
                    print_on_card,
                    card_group_name,
                    cards)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'print_on_card={(self.print_on_card if hasattr(self, "print_on_card") else None)!r}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!r}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'print_on_card={(self.print_on_card if hasattr(self, "print_on_card") else None)!s}, '
+                f'card_group_name={(self.card_group_name if hasattr(self, "card_group_name") else None)!s}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!s})')

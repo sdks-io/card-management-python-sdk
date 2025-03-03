@@ -15,14 +15,13 @@ class CardRestrictionResponse(object):
 
     """Implementation of the 'CardRestrictionResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Request Id of the API call
         restriction_request_reference (float): Reference number for tracking
             the execution of the card restriction requests.
-        cards (List[RestrictioncardsRes]): TODO: type description here.
-        error (ErrorStatus): TODO: type description here.
+        cards (List[RestrictioncardsRes]): The model property of type
+            List[RestrictioncardsRes].
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -94,3 +93,17 @@ class CardRestrictionResponse(object):
                    restriction_request_reference,
                    cards,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'restriction_request_reference={(self.restriction_request_reference if hasattr(self, "restriction_request_reference") else None)!r}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'restriction_request_reference={(self.restriction_request_reference if hasattr(self, "restriction_request_reference") else None)!s}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

@@ -14,8 +14,6 @@ class ScheduleCardBlockResponse(object):
 
     """Implementation of the 'ScheduleCardBlockResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         main_reference (int): Reference number for tracking the execution of
             the request. Note: Reference will be empty for status 9006 and
@@ -91,3 +89,17 @@ class ScheduleCardBlockResponse(object):
                    request_id,
                    status,
                    data)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'data={(self.data if hasattr(self, "data") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'main_reference={(self.main_reference if hasattr(self, "main_reference") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'data={(self.data if hasattr(self, "data") else None)!s})')

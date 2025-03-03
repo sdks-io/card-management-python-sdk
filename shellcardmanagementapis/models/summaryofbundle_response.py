@@ -15,20 +15,18 @@ class SummaryofbundleResponse(object):
 
     """Implementation of the 'SummaryofbundleResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Request Id of the API call
         payer_id (int): Payer Id of the bundles and cards. Example: 123456
         payer_number (str): Payer Number of the bundles and cards. Example:
             GB000000123
-        account_id (int): TODO: type description here.
+        account_id (int): The model property of type int.
         account_number (str): Account Number of the bundle. Example:
             GB000000123
         count_of_cards_not_in_bundle (int): Count of cards that are not part
             of the bundle in a given account.
-        card_bundles (CardBundle): TODO: type description here.
-        error (ErrorStatus): TODO: type description here.
+        card_bundles (CardBundle): The model property of type CardBundle.
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -124,3 +122,25 @@ class SummaryofbundleResponse(object):
                    count_of_cards_not_in_bundle,
                    card_bundles,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'count_of_cards_not_in_bundle={(self.count_of_cards_not_in_bundle if hasattr(self, "count_of_cards_not_in_bundle") else None)!r}, '
+                f'card_bundles={(self.card_bundles if hasattr(self, "card_bundles") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'count_of_cards_not_in_bundle={(self.count_of_cards_not_in_bundle if hasattr(self, "count_of_cards_not_in_bundle") else None)!s}, '
+                f'card_bundles={(self.card_bundles if hasattr(self, "card_bundles") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

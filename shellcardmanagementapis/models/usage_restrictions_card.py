@@ -13,8 +13,6 @@ class UsageRestrictionsCard(object):
 
     """Implementation of the 'UsageRestrictionsCard' model.
 
-    TODO: type model description here.
-
     Attributes:
         daily_spend (float): Maximum spend value (amount) allowed per day.
             Optional It allows null in the input field. If Values is passed as
@@ -225,3 +223,43 @@ class UsageRestrictionsCard(object):
                    monthly_transaction_count,
                    annual_transaction_count,
                    life_time_transaction_count)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'daily_spend={(self.daily_spend if hasattr(self, "daily_spend") else None)!r}, '
+                f'weekly_spend={(self.weekly_spend if hasattr(self, "weekly_spend") else None)!r}, '
+                f'monthly_spend={(self.monthly_spend if hasattr(self, "monthly_spend") else None)!r}, '
+                f'per_transaction_spend={(self.per_transaction_spend if hasattr(self, "per_transaction_spend") else None)!r}, '
+                f'annual_spend={(self.annual_spend if hasattr(self, "annual_spend") else None)!r}, '
+                f'life_time_spend={(self.life_time_spend if hasattr(self, "life_time_spend") else None)!r}, '
+                f'daily_volume={(self.daily_volume if hasattr(self, "daily_volume") else None)!r}, '
+                f'weekly_volume={(self.weekly_volume if hasattr(self, "weekly_volume") else None)!r}, '
+                f'monthly_volume={(self.monthly_volume if hasattr(self, "monthly_volume") else None)!r}, '
+                f'per_transaction_volume={(self.per_transaction_volume if hasattr(self, "per_transaction_volume") else None)!r}, '
+                f'annual_volume={(self.annual_volume if hasattr(self, "annual_volume") else None)!r}, '
+                f'life_time_volume={(self.life_time_volume if hasattr(self, "life_time_volume") else None)!r}, '
+                f'daily_transaction_count={(self.daily_transaction_count if hasattr(self, "daily_transaction_count") else None)!r}, '
+                f'weekly_transaction_count={(self.weekly_transaction_count if hasattr(self, "weekly_transaction_count") else None)!r}, '
+                f'monthly_transaction_count={(self.monthly_transaction_count if hasattr(self, "monthly_transaction_count") else None)!r}, '
+                f'annual_transaction_count={(self.annual_transaction_count if hasattr(self, "annual_transaction_count") else None)!r}, '
+                f'life_time_transaction_count={(self.life_time_transaction_count if hasattr(self, "life_time_transaction_count") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'daily_spend={(self.daily_spend if hasattr(self, "daily_spend") else None)!s}, '
+                f'weekly_spend={(self.weekly_spend if hasattr(self, "weekly_spend") else None)!s}, '
+                f'monthly_spend={(self.monthly_spend if hasattr(self, "monthly_spend") else None)!s}, '
+                f'per_transaction_spend={(self.per_transaction_spend if hasattr(self, "per_transaction_spend") else None)!s}, '
+                f'annual_spend={(self.annual_spend if hasattr(self, "annual_spend") else None)!s}, '
+                f'life_time_spend={(self.life_time_spend if hasattr(self, "life_time_spend") else None)!s}, '
+                f'daily_volume={(self.daily_volume if hasattr(self, "daily_volume") else None)!s}, '
+                f'weekly_volume={(self.weekly_volume if hasattr(self, "weekly_volume") else None)!s}, '
+                f'monthly_volume={(self.monthly_volume if hasattr(self, "monthly_volume") else None)!s}, '
+                f'per_transaction_volume={(self.per_transaction_volume if hasattr(self, "per_transaction_volume") else None)!s}, '
+                f'annual_volume={(self.annual_volume if hasattr(self, "annual_volume") else None)!s}, '
+                f'life_time_volume={(self.life_time_volume if hasattr(self, "life_time_volume") else None)!s}, '
+                f'daily_transaction_count={(self.daily_transaction_count if hasattr(self, "daily_transaction_count") else None)!s}, '
+                f'weekly_transaction_count={(self.weekly_transaction_count if hasattr(self, "weekly_transaction_count") else None)!s}, '
+                f'monthly_transaction_count={(self.monthly_transaction_count if hasattr(self, "monthly_transaction_count") else None)!s}, '
+                f'annual_transaction_count={(self.annual_transaction_count if hasattr(self, "annual_transaction_count") else None)!s}, '
+                f'life_time_transaction_count={(self.life_time_transaction_count if hasattr(self, "life_time_transaction_count") else None)!s})')

@@ -14,8 +14,6 @@ class PayerRequest(object):
 
     """Implementation of the 'PayerRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         payers (List[Payers]): List of Payer entity. Optional. Note: •    Max
             number of payers allowed in the input is 10, if it exceeds in the
@@ -114,3 +112,21 @@ class PayerRequest(object):
                    include_bonus_parameters,
                    current_page,
                    page_size)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'payers={(self.payers if hasattr(self, "payers") else None)!r}, '
+                f'return_basic_details_only={(self.return_basic_details_only if hasattr(self, "return_basic_details_only") else None)!r}, '
+                f'include_addresses={(self.include_addresses if hasattr(self, "include_addresses") else None)!r}, '
+                f'include_bonus_parameters={(self.include_bonus_parameters if hasattr(self, "include_bonus_parameters") else None)!r}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!r}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'payers={(self.payers if hasattr(self, "payers") else None)!s}, '
+                f'return_basic_details_only={(self.return_basic_details_only if hasattr(self, "return_basic_details_only") else None)!s}, '
+                f'include_addresses={(self.include_addresses if hasattr(self, "include_addresses") else None)!s}, '
+                f'include_bonus_parameters={(self.include_bonus_parameters if hasattr(self, "include_bonus_parameters") else None)!s}, '
+                f'current_page={(self.current_page if hasattr(self, "current_page") else None)!s}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!s})')

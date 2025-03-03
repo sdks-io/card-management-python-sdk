@@ -13,8 +13,6 @@ class CardDetailsRequest(object):
 
     """Implementation of the 'CardDetailsRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_code (int): Collecting Company Id  of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example: 
@@ -220,3 +218,43 @@ class CardDetailsRequest(object):
                    include_bundle_details,
                    include_intermediate_status,
                    include_scheduled_card_blocks)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!r}, '
+                f'client_reference_id={(self.client_reference_id if hasattr(self, "client_reference_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'token_type_id={(self.token_type_id if hasattr(self, "token_type_id") else None)!r}, '
+                f'token_type_name={(self.token_type_name if hasattr(self, "token_type_name") else None)!r}, '
+                f'creation_date={(self.creation_date if hasattr(self, "creation_date") else None)!r}, '
+                f'effective_date={(self.effective_date if hasattr(self, "effective_date") else None)!r}, '
+                f'include_bundle_details={(self.include_bundle_details if hasattr(self, "include_bundle_details") else None)!r}, '
+                f'include_intermediate_status={(self.include_intermediate_status if hasattr(self, "include_intermediate_status") else None)!r}, '
+                f'include_scheduled_card_blocks={(self.include_scheduled_card_blocks if hasattr(self, "include_scheduled_card_blocks") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!s}, '
+                f'client_reference_id={(self.client_reference_id if hasattr(self, "client_reference_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'token_type_id={(self.token_type_id if hasattr(self, "token_type_id") else None)!s}, '
+                f'token_type_name={(self.token_type_name if hasattr(self, "token_type_name") else None)!s}, '
+                f'creation_date={(self.creation_date if hasattr(self, "creation_date") else None)!s}, '
+                f'effective_date={(self.effective_date if hasattr(self, "effective_date") else None)!s}, '
+                f'include_bundle_details={(self.include_bundle_details if hasattr(self, "include_bundle_details") else None)!s}, '
+                f'include_intermediate_status={(self.include_intermediate_status if hasattr(self, "include_intermediate_status") else None)!s}, '
+                f'include_scheduled_card_blocks={(self.include_scheduled_card_blocks if hasattr(self, "include_scheduled_card_blocks") else None)!s})')

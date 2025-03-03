@@ -185,3 +185,35 @@ class SubmittedCard(object):
                    masked_pan,
                    payer_id,
                    payer_number)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'replacement_card_reference={(self.replacement_card_reference if hasattr(self, "replacement_card_reference") else None)!r}, '
+                f'update_card_reference={(self.update_card_reference if hasattr(self, "update_card_reference") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'card_expiry_date={(self.card_expiry_date if hasattr(self, "card_expiry_date") else None)!r}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!r}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!r}, '
+                f'masked_pan={(self.masked_pan if hasattr(self, "masked_pan") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'replacement_card_reference={(self.replacement_card_reference if hasattr(self, "replacement_card_reference") else None)!s}, '
+                f'update_card_reference={(self.update_card_reference if hasattr(self, "update_card_reference") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'card_expiry_date={(self.card_expiry_date if hasattr(self, "card_expiry_date") else None)!s}, '
+                f'card_id={(self.card_id if hasattr(self, "card_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'pan={(self.pan if hasattr(self, "pan") else None)!s}, '
+                f'panid={(self.panid if hasattr(self, "panid") else None)!s}, '
+                f'masked_pan={(self.masked_pan if hasattr(self, "masked_pan") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s})')

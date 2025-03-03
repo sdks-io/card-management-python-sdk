@@ -15,22 +15,26 @@ class CreateBundleResponse(object):
 
     """Implementation of the 'CreateBundleResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Request Id of the API call
-        bundle_creation_status (ErrorStatus): TODO: type description here.
+        bundle_creation_status (ErrorStatus): The model property of type
+            ErrorStatus.
         bundle_id (str): Identifier of the newly created bundle
-        day_time_restriction_status (ErrorStatus): TODO: type description here.
+        day_time_restriction_status (ErrorStatus): The model property of type
+            ErrorStatus.
         day_time_restriction_profile_id (str): Identifier of the day/time
             restriction profile created
-        location_restriction_status (ErrorStatus): TODO: type description here.
+        location_restriction_status (ErrorStatus): The model property of type
+            ErrorStatus.
         location_restriction_profile_id (str): Identifier of the location
             restriction profile created
-        usage_restriction_status (ErrorStatus): TODO: type description here.
-        product_restriction_status (ErrorStatus): TODO: type description here.
-        cards (BundleCardRestrictionStatus): TODO: type description here.
-        error (ErrorStatus): TODO: type description here.
+        usage_restriction_status (ErrorStatus): The model property of type
+            ErrorStatus.
+        product_restriction_status (ErrorStatus): The model property of type
+            ErrorStatus.
+        cards (BundleCardRestrictionStatus): The model property of type
+            BundleCardRestrictionStatus.
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -147,3 +151,31 @@ class CreateBundleResponse(object):
                    product_restriction_status,
                    cards,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'bundle_creation_status={(self.bundle_creation_status if hasattr(self, "bundle_creation_status") else None)!r}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!r}, '
+                f'day_time_restriction_status={(self.day_time_restriction_status if hasattr(self, "day_time_restriction_status") else None)!r}, '
+                f'day_time_restriction_profile_id={(self.day_time_restriction_profile_id if hasattr(self, "day_time_restriction_profile_id") else None)!r}, '
+                f'location_restriction_status={(self.location_restriction_status if hasattr(self, "location_restriction_status") else None)!r}, '
+                f'location_restriction_profile_id={(self.location_restriction_profile_id if hasattr(self, "location_restriction_profile_id") else None)!r}, '
+                f'usage_restriction_status={(self.usage_restriction_status if hasattr(self, "usage_restriction_status") else None)!r}, '
+                f'product_restriction_status={(self.product_restriction_status if hasattr(self, "product_restriction_status") else None)!r}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'bundle_creation_status={(self.bundle_creation_status if hasattr(self, "bundle_creation_status") else None)!s}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!s}, '
+                f'day_time_restriction_status={(self.day_time_restriction_status if hasattr(self, "day_time_restriction_status") else None)!s}, '
+                f'day_time_restriction_profile_id={(self.day_time_restriction_profile_id if hasattr(self, "day_time_restriction_profile_id") else None)!s}, '
+                f'location_restriction_status={(self.location_restriction_status if hasattr(self, "location_restriction_status") else None)!s}, '
+                f'location_restriction_profile_id={(self.location_restriction_profile_id if hasattr(self, "location_restriction_profile_id") else None)!s}, '
+                f'usage_restriction_status={(self.usage_restriction_status if hasattr(self, "usage_restriction_status") else None)!s}, '
+                f'product_restriction_status={(self.product_restriction_status if hasattr(self, "product_restriction_status") else None)!s}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

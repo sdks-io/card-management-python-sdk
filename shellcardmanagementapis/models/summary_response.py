@@ -173,3 +173,33 @@ class SummaryResponse(object):
                    temporary_block_by_customer,
                    temporary_block_by_shell,
                    total_cards)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'active_cards={(self.active_cards if hasattr(self, "active_cards") else None)!r}, '
+                f'blocked_cards={(self.blocked_cards if hasattr(self, "blocked_cards") else None)!r}, '
+                f'cancelled_cards={(self.cancelled_cards if hasattr(self, "cancelled_cards") else None)!r}, '
+                f'expired_cards={(self.expired_cards if hasattr(self, "expired_cards") else None)!r}, '
+                f'expiring_cards={(self.expiring_cards if hasattr(self, "expiring_cards") else None)!r}, '
+                f'fraud_cards={(self.fraud_cards if hasattr(self, "fraud_cards") else None)!r}, '
+                f'new_cards={(self.new_cards if hasattr(self, "new_cards") else None)!r}, '
+                f'renewal_pending_cards={(self.renewal_pending_cards if hasattr(self, "renewal_pending_cards") else None)!r}, '
+                f'replaced_cards={(self.replaced_cards if hasattr(self, "replaced_cards") else None)!r}, '
+                f'temporary_block_by_customer={(self.temporary_block_by_customer if hasattr(self, "temporary_block_by_customer") else None)!r}, '
+                f'temporary_block_by_shell={(self.temporary_block_by_shell if hasattr(self, "temporary_block_by_shell") else None)!r}, '
+                f'total_cards={(self.total_cards if hasattr(self, "total_cards") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'active_cards={(self.active_cards if hasattr(self, "active_cards") else None)!s}, '
+                f'blocked_cards={(self.blocked_cards if hasattr(self, "blocked_cards") else None)!s}, '
+                f'cancelled_cards={(self.cancelled_cards if hasattr(self, "cancelled_cards") else None)!s}, '
+                f'expired_cards={(self.expired_cards if hasattr(self, "expired_cards") else None)!s}, '
+                f'expiring_cards={(self.expiring_cards if hasattr(self, "expiring_cards") else None)!s}, '
+                f'fraud_cards={(self.fraud_cards if hasattr(self, "fraud_cards") else None)!s}, '
+                f'new_cards={(self.new_cards if hasattr(self, "new_cards") else None)!s}, '
+                f'renewal_pending_cards={(self.renewal_pending_cards if hasattr(self, "renewal_pending_cards") else None)!s}, '
+                f'replaced_cards={(self.replaced_cards if hasattr(self, "replaced_cards") else None)!s}, '
+                f'temporary_block_by_customer={(self.temporary_block_by_customer if hasattr(self, "temporary_block_by_customer") else None)!s}, '
+                f'temporary_block_by_shell={(self.temporary_block_by_shell if hasattr(self, "temporary_block_by_shell") else None)!s}, '
+                f'total_cards={(self.total_cards if hasattr(self, "total_cards") else None)!s})')

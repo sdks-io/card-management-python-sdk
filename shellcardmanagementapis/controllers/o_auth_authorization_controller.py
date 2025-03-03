@@ -28,7 +28,7 @@ class OAuthAuthorizationController(BaseController):
                                    authorization,
                                    scope=None,
                                    _optional_form_parameters=None):
-        """Does a POST request to /v1/oauth/token.
+        """Does a POST request to /v2/oauth/token.
 
         Create a new OAuth 2 token.
 
@@ -51,7 +51,7 @@ class OAuthAuthorizationController(BaseController):
 
         return super().new_api_call_builder.request(
             RequestBuilder().server(Server.OAUTH_SERVER)
-            .path('/v1/oauth/token')
+            .path('/v2/oauth/token')
             .http_method(HttpMethodEnum.POST)
             .form_param(Parameter()
                         .key('grant_type')

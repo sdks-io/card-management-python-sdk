@@ -106,3 +106,19 @@ class LoggedInUserRequest(object):
                    requested_api_name,
                    payer_id,
                    payer_number)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'include_payer_group={(self.include_payer_group if hasattr(self, "include_payer_group") else None)!r}, '
+                f'include_eid_details={(self.include_eid_details if hasattr(self, "include_eid_details") else None)!r}, '
+                f'requested_api_name={(self.requested_api_name if hasattr(self, "requested_api_name") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'include_payer_group={(self.include_payer_group if hasattr(self, "include_payer_group") else None)!s}, '
+                f'include_eid_details={(self.include_eid_details if hasattr(self, "include_eid_details") else None)!s}, '
+                f'requested_api_name={(self.requested_api_name if hasattr(self, "requested_api_name") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s})')

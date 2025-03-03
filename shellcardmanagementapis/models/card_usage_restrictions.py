@@ -13,8 +13,6 @@ class CardUsageRestrictions(object):
 
     """Implementation of the 'CardUsageRestrictions' model.
 
-    TODO: type model description here.
-
     Attributes:
         level (str): Describes at which level the restriction is set at. 
             Possible values:  OU = Restriction set at ColCo card type  
@@ -246,3 +244,47 @@ class CardUsageRestrictions(object):
                    annual_transaction_count,
                    life_time_transaction_count,
                    is_velocity_ceiling)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'level={(self.level if hasattr(self, "level") else None)!r}, '
+                f'daily_spend_limit={(self.daily_spend_limit if hasattr(self, "daily_spend_limit") else None)!r}, '
+                f'weekly_spend_limit={(self.weekly_spend_limit if hasattr(self, "weekly_spend_limit") else None)!r}, '
+                f'monthly_spend_limit={(self.monthly_spend_limit if hasattr(self, "monthly_spend_limit") else None)!r}, '
+                f'annual_spend_limit={(self.annual_spend_limit if hasattr(self, "annual_spend_limit") else None)!r}, '
+                f'life_time_spend_limit={(self.life_time_spend_limit if hasattr(self, "life_time_spend_limit") else None)!r}, '
+                f'daily_volume_limit={(self.daily_volume_limit if hasattr(self, "daily_volume_limit") else None)!r}, '
+                f'weekly_volume_limit={(self.weekly_volume_limit if hasattr(self, "weekly_volume_limit") else None)!r}, '
+                f'monthly_volume_limit={(self.monthly_volume_limit if hasattr(self, "monthly_volume_limit") else None)!r}, '
+                f'annual_volume_limit={(self.annual_volume_limit if hasattr(self, "annual_volume_limit") else None)!r}, '
+                f'life_time_volume_limit={(self.life_time_volume_limit if hasattr(self, "life_time_volume_limit") else None)!r}, '
+                f'transaction_spend_limit={(self.transaction_spend_limit if hasattr(self, "transaction_spend_limit") else None)!r}, '
+                f'transaction_volume_limit={(self.transaction_volume_limit if hasattr(self, "transaction_volume_limit") else None)!r}, '
+                f'daily_transaction_count={(self.daily_transaction_count if hasattr(self, "daily_transaction_count") else None)!r}, '
+                f'weekly_transaction_count={(self.weekly_transaction_count if hasattr(self, "weekly_transaction_count") else None)!r}, '
+                f'monthly_transaction_count={(self.monthly_transaction_count if hasattr(self, "monthly_transaction_count") else None)!r}, '
+                f'annual_transaction_count={(self.annual_transaction_count if hasattr(self, "annual_transaction_count") else None)!r}, '
+                f'life_time_transaction_count={(self.life_time_transaction_count if hasattr(self, "life_time_transaction_count") else None)!r}, '
+                f'is_velocity_ceiling={(self.is_velocity_ceiling if hasattr(self, "is_velocity_ceiling") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'level={(self.level if hasattr(self, "level") else None)!s}, '
+                f'daily_spend_limit={(self.daily_spend_limit if hasattr(self, "daily_spend_limit") else None)!s}, '
+                f'weekly_spend_limit={(self.weekly_spend_limit if hasattr(self, "weekly_spend_limit") else None)!s}, '
+                f'monthly_spend_limit={(self.monthly_spend_limit if hasattr(self, "monthly_spend_limit") else None)!s}, '
+                f'annual_spend_limit={(self.annual_spend_limit if hasattr(self, "annual_spend_limit") else None)!s}, '
+                f'life_time_spend_limit={(self.life_time_spend_limit if hasattr(self, "life_time_spend_limit") else None)!s}, '
+                f'daily_volume_limit={(self.daily_volume_limit if hasattr(self, "daily_volume_limit") else None)!s}, '
+                f'weekly_volume_limit={(self.weekly_volume_limit if hasattr(self, "weekly_volume_limit") else None)!s}, '
+                f'monthly_volume_limit={(self.monthly_volume_limit if hasattr(self, "monthly_volume_limit") else None)!s}, '
+                f'annual_volume_limit={(self.annual_volume_limit if hasattr(self, "annual_volume_limit") else None)!s}, '
+                f'life_time_volume_limit={(self.life_time_volume_limit if hasattr(self, "life_time_volume_limit") else None)!s}, '
+                f'transaction_spend_limit={(self.transaction_spend_limit if hasattr(self, "transaction_spend_limit") else None)!s}, '
+                f'transaction_volume_limit={(self.transaction_volume_limit if hasattr(self, "transaction_volume_limit") else None)!s}, '
+                f'daily_transaction_count={(self.daily_transaction_count if hasattr(self, "daily_transaction_count") else None)!s}, '
+                f'weekly_transaction_count={(self.weekly_transaction_count if hasattr(self, "weekly_transaction_count") else None)!s}, '
+                f'monthly_transaction_count={(self.monthly_transaction_count if hasattr(self, "monthly_transaction_count") else None)!s}, '
+                f'annual_transaction_count={(self.annual_transaction_count if hasattr(self, "annual_transaction_count") else None)!s}, '
+                f'life_time_transaction_count={(self.life_time_transaction_count if hasattr(self, "life_time_transaction_count") else None)!s}, '
+                f'is_velocity_ceiling={(self.is_velocity_ceiling if hasattr(self, "is_velocity_ceiling") else None)!s})')

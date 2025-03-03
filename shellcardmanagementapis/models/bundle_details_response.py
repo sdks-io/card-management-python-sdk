@@ -15,8 +15,6 @@ class BundleDetailsResponse(object):
 
     """Implementation of the 'BundleDetailsResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         payer_id (int): Payer Id of the bundles and cards. Example: 123456
         payer_number (str): Payer Number of the bundles and cards. Example:
@@ -33,8 +31,9 @@ class BundleDetailsResponse(object):
             Example: GBP
         restriction_currency_symbol (str): Currency symbol of the country.
             Example: £, $
-        restrictions (BundledRestrictionsList): TODO: type description here.
-        error (ErrorStatus): TODO: type description here.
+        restrictions (BundledRestrictionsList): The model property of type
+            BundledRestrictionsList.
+        error (ErrorStatus): The model property of type ErrorStatus.
         request_id (str): API Request Id
 
     """
@@ -162,3 +161,35 @@ class BundleDetailsResponse(object):
                    restrictions,
                    error,
                    request_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!r}, '
+                f'external_bundle_id={(self.external_bundle_id if hasattr(self, "external_bundle_id") else None)!r}, '
+                f'description={(self.description if hasattr(self, "description") else None)!r}, '
+                f'pans={(self.pans if hasattr(self, "pans") else None)!r}, '
+                f'restriction_currency_code={(self.restriction_currency_code if hasattr(self, "restriction_currency_code") else None)!r}, '
+                f'restriction_currency_symbol={(self.restriction_currency_symbol if hasattr(self, "restriction_currency_symbol") else None)!r}, '
+                f'restrictions={(self.restrictions if hasattr(self, "restrictions") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'bundle_id={(self.bundle_id if hasattr(self, "bundle_id") else None)!s}, '
+                f'external_bundle_id={(self.external_bundle_id if hasattr(self, "external_bundle_id") else None)!s}, '
+                f'description={(self.description if hasattr(self, "description") else None)!s}, '
+                f'pans={(self.pans if hasattr(self, "pans") else None)!s}, '
+                f'restriction_currency_code={(self.restriction_currency_code if hasattr(self, "restriction_currency_code") else None)!s}, '
+                f'restriction_currency_symbol={(self.restriction_currency_symbol if hasattr(self, "restriction_currency_symbol") else None)!s}, '
+                f'restrictions={(self.restrictions if hasattr(self, "restrictions") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s}, '
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s})')

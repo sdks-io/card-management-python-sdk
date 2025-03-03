@@ -13,8 +13,6 @@ class CardDetailsResponseCardBlockSchedulesItemsAllOf0(object):
 
     """Implementation of the 'CardDetailsResponseCardBlockSchedulesItemsAllOf0' model.
 
-    TODO: type model description here.
-
     Attributes:
         from_date (str): Effective start date of Block / Unblock
         to_date (str): Effective end date of Block / Unblock
@@ -67,3 +65,13 @@ class CardDetailsResponseCardBlockSchedulesItemsAllOf0(object):
         # Return an object of this model
         return cls(from_date,
                    to_date)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!r}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!s}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!s})')

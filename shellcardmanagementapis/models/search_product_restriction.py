@@ -15,11 +15,11 @@ class SearchProductRestriction(object):
 
     """Implementation of the 'SearchProductRestriction' model.
 
-    TODO: type model description here.
-
     Attributes:
-        products (List[RestrictionProduct]): TODO: type description here.
-        product_groups (List[ProductGroup]): TODO: type description here.
+        products (List[RestrictionProduct]): The model property of type
+            List[RestrictionProduct].
+        product_groups (List[ProductGroup]): The model property of type
+            List[ProductGroup].
 
     """
 
@@ -77,3 +77,13 @@ class SearchProductRestriction(object):
         # Return an object of this model
         return cls(products,
                    product_groups)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'products={(self.products if hasattr(self, "products") else None)!r}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'products={(self.products if hasattr(self, "products") else None)!s}, '
+                f'product_groups={(self.product_groups if hasattr(self, "product_groups") else None)!s})')

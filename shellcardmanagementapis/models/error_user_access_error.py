@@ -13,8 +13,6 @@ class ErrorUserAccessError(object):
 
     """Implementation of the 'ErrorUserAccessError' model.
 
-    TODO: type model description here.
-
     Attributes:
         code (str): Error Code
         description (str): Description
@@ -67,3 +65,13 @@ class ErrorUserAccessError(object):
         # Return an object of this model
         return cls(code,
                    description)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'code={(self.code if hasattr(self, "code") else None)!r}, '
+                f'description={(self.description if hasattr(self, "description") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'code={(self.code if hasattr(self, "code") else None)!s}, '
+                f'description={(self.description if hasattr(self, "description") else None)!s})')

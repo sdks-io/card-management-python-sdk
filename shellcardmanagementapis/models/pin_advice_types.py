@@ -13,8 +13,6 @@ class PINAdviceTypes(object):
 
     """Implementation of the 'PINAdviceTypes' model.
 
-    TODO: type model description here.
-
     Attributes:
         pin_advice_type_id (int): Id of of PIN advice type. Possible Values:
             1.    Paper 2.    Email 3.    SMS 4.    None
@@ -82,3 +80,15 @@ class PINAdviceTypes(object):
         return cls(pin_advice_type_id,
                    is_card_order_option,
                    is_pin_reminder_option)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'pin_advice_type_id={(self.pin_advice_type_id if hasattr(self, "pin_advice_type_id") else None)!r}, '
+                f'is_card_order_option={(self.is_card_order_option if hasattr(self, "is_card_order_option") else None)!r}, '
+                f'is_pin_reminder_option={(self.is_pin_reminder_option if hasattr(self, "is_pin_reminder_option") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'pin_advice_type_id={(self.pin_advice_type_id if hasattr(self, "pin_advice_type_id") else None)!s}, '
+                f'is_card_order_option={(self.is_card_order_option if hasattr(self, "is_card_order_option") else None)!s}, '
+                f'is_pin_reminder_option={(self.is_pin_reminder_option if hasattr(self, "is_pin_reminder_option") else None)!s})')

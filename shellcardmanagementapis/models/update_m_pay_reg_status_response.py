@@ -13,8 +13,6 @@ class UpdateMPayRegStatusResponse(object):
 
     """Implementation of the 'UpdateMPayRegStatusResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): API Request Id
         status (str): API Response Status
@@ -67,3 +65,13 @@ class UpdateMPayRegStatusResponse(object):
         # Return an object of this model
         return cls(request_id,
                    status)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s})')

@@ -40,8 +40,15 @@ class OrderCardEnquiryReq(object):
         reference_number (int): Reference number of the Card Order/ Bulk Card
             Order/ Order Card Request.<br /> Mandatory when ColCo and Payer
             fields are not provided. Else, optional.
-        reference_type (OrderCardEnquiryReqReferenceTypeEnum): TODO: type
-            description here.
+        reference_type (OrderCardEnquiryReqReferenceTypeEnum): Type of the
+            reference number provided.<br /> Mandatory if ReferenceNumber is
+            provided. Else optional.<br /> Allowed Values:<br /> 1=Main
+            Reference(Main Order Reference Number returned in the output of
+            Card/OrderCard service. <br /> 2=Order Card Reference (Reference
+            number for each individual card in the order submitted via
+            Card/OrderCard service. <br /> 3=Bulk Order Card Reference
+            (Reference number returned in the response of bulkcardinterface
+            /UploadOrderCardTemplate. )
         from_date (str): Card Orders from Date/Time.<br /> Optional.<br />
             Value should be with in last 7 days<br /> This field is ignored if
             ReferenceNumber is provided <br /> This field is optional when not
@@ -187,3 +194,33 @@ class OrderCardEnquiryReq(object):
                    from_date,
                    to_date,
                    order_request_id)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'reference_number={(self.reference_number if hasattr(self, "reference_number") else None)!r}, '
+                f'reference_type={(self.reference_type if hasattr(self, "reference_type") else None)!r}, '
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!r}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!r}, '
+                f'order_request_id={(self.order_request_id if hasattr(self, "order_request_id") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_country_code={(self.col_co_country_code if hasattr(self, "col_co_country_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'reference_number={(self.reference_number if hasattr(self, "reference_number") else None)!s}, '
+                f'reference_type={(self.reference_type if hasattr(self, "reference_type") else None)!s}, '
+                f'from_date={(self.from_date if hasattr(self, "from_date") else None)!s}, '
+                f'to_date={(self.to_date if hasattr(self, "to_date") else None)!s}, '
+                f'order_request_id={(self.order_request_id if hasattr(self, "order_request_id") else None)!s})')

@@ -13,8 +13,6 @@ class InvoiceDistributionMethod(object):
 
     """Implementation of the 'InvoiceDistributionMethod' model.
 
-    TODO: type model description here.
-
     Attributes:
         is_primary (bool): If True then this distribution method is the
             default distribution method.
@@ -92,3 +90,17 @@ class InvoiceDistributionMethod(object):
                    frequency_type,
                    distribution_method,
                    output_type)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'is_primary={(self.is_primary if hasattr(self, "is_primary") else None)!r}, '
+                f'frequency_type={(self.frequency_type if hasattr(self, "frequency_type") else None)!r}, '
+                f'distribution_method={(self.distribution_method if hasattr(self, "distribution_method") else None)!r}, '
+                f'output_type={(self.output_type if hasattr(self, "output_type") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'is_primary={(self.is_primary if hasattr(self, "is_primary") else None)!s}, '
+                f'frequency_type={(self.frequency_type if hasattr(self, "frequency_type") else None)!s}, '
+                f'distribution_method={(self.distribution_method if hasattr(self, "distribution_method") else None)!s}, '
+                f'output_type={(self.output_type if hasattr(self, "output_type") else None)!s})')

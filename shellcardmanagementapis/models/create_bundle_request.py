@@ -13,8 +13,6 @@ class CreateBundleRequest(object):
 
     """Implementation of the 'CreateBundleRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
         col_co_id (int): Collecting Company Id of the selected payer.  
             Optional if ColCoCode is passed else Mandatory.  Example:  1 for
@@ -40,7 +38,7 @@ class CreateBundleRequest(object):
             Mandatory. Example: 7002051006629890645 When PAN matches with
             multiple cards, the restriction will be applied on the latest
             issued card.
-        restrictions (object): TODO: type description here.
+        restrictions (object): The model property of type object.
 
     """
 
@@ -155,3 +153,29 @@ class CreateBundleRequest(object):
                    description,
                    cards,
                    restrictions)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!r}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'external_bundle_id={(self.external_bundle_id if hasattr(self, "external_bundle_id") else None)!r}, '
+                f'description={(self.description if hasattr(self, "description") else None)!r}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!r}, '
+                f'restrictions={(self.restrictions if hasattr(self, "restrictions") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'col_co_id={(self.col_co_id if hasattr(self, "col_co_id") else None)!s}, '
+                f'col_co_code={(self.col_co_code if hasattr(self, "col_co_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'external_bundle_id={(self.external_bundle_id if hasattr(self, "external_bundle_id") else None)!s}, '
+                f'description={(self.description if hasattr(self, "description") else None)!s}, '
+                f'cards={(self.cards if hasattr(self, "cards") else None)!s}, '
+                f'restrictions={(self.restrictions if hasattr(self, "restrictions") else None)!s})')

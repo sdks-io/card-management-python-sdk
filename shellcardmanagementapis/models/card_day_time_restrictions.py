@@ -13,8 +13,6 @@ class CardDayTimeRestrictions(object):
 
     """Implementation of the 'CardDayTimeRestrictions' model.
 
-    TODO: type model description here.
-
     Attributes:
         level (str): Describes at which level the restriction is set at. 
             Possible values:  OU = Restriction set at ColCo card type  
@@ -149,3 +147,29 @@ class CardDayTimeRestrictions(object):
                    sunday,
                    time_from,
                    time_to)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'level={(self.level if hasattr(self, "level") else None)!r}, '
+                f'monday={(self.monday if hasattr(self, "monday") else None)!r}, '
+                f'tuesday={(self.tuesday if hasattr(self, "tuesday") else None)!r}, '
+                f'wednesday={(self.wednesday if hasattr(self, "wednesday") else None)!r}, '
+                f'thursday={(self.thursday if hasattr(self, "thursday") else None)!r}, '
+                f'friday={(self.friday if hasattr(self, "friday") else None)!r}, '
+                f'saturday={(self.saturday if hasattr(self, "saturday") else None)!r}, '
+                f'sunday={(self.sunday if hasattr(self, "sunday") else None)!r}, '
+                f'time_from={(self.time_from if hasattr(self, "time_from") else None)!r}, '
+                f'time_to={(self.time_to if hasattr(self, "time_to") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'level={(self.level if hasattr(self, "level") else None)!s}, '
+                f'monday={(self.monday if hasattr(self, "monday") else None)!s}, '
+                f'tuesday={(self.tuesday if hasattr(self, "tuesday") else None)!s}, '
+                f'wednesday={(self.wednesday if hasattr(self, "wednesday") else None)!s}, '
+                f'thursday={(self.thursday if hasattr(self, "thursday") else None)!s}, '
+                f'friday={(self.friday if hasattr(self, "friday") else None)!s}, '
+                f'saturday={(self.saturday if hasattr(self, "saturday") else None)!s}, '
+                f'sunday={(self.sunday if hasattr(self, "sunday") else None)!s}, '
+                f'time_from={(self.time_from if hasattr(self, "time_from") else None)!s}, '
+                f'time_to={(self.time_to if hasattr(self, "time_to") else None)!s})')

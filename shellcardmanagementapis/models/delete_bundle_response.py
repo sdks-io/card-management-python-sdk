@@ -14,11 +14,9 @@ class DeleteBundleResponse(object):
 
     """Implementation of the 'DeleteBundleResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): API Request Id
-        error (ErrorStatus): TODO: type description here.
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -68,3 +66,13 @@ class DeleteBundleResponse(object):
         # Return an object of this model
         return cls(request_id,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

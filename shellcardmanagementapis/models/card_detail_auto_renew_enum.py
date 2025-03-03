@@ -19,9 +19,9 @@ class CardDetailAutoRenewEnum(object):
     3.    Card will not be Reissued.
 
     Attributes:
-        ENUM_1: TODO: type description here.
-        ENUM_2: TODO: type description here.
-        ENUM_3: TODO: type description here.
+        ENUM_1: The enum member of type int.
+        ENUM_2: The enum member of type int.
+        ENUM_3: The enum member of type int.
 
     """
     ENUM_1 = 1

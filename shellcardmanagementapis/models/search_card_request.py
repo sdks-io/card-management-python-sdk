@@ -14,10 +14,8 @@ class SearchCardRequest(object):
 
     """Implementation of the 'SearchCardRequest' model.
 
-    TODO: type model description here.
-
     Attributes:
-        filters (Filters): TODO: type description here.
+        filters (Filters): The model property of type Filters.
         page_size (str): Page Size – Number of records to show on a page
             Optional Default value 50
         page (str): Page Number
@@ -77,3 +75,15 @@ class SearchCardRequest(object):
         return cls(filters,
                    page_size,
                    page)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'filters={(self.filters if hasattr(self, "filters") else None)!r}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!r}, '
+                f'page={(self.page if hasattr(self, "page") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'filters={(self.filters if hasattr(self, "filters") else None)!s}, '
+                f'page_size={(self.page_size if hasattr(self, "page_size") else None)!s}, '
+                f'page={(self.page if hasattr(self, "page") else None)!s})')

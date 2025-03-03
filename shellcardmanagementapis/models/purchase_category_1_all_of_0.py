@@ -14,8 +14,6 @@ class PurchaseCategory1AllOf0(object):
 
     """Implementation of the 'PurchaseCategory1AllOf0' model.
 
-    TODO: type model description here.
-
     Attributes:
         id (int): Purchase category ID
         code (str): Purchase category code
@@ -120,3 +118,23 @@ class PurchaseCategory1AllOf0(object):
                    product_groups,
                    title,
                    description)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'id={self.id!r}, '
+                f'code={self.code!r}, '
+                f'name={self.name!r}, '
+                f'is_visible={self.is_visible!r}, '
+                f'product_groups={self.product_groups!r}, '
+                f'title={(self.title if hasattr(self, "title") else None)!r}, '
+                f'description={(self.description if hasattr(self, "description") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'id={self.id!s}, '
+                f'code={self.code!s}, '
+                f'name={self.name!s}, '
+                f'is_visible={self.is_visible!s}, '
+                f'product_groups={self.product_groups!s}, '
+                f'title={(self.title if hasattr(self, "title") else None)!s}, '
+                f'description={(self.description if hasattr(self, "description") else None)!s})')

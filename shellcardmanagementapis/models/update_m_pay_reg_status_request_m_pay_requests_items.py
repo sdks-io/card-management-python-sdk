@@ -13,8 +13,6 @@ class UpdateMPayRegStatusRequestMPayRequestsItems(object):
 
     """Implementation of the 'UpdateMPayRegStatusRequestMPayRequestsItems' model.
 
-    TODO: type model description here.
-
     Attributes:
         global_request_id (str): List of MPay Request to be updated for Fleet
             Manager approval status. Mandatory Maximum number of requests that
@@ -96,3 +94,19 @@ class UpdateMPayRegStatusRequestMPayRequestsItems(object):
                    approver_user_id,
                    approver_user_display_name,
                    reason)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'global_request_id={(self.global_request_id if hasattr(self, "global_request_id") else None)!r}, '
+                f'status={(self.status if hasattr(self, "status") else None)!r}, '
+                f'approver_user_id={(self.approver_user_id if hasattr(self, "approver_user_id") else None)!r}, '
+                f'approver_user_display_name={(self.approver_user_display_name if hasattr(self, "approver_user_display_name") else None)!r}, '
+                f'reason={(self.reason if hasattr(self, "reason") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'global_request_id={(self.global_request_id if hasattr(self, "global_request_id") else None)!s}, '
+                f'status={(self.status if hasattr(self, "status") else None)!s}, '
+                f'approver_user_id={(self.approver_user_id if hasattr(self, "approver_user_id") else None)!s}, '
+                f'approver_user_display_name={(self.approver_user_display_name if hasattr(self, "approver_user_display_name") else None)!s}, '
+                f'reason={(self.reason if hasattr(self, "reason") else None)!s})')

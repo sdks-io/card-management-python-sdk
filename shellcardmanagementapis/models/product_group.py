@@ -14,8 +14,6 @@ class ProductGroup(object):
 
     """Implementation of the 'ProductGroup' model.
 
-    TODO: type model description here.
-
     Attributes:
         reference_id (int): Referenced Purchase Category Id Example: 123, 124
         product_group_id (str): Product group ID
@@ -25,7 +23,8 @@ class ProductGroup(object):
             are not considered here.
         is_fuel_type (bool): Identifies the type of Product group.  true - if
             it is a Fuel type Product group   false - if it is Non-Fuel type
-        products (List[ProductAllOf0]): TODO: type description here.
+        products (List[ProductAllOf0]): The model property of type
+            List[ProductAllOf0].
 
     """
 
@@ -107,3 +106,21 @@ class ProductGroup(object):
                    is_default,
                    is_fuel_type,
                    products)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'reference_id={(self.reference_id if hasattr(self, "reference_id") else None)!r}, '
+                f'product_group_id={(self.product_group_id if hasattr(self, "product_group_id") else None)!r}, '
+                f'name={(self.name if hasattr(self, "name") else None)!r}, '
+                f'is_default={(self.is_default if hasattr(self, "is_default") else None)!r}, '
+                f'is_fuel_type={(self.is_fuel_type if hasattr(self, "is_fuel_type") else None)!r}, '
+                f'products={(self.products if hasattr(self, "products") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'reference_id={(self.reference_id if hasattr(self, "reference_id") else None)!s}, '
+                f'product_group_id={(self.product_group_id if hasattr(self, "product_group_id") else None)!s}, '
+                f'name={(self.name if hasattr(self, "name") else None)!s}, '
+                f'is_default={(self.is_default if hasattr(self, "is_default") else None)!s}, '
+                f'is_fuel_type={(self.is_fuel_type if hasattr(self, "is_fuel_type") else None)!s}, '
+                f'products={(self.products if hasattr(self, "products") else None)!s})')

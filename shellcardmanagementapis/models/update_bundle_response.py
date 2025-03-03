@@ -14,16 +14,19 @@ class UpdateBundleResponse(object):
 
     """Implementation of the 'UpdateBundleResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Request Id of the API call
-        request_action_status (ErrorStatus): TODO: type description here.
-        day_time_restriction_status (ErrorStatus): TODO: type description here.
-        location_restriction_status (ErrorStatus): TODO: type description here.
-        product_restriction_status (ErrorStatus): TODO: type description here.
-        usage_restriction_status (ErrorStatus): TODO: type description here.
-        error (ErrorStatus): TODO: type description here.
+        request_action_status (ErrorStatus): The model property of type
+            ErrorStatus.
+        day_time_restriction_status (ErrorStatus): The model property of type
+            ErrorStatus.
+        location_restriction_status (ErrorStatus): The model property of type
+            ErrorStatus.
+        product_restriction_status (ErrorStatus): The model property of type
+            ErrorStatus.
+        usage_restriction_status (ErrorStatus): The model property of type
+            ErrorStatus.
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -112,3 +115,23 @@ class UpdateBundleResponse(object):
                    product_restriction_status,
                    usage_restriction_status,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'request_action_status={(self.request_action_status if hasattr(self, "request_action_status") else None)!r}, '
+                f'day_time_restriction_status={(self.day_time_restriction_status if hasattr(self, "day_time_restriction_status") else None)!r}, '
+                f'location_restriction_status={(self.location_restriction_status if hasattr(self, "location_restriction_status") else None)!r}, '
+                f'product_restriction_status={(self.product_restriction_status if hasattr(self, "product_restriction_status") else None)!r}, '
+                f'usage_restriction_status={(self.usage_restriction_status if hasattr(self, "usage_restriction_status") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'request_action_status={(self.request_action_status if hasattr(self, "request_action_status") else None)!s}, '
+                f'day_time_restriction_status={(self.day_time_restriction_status if hasattr(self, "day_time_restriction_status") else None)!s}, '
+                f'location_restriction_status={(self.location_restriction_status if hasattr(self, "location_restriction_status") else None)!s}, '
+                f'product_restriction_status={(self.product_restriction_status if hasattr(self, "product_restriction_status") else None)!s}, '
+                f'usage_restriction_status={(self.usage_restriction_status if hasattr(self, "usage_restriction_status") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

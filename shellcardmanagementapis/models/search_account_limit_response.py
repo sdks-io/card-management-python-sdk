@@ -15,8 +15,6 @@ class SearchAccountLimitResponse(object):
 
     """Implementation of the 'SearchAccountLimitResponse' model.
 
-    TODO: type model description here.
-
     Attributes:
         request_id (str): Request Id of the API call
         account_id (int): Account ID of the customer.
@@ -25,9 +23,9 @@ class SearchAccountLimitResponse(object):
             already set up. Example: 021
         restriction_condition (str): The restriction condition code. Example:
             DECLINE_ALERT
-        velocity_limits (List[AccountVelocityLimit]): TODO: type description
-            here.
-        error (ErrorStatus): TODO: type description here.
+        velocity_limits (List[AccountVelocityLimit]): The model property of
+            type List[AccountVelocityLimit].
+        error (ErrorStatus): The model property of type ErrorStatus.
 
     """
 
@@ -120,3 +118,23 @@ class SearchAccountLimitResponse(object):
                    restriction_condition,
                    velocity_limits,
                    error)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'reference_product={(self.reference_product if hasattr(self, "reference_product") else None)!r}, '
+                f'restriction_condition={(self.restriction_condition if hasattr(self, "restriction_condition") else None)!r}, '
+                f'velocity_limits={(self.velocity_limits if hasattr(self, "velocity_limits") else None)!r}, '
+                f'error={(self.error if hasattr(self, "error") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'request_id={(self.request_id if hasattr(self, "request_id") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'reference_product={(self.reference_product if hasattr(self, "reference_product") else None)!s}, '
+                f'restriction_condition={(self.restriction_condition if hasattr(self, "restriction_condition") else None)!s}, '
+                f'velocity_limits={(self.velocity_limits if hasattr(self, "velocity_limits") else None)!s}, '
+                f'error={(self.error if hasattr(self, "error") else None)!s})')

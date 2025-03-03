@@ -205,3 +205,41 @@ class CardDetailsResponsePINDeliveryAddress(object):
                    city,
                    region_id,
                    region)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'contact_fore_name={(self.contact_fore_name if hasattr(self, "contact_fore_name") else None)!r}, '
+                f'contact_middle_name={(self.contact_middle_name if hasattr(self, "contact_middle_name") else None)!r}, '
+                f'contact_last_name={(self.contact_last_name if hasattr(self, "contact_last_name") else None)!r}, '
+                f'contact_title={(self.contact_title if hasattr(self, "contact_title") else None)!r}, '
+                f'company_name={self.company_name!r}, '
+                f'address_id={self.address_id!r}, '
+                f'address_line_1={self.address_line_1!r}, '
+                f'address_line_2={(self.address_line_2 if hasattr(self, "address_line_2") else None)!r}, '
+                f'address_line_3={(self.address_line_3 if hasattr(self, "address_line_3") else None)!r}, '
+                f'zip_code={self.zip_code!r}, '
+                f'city={(self.city if hasattr(self, "city") else None)!r}, '
+                f'region_id={(self.region_id if hasattr(self, "region_id") else None)!r}, '
+                f'region={(self.region if hasattr(self, "region") else None)!r}, '
+                f'country_id={self.country_id!r}, '
+                f'country_iso_code={self.country_iso_code!r}, '
+                f'country={self.country!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'contact_fore_name={(self.contact_fore_name if hasattr(self, "contact_fore_name") else None)!s}, '
+                f'contact_middle_name={(self.contact_middle_name if hasattr(self, "contact_middle_name") else None)!s}, '
+                f'contact_last_name={(self.contact_last_name if hasattr(self, "contact_last_name") else None)!s}, '
+                f'contact_title={(self.contact_title if hasattr(self, "contact_title") else None)!s}, '
+                f'company_name={self.company_name!s}, '
+                f'address_id={self.address_id!s}, '
+                f'address_line_1={self.address_line_1!s}, '
+                f'address_line_2={(self.address_line_2 if hasattr(self, "address_line_2") else None)!s}, '
+                f'address_line_3={(self.address_line_3 if hasattr(self, "address_line_3") else None)!s}, '
+                f'zip_code={self.zip_code!s}, '
+                f'city={(self.city if hasattr(self, "city") else None)!s}, '
+                f'region_id={(self.region_id if hasattr(self, "region_id") else None)!s}, '
+                f'region={(self.region if hasattr(self, "region") else None)!s}, '
+                f'country_id={self.country_id!s}, '
+                f'country_iso_code={self.country_iso_code!s}, '
+                f'country={self.country!s})')

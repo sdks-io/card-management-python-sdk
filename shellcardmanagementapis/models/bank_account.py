@@ -13,8 +13,6 @@ class BankAccount(object):
 
     """Implementation of the 'BankAccount' model.
 
-    TODO: type model description here.
-
     Attributes:
         account_number (str): Account Number
         bank_name (str): Bank Name
@@ -172,3 +170,35 @@ class BankAccount(object):
                    sort_code,
                    swift_code,
                    bank_type)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'bank_name={(self.bank_name if hasattr(self, "bank_name") else None)!r}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!r}, '
+                f'date_effective={(self.date_effective if hasattr(self, "date_effective") else None)!r}, '
+                f'date_terminated={(self.date_terminated if hasattr(self, "date_terminated") else None)!r}, '
+                f'iban={(self.iban if hasattr(self, "iban") else None)!r}, '
+                f'currency_code={(self.currency_code if hasattr(self, "currency_code") else None)!r}, '
+                f'currency_symbol={(self.currency_symbol if hasattr(self, "currency_symbol") else None)!r}, '
+                f'country_iso_code={(self.country_iso_code if hasattr(self, "country_iso_code") else None)!r}, '
+                f'country={(self.country if hasattr(self, "country") else None)!r}, '
+                f'sort_code={(self.sort_code if hasattr(self, "sort_code") else None)!r}, '
+                f'swift_code={(self.swift_code if hasattr(self, "swift_code") else None)!r}, '
+                f'bank_type={(self.bank_type if hasattr(self, "bank_type") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'bank_name={(self.bank_name if hasattr(self, "bank_name") else None)!s}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!s}, '
+                f'date_effective={(self.date_effective if hasattr(self, "date_effective") else None)!s}, '
+                f'date_terminated={(self.date_terminated if hasattr(self, "date_terminated") else None)!s}, '
+                f'iban={(self.iban if hasattr(self, "iban") else None)!s}, '
+                f'currency_code={(self.currency_code if hasattr(self, "currency_code") else None)!s}, '
+                f'currency_symbol={(self.currency_symbol if hasattr(self, "currency_symbol") else None)!s}, '
+                f'country_iso_code={(self.country_iso_code if hasattr(self, "country_iso_code") else None)!s}, '
+                f'country={(self.country if hasattr(self, "country") else None)!s}, '
+                f'sort_code={(self.sort_code if hasattr(self, "sort_code") else None)!s}, '
+                f'swift_code={(self.swift_code if hasattr(self, "swift_code") else None)!s}, '
+                f'bank_type={(self.bank_type if hasattr(self, "bank_type") else None)!s})')

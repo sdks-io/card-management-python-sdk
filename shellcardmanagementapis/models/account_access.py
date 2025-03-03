@@ -13,8 +13,6 @@ class AccountAccess(object):
 
     """Implementation of the 'AccountAccess' model.
 
-    TODO: type model description here.
-
     Attributes:
         colco_id (int): Collecting company id.
         colco_code (int): Collecting company code.
@@ -125,3 +123,25 @@ class AccountAccess(object):
                    account_id,
                    account_number,
                    account_name)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'colco_id={(self.colco_id if hasattr(self, "colco_id") else None)!r}, '
+                f'colco_code={(self.colco_code if hasattr(self, "colco_code") else None)!r}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!r}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!r}, '
+                f'payer_name={(self.payer_name if hasattr(self, "payer_name") else None)!r}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!r}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!r}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'colco_id={(self.colco_id if hasattr(self, "colco_id") else None)!s}, '
+                f'colco_code={(self.colco_code if hasattr(self, "colco_code") else None)!s}, '
+                f'payer_id={(self.payer_id if hasattr(self, "payer_id") else None)!s}, '
+                f'payer_number={(self.payer_number if hasattr(self, "payer_number") else None)!s}, '
+                f'payer_name={(self.payer_name if hasattr(self, "payer_name") else None)!s}, '
+                f'account_id={(self.account_id if hasattr(self, "account_id") else None)!s}, '
+                f'account_number={(self.account_number if hasattr(self, "account_number") else None)!s}, '
+                f'account_name={(self.account_name if hasattr(self, "account_name") else None)!s})')

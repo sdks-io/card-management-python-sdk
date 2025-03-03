@@ -13,8 +13,6 @@ class ShellSiteRestriction(object):
 
     """Implementation of the 'ShellSiteRestriction' model.
 
-    TODO: type model description here.
-
     Attributes:
         country (str): ISO 3166-1 Numeric-3 code of the country where the site
             restriction is applied. Example: 826 for United Kingdom.
@@ -93,3 +91,17 @@ class ShellSiteRestriction(object):
                    sites,
                    site_groups,
                    exclusive)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'country={(self.country if hasattr(self, "country") else None)!r}, '
+                f'sites={(self.sites if hasattr(self, "sites") else None)!r}, '
+                f'site_groups={(self.site_groups if hasattr(self, "site_groups") else None)!r}, '
+                f'exclusive={(self.exclusive if hasattr(self, "exclusive") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'country={(self.country if hasattr(self, "country") else None)!s}, '
+                f'sites={(self.sites if hasattr(self, "sites") else None)!s}, '
+                f'site_groups={(self.site_groups if hasattr(self, "site_groups") else None)!s}, '
+                f'exclusive={(self.exclusive if hasattr(self, "exclusive") else None)!s})')

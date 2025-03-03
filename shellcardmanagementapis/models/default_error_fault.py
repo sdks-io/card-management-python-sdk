@@ -18,7 +18,7 @@ class DefaultErrorFault(object):
 
     Attributes:
         faultstring (str): Error Description
-        detail (Detail): TODO: type description here.
+        detail (Detail): The model property of type Detail.
 
     """
 
@@ -68,3 +68,13 @@ class DefaultErrorFault(object):
         # Return an object of this model
         return cls(faultstring,
                    detail)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'faultstring={(self.faultstring if hasattr(self, "faultstring") else None)!r}, '
+                f'detail={(self.detail if hasattr(self, "detail") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'faultstring={(self.faultstring if hasattr(self, "faultstring") else None)!s}, '
+                f'detail={(self.detail if hasattr(self, "detail") else None)!s})')

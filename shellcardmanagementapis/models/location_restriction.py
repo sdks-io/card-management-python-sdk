@@ -17,16 +17,15 @@ class LocationRestriction(object):
 
     """Implementation of the 'LocationRestriction' model.
 
-    TODO: type model description here.
-
     Attributes:
-        country_restrictions (CountryRestriction): TODO: type description here.
-        network_restrictions (List[NetworkRestriction]): TODO: type
-            description here.
-        shell_site_restrictions (List[ShellSiteRestriction]): TODO: type
-            description here.
-        partner_site_restrictions (List[PartnerSiteRestriction]): TODO: type
-            description here.
+        country_restrictions (CountryRestriction): The model property of type
+            CountryRestriction.
+        network_restrictions (List[NetworkRestriction]): The model property of
+            type List[NetworkRestriction].
+        shell_site_restrictions (List[ShellSiteRestriction]): The model
+            property of type List[ShellSiteRestriction].
+        partner_site_restrictions (List[PartnerSiteRestriction]): The model
+            property of type List[PartnerSiteRestriction].
 
     """
 
@@ -102,3 +101,17 @@ class LocationRestriction(object):
                    network_restrictions,
                    shell_site_restrictions,
                    partner_site_restrictions)
+
+    def __repr__(self):
+        return (f'{self.__class__.__name__}('
+                f'country_restrictions={(self.country_restrictions if hasattr(self, "country_restrictions") else None)!r}, '
+                f'network_restrictions={(self.network_restrictions if hasattr(self, "network_restrictions") else None)!r}, '
+                f'shell_site_restrictions={(self.shell_site_restrictions if hasattr(self, "shell_site_restrictions") else None)!r}, '
+                f'partner_site_restrictions={(self.partner_site_restrictions if hasattr(self, "partner_site_restrictions") else None)!r})')
+
+    def __str__(self):
+        return (f'{self.__class__.__name__}('
+                f'country_restrictions={(self.country_restrictions if hasattr(self, "country_restrictions") else None)!s}, '
+                f'network_restrictions={(self.network_restrictions if hasattr(self, "network_restrictions") else None)!s}, '
+                f'shell_site_restrictions={(self.shell_site_restrictions if hasattr(self, "shell_site_restrictions") else None)!s}, '
+                f'partner_site_restrictions={(self.partner_site_restrictions if hasattr(self, "partner_site_restrictions") else None)!s})')
